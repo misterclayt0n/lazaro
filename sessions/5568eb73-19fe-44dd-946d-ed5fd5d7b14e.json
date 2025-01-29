@@ -1,0 +1,34 @@
+{
+  "id": "5568eb73-19fe-44dd-946d-ed5fd5d7b14e",
+  "program": "Basic Routine",
+  "start_time": "2025-01-29T15:27:30.218134283-03:00",
+  "end_time": "2025-01-29T15:27:50.279314254-03:00",
+  "exercises": [
+    {
+      "name": "Bench Press",
+      "sets": [
+        {
+          "timestamp": "2025-01-29T15:27:36.861154650-03:00",
+          "weight": 100.0,
+          "reps": 5,
+          "rpe": null,
+          "notes": null
+        }
+      ],
+      "last_session_sets": [],
+      "pr": null
+    },
+    {
+      "name": "Squat",
+      "sets": [],
+      "last_session_sets": [],
+      "pr": null
+    },
+    {
+      "name": "Deadlift",
+      "sets": [],
+      "last_session_sets": [],
+      "pr": null
+    }
+  ]
+}

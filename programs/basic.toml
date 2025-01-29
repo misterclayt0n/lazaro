@@ -1,0 +1,7 @@
+# This is an example.
+name = "Basic Routine"
+exercises = [
+    { name = "Bench Press", sets = 3, reps = "5" },
+    { name = "Squat", sets = 3, reps = "5" },
+    { name = "Deadlift", sets = 3, reps = "5" }
+]
