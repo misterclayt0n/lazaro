@@ -1,0 +1,19 @@
+name = "Sexy program"
+description = "Just a test ma man"
+
+[[block]]
+name = "Heavy Day"
+description = "Max effort day"
+
+[[block.exercise]]
+name = "Back Squat"
+sets = 5
+reps = "5"
+target_rpe = 8.0
+notes = "Work up to heavy set"
+
+[[block.exercise]]
+name = "Bench Press"
+sets = 5
+reps = "5"
+target_rm_percent = 0.75
