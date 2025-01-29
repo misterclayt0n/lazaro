@@ -4,4 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-clap = "4.5.27"
+chrono = "0.4.39"
+clap = { version = "4.5.27", features = ["derive"] }
+dirs = "6.0.0"
+serde = "1.0.217"
+uuid = "1.12.1"
