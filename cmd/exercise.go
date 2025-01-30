@@ -21,7 +21,7 @@ var (
 
 var addExerciseCmd = &cobra.Command{
 	Use:   "add-exercise",
-	Short: "Create a new exercise",
+	Short: "Create a new exercise from the command line",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		st := storage.NewStorage()
 

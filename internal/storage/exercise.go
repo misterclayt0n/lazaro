@@ -47,3 +47,28 @@ func (s *Storage) GetExerciseByName(name string) (*models.Exercise, error) {
 	ex.CreatedAt, _ = time.Parse(time.RFC3339, createdAt)
 	return &ex, nil
 }
+
+func (s *Storage) GetExerciseByID(id string) (*models.Exercise, error) {
+	var ex models.Exercise
+	var createdAt string
+
+	err := s.db.QueryRow(
+		`SELECT id, name, description, primary_muscle, created_at, estimated_one_rm
+        FROM exercises WHERE id = ?`,
+		id,
+	).Scan(
+		&ex.ID,
+		&ex.Name,
+		&ex.Description,
+		&ex.PrimaryMuscle,
+		&createdAt,
+		&ex.EstimatedOneRM,
+	)
+
+	if err != nil {
+		return nil, err
+	}
+
+	ex.CreatedAt, _ = time.Parse(time.RFC3339, createdAt)
+	return &ex, nil
+}
