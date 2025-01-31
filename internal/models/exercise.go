@@ -11,6 +11,8 @@ type Exercise struct {
 	PRHistory      []PersonalRecord `json:"pr_history"`
 	CurrentPR      *PersonalRecord  `json:"current_pr"`
 	EstimatedOneRM float32          `json:"estimated_one_rm"`
+	BestSet        *ExerciseSet     `json:"best_set"` // All-time best set for 1RM display.
+	LastPerformed  time.Time        `json:"last_performed"`
 }
 
 type SessionExercise struct {
@@ -19,6 +21,7 @@ type SessionExercise struct {
 	Sets       []ExerciseSet   `json:"sets"`
 	Notes      string          `json:"notes"`
 	PreviousPR *PersonalRecord `json:"previous_pr"`
+    PreviousSets []ExerciseSet `json:"previous_sets"` // Sets from last session.
 }
 
 type ExerciseSet struct {

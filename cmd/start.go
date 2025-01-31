@@ -58,11 +58,23 @@ var startCmd = &cobra.Command{
 				return fmt.Errorf("Failed to get exercise: %w", err)
 			}
 
+			// Load previous session sets.
+			prevSession, err := st.GetPreviousSession(exercise.ID, selectedBlock.ID)
+			if err != nil {
+				return fmt.Errorf("Failed to get previous session: %w", err)
+			}
+
+			var prevSets []models.ExerciseSet
+			if prevSession != nil {
+				prevSets = getSetsForExercise(prevSession, exercise.ID)
+			}
+
 			state.Exercises = append(state.Exercises, models.SessionExercise{
-				ID:       uuid.New().String(),
-				Exercise: *exercise,
-				Sets:     make([]models.ExerciseSet, pe.Sets),
-				Notes:    pe.Notes,
+				ID:           uuid.New().String(),
+				Exercise:     *exercise,
+				Sets:         make([]models.ExerciseSet, pe.Sets),
+				PreviousSets: alignPreviousSets(prevSets, pe.Sets),
+				Notes:        pe.Notes,
 			})
 		}
 
@@ -73,6 +85,73 @@ var startCmd = &cobra.Command{
 		fmt.Printf("✅ Started session %s for block '%s'\n", state.SessionID, blockName)
 		return nil
 	},
+}
+
+func getSetsForExercise(prevSession *models.TrainingSession, exerciseID string) []models.ExerciseSet {
+	st := storage.NewStorage()
+
+	// First, get the training_session_exercises.id record that matches.
+	// the previous session's ID and the target exercise ID.
+	var sessionExerciseID string
+	row := st.DB.QueryRow(
+		`SELECT id
+		 FROM training_session_exercises
+		 WHERE training_session_id = ?
+		   AND exercise_id = ?`,
+		prevSession.ID,
+		exerciseID,
+	)
+	if err := row.Scan(&sessionExerciseID); err != nil {
+		// If not found or error, return an empty slice.
+		return nil
+	}
+
+	rows, err := st.DB.Query(`
+        SELECT id, weight, reps, timestamp
+        FROM exercise_sets
+        WHERE session_exercise_id = ?
+        ORDER BY timestamp ASC
+    `, sessionExerciseID)
+	if err != nil {
+		return nil
+	}
+	defer rows.Close()
+
+	// Use an unbounded slice.
+	var sets []models.ExerciseSet
+
+	for rows.Next() {
+		var (
+			id      string
+			weight  float32
+			reps    int
+			rawTime string
+		)
+		if err := rows.Scan(&id, &weight, &reps, &rawTime); err != nil {
+			continue
+		}
+		ts, _ := time.Parse(time.RFC3339, rawTime)
+		sets = append(sets, models.ExerciseSet{
+			ID:        id,
+			Weight:    weight,
+			Reps:      reps,
+			Timestamp: ts,
+		})
+	}
+
+	return sets
+}
+
+func alignPreviousSets(prevSets []models.ExerciseSet, requiredSets int) []models.ExerciseSet {
+	aligned := make([]models.ExerciseSet, requiredSets)
+	for i := 0; i < requiredSets; i++ {
+		if i < len(prevSets) {
+			aligned[i] = prevSets[i]
+		} else {
+			aligned[i] = models.ExerciseSet{Weight: 0, Reps: 0} // Mark as N/A.
+		}
+	}
+	return aligned
 }
 
 func init() {

@@ -11,21 +11,34 @@ import (
 
 func (s *Storage) SaveSession(state *models.SessionState) error {
 	ctx := context.Background()
-	tx, err := s.db.BeginTx(ctx, nil)
+	tx, err := s.DB.BeginTx(ctx, nil)
 	if err != nil {
 		return fmt.Errorf("Failed to begin transaction: %w", err)
 	}
 	defer tx.Rollback()
 
+	// Update the existing session with end_time.
+	_, err = tx.ExecContext(ctx,
+		`UPDATE training_sessions
+         SET end_time = ?
+         WHERE id = ?`,
+		time.Now().UTC().Format(time.RFC3339),
+		state.SessionID,
+	)
+	if err != nil {
+		return fmt.Errorf("Failed to update session end time: %w", err)
+	}
+
 	// Save the training session.
 	_, err = tx.ExecContext(ctx,
 		`INSERT INTO training_sessions
-        (id, program_block_id, start_time, notes)
-        VALUES (?, ?, ?, ?)`,
+		(id, program_block_id, start_time, end_time, notes)
+		VALUES (?, ?, ?, ?, ?)`,
 		state.SessionID,
 		state.ProgramBlockID, // Assuming program_id is stored here.
 		state.StartTime.Format(time.RFC3339),
-		"", // Add notes if needed
+	    time.Now().UTC().Format(time.RFC3339), // end_time is current time.
+		"", // Add notes if needed.
 	)
 	if err != nil {
 		return fmt.Errorf("Failed to create training session: %w", err)
@@ -77,7 +90,7 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 	var program models.Program
 	var createdAt string
 
-	err := s.db.QueryRow(
+	err := s.DB.QueryRow(
 		`SELECT id, name, description, created_at
         FROM programs WHERE name = ?`,
 		name,
@@ -95,55 +108,55 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 	program.CreatedAt, _ = time.Parse(time.RFC3339, createdAt)
 
 	// Load the program’s blocks.
-    blockRows, err := s.db.Query(`
+	blockRows, err := s.DB.Query(`
         SELECT id, name, description
         FROM program_blocks
         WHERE program_id = ?
     `, program.ID)
-    if err != nil {
-        return nil, fmt.Errorf("failed to load blocks: %w", err)
-    }
-    defer blockRows.Close()
+	if err != nil {
+		return nil, fmt.Errorf("Failed to load blocks: %w", err)
+	}
+	defer blockRows.Close()
 
-    for blockRows.Next() {
-        var block models.ProgramBlock
-        if err := blockRows.Scan(
-            &block.ID,
-            &block.Name,
-            &block.Description,
-        ); err != nil {
-            return nil, fmt.Errorf("failed to scan block: %w", err)
-        }
+	for blockRows.Next() {
+		var block models.ProgramBlock
+		if err := blockRows.Scan(
+			&block.ID,
+			&block.Name,
+			&block.Description,
+		); err != nil {
+			return nil, fmt.Errorf("Failed to scan block: %w", err)
+		}
 
-        // Load exercises in each block.
-        exerciseRows, err := s.db.Query(`
+		// Load exercises in each block.
+		exerciseRows, err := s.DB.Query(`
             SELECT id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes
             FROM program_exercises
             WHERE program_block_id = ?
         `, block.ID)
-        if err != nil {
-            return nil, fmt.Errorf("failed to load exercises: %w", err)
-        }
-        defer exerciseRows.Close()
+		if err != nil {
+			return nil, fmt.Errorf("Failed to load exercises: %w", err)
+		}
+		defer exerciseRows.Close()
 
-        for exerciseRows.Next() {
-            var ex models.ProgramExercise
-            if err := exerciseRows.Scan(
-                &ex.ID,
-                &ex.ExerciseID,
-                &ex.Sets,
-                &ex.Reps,
-                &ex.TargetRPE,
-                &ex.TargetRMPercent,
-                &ex.Notes,
-            ); err != nil {
-                return nil, fmt.Errorf("failed to scan exercise: %w", err)
-            }
-            block.Exercises = append(block.Exercises, ex)
-        }
+		for exerciseRows.Next() {
+			var ex models.ProgramExercise
+			if err := exerciseRows.Scan(
+				&ex.ID,
+				&ex.ExerciseID,
+				&ex.Sets,
+				&ex.Reps,
+				&ex.TargetRPE,
+				&ex.TargetRMPercent,
+				&ex.Notes,
+			); err != nil {
+				return nil, fmt.Errorf("Failed to scan exercise: %w", err)
+			}
+			block.Exercises = append(block.Exercises, ex)
+		}
 
-        program.Blocks = append(program.Blocks, block)
-    }
+		program.Blocks = append(program.Blocks, block)
+	}
 
-    return &program, nil
+	return &program, nil
 }

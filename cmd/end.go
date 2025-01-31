@@ -23,12 +23,12 @@ var endSessionCmd = &cobra.Command{
 
 		st := storage.NewStorage()
 
-		// Save to database
+		// Save to database.
 		if err := st.SaveSession(state); err != nil {
 			return fmt.Errorf("Failed to save session: %w", err)
 		}
 
-		// Clear temp file
+		// Clear temp file.
 		if err := utils.ClearSessionState(); err != nil {
 			return fmt.Errorf("Failed to clear session: %w", err)
 		}

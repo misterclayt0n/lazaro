@@ -25,7 +25,7 @@ var editSetCmd = &cobra.Command{
 			return fmt.Errorf("No active session")
 		}
 
-		// Parse arguments
+		// Parse arguments.
 		exerciseIndex, err := strconv.Atoi(args[0])
 		exerciseIndex--
 		if err != nil || exerciseIndex < 0 {
@@ -38,13 +38,13 @@ var editSetCmd = &cobra.Command{
 			return fmt.Errorf("Invalid set index")
 		}
 
-		// Load session
+		// Load session.
 		state, err := utils.LoadSessionState()
 		if err != nil {
 			return fmt.Errorf("Failed to load session: %w", err)
 		}
 
-		// Validate indices
+		// Validate indices.
 		if exerciseIndex >= len(state.Exercises) {
 			return fmt.Errorf("Exercise index out of range")
 		}
@@ -54,7 +54,7 @@ var editSetCmd = &cobra.Command{
 			return fmt.Errorf("Set index out of range")
 		}
 
-		// Update set
+		// Update set.
 		exercise.Sets[setIndex] = models.ExerciseSet{
 			ID:        uuid.New().String(),
 			Weight:    setWeight,
@@ -62,7 +62,7 @@ var editSetCmd = &cobra.Command{
 			Timestamp: time.Now().UTC(),
 		}
 
-		// Save changes
+		// Save changes.
 		if err := utils.SaveSessionState(state); err != nil {
 			return fmt.Errorf("Failed to save session: %w", err)
 		}

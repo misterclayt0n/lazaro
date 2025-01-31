@@ -12,7 +12,7 @@ import (
 )
 
 type Storage struct {
-	db *sql.DB
+	DB *sql.DB
 }
 
 func NewStorage() *Storage {
@@ -38,7 +38,7 @@ func NewStorage() *Storage {
 		os.Exit(1)
 	}
 
-	return &Storage{db: db}
+	return &Storage{DB: db}
 }
 
 func initializeDB(db *sql.DB) error {
@@ -133,20 +133,20 @@ func (s *Storage) StartSession(programName string) (string, error) {
 	sessionID := uuid.New().String()
 	startTime := time.Now().UTC().Format(time.RFC3339)
 
-	_, err := s.db.Exec(
-		"INSERT INTO sessions (id, program, start_time) VALUES (?, ?, ?)",
+	_, err := s.DB.Exec(
+		"INSERT INTO training_sessions (id, program, start_time) VALUES (?, ?, ?)",
 		sessionID, programName, startTime,
 	)
 	if err != nil {
 		return "", fmt.Errorf("failed to create session: %w", err)
 	}
 
-	_, err = s.db.Exec(
+	_, err = s.DB.Exec(
 		"INSERT OR REPLACE INTO current_session (id) VALUES (?)",
 		sessionID,
 	)
 	if err != nil {
-		return "", fmt.Errorf("failed to set current session: %w", err)
+		return "", fmt.Errorf("Failed to set current session: %w", err)
 	}
 
 	return sessionID, nil

@@ -13,16 +13,16 @@ import (
 
 func (s *Storage) CreateProgram(tomlData []byte) error {
     ctx := context.Background()
-    tx, err := s.db.BeginTx(ctx, nil)
+    tx, err := s.DB.BeginTx(ctx, nil)
     if err != nil {
-        return fmt.Errorf("failed to begin transaction: %w", err)
+        return fmt.Errorf("Failed to begin transaction: %w", err)
     }
     defer tx.Rollback()
 
     // Parse TOML.
     var programTOML models.ProgramTOML
     if err := toml.Unmarshal(tomlData, &programTOML); err != nil {
-        return fmt.Errorf("invalid TOML format: %w", err)
+        return fmt.Errorf("Invalid TOML format: %w", err)
     }
 
     // Create main program.
@@ -37,7 +37,7 @@ func (s *Storage) CreateProgram(tomlData []byte) error {
         createdAt,
     )
     if err != nil {
-        return fmt.Errorf("failed to create program: %w", err)
+        return fmt.Errorf("Failed to create program: %w", err)
     }
 
     // Process blocks.
@@ -53,7 +53,7 @@ func (s *Storage) CreateProgram(tomlData []byte) error {
             blockTOML.Description,
         )
         if err != nil {
-            return fmt.Errorf("failed to create program block: %w", err)
+            return fmt.Errorf("Failed to create program block: %w", err)
         }
 
         // Process exercises in block.
@@ -68,7 +68,7 @@ func (s *Storage) CreateProgram(tomlData []byte) error {
                 if err == sql.ErrNoRows {
                     return fmt.Errorf("exercise '%s' not found", exerciseTOML.Name)
                 }
-                return fmt.Errorf("failed to validate exercise: %w", err)
+                return fmt.Errorf("Failed to validate exercise: %w", err)
             }
 
             // Create program exercise.
@@ -86,25 +86,25 @@ func (s *Storage) CreateProgram(tomlData []byte) error {
                 exerciseTOML.Notes,
             )
             if err != nil {
-                return fmt.Errorf("failed to create program exercise: %w", err)
+                return fmt.Errorf("Failed to create program exercise: %w", err)
             }
         }
     }
 
     if err := tx.Commit(); err != nil {
-        return fmt.Errorf("failed to commit transaction: %w", err)
+        return fmt.Errorf("Failed to commit transaction: %w", err)
     }
 
     return nil
 }
 
 func (s *Storage) ListPrograms() ([]models.Program, error) {
-	rows, err := s.db.Query(`
+	rows, err := s.DB.Query(`
         SELECT id, name, description, created_at
         FROM programs
     `)
 	if err != nil {
-		return nil, fmt.Errorf("failed to query programs: %w", err)
+		return nil, fmt.Errorf("Failed to query programs: %w", err)
 	}
 	defer rows.Close()
 
@@ -120,7 +120,7 @@ func (s *Storage) ListPrograms() ([]models.Program, error) {
 			&createdAt,
 		)
 		if err != nil {
-			return nil, fmt.Errorf("failed to scan program: %w", err)
+			return nil, fmt.Errorf("Failed to scan program: %w", err)
 		}
 
 		p.CreatedAt, _ = time.Parse(time.RFC3339, createdAt)
@@ -131,10 +131,10 @@ func (s *Storage) ListPrograms() ([]models.Program, error) {
 }
 
 func (s *Storage) GetProgram(id string) (*models.Program, error) {
-    // Load program base
+    // Load program base.
     var program models.Program
     var createdAt string
-    err := s.db.QueryRow(`
+    err := s.DB.QueryRow(`
         SELECT id, name, description, created_at
         FROM programs WHERE id = ?
     `, id).Scan(
@@ -144,18 +144,18 @@ func (s *Storage) GetProgram(id string) (*models.Program, error) {
         &createdAt,
     )
     if err != nil {
-        return nil, fmt.Errorf("program not found: %w", err)
+        return nil, fmt.Errorf("Program not found: %w", err)
     }
     program.CreatedAt, _ = time.Parse(time.RFC3339, createdAt)
 
     // Load blocks.
-    blockRows, err := s.db.Query(`
+    blockRows, err := s.DB.Query(`
         SELECT id, name, description
         FROM program_blocks
         WHERE program_id = ?
     `, id)
     if err != nil {
-        return nil, fmt.Errorf("failed to load blocks: %w", err)
+        return nil, fmt.Errorf("Failed to load blocks: %w", err)
     }
     defer blockRows.Close()
 
@@ -167,17 +167,17 @@ func (s *Storage) GetProgram(id string) (*models.Program, error) {
             &block.Description,
         )
         if err != nil {
-            return nil, fmt.Errorf("failed to scan block: %w", err)
+            return nil, fmt.Errorf("Failed to scan block: %w", err)
         }
 
         // Load exercises.
-        exerciseRows, err := s.db.Query(`
+        exerciseRows, err := s.DB.Query(`
             SELECT id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes
             FROM program_exercises
             WHERE program_block_id = ?
         `, block.ID)
         if err != nil {
-            return nil, fmt.Errorf("failed to load exercises: %w", err)
+            return nil, fmt.Errorf("Failed to load exercises: %w", err)
         }
         defer exerciseRows.Close()
 
@@ -193,7 +193,7 @@ func (s *Storage) GetProgram(id string) (*models.Program, error) {
                 &ex.Notes,
             )
             if err != nil {
-                return nil, fmt.Errorf("failed to scan exercise: %w", err)
+                return nil, fmt.Errorf("Failed to scan exercise: %w", err)
             }
             block.Exercises = append(block.Exercises, ex)
         }
