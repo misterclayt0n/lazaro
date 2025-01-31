@@ -3,45 +3,47 @@ package models
 import "time"
 
 type Exercise struct {
-	ID             string           `json:"id"`
-	Name           string           `json:"name"`
-	Description    string           `json:"description"`
-	PrimaryMuscle  string           `json:"primary_muscle"`
-	CreatedAt      time.Time        `json:"created_at"`
-	PRHistory      []PersonalRecord `json:"pr_history"`
-	CurrentPR      *PersonalRecord  `json:"current_pr"`
-	EstimatedOneRM float32          `json:"estimated_one_rm"`
-	BestSet        *ExerciseSet     `json:"best_set"` // All-time best set for 1RM display.
-	LastPerformed  time.Time        `json:"last_performed"`
+	ID             string           `toml:"id"`
+	Name           string           `toml:"name"`
+	Description    string           `toml:"description"`
+	PrimaryMuscle  string           `toml:"primary_muscle"`
+	CreatedAt      time.Time        `toml:"created_at"`
+	PRHistory      []PersonalRecord `toml:"pr_history"`
+	CurrentPR      *PersonalRecord  `toml:"current_pr"`
+	EstimatedOneRM float32          `toml:"estimated_one_rm"`
+	BestSet        *ExerciseSet     `toml:"best_set"`
+	LastPerformed  time.Time        `toml:"last_performed"`
 }
 
 type SessionExercise struct {
-	ID         string          `json:"id"`
-	Exercise   Exercise        `json:"exercise"`
-	Sets       []ExerciseSet   `json:"sets"`
-	Notes      string          `json:"notes"`
-	PreviousPR *PersonalRecord `json:"previous_pr"`
-    PreviousSets []ExerciseSet `json:"previous_sets"` // Sets from last session.
+	ID           string          `toml:"id"`
+	Exercise     Exercise        `toml:"exercise"`
+	Sets         []ExerciseSet   `toml:"sets"`
+	ProgramNotes string          `toml:"notes"`         // From ProgramExercise.
+	SessionNotes string          `toml:"session_notes"` // User input (like "felt like shit").
+	PreviousPR   *PersonalRecord `toml:"previous_pr"`
+	PreviousSets []ExerciseSet   `toml:"previous_sets"`
+	TargetReps   []string        `toml:"target_reps"`
 }
 
 type ExerciseSet struct {
-	ID              string    `json:"id"`
-	Weight          float32   `json:"weight"`
-	Reps            int       `json:"reps"`
-	TargetRPE       *float32  `json:"target_rpe,omitempty"`
-	TargetRMPercent *float32  `json:"target_rm_percent,omitempty"`
-	Notes           string    `json:"notes"`
-	Timestamp       time.Time `json:"timestamp"`
+	ID              string    `toml:"id"`
+	Weight          float32   `toml:"weight"`
+	Reps            int       `toml:"reps"`
+	TargetRPE       *float32  `toml:"target_rpe,omitempty"`
+	TargetRMPercent *float32  `toml:"target_rm_percent,omitempty"`
+	Notes           string    `toml:"notes"`
+	Timestamp       time.Time `toml:"timestamp"`
 }
 
 type ProgramExercise struct {
 	ID              string   `json:"id"`
 	ExerciseID      string   `json:"exercise_id"`
 	Sets            int      `json:"sets"`
-	Reps            string   `json:"reps"`
+	Reps            []string `json:"reps"`
 	TargetRPE       *float32 `json:"target_rpe,omitempty"`
 	TargetRMPercent *float32 `json:"target_rm_percent,omitempty"`
-	Notes           string   `json:"notes,omitempty"`
+	ProgramNotes    string   `json:"program_notes,omitempty"`
 }
 
 //

@@ -20,11 +20,15 @@ type PersonalRecord struct {
 }
 
 type SessionState struct {
-	SessionID      string            `toml:"session_id"`
-	ProgramBlockID string            `toml:"program_block_id"`
-	StartTime      time.Time         `toml:"start_time"`
-	Exercises      []SessionExercise `toml:"exercises"`
-	CurrentSetID   int               `toml:"current_set_id"` // Auto-incrementing set IDs.
+	SessionID               string            `toml:"session_id"`
+	ProgramBlockID          string            `toml:"program_block_id"`
+	ProgramBlockDescription string            `toml:"program_block_description"`
+	ProgramName             string            `toml:"program_name"`
+	ProgramBlockName        string            `toml:"program_block_name"`
+	ExerciseNote            string            `toml:"exercise_note"`
+	StartTime               time.Time         `toml:"start_time"`
+	Exercises               []SessionExercise `toml:"exercises"`
+	CurrentSetID            int               `toml:"current_set_id"`
 }
 
 type TempSet struct {

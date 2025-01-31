@@ -27,9 +27,13 @@ var showSessionCmd = &cobra.Command{
 		// Print header.
 		cyan := color.New(color.FgCyan).SprintFunc()
 		yellow := color.New(color.FgYellow).SprintFunc()
+		red := color.New(color.FgRed).SprintFunc()
+		green := color.New(color.FgGreen).SprintFunc()
 
-		fmt.Printf("\n%s %s\n", cyan("🏋️ Session:"), state.SessionID)
-		fmt.Printf("%s %s\n\n", cyan("⏱  Duration:"), duration)
+		fmt.Printf("%s\n", green(state.ProgramName))
+		fmt.Printf("\n%s %s\n", red("Session:"), state.ProgramBlockName)
+		fmt.Printf("%s %s\n", cyan("Description:"), state.ProgramBlockDescription)
+		fmt.Printf("%s %s\n\n", red("Duration:"), duration)
 
 		for exIdx, exercise := range state.Exercises {
 			ex := exercise.Exercise
@@ -41,6 +45,7 @@ var showSessionCmd = &cobra.Command{
 					cyan("Last performed:"),
 					ex.LastPerformed.Format("2006-01-02"))
 			}
+
 			if ex.BestSet != nil {
 				fmt.Printf("   %s %.1fkg × %d (1RM: %.1fkg)\n",
 					cyan("All-time PR:"),
@@ -49,10 +54,18 @@ var showSessionCmd = &cobra.Command{
 					utils.CalculateEpley1RM(ex.BestSet.Weight, ex.BestSet.Reps))
 			}
 
+			if exercise.ProgramNotes != "" {
+				fmt.Printf("   %s %s\n", cyan("Program Notes:"), exercise.ProgramNotes)
+			}
+
+			if exercise.SessionNotes != "" {
+				fmt.Printf("   %s %s\n", green("Session Notes:"), exercise.SessionNotes)
+			}
+
 			// Table header.
-			fmt.Println("\n   ┌──────────┬─────────────────┬───────────────┐")
-			fmt.Println("   │  Set     │ Current         │ Prev Session  │")
-			fmt.Println("   ├──────────┼─────────────────┼───────────────┤")
+			fmt.Println("\n   ┌──────────┬───────────────┬─────────────────┬───────────────┐")
+			fmt.Println("   │  Set     │ Target Reps   │ Current         │ Prev Session  │")
+			fmt.Println("   ├──────────┼───────────────┼─────────────────┼───────────────┤")
 
 			for setIdx, set := range exercise.Sets {
 				var prevSet string
@@ -84,10 +97,12 @@ var showSessionCmd = &cobra.Command{
 					setStr = "Not completed"
 				}
 
-				fmt.Printf("   │ %-8d │ %-15s │ %-13s │\n", setIdx+1, setStr, prevSet)
+				targetRep := exercise.TargetReps[setIdx]
+
+				fmt.Printf("   │ %-8d │ %-13s │ %-15s │ %-13s │\n", setIdx+1, targetRep, setStr, prevSet)
 			}
 
-			fmt.Println("   └──────────┴─────────────────┴───────────────┘")
+			fmt.Println("   └──────────┴───────────────┴─────────────────┴───────────────┘")
 		}
 
 		return nil

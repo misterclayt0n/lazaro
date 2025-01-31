@@ -1,19 +1,19 @@
 name = "Sexy program"
 description = "Just a test ma man"
 
-[[block]]
+[[blocks]]
 name = "Heavy Day"
 description = "Max effort day"
 
-[[block.exercise]]
+[[blocks.exercises]]
 name = "Back Squat"
-sets = 5
-reps = "5"
+sets = 3
+reps = ["5", "6-10", "AMRAP"]
 target_rpe = 8.0
 notes = "Work up to heavy set"
 
-[[block.exercise]]
+[[blocks.exercises]]
 name = "Bench Press"
-sets = 5
-reps = "5"
+sets = 3
+reps = ["5", "5", "5"]
 target_rm_percent = 0.75

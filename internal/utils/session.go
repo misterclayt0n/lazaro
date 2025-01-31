@@ -54,6 +54,12 @@ func ClearSessionState() error {
 	if err != nil {
 		return err
 	}
+
+	// Ensure file exists before trying to remove.
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		return nil
+	}
+
 	return os.Remove(path)
 }
 
@@ -62,8 +68,20 @@ func SessionExists() bool {
 	if err != nil {
 		return false
 	}
-	_, err = os.Stat(path)
-	return !os.IsNotExist(err)
+
+	// Check both file existence and non-empty content.
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		return false
+	}
+
+	// Verify the file actually contains a valid session.
+	state, err := LoadSessionState()
+	if err != nil || state.SessionID == "" || len(state.Exercises) == 0 {
+		_ = ClearSessionState()
+		return false
+	}
+
+	return true
 }
 
 func AlignPreviousSets(prevSets []models.ExerciseSet, requiredSets int) []models.ExerciseSet {

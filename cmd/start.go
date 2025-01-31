@@ -41,14 +41,21 @@ var startCmd = &cobra.Command{
 			}
 		}
 		if selectedBlock == nil {
-			return fmt.Errorf("block '%s' not found in program", blockName)
+			return fmt.Errorf("Block '%s' not found in program", blockName)
 		}
 
 		// Create session state with correct block ID.
 		state := &models.SessionState{
-			SessionID:      uuid.New().String(),
-			ProgramBlockID: selectedBlock.ID,
-			StartTime:      time.Now().UTC(),
+			SessionID:               uuid.New().String(),
+			ProgramName:             program.Name,
+			ProgramBlockID:          selectedBlock.ID,
+			ProgramBlockDescription: selectedBlock.Description,
+			ProgramBlockName:        selectedBlock.Name,
+			StartTime:               time.Now().UTC(),
+		}
+
+		if len(selectedBlock.Exercises) == 0 {
+			return fmt.Errorf("Block '%s' has no exercises", blockName)
 		}
 
 		// Initialize exercises only from the selected block.
@@ -69,12 +76,26 @@ var startCmd = &cobra.Command{
 				prevSets = getSetsForExercise(prevSession, exercise.ID)
 			}
 
+			targetReps := make([]string, pe.Sets)
+			for i := 0; i < pe.Sets; i++ {
+				if i < len(pe.Reps) {
+					targetReps[i] = pe.Reps[i]
+				} else if len(pe.Reps) > 0 {
+					// Use last specified rep scheme for remaining sets
+					targetReps[i] = pe.Reps[len(pe.Reps)-1]
+				} else {
+					targetReps[i] = ""
+				}
+			}
 			state.Exercises = append(state.Exercises, models.SessionExercise{
 				ID:           uuid.New().String(),
 				Exercise:     *exercise,
 				Sets:         make([]models.ExerciseSet, pe.Sets),
 				PreviousSets: alignPreviousSets(prevSets, pe.Sets),
-				Notes:        pe.Notes,
+				ProgramNotes: pe.ProgramNotes,
+				// SessionNotes stays empty for now since the user hasn't entered anything yet.
+				SessionNotes: "",
+				TargetReps:   targetReps,
 			})
 		}
 

@@ -24,20 +24,20 @@ type ProgramBlock struct {
 type ProgramTOML struct {
 	Name        string      `toml:"name"`
 	Description string      `toml:"description"`
-	Blocks      []BlockTOML `toml:"block"`
+	Blocks      []BlockTOML `toml:"blocks"`
 }
 
 type BlockTOML struct {
 	Name        string         `toml:"name"`
 	Description string         `toml:"description"`
-	Exercises   []ExerciseTOML `toml:"exercise"`
+	Exercises   []ExerciseTOML `toml:"exercises"`
 }
 
 type ExerciseTOML struct {
 	Name            string   `toml:"name"`
 	Sets            int      `toml:"sets"`
-	Reps            string   `toml:"reps"`
+	Reps            []string `toml:"reps"`
 	TargetRPE       *float32 `toml:"target_rpe,omitempty"`
 	TargetRMPercent *float32 `toml:"target_rm_percent,omitempty"`
-	Notes           string   `toml:"notes,omitempty"`
+	ProgramNotes           string   `toml:"notes,omitempty"`
 }

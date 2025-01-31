@@ -2,6 +2,7 @@ package storage
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"time"
 
@@ -37,8 +38,8 @@ func (s *Storage) SaveSession(state *models.SessionState) error {
 		state.SessionID,
 		state.ProgramBlockID, // Assuming program_id is stored here.
 		state.StartTime.Format(time.RFC3339),
-	    time.Now().UTC().Format(time.RFC3339), // end_time is current time.
-		"", // Add notes if needed.
+		time.Now().UTC().Format(time.RFC3339), // end_time is current time.
+		"",                                    // Add notes if needed.
 	)
 	if err != nil {
 		return fmt.Errorf("Failed to create training session: %w", err)
@@ -55,7 +56,7 @@ func (s *Storage) SaveSession(state *models.SessionState) error {
 			sessionExID,
 			state.SessionID,
 			exercise.Exercise.ID,
-			exercise.Notes,
+			exercise.SessionNotes,
 		)
 		if err != nil {
 			return fmt.Errorf("Failed to create session exercise: %w", err)
@@ -141,16 +142,23 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 
 		for exerciseRows.Next() {
 			var ex models.ProgramExercise
+			var repsJSON string // NOTE: Temporary variable to hold the JSON string.
+
 			if err := exerciseRows.Scan(
 				&ex.ID,
 				&ex.ExerciseID,
 				&ex.Sets,
-				&ex.Reps,
+				&repsJSON, // Scan into repsJSON here.
 				&ex.TargetRPE,
 				&ex.TargetRMPercent,
-				&ex.Notes,
+				&ex.ProgramNotes,
 			); err != nil {
 				return nil, fmt.Errorf("Failed to scan exercise: %w", err)
+			}
+
+			// Unmarshal the JSON string into ex.Reps.
+			if err := json.Unmarshal([]byte(repsJSON), &ex.Reps); err != nil {
+				return nil, fmt.Errorf("Failed to unmarshal reps: %w", err)
 			}
 			block.Exercises = append(block.Exercises, ex)
 		}
