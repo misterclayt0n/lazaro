@@ -65,3 +65,15 @@ func SessionExists() bool {
 	_, err = os.Stat(path)
 	return !os.IsNotExist(err)
 }
+
+func AlignPreviousSets(prevSets []models.ExerciseSet, requiredSets int) []models.ExerciseSet {
+	aligned := make([]models.ExerciseSet, requiredSets)
+	for i := 0; i < requiredSets; i++ {
+		if i < len(prevSets) {
+			aligned[i] = prevSets[i]
+		} else {
+			aligned[i] = models.ExerciseSet{Weight: 0, Reps: 0}
+		}
+	}
+	return aligned
+}

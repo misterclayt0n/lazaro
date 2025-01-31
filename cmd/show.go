@@ -29,7 +29,7 @@ var showSessionCmd = &cobra.Command{
 		yellow := color.New(color.FgYellow).SprintFunc()
 
 		fmt.Printf("\n%s %s\n", cyan("🏋️ Session:"), state.SessionID)
-		fmt.Printf("%s %s\n\n", cyan("⏱ Duration:"), duration)
+		fmt.Printf("%s %s\n\n", cyan("⏱  Duration:"), duration)
 
 		for exIdx, exercise := range state.Exercises {
 			ex := exercise.Exercise

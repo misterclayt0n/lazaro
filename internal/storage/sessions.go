@@ -44,3 +44,42 @@ func (s *Storage) GetPreviousSession(exerciseID, programBlockID string) (*models
 
 	return &session, nil
 }
+
+func (s *Storage) GetExerciseSetsForSession(sessionID, exerciseID string) ([]models.ExerciseSet, error) {
+	var sessionExerciseID string
+	err := s.DB.QueryRow(
+		`SELECT id FROM training_session_exercises
+		WHERE training_session_id = ? AND exercise_id = ?`,
+		sessionID, exerciseID,
+	).Scan(&sessionExerciseID)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return nil, nil
+		}
+		return nil, err
+	}
+
+	rows, err := s.DB.Query(`
+		SELECT id, weight, reps, timestamp
+		FROM exercise_sets
+		WHERE session_exercise_id = ?
+		ORDER BY timestamp ASC`,
+		sessionExerciseID,
+	)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var sets []models.ExerciseSet
+	for rows.Next() {
+		var set models.ExerciseSet
+		var rawTime string
+		if err := rows.Scan(&set.ID, &set.Weight, &set.Reps, &rawTime); err != nil {
+			continue
+		}
+		set.Timestamp, _ = time.Parse(time.RFC3339, rawTime)
+		sets = append(sets, set)
+	}
+	return sets, nil
+}
