@@ -1,9 +1,11 @@
 # TODO's
 
 - [x] Create the `swap-ex` command.
-- [ ] Show command should probably display more information.
+- [x] Show command should probably display more information.
+- [ ] Target reps should become just Target, and show reps, RPE and %, if they exist.
 - [ ] Create a `show-program` command.
-- [ ] Make each individual set with customizable reps in the program creator.
+- [x] Make each individual set with customizable reps in the program creator.
+- [ ] Some kind of specific support for advanced techniques (eg. drop sets, myoreps, giant sets, whatever).
 - [ ] `delete_program` command.
 - [ ] Easy session history:
   - [ ] Calendar of days trained.
