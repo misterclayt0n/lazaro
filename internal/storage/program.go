@@ -201,7 +201,7 @@ func (s *Storage) GetProgram(id string) (*models.Program, error) {
 				&ex.TargetRPE,
 				&ex.TargetRMPercent,
 				&ex.ProgramNotes,
-			    &ex.Program1RM,
+				&ex.Program1RM,
 			)
 			if err != nil {
 				return nil, fmt.Errorf("Failed to scan exercise: %w", err)
@@ -218,4 +218,133 @@ func (s *Storage) GetProgram(id string) (*models.Program, error) {
 	}
 
 	return &program, nil
+}
+
+// UpdateProgram updates the existing program based on a TOML file.
+// It updates only the program and block/exercise fields so that existing sessions are not lost.
+func (s *Storage) UpdateProgram(tomlData []byte) error {
+	// Parse the TOML file into a ProgramTOML structure.
+	var progTOML models.ProgramTOML
+	if err := toml.Unmarshal(tomlData, &progTOML); err != nil {
+		return fmt.Errorf("invalid TOML format: %w", err)
+	}
+
+	// Retrieve the existing program by name.
+	// NOTE: This assumes program name is unique.
+	existingProgram, err := s.GetProgramByName(progTOML.Name)
+	if err != nil {
+		return fmt.Errorf("failed to get existing program: %w", err)
+	}
+
+	ctx := context.Background()
+	tx, err := s.DB.BeginTx(ctx, nil)
+	if err != nil {
+		return fmt.Errorf("failed to begin transaction: %w", err)
+	}
+	// In case of error, ensure the transaction is rolled back.
+	defer tx.Rollback()
+
+	// Update the program’s description if it has changed.
+	if existingProgram.Description != progTOML.Description {
+		_, err := tx.ExecContext(ctx, `UPDATE programs SET description = ? WHERE id = ?`,
+			progTOML.Description, existingProgram.ID)
+		if err != nil {
+			return fmt.Errorf("failed to update program: %w", err)
+		}
+	}
+
+	// Iterate over each block in the TOML file.
+	// For each block, try to match an existing block by name.
+	// NOTE: Here, we assume block names are unique per program.
+	for _, newBlock := range progTOML.Blocks {
+		// Try to find an existing block with the same name.
+		var blockID string
+		err := tx.QueryRowContext(ctx, `SELECT id FROM program_blocks WHERE program_id = ? AND name = ?`,
+			existingProgram.ID, newBlock.Name).Scan(&blockID)
+		if err != nil {
+			// If no block exists, then insert a new block.
+			if err == sql.ErrNoRows {
+				blockID = generateID() // generateID() is a helper that returns a new UUID.
+				_, err = tx.ExecContext(ctx, `INSERT INTO program_blocks (id, program_id, name, description)
+					VALUES (?, ?, ?, ?)`, blockID, existingProgram.ID, newBlock.Name, newBlock.Description)
+				if err != nil {
+					return fmt.Errorf("failed to insert new block: %w", err)
+				}
+			} else {
+				return fmt.Errorf("failed to query program block: %w", err)
+			}
+		} else {
+			// If the block exists, update its description if necessary.
+			_, err = tx.ExecContext(ctx, `UPDATE program_blocks SET description = ? WHERE id = ?`,
+				newBlock.Description, blockID)
+			if err != nil {
+				return fmt.Errorf("failed to update block: %w", err)
+			}
+		}
+
+		// Process exercises in the block.
+		for _, newEx := range newBlock.Exercises {
+			// Get the exercise id from the exercises table by name.
+			var exerciseID string
+			err := tx.QueryRowContext(ctx, `SELECT id FROM exercises WHERE name = ?`, newEx.Name).Scan(&exerciseID)
+			if err != nil {
+				if err == sql.ErrNoRows {
+					// You might want to return an error or choose to create the exercise.
+					return fmt.Errorf("exercise '%s' not found", newEx.Name)
+				}
+				return fmt.Errorf("failed to query exercise: %w", err)
+			}
+
+			// Marshal the reps into JSON.
+			repsJSON, err := json.Marshal(newEx.Reps)
+			if err != nil {
+				return fmt.Errorf("failed to marshal reps: %w", err)
+			}
+
+			// Check if a program_exercise for this exercise in this block already exists.
+			var peID string
+			err = tx.QueryRowContext(ctx, `SELECT id FROM program_exercises
+				WHERE program_block_id = ? AND exercise_id = ?`, blockID, exerciseID).Scan(&peID)
+			if err != nil {
+				if err == sql.ErrNoRows {
+					// Insert a new program exercise.
+					peID = generateID()
+					_, err = tx.ExecContext(ctx, `
+						INSERT INTO program_exercises
+						(id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm)
+						VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+						peID, blockID, exerciseID, newEx.Sets, string(repsJSON),
+						newEx.TargetRPE, newEx.TargetRMPercent, newEx.ProgramNotes, newEx.Program1RM,
+					)
+					if err != nil {
+						return fmt.Errorf("failed to insert program exercise: %w", err)
+					}
+				} else {
+					return fmt.Errorf("failed to query program exercise: %w", err)
+				}
+			} else {
+				// Update the program exercise fields.
+				_, err = tx.ExecContext(ctx, `
+					UPDATE program_exercises SET sets = ?, reps = ?, target_rpe = ?, target_rm_percent = ?, notes = ?, program_1rm = ?
+					WHERE id = ?`,
+					newEx.Sets, string(repsJSON), newEx.TargetRPE, newEx.TargetRMPercent, newEx.ProgramNotes, newEx.Program1RM,
+					peID,
+				)
+				if err != nil {
+					return fmt.Errorf("failed to update program exercise: %w", err)
+				}
+			}
+		}
+	}
+
+	// Commit the transaction.
+	if err := tx.Commit(); err != nil {
+		return fmt.Errorf("failed to commit transaction: %w", err)
+	}
+
+	return nil
+}
+
+func generateID() string {
+	return uuid.New().String()
 }
