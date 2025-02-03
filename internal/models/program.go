@@ -34,11 +34,11 @@ type BlockTOML struct {
 }
 
 type ExerciseTOML struct {
-	Name            string   `toml:"name"`
-	Sets            int      `toml:"sets"`
-	Reps            []string `toml:"reps"`
-	TargetRPE       *float32 `toml:"target_rpe,omitempty"`
-	TargetRMPercent *float32 `toml:"target_rm_percent,omitempty"`
-	ProgramNotes    string   `toml:"notes,omitempty"`
-	Program1RM      *float32 `toml:"program_1rm,omitempty"` 
+	Name            string    `toml:"name"`
+	Sets            int       `toml:"sets"`
+	Reps            []string  `toml:"reps"`
+	TargetRPE       []float32 `toml:"target_rpe,omitempty"`
+	TargetRMPercent []float32 `toml:"target_rm_percent,omitempty"`
+	ProgramNotes    string    `toml:"notes,omitempty"`
+	Program1RM      *float32  `toml:"program_1rm,omitempty"`
 }

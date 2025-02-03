@@ -9,7 +9,7 @@ description = "Max effort day"
 name = "Back Squat"
 sets = 3
 reps = ["5", "6-10", "15"]
-target_rpe = 8.0
+target_rpe = [8.0, 9.0, 10.0]
 notes = "Work up to heavy set"
 program_1rm = 150.0
 
@@ -17,5 +17,5 @@ program_1rm = 150.0
 name = "Bench Press"
 sets = 3
 reps = ["5", "5", "5"]
-target_rm_percent = 75.0
+target_rm_percent = [75.0, 75.0, 75.0]
 program_1rm = 110.0

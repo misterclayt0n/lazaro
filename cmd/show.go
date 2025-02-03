@@ -121,31 +121,25 @@ var showSessionCmd = &cobra.Command{
 				}
 
 				// Build target string.
-				targetRep := ""
+				var targetRep string
 				if setIdx < len(exercise.TargetReps) {
 					targetRep = exercise.TargetReps[setIdx]
 				}
-				var targetWeight string
-				if exercise.TargetRMPercent != nil && exercise.Program1RM != nil {
-					calculated := *exercise.Program1RM * (*exercise.TargetRMPercent / 100)
-					targetWeight = fmt.Sprintf("(%.1fkg)", calculated)
-				}
+
 				// Append target RPE and RM% info.
-				if exercise.TargetRPE != nil || exercise.TargetRMPercent != nil {
-					var parts []string
-					if exercise.TargetRPE != nil {
-						parts = append(parts, fmt.Sprintf("@%.1f", *exercise.TargetRPE))
-					}
-					if exercise.TargetRMPercent != nil {
-						rmPart := fmt.Sprintf("@%.0f%%", *exercise.TargetRMPercent)
-						if targetWeight != "" {
-							rmPart += " " + targetWeight
-						}
-						parts = append(parts, rmPart)
-					}
-					if len(parts) > 0 {
-						targetRep += " " + strings.Join(parts, "/")
-					}
+				var parts []string
+
+				// If there is a target RPE for this set, use it.
+				if setIdx < len(exercise.TargetRPE) {
+					parts = append(parts, fmt.Sprintf("@%.1f", exercise.TargetRPE[setIdx]))
+				}
+				// If there is a target RM% for this set and Program1RM is defined, compute the target weight.
+				if setIdx < len(exercise.TargetRMPercent) && exercise.Program1RM != nil {
+					calculated := *exercise.Program1RM * (exercise.TargetRMPercent[setIdx] / 100)
+					parts = append(parts, fmt.Sprintf("@%.0f%% (%.1fkg)", exercise.TargetRMPercent[setIdx], calculated))
+				}
+				if len(parts) > 0 {
+					targetRep += " " + strings.Join(parts, "/")
 				}
 
 				// Print the row using no extra padding beyond the fixed width.

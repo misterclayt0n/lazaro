@@ -77,20 +77,30 @@ func (s *Storage) CreateProgram(tomlData []byte) error {
 				return fmt.Errorf("Failed to marshal reps: %w", err)
 			}
 
+			// Marshal the new slice fields.
+			targetRPEJSON, err := json.Marshal(exerciseTOML.TargetRPE)
+			if err != nil {
+				return fmt.Errorf("Failed to marshal target_rpe: %w", err)
+			}
+			targetRMPercentJSON, err := json.Marshal(exerciseTOML.TargetRMPercent)
+			if err != nil {
+				return fmt.Errorf("Failed to marshal target_rm_percent: %w", err)
+			}
+
 			// Create program exercise.
 			_, err = tx.ExecContext(ctx,
 				`INSERT INTO program_exercises
 		     (id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm)
-		     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, // Added program_1rm
+		     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 				uuid.New().String(),
 				blockID,
 				exerciseID,
 				exerciseTOML.Sets,
 				string(repsJSON),
-				exerciseTOML.TargetRPE,
-				exerciseTOML.TargetRMPercent,
+				string(targetRPEJSON),
+				string(targetRMPercentJSON),
 				exerciseTOML.ProgramNotes,
-				exerciseTOML.Program1RM, // New field
+				exerciseTOML.Program1RM,
 			)
 			if err != nil {
 				return fmt.Errorf("Failed to create program exercise: %w", err)
@@ -191,15 +201,15 @@ func (s *Storage) GetProgram(id string) (*models.Program, error) {
 
 		for exerciseRows.Next() {
 			var ex models.ProgramExercise
-			var repsJSON string // NOTE: Temporary storage for JSON string.
+			var repsJSON, targetRPEJSON, targetRMPercentJSON string // NOTE: Temporary storage for JSON string.
 
 			err := exerciseRows.Scan(
 				&ex.ID,
 				&ex.ExerciseID,
 				&ex.Sets,
 				&repsJSON,
-				&ex.TargetRPE,
-				&ex.TargetRMPercent,
+				&targetRPEJSON,
+				&targetRMPercentJSON,
 				&ex.ProgramNotes,
 				&ex.Program1RM,
 			)
@@ -209,6 +219,14 @@ func (s *Storage) GetProgram(id string) (*models.Program, error) {
 
 			if err := json.Unmarshal([]byte(repsJSON), &ex.Reps); err != nil {
 				return nil, fmt.Errorf("Failed to unmarshal reps: %w", err)
+			}
+
+			if err := json.Unmarshal([]byte(targetRPEJSON), &ex.TargetRPE); err != nil {
+				return nil, fmt.Errorf("Failed to unmarshal target_rpe: %w", err)
+			}
+
+			if err := json.Unmarshal([]byte(targetRMPercentJSON), &ex.TargetRMPercent); err != nil {
+				return nil, fmt.Errorf("Failed to unmarshal target_rm_percent: %w", err)
 			}
 
 			block.Exercises = append(block.Exercises, ex)

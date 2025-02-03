@@ -66,13 +66,21 @@ var showProgramCmd = &cobra.Command{
 
 				// Build a target scheme display.
 				if len(pe.Reps) > 0 {
-					target := strings.Join(pe.Reps, ", ")
-					if pe.TargetRPE != nil {
-						target += fmt.Sprintf(" (@%.1f RPE)", *pe.TargetRPE)
+					var targetParts []string
+
+					// Iterate over all sets (assuming the number of sets is the length of pe.Reps)
+					for i, rep := range pe.Reps {
+						part := rep
+						if i < len(pe.TargetRPE) {
+							part += fmt.Sprintf(" (@%.1f RPE)", pe.TargetRPE[i])
+						}
+						if i < len(pe.TargetRMPercent) {
+							part += fmt.Sprintf(" (@%.0f%%)", pe.TargetRMPercent[i])
+						}
+						targetParts = append(targetParts, part)
 					}
-					if pe.TargetRMPercent != nil {
-						target += fmt.Sprintf(" (@%.0f%%)", *pe.TargetRMPercent)
-					}
+
+					target := strings.Join(targetParts, ", ")
 					fmt.Printf("   %s: %s\n", cyan("Target"), target)
 				}
 				if pe.ProgramNotes != "" {

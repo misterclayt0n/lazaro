@@ -142,15 +142,15 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 
 		for exerciseRows.Next() {
 			var ex models.ProgramExercise
-			var repsJSON string // NOTE: Temporary variable to hold the JSON string.
+			var repsJSON, targetRPEJSON, targetRMPercentJSON string // NOTE: Temporary variable to hold the JSON string.
 
 			if err := exerciseRows.Scan(
 				&ex.ID,
 				&ex.ExerciseID,
 				&ex.Sets,
 				&repsJSON, // Scan into repsJSON here.
-				&ex.TargetRPE,
-				&ex.TargetRMPercent,
+				&targetRPEJSON,
+				&targetRMPercentJSON,
 				&ex.ProgramNotes,
 			    &ex.Program1RM,
 			); err != nil {
@@ -161,6 +161,15 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 			if err := json.Unmarshal([]byte(repsJSON), &ex.Reps); err != nil {
 				return nil, fmt.Errorf("Failed to unmarshal reps: %w", err)
 			}
+
+			if err := json.Unmarshal([]byte(targetRPEJSON), &ex.TargetRPE); err != nil {
+				return nil, fmt.Errorf("Failed to unmarshal target_rpe: %w", err)
+			}
+
+			if err := json.Unmarshal([]byte(targetRMPercentJSON), &ex.TargetRMPercent); err != nil {
+				return nil, fmt.Errorf("Failed to unmarshal target_rm_percent: %w", err)
+			}
+
 			block.Exercises = append(block.Exercises, ex)
 		}
 
