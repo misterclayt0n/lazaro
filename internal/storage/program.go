@@ -226,20 +226,20 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 	// Parse the TOML file into a ProgramTOML structure.
 	var progTOML models.ProgramTOML
 	if err := toml.Unmarshal(tomlData, &progTOML); err != nil {
-		return fmt.Errorf("invalid TOML format: %w", err)
+		return fmt.Errorf("Invalid TOML format: %w", err)
 	}
 
 	// Retrieve the existing program by name.
 	// NOTE: This assumes program name is unique.
 	existingProgram, err := s.GetProgramByName(progTOML.Name)
 	if err != nil {
-		return fmt.Errorf("failed to get existing program: %w", err)
+		return fmt.Errorf("Failed to get existing program: %w", err)
 	}
 
 	ctx := context.Background()
 	tx, err := s.DB.BeginTx(ctx, nil)
 	if err != nil {
-		return fmt.Errorf("failed to begin transaction: %w", err)
+		return fmt.Errorf("Failed to begin transaction: %w", err)
 	}
 	// In case of error, ensure the transaction is rolled back.
 	defer tx.Rollback()
@@ -249,7 +249,7 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 		_, err := tx.ExecContext(ctx, `UPDATE programs SET description = ? WHERE id = ?`,
 			progTOML.Description, existingProgram.ID)
 		if err != nil {
-			return fmt.Errorf("failed to update program: %w", err)
+			return fmt.Errorf("Failed to update program: %w", err)
 		}
 	}
 
@@ -268,17 +268,17 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 				_, err = tx.ExecContext(ctx, `INSERT INTO program_blocks (id, program_id, name, description)
 					VALUES (?, ?, ?, ?)`, blockID, existingProgram.ID, newBlock.Name, newBlock.Description)
 				if err != nil {
-					return fmt.Errorf("failed to insert new block: %w", err)
+					return fmt.Errorf("Failed to insert new block: %w", err)
 				}
 			} else {
-				return fmt.Errorf("failed to query program block: %w", err)
+				return fmt.Errorf("Failed to query program block: %w", err)
 			}
 		} else {
 			// If the block exists, update its description if necessary.
 			_, err = tx.ExecContext(ctx, `UPDATE program_blocks SET description = ? WHERE id = ?`,
 				newBlock.Description, blockID)
 			if err != nil {
-				return fmt.Errorf("failed to update block: %w", err)
+				return fmt.Errorf("Failed to update block: %w", err)
 			}
 		}
 
@@ -290,15 +290,15 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 			if err != nil {
 				if err == sql.ErrNoRows {
 					// You might want to return an error or choose to create the exercise.
-					return fmt.Errorf("exercise '%s' not found", newEx.Name)
+					return fmt.Errorf("Exercise '%s' not found", newEx.Name)
 				}
-				return fmt.Errorf("failed to query exercise: %w", err)
+				return fmt.Errorf("Failed to query exercise: %w", err)
 			}
 
 			// Marshal the reps into JSON.
 			repsJSON, err := json.Marshal(newEx.Reps)
 			if err != nil {
-				return fmt.Errorf("failed to marshal reps: %w", err)
+				return fmt.Errorf("Failed to marshal reps: %w", err)
 			}
 
 			// Check if a program_exercise for this exercise in this block already exists.
@@ -317,10 +317,10 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 						newEx.TargetRPE, newEx.TargetRMPercent, newEx.ProgramNotes, newEx.Program1RM,
 					)
 					if err != nil {
-						return fmt.Errorf("failed to insert program exercise: %w", err)
+						return fmt.Errorf("Failed to insert program exercise: %w", err)
 					}
 				} else {
-					return fmt.Errorf("failed to query program exercise: %w", err)
+					return fmt.Errorf("Failed to query program exercise: %w", err)
 				}
 			} else {
 				// Update the program exercise fields.
@@ -331,7 +331,7 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 					peID,
 				)
 				if err != nil {
-					return fmt.Errorf("failed to update program exercise: %w", err)
+					return fmt.Errorf("Failed to update program exercise: %w", err)
 				}
 			}
 		}
@@ -339,7 +339,26 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 
 	// Commit the transaction.
 	if err := tx.Commit(); err != nil {
-		return fmt.Errorf("failed to commit transaction: %w", err)
+		return fmt.Errorf("Failed to commit transaction: %w", err)
+	}
+
+	return nil
+}
+
+func (s *Storage) DeleteProgramByName(name string) error {
+	ctx := context.Background()
+
+	// First, find the program ID by name.
+	var programID string
+	err := s.DB.QueryRowContext(ctx, `SELECT id FROM programs WHERE name = ?`, name).Scan(&programID)
+	if err != nil {
+		return fmt.Errorf("Program not found: %w", err)
+	}
+
+	// Delete the program row.
+	_, err = s.DB.ExecContext(ctx, `DELETE FROM programs WHERE id = ?`, programID)
+	if err != nil {
+		return fmt.Errorf("Failed to delete program: %w", err)
 	}
 
 	return nil

@@ -9,7 +9,7 @@
 - [ ] Add some sort of limited time programs (eg. 12 weeks or whatever), and also an easy way to edit the weeks.
 - [ ] Create a `show-program` command.
 - [x] Create a `update-program` command.
-- [ ] Create a `delete_program` command.
+- [x] Create a `delete_program` command.
 - [x] Create a `cancel-session` command.
 - [ ] Create a `set-note` command.
 - [ ] Easy session history:
