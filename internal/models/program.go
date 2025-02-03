@@ -39,5 +39,6 @@ type ExerciseTOML struct {
 	Reps            []string `toml:"reps"`
 	TargetRPE       *float32 `toml:"target_rpe,omitempty"`
 	TargetRMPercent *float32 `toml:"target_rm_percent,omitempty"`
-	ProgramNotes           string   `toml:"notes,omitempty"`
+	ProgramNotes    string   `toml:"notes,omitempty"`
+	Program1RM      *float32 `toml:"program_1rm,omitempty"` 
 }

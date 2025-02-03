@@ -131,10 +131,10 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 
 		// Load exercises in each block.
 		exerciseRows, err := s.DB.Query(`
-            SELECT id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes
-            FROM program_exercises
-            WHERE program_block_id = ?
-        `, block.ID)
+		    SELECT id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm
+		    FROM program_exercises
+		    WHERE program_block_id = ?
+		`, block.ID)
 		if err != nil {
 			return nil, fmt.Errorf("Failed to load exercises: %w", err)
 		}
@@ -152,6 +152,7 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 				&ex.TargetRPE,
 				&ex.TargetRMPercent,
 				&ex.ProgramNotes,
+			    &ex.Program1RM,
 			); err != nil {
 				return nil, fmt.Errorf("Failed to scan exercise: %w", err)
 			}

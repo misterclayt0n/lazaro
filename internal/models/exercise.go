@@ -16,14 +16,17 @@ type Exercise struct {
 }
 
 type SessionExercise struct {
-	ID           string          `toml:"id"`
-	Exercise     Exercise        `toml:"exercise"`
-	Sets         []ExerciseSet   `toml:"sets"`
-	ProgramNotes string          `toml:"notes"`         // From ProgramExercise.
-	SessionNotes string          `toml:"session_notes"` // User input (like "felt like shit").
-	PreviousPR   *PersonalRecord `toml:"previous_pr"`
-	PreviousSets []ExerciseSet   `toml:"previous_sets"`
-	TargetReps   []string        `toml:"target_reps"`
+	ID              string          `toml:"id"`
+	Exercise        Exercise        `toml:"exercise"`
+	Sets            []ExerciseSet   `toml:"sets"`
+	ProgramNotes    string          `toml:"notes"`         // From ProgramExercise.
+	SessionNotes    string          `toml:"session_notes"` // User input (like "felt like shit").
+	PreviousPR      *PersonalRecord `toml:"previous_pr"`
+	PreviousSets    []ExerciseSet   `toml:"previous_sets"`
+	TargetReps      []string        `toml:"target_reps"`
+	TargetRPE       *float32        `toml:"target_rpe,omitempty"`
+	TargetRMPercent *float32        `toml:"target_rm_percent,omitempty"`
+	Program1RM      *float32        `toml:"program_1rm,omitempty"`
 }
 
 type ExerciseSet struct {
@@ -44,6 +47,7 @@ type ProgramExercise struct {
 	TargetRPE       *float32 `json:"target_rpe,omitempty"`
 	TargetRMPercent *float32 `json:"target_rm_percent,omitempty"`
 	ProgramNotes    string   `json:"program_notes,omitempty"`
+	Program1RM      *float32 `json:"program_1rm,omitempty"`
 }
 
 //

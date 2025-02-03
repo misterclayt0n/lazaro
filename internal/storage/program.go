@@ -80,8 +80,8 @@ func (s *Storage) CreateProgram(tomlData []byte) error {
 			// Create program exercise.
 			_, err = tx.ExecContext(ctx,
 				`INSERT INTO program_exercises
-                 (id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes)
-                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+		     (id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm)
+		     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, // Added program_1rm
 				uuid.New().String(),
 				blockID,
 				exerciseID,
@@ -90,6 +90,7 @@ func (s *Storage) CreateProgram(tomlData []byte) error {
 				exerciseTOML.TargetRPE,
 				exerciseTOML.TargetRMPercent,
 				exerciseTOML.ProgramNotes,
+				exerciseTOML.Program1RM, // New field
 			)
 			if err != nil {
 				return fmt.Errorf("Failed to create program exercise: %w", err)
@@ -179,10 +180,10 @@ func (s *Storage) GetProgram(id string) (*models.Program, error) {
 
 		// Load exercises.
 		exerciseRows, err := s.DB.Query(`
-            SELECT id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes
-            FROM program_exercises
-            WHERE program_block_id = ?
-        `, block.ID)
+		    SELECT id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm
+		    FROM program_exercises
+		    WHERE program_block_id = ?
+		`, block.ID)
 		if err != nil {
 			return nil, fmt.Errorf("Failed to load exercises: %w", err)
 		}
@@ -200,6 +201,7 @@ func (s *Storage) GetProgram(id string) (*models.Program, error) {
 				&ex.TargetRPE,
 				&ex.TargetRMPercent,
 				&ex.ProgramNotes,
+			    &ex.Program1RM,
 			)
 			if err != nil {
 				return nil, fmt.Errorf("Failed to scan exercise: %w", err)

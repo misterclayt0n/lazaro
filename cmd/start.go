@@ -94,8 +94,11 @@ var startCmd = &cobra.Command{
 				PreviousSets: alignPreviousSets(prevSets, pe.Sets),
 				ProgramNotes: pe.ProgramNotes,
 				// SessionNotes stays empty for now since the user hasn't entered anything yet.
-				SessionNotes: "",
-				TargetReps:   targetReps,
+				SessionNotes:    "",
+				TargetReps:      targetReps,
+				TargetRPE:       pe.TargetRPE,
+				TargetRMPercent: pe.TargetRMPercent,
+				Program1RM:      pe.Program1RM,
 			})
 		}
 
