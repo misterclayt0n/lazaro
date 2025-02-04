@@ -15,6 +15,7 @@ type ProgramBlock struct {
 	Name        string            `json:"name"`
 	Description string            `json:"description"`
 	Exercises   []ProgramExercise `json:"exercises"`
+	Week        int               `json:"week,omitempty"` // 0 if not provided.
 }
 
 //
@@ -22,9 +23,17 @@ type ProgramBlock struct {
 //
 
 type ProgramTOML struct {
-	Name        string      `toml:"name"`
-	Description string      `toml:"description"`
-	Blocks      []BlockTOML `toml:"blocks"`
+	Name        string `toml:"name"`
+	Description string `toml:"description"`
+	// Either the TOML will provide weeks...
+	Weeks []WeekTOML `toml:"weeks"`
+	// Or blocks at the top level
+	Blocks []BlockTOML `toml:"blocks"`
+}
+
+type WeekTOML struct {
+	Week   int         `toml:"week"`
+	Blocks []BlockTOML `toml:"blocks"`
 }
 
 type BlockTOML struct {

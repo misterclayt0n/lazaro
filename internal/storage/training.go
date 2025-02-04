@@ -2,6 +2,7 @@ package storage
 
 import (
 	"context"
+	"database/sql"
 	"encoding/json"
 	"fmt"
 	"time"
@@ -110,7 +111,7 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 
 	// Load the program’s blocks.
 	blockRows, err := s.DB.Query(`
-        SELECT id, name, description
+        SELECT id, name, description, week
         FROM program_blocks
         WHERE program_id = ?
     `, program.ID)
@@ -121,12 +122,20 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 
 	for blockRows.Next() {
 		var block models.ProgramBlock
+		var week sql.NullInt64
 		if err := blockRows.Scan(
 			&block.ID,
 			&block.Name,
 			&block.Description,
+			&week,
 		); err != nil {
 			return nil, fmt.Errorf("Failed to scan block: %w", err)
+		}
+
+		if week.Valid {
+			block.Week = int(week.Int64)
+		} else {
+			block.Week = 0 // Default fallback.
 		}
 
 		// Load exercises in each block.
@@ -152,7 +161,7 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 				&targetRPEJSON,
 				&targetRMPercentJSON,
 				&ex.ProgramNotes,
-			    &ex.Program1RM,
+				&ex.Program1RM,
 			); err != nil {
 				return nil, fmt.Errorf("Failed to scan exercise: %w", err)
 			}

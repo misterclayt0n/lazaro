@@ -75,6 +75,7 @@ func initializeDB(db *sql.DB) error {
             program_id TEXT NOT NULL,
             name TEXT NOT NULL,
             description TEXT,
+            week INTEGER,
             FOREIGN KEY (program_id) REFERENCES programs(id) ON DELETE CASCADE
         );
 

@@ -29,6 +29,7 @@ type SessionState struct {
 	StartTime               time.Time         `toml:"start_time"`
 	Exercises               []SessionExercise `toml:"exercises"`
 	CurrentSetID            int               `toml:"current_set_id"`
+	Week                    int               `toml:"week,omitempty"`
 }
 
 type TempSet struct {

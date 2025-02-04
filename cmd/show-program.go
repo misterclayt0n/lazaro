@@ -49,7 +49,11 @@ var showProgramCmd = &cobra.Command{
 			}
 
 			// Print block header.
-			fmt.Printf("\n%s: %s\n", yellow("Day"), block.Name)
+			if block.Week != 0 {
+				fmt.Printf("\n%s: %s (Week %d)\n", yellow("Day"), block.Name, block.Week)
+			} else {
+				fmt.Printf("\n%s: %s\n", yellow("Day"), block.Name)
+			}
 			fmt.Printf("%s: %s\n", yellow("Notes"), block.Description)
 			fmt.Println(strings.Repeat("-", 60))
 

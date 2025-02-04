@@ -35,6 +35,9 @@ var showSessionCmd = &cobra.Command{
 		fmt.Printf("%s\n", green(state.ProgramName))
 		fmt.Printf("\n%s %s\n", red("Session:"), state.ProgramBlockName)
 		fmt.Printf("%s %s\n", cyan("Description:"), state.ProgramBlockDescription)
+		if state.Week != 0 {
+		    fmt.Printf("%s %d\n", yellow("Week:"), state.Week)
+		}
 		fmt.Printf("%s %s\n\n", red("Duration:"), duration)
 
 		// Define table indent and column widths.

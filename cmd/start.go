@@ -14,6 +14,7 @@ import (
 var (
 	programName string
 	blockName   string
+	weekNumber  int
 )
 
 var startCmd = &cobra.Command{
@@ -32,16 +33,43 @@ var startCmd = &cobra.Command{
 			return fmt.Errorf("Failed to get program: %w", err)
 		}
 
+		// Validate week info.
+		var usesWeek bool
+		for _, block := range program.Blocks {
+			if block.Week != 0 {
+				usesWeek = true
+				break
+			}
+		}
+		if usesWeek && weekNumber == 0 {
+			return fmt.Errorf("This program is week-based. Please provide a week number using the --week flag")
+		}
+		if !usesWeek && weekNumber != 0 {
+			return fmt.Errorf("This program does not use week information. Do not provide a week number")
+		}
+		if weekNumber != 0 {
+			var valid bool
+			for _, block := range program.Blocks {
+				if block.Week == weekNumber {
+					valid = true
+					break
+				}
+			}
+			if !valid {
+				return fmt.Errorf("Invalid week number: %d. No block in the program is assigned to that week", weekNumber)
+			}
+		}
+
 		// Find the specific block in the program.
 		var selectedBlock *models.ProgramBlock
 		for _, block := range program.Blocks {
-			if block.Name == blockName {
+			if block.Name == blockName && block.Week == weekNumber {
 				selectedBlock = &block
 				break
 			}
 		}
 		if selectedBlock == nil {
-			return fmt.Errorf("Block '%s' not found in program", blockName)
+		    return fmt.Errorf("Block '%s' for week %d not found in program", blockName, weekNumber)
 		}
 
 		// Create session state with correct block ID.
@@ -52,6 +80,7 @@ var startCmd = &cobra.Command{
 			ProgramBlockDescription: selectedBlock.Description,
 			ProgramBlockName:        selectedBlock.Name,
 			StartTime:               time.Now().UTC(),
+			Week:                    weekNumber,
 		}
 
 		if len(selectedBlock.Exercises) == 0 {
@@ -183,6 +212,7 @@ func init() {
 
 	startCmd.Flags().StringVarP(&programName, "program", "p", "", "Program name")
 	startCmd.Flags().StringVarP(&blockName, "block", "b", "", "Program block name")
+	startCmd.Flags().IntVarP(&weekNumber, "week", "w", 0, "Week number (if applicable)")
 	startCmd.MarkFlagRequired("program")
 	startCmd.MarkFlagRequired("block")
 }
