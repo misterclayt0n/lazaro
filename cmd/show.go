@@ -142,10 +142,28 @@ var showSessionCmd = &cobra.Command{
 					targetRep += " " + strings.Join(parts, "/")
 				}
 
+				// Split into reps and modifiers parts.
+				splitRep := strings.SplitN(targetRep, " ", 2)
+				repsPart := splitRep[0]
+				modifiersPart := ""
+				if len(splitRep) > 1 {
+					modifiersPart = splitRep[1]
+				}
+
+				// Calculate available space for the reps part.
+				availableSpace := targetColWidth - len(modifiersPart)
+				if availableSpace < 0 {
+					availableSpace = 0
+				}
+
+				// Format the target string with reps left-aligned and modifiers right-aligned.
+				formattedReps := fmt.Sprintf("%-*s", availableSpace, repsPart)
+				formattedTarget := formattedReps + modifiersPart
+
 				// Print the row using no extra padding beyond the fixed width.
 				fmt.Printf(tableIndent+"│%-*d│%-*s│%-*s│%-*s│\n",
 					setColWidth, setIdx+1,
-					targetColWidth, targetRep,
+					targetColWidth, formattedTarget,
 					currentColWidth, setStr,
 					prevColWidth, prevSet,
 				)
