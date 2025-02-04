@@ -319,6 +319,16 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 				return fmt.Errorf("Failed to marshal reps: %w", err)
 			}
 
+			// Marshal target RPE and target RM Percent into JSON.
+			targetRPEJSON, err := json.Marshal(newEx.TargetRPE)
+			if err != nil {
+				return fmt.Errorf("Failed to marshal target_rpe: %w", err)
+			}
+			targetRMPercentJSON, err := json.Marshal(newEx.TargetRMPercent)
+			if err != nil {
+				return fmt.Errorf("Failed to marshal target_rm_percent: %w", err)
+			}
+
 			// Check if a program_exercise for this exercise in this block already exists.
 			var peID string
 			err = tx.QueryRowContext(ctx, `SELECT id FROM program_exercises
@@ -345,7 +355,7 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 				_, err = tx.ExecContext(ctx, `
 					UPDATE program_exercises SET sets = ?, reps = ?, target_rpe = ?, target_rm_percent = ?, notes = ?, program_1rm = ?
 					WHERE id = ?`,
-					newEx.Sets, string(repsJSON), newEx.TargetRPE, newEx.TargetRMPercent, newEx.ProgramNotes, newEx.Program1RM,
+					newEx.Sets, string(repsJSON), string(targetRPEJSON), string(targetRMPercentJSON), newEx.ProgramNotes, newEx.Program1RM,
 					peID,
 				)
 				if err != nil {
