@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/joho/godotenv"
-	_ "github.com/tursodatabase/libsql-client-go/libsql"
+	"github.com/misterclayt0n/lazaro/internal/config"
+	_ "github.com/tursodatabase/go-libsql"
 )
 
 type Storage struct {
@@ -16,20 +16,22 @@ type Storage struct {
 }
 
 func NewStorage() *Storage {
-	if err := godotenv.Load(); err != nil {
-		fmt.Fprintf(os.Stderr, "No .env file found")
-		os.Exit(1)
-	}
-
-	url := os.Getenv("TURSO_DATABASE_URL")
-	if url == "" {
-		fmt.Fprintf(os.Stderr, "TURSO_DATABASE_URL not set in the enviroment")
-		os.Exit(1)
-	}
-
-	db, err := sql.Open("libsql", url)
+	cfg, err := config.LoadConfig()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Failed to open db %s: %s", url, err)
+		fmt.Fprintf(os.Stderr, "Failed to load configuration: %v\n", err)
+		os.Exit(1)
+	}
+
+	// Use the connection string from the configuration.
+	connStr := cfg.DB.ConnectionString
+	if connStr == "" {
+		fmt.Fprintln(os.Stderr, "Database connection string not set in configuration")
+		os.Exit(1)
+	}
+
+	db, err := sql.Open("libsql", connStr)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Failed to open db %s: %s", connStr, err)
 		os.Exit(1)
 	}
 
