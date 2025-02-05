@@ -7,6 +7,7 @@
 - [x] Make each individual RPE/% customizable in the program creator.
 - [ ] Some kind of specific support for advanced techniques (eg. drop sets, myoreps, giant sets, whatever).
 - [ ] Be able to record sessions with specific dates (a command like `record-session` -- This should take again a some sort of file).
+- [ ] Local turso db support.
 - [x] Add some sort of limited time programs (eg. 12 weeks or whatever), and also an easy way to edit the weeks.
 - [x] Create a `show-program` command.
 - [x] Create a `update-program` command.
@@ -15,7 +16,9 @@
 - [x] Create a `set-note` command.
 - [x] BIG: Change swap-ex to only swap to a couple variations specified inside program.toml.
 - [x] Remove `estimate_1rm` from `exercises.toml`. I want that thing to be calculated automatically.
-- [ ] Some way to view information about one particular exercise?
+- [x] Some way to view information about one particular exercise?
 - [ ] Easy session history:
   - [ ] Calendar of days trained.
-  - [ ] Display historical information about one lift accross all programs and about only one program.
+  - [x] Look for a session in specific and display it (Search by ID).
+  - [x] Look for a session by it's date (put a flag inside `look-session`)
+  - [ ] Look for overall history of sessions -> All programs, per program, per day of program.

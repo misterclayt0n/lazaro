@@ -83,3 +83,81 @@ func (s *Storage) GetExerciseSetsForSession(sessionID, exerciseID string) ([]mod
 	}
 	return sets, nil
 }
+
+// GetSessionByID returns a TrainingSession (with its exercises and sets) by its session ID.
+func (s *Storage) GetSessionByID(sessionID string) (*models.TrainingSession, error) {
+	// Query the session basic data.
+	var ts models.TrainingSession
+	var startTime, endTimeStr string
+	err := s.DB.QueryRow(`
+        SELECT id, start_time, end_time, notes
+        FROM training_sessions
+        WHERE id = ?`, sessionID).Scan(&ts.ID, &startTime, &endTimeStr, &ts.Notes)
+	if err != nil {
+		return nil, err
+	}
+
+	ts.StartTime, _ = time.Parse(time.RFC3339, startTime)
+	if endTimeStr != "" {
+		t, _ := time.Parse(time.RFC3339, endTimeStr)
+		ts.EndTime = &t
+	}
+	// Now get the exercises that belong to this session.
+	rows, err := s.DB.Query(`
+        SELECT id, exercise_id, notes
+        FROM training_session_exercises
+        WHERE training_session_id = ?`, sessionID)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var exercises []models.SessionExercise
+	for rows.Next() {
+		var se models.SessionExercise
+		if err := rows.Scan(&se.ID, &se.Exercise.ID, &se.SessionNotes); err != nil {
+			continue
+		}
+		// Load the exercise details.
+		exercise, err := s.GetExerciseByID(se.Exercise.ID)
+		if err == nil {
+			se.Exercise = *exercise
+		}
+		// Load the sets for this session exercise.
+		se.Sets, _ = s.GetExerciseSetsForSession(sessionID, se.Exercise.ID)
+		exercises = append(exercises, se)
+	}
+	ts.Exercises = exercises
+	return &ts, nil
+}
+
+// GetSessionsByDate returns all training sessions whose start_time matches the given date (formatted as "2006-01-02").
+func (s *Storage) GetSessionsByDate(dateStr string) ([]models.TrainingSession, error) {
+    query := `
+        SELECT id, start_time, end_time, notes
+        FROM training_sessions
+        WHERE date(start_time) = ?
+        ORDER BY start_time DESC
+    `
+    rows, err := s.DB.Query(query, dateStr)
+    if err != nil {
+        return nil, err
+    }
+    defer rows.Close()
+
+    var sessions []models.TrainingSession
+    for rows.Next() {
+        var ts models.TrainingSession
+        var startTime, endTimeStr string
+        if err := rows.Scan(&ts.ID, &startTime, &endTimeStr, &ts.Notes); err != nil {
+            continue
+        }
+        ts.StartTime, _ = time.Parse(time.RFC3339, startTime)
+        if endTimeStr != "" {
+            t, _ := time.Parse(time.RFC3339, endTimeStr)
+            ts.EndTime = &t
+        }
+        sessions = append(sessions, ts)
+    }
+    return sessions, nil
+}

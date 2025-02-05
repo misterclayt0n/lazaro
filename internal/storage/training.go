@@ -192,3 +192,38 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 
 	return &program, nil
 }
+
+// GetTrainingSessionsForExercise returns up to "limit" training sessions in which the given exercise was performed.
+func (s *Storage) GetTrainingSessionsForExercise(exerciseID string, limit int) ([]models.TrainingSession, error) {
+	query := `
+		SELECT DISTINCT ts.id, ts.start_time, ts.end_time, ts.notes
+		FROM training_sessions ts
+		JOIN training_session_exercises tse ON ts.id = tse.training_session_id
+		WHERE tse.exercise_id = ?
+		ORDER BY ts.start_time DESC
+		LIMIT ?
+    `
+
+	rows, err := s.DB.Query(query, exerciseID, limit)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var sessions []models.TrainingSession
+	for rows.Next() {
+		var ts models.TrainingSession
+		var startTime, endTimeStr string
+		if err := rows.Scan(&ts.ID, &startTime, &endTimeStr, &ts.Notes); err != nil {
+			continue
+		}
+		ts.StartTime, _ = time.Parse(time.RFC3339, startTime)
+		if endTimeStr != "" {
+			t, _ := time.Parse(time.RFC3339, endTimeStr)
+			ts.EndTime = &t
+		}
+		sessions = append(sessions, ts)
+	}
+
+	return sessions, nil
+}
