@@ -60,7 +60,6 @@ type ExerciseDefTOML struct {
 	Name          string  `toml:"name"`
 	Description   string  `toml:"description"`
 	PrimaryMuscle string  `toml:"primary_muscle"`
-	Estimate1RM   float32 `toml:"estimate_1rm"`
 }
 
 type ExerciseImport struct {

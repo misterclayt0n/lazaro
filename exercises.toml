@@ -2,28 +2,23 @@
 name = "Back Squat"
 description = "Full depth barbell back squat"
 primary_muscle = "Quadriceps"
-estimate_1rm = 100.0
 
 [[exercise]]
 name = "Bench Press"
 description = "Flat bench barbell press"
 primary_muscle = "Chest"
-estimate_1rm = 80.0
 
 [[exercise]]
 name = "Incline Bench Press"
 description = "Incline bench barbell press"
 primary_muscle = "Chest"
-estimate_1rm = 80.0
 
 [[exercise]]
 name = "Close-Grip Bench Press"
 description = "Close grip bench barbell press"
 primary_muscle = "Chest"
-estimate_1rm = 80.0
 
 [[exercise]]
 name = "Deadlift"
 description = "Conventional barbell deadlift"
 primary_muscle = "Posterior Chain"
-estimate_1rm = 120.0

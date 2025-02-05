@@ -9,6 +9,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/misterclayt0n/lazaro/internal/models"
 	"github.com/misterclayt0n/lazaro/internal/storage"
+	"github.com/misterclayt0n/lazaro/internal/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -16,7 +17,6 @@ var (
 	exerciseName        string
 	exerciseDesc        string
 	exerciseMuscle      string
-	exerciseEstimate1RM float32
 )
 
 var addExerciseCmd = &cobra.Command{
@@ -31,7 +31,6 @@ var addExerciseCmd = &cobra.Command{
 			Description:    exerciseDesc,
 			PrimaryMuscle:  exerciseMuscle,
 			CreatedAt:      time.Now().UTC(),
-			EstimatedOneRM: exerciseEstimate1RM,
 		}
 
 		if err := st.CreateExercise(exercise); err != nil {
@@ -66,11 +65,11 @@ var importExercisesCmd = &cobra.Command{
 				Description:    exTOML.Description,
 				PrimaryMuscle:  exTOML.PrimaryMuscle,
 				CreatedAt:      time.Now().UTC(),
-				EstimatedOneRM: exTOML.Estimate1RM,
+				EstimatedOneRM: utils.CalculateInitialOneRM(),
 			}
 
 			if err := st.CreateExercise(ex); err != nil {
-				return fmt.Errorf("failed to create exercise %s: %w", ex.Name, err)
+				return fmt.Errorf("Failed to create exercise %s: %w", ex.Name, err)
 			}
 		}
 
@@ -83,7 +82,6 @@ func init() {
 	addExerciseCmd.Flags().StringVarP(&exerciseName, "name", "n", "", "Exercise name")
 	addExerciseCmd.Flags().StringVarP(&exerciseDesc, "description", "d", "", "Exercise description")
 	addExerciseCmd.Flags().StringVarP(&exerciseMuscle, "muscle", "m", "", "Primary muscle group")
-	addExerciseCmd.Flags().Float32Var(&exerciseEstimate1RM, "estimate-1rm", 0, "Estimated 1RM")
 
 	addExerciseCmd.MarkFlagRequired("name")
 	addExerciseCmd.MarkFlagRequired("muscle")

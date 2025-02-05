@@ -14,7 +14,7 @@
 - [x] Create a `cancel-session` command.
 - [x] Create a `set-note` command.
 - [x] BIG: Change swap-ex to only swap to a couple variations specified inside program.toml.
-- [ ] Remove `estimate_1rm` from `exercises.toml`. I want that thing to be calculated automatically.
+- [x] Remove `estimate_1rm` from `exercises.toml`. I want that thing to be calculated automatically.
 - [ ] Some way to view information about one particular exercise?
 - [ ] Easy session history:
   - [ ] Calendar of days trained.

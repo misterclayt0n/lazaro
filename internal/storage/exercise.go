@@ -5,10 +5,13 @@ import (
 	"time"
 
 	"github.com/misterclayt0n/lazaro/internal/models"
+	"github.com/misterclayt0n/lazaro/internal/utils"
 )
 
 func (s *Storage) CreateExercise(ex models.Exercise) error {
 	ctx := context.Background()
+	ex.EstimatedOneRM = utils.CalculateInitialOneRM()
+
 	_, err := s.DB.ExecContext(ctx,
 		`INSERT INTO exercises
 		(id, name, description, primary_muscle, created_at, estimated_one_rm)
@@ -74,6 +77,9 @@ func (s *Storage) GetExerciseByName(name string) (*models.Exercise, error) {
 		ex.BestSet = &bestSet
 	}
 
+	// Recalculate the estimate 1-RM.
+	ex.EstimatedOneRM = utils.CalculateEpley1RM(bestSet.Weight, bestSet.Reps)
+
 	return &ex, nil
 }
 
@@ -126,6 +132,9 @@ func (s *Storage) GetExerciseByID(id string) (*models.Exercise, error) {
 	if err == nil {
 		ex.BestSet = &bestSet
 	}
+
+	// Recalculate the estimate 1-RM.
+	ex.EstimatedOneRM = utils.CalculateEpley1RM(bestSet.Weight, bestSet.Reps)
 
 	return &ex, nil
 }
