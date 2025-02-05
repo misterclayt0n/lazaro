@@ -27,3 +27,4 @@
   - [x] Look for a session in specific and display it (Search by ID).
   - [x] Look for a session by it's date (put a flag inside `look-session`)
   - [ ] Look for overall history of sessions -> All programs, per program, per day of program.
+- [ ] Some silly meta data, some command like `status`, which shows info like total weight lifted, number of sessions, hours at the gym, week streak?

@@ -392,7 +392,7 @@ func generateID() string {
 }
 
 func insertProgramExercises(ctx context.Context, tx *sql.Tx, blockID string, exercises []models.ExerciseTOML) error {
-	for _, exerciseTOML := range exercises {
+	for index, exerciseTOML := range exercises {
 		// Get the exercise ID from the exercises table.
 		var exerciseID string
 		err := tx.QueryRowContext(ctx, "SELECT id FROM exercises WHERE name = ?", exerciseTOML.Name).Scan(&exerciseID)
@@ -422,8 +422,19 @@ func insertProgramExercises(ctx context.Context, tx *sql.Tx, blockID string, exe
 
 		_, err = tx.ExecContext(ctx,
 			`INSERT INTO program_exercises
-             (id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, options, technique, technique_group)
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        (id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, options, technique, technique_group, order_index)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+     ON CONFLICT(program_block_id, exercise_id) DO UPDATE SET
+         sets = excluded.sets,
+         reps = excluded.reps,
+         target_rpe = excluded.target_rpe,
+         target_rm_percent = excluded.target_rm_percent,
+         notes = excluded.notes,
+         program_1rm = excluded.program_1rm,
+         options = excluded.options,
+         technique = excluded.technique,
+         technique_group = excluded.technique_group,
+         order_index = excluded.order_index`,
 			uuid.New().String(),
 			blockID,
 			exerciseID,
@@ -436,6 +447,7 @@ func insertProgramExercises(ctx context.Context, tx *sql.Tx, blockID string, exe
 			string(optionsJSON),
 			exerciseTOML.Technique,
 			exerciseTOML.TechniqueGroup,
+			index, // this is the order index (starting at 0 or 1)
 		)
 		if err != nil {
 			return fmt.Errorf("Failed to create program exercise: %w", err)

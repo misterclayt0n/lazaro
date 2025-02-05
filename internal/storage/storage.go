@@ -96,8 +96,10 @@ func InitializeDB(db *sql.DB) error {
 			options TEXT,
 			technique TEXT,
 			technique_group INTEGER,
+		    order_index INTEGER,
 			FOREIGN KEY (program_block_id) REFERENCES program_blocks(id) ON DELETE CASCADE,
 			FOREIGN KEY (exercise_id) REFERENCES exercises(id)
+		    UNIQUE(program_block_id, exercise_id)
 		);
 
 		CREATE TABLE IF NOT EXISTS training_sessions (

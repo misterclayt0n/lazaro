@@ -14,8 +14,13 @@ func (s *Storage) CreateExercise(ex models.Exercise) error {
 
 	_, err := s.DB.ExecContext(ctx,
 		`INSERT INTO exercises
-		(id, name, description, primary_muscle, created_at, estimated_one_rm)
-		VALUES (?, ?, ?, ?, ?, ?)`,
+			(id, name, description, primary_muscle, created_at, estimated_one_rm)
+			VALUES (?, ?, ?, ?, ?, ?)
+			ON CONFLICT(name) DO UPDATE SET
+				description = excluded.description,
+				primary_muscle = excluded.primary_muscle,
+				created_at = excluded.created_at,
+				estimated_one_rm = excluded.estimated_one_rm`,
 		ex.ID,
 		ex.Name,
 		ex.Description,

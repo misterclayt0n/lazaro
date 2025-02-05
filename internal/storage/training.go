@@ -159,6 +159,7 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 		    SELECT id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, COALESCE(options, '[]') AS options, technique, technique_group
 		    FROM program_exercises
 		    WHERE program_block_id = ?
+			ORDER BY order_index
 		`, block.ID)
 		if err != nil {
 			return nil, fmt.Errorf("Failed to load exercises: %w", err)

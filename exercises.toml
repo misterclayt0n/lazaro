@@ -22,3 +22,39 @@ primary_muscle = "Chest"
 name = "Deadlift"
 description = "Conventional barbell deadlift"
 primary_muscle = "Posterior Chain"
+
+[[exercise]]
+name = "Weighted Pull-Up"
+primary_muscle = "Back"
+
+[[exercise]]
+name = "BW Pull-Up"
+primary_muscle = "Back"
+
+[[exercise]]
+name = "Incline Chest Press"
+primary_muscle = "Chest"
+
+[[exercise]]
+name = "Chest Supported Row"
+primary_muscle = "Back"
+
+[[exercise]]
+name = "Barbell JM Press"
+primary_muscle = "Triceps"
+
+[[exercise]]
+name = "EZ Bar Preacher Curl"
+primary_muscle = "Biceps"
+
+[[exercise]]
+name = "Cable Tricep Pushdown"
+primary_muscle = "Triceps"
+
+[[exercise]]
+name = "Dumbbell Hammer Curl"
+primary_muscle = "Biceps"
+
+[[exercise]]
+name = "Reverse Dumbbell Wrist Curl"
+primary_muscle = "Forearms"
