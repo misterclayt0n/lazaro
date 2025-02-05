@@ -5,13 +5,13 @@
 - [x] Target reps should become just Target, and show reps, RPE and %, if they exist.
 - [x] Make each individual set with customizable reps in the program creator.
 - [x] Make each individual RPE/% customizable in the program creator.
-- [ ] Some kind of specific support for advanced techniques. drop sets, myoreps, giant sets, whatever).
+- [x] Some kind of specific support for advanced techniques. drop sets, myoreps, giant sets, whatever).
   - [x] Super sets.
   - [x] Myoreps.
   - [x] Drop.
   - [x] HELL.
 - [ ] Be able to record sessions with specific dates (a command like `record-session` -- This should take again some sort of file).
-- [ ] Make most things case insensitive.
+- [x] Make most things case insensitive.
 - [x] Remove `.env` and save connection string inside a toml file.
 - [x] Add some sort of limited time programs (eg. 12 weeks or whatever), and also an easy way to edit the weeks.
 - [x] Create a `show-program` command.

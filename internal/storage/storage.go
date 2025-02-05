@@ -49,7 +49,7 @@ func InitializeDB(db *sql.DB) error {
 	sqlStatements := `
 		CREATE TABLE IF NOT EXISTS exercises (
 			id TEXT PRIMARY KEY,
-			name TEXT NOT NULL UNIQUE,
+			name TEXT NOT NULL UNIQUE COLLATE NOCASE,
 			description TEXT,
 			primary_muscle TEXT,
 			created_at TEXT NOT NULL,
@@ -69,7 +69,7 @@ func InitializeDB(db *sql.DB) error {
 
 		CREATE TABLE IF NOT EXISTS programs (
 			id TEXT PRIMARY KEY,
-			name TEXT NOT NULL UNIQUE,
+			name TEXT NOT NULL UNIQUE COLLATE NOCASE,
 			description TEXT,
 			created_at TEXT NOT NULL
 		);
@@ -77,7 +77,7 @@ func InitializeDB(db *sql.DB) error {
 		CREATE TABLE IF NOT EXISTS program_blocks (
 			id TEXT PRIMARY KEY,
 			program_id TEXT NOT NULL,
-			name TEXT NOT NULL,
+			name TEXT NOT NULL COLLATE NOCASE,
 			description TEXT,
 			week INTEGER,
 			FOREIGN KEY (program_id) REFERENCES programs(id) ON DELETE CASCADE

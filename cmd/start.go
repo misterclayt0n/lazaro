@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"strings"
 	"time"
 
 	"github.com/google/uuid"
@@ -63,7 +64,7 @@ var startCmd = &cobra.Command{
 		// Find the specific block in the program.
 		var selectedBlock *models.ProgramBlock
 		for _, block := range program.Blocks {
-			if block.Name == blockName && block.Week == weekNumber {
+			if strings.EqualFold(block.Name, blockName) && block.Week == weekNumber {
 				selectedBlock = &block
 				break
 			}
