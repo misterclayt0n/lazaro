@@ -68,6 +68,7 @@ func (s *Storage) GetExerciseByName(name string) (*models.Exercise, error) {
         WHERE session_exercise_id IN (
             SELECT id FROM training_session_exercises WHERE exercise_id = ?
         )
+        AND ignore_for_one_rm = 0
         ORDER BY (weight * (1 + reps/30)) DESC
         LIMIT 1`,
 		ex.ID,
@@ -124,6 +125,7 @@ func (s *Storage) GetExerciseByID(id string) (*models.Exercise, error) {
         WHERE session_exercise_id IN (
             SELECT id FROM training_session_exercises WHERE exercise_id = ?
         )
+        AND ignore_for_one_rm = 0
         ORDER BY (weight * (1 + reps/30)) DESC
         LIMIT 1`,
 		ex.ID,

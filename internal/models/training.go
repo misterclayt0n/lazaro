@@ -2,6 +2,13 @@ package models
 
 import "time"
 
+const (
+	TechniqueSuperset = "superset"
+	TechniqueMyoreps  = "myoreps"
+	TechniqueHell     = "hell"
+	TechniqueDrop     = "drop"
+)
+
 type TrainingSession struct {
 	ID        string            `json:"id"`
 	Program   Program           `json:"program"`

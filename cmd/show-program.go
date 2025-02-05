@@ -68,6 +68,14 @@ var showProgramCmd = &cobra.Command{
 
 				fmt.Printf("%d. %s\n", i+1, ex.Name)
 
+				if pe.Technique != "" {
+					techInfo := fmt.Sprintf("%s: %s", cyan("Technique"), pe.Technique)
+					if pe.TechniqueGroup != 0 {
+						techInfo += fmt.Sprintf(" (%s: %d)", cyan("Group"), pe.TechniqueGroup)
+					}
+					fmt.Printf("   %s\n", techInfo)
+				}
+
 				// Print additional options (variations) if available.
 				if len(pe.Options) > 0 {
 					fmt.Printf("   %s: %s\n", cyan("Options"), strings.Join(pe.Options, ", "))

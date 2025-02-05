@@ -28,6 +28,8 @@ type SessionExercise struct {
 	TargetRMPercent []float32       `toml:"target_rm_percent,omitempty"`
 	Program1RM      *float32        `toml:"program_1rm,omitempty"`
 	Options         []string        `toml:"options,omitempty"`
+	Technique       string          `toml:"technique,omitempty"`
+	TechniqueGroup  int             `toml:"technique_group,omitempty"`
 }
 
 type ExerciseSet struct {
@@ -38,6 +40,7 @@ type ExerciseSet struct {
 	TargetRMPercent *float32  `toml:"target_rm_percent,omitempty"`
 	Notes           string    `toml:"notes"`
 	Timestamp       time.Time `toml:"timestamp"`
+	IgnoreForOneRM  bool      `toml:"ignore_for_one_rm,omitempty" json:"ignore_for_one_rm,omitempty"`
 }
 
 type ProgramExercise struct {
@@ -50,6 +53,9 @@ type ProgramExercise struct {
 	ProgramNotes    string    `json:"program_notes,omitempty"`
 	Program1RM      *float32  `json:"program_1rm,omitempty"`
 	Options         []string  `json:"options,omitempty"`
+	// Advanced techniques:
+	Technique      string `json:"technique,omitempty"`       // e.g. "superset", "myoreps", "drop"
+	TechniqueGroup int    `json:"technique_group,omitempty"` // Group id if needed
 }
 
 //
@@ -57,9 +63,9 @@ type ProgramExercise struct {
 //
 
 type ExerciseDefTOML struct {
-	Name          string  `toml:"name"`
-	Description   string  `toml:"description"`
-	PrimaryMuscle string  `toml:"primary_muscle"`
+	Name          string `toml:"name"`
+	Description   string `toml:"description"`
+	PrimaryMuscle string `toml:"primary_muscle"`
 }
 
 type ExerciseImport struct {

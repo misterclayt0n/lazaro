@@ -5,6 +5,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
+	"strings"
 	"time"
 
 	"github.com/google/uuid"
@@ -63,17 +64,32 @@ func (s *Storage) SaveSession(state *models.SessionState) error {
 			return fmt.Errorf("Failed to create session exercise: %w", err)
 		}
 
+		// Process the sets:
+		setsToSave := exercise.Sets
+		if strings.EqualFold(exercise.Technique, models.TechniqueHell) {
+			// Automatically filter/split the hell sets using your the threshold.
+			// NOTE: I'm hard coding this thing for now because fuck you.
+			setsToSave = processHellSets(exercise.Sets, 5)
+		}
+
 		// Save the sets.
-		for _, set := range exercise.Sets {
+		for _, set := range setsToSave {
+			ignoreVal := 0
+			if strings.EqualFold(exercise.Technique, models.TechniqueMyoreps) ||
+				strings.EqualFold(exercise.Technique, models.TechniqueHell) {
+				ignoreVal = 1
+			}
+
 			_, err = tx.ExecContext(ctx,
 				`INSERT INTO exercise_sets
-                (id, session_exercise_id, weight, reps, timestamp)
-                VALUES (?, ?, ?, ?, ?)`,
+                (id, session_exercise_id, weight, reps, timestamp, ignore_for_one_rm)
+                VALUES (?, ?, ?, ?, ?, ?)`,
 				uuid.New().String(),
 				sessionExID,
 				set.Weight,
 				set.Reps,
 				set.Timestamp.Format(time.RFC3339),
+				ignoreVal,
 			)
 			if err != nil {
 				return fmt.Errorf("Failed to save set: %w", err)
@@ -140,7 +156,7 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 
 		// Load exercises in each block.
 		exerciseRows, err := s.DB.Query(`
-		    SELECT id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, options
+		    SELECT id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, COALESCE(options, '[]') AS options, technique, technique_group
 		    FROM program_exercises
 		    WHERE program_block_id = ?
 		`, block.ID)
@@ -163,6 +179,8 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 				&ex.ProgramNotes,
 				&ex.Program1RM,
 				&optionsJSON,
+				&ex.Technique,
+				&ex.TechniqueGroup,
 			); err != nil {
 				return nil, fmt.Errorf("Failed to scan exercise: %w", err)
 			}
@@ -226,4 +244,18 @@ func (s *Storage) GetTrainingSessionsForExercise(exerciseID string, limit int) (
 	}
 
 	return sessions, nil
+}
+
+func processHellSets(sets []models.ExerciseSet, minReps int) []models.ExerciseSet {
+	var processed []models.ExerciseSet
+	for _, s := range sets {
+		// Only keep sets that have at least the minimum reps.
+		if s.Reps < minReps {
+			break // End the hell chain when reps drop below the minimum.
+		}
+		// Mark these sets to be ignored for 1RM.
+		s.IgnoreForOneRM = true
+		processed = append(processed, s)
+	}
+	return processed
 }

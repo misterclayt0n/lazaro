@@ -51,4 +51,6 @@ type ExerciseTOML struct {
 	ProgramNotes    string    `toml:"notes,omitempty"`
 	Program1RM      *float32  `toml:"program_1rm,omitempty"`
 	Options         []string  `toml:"options,omitempty"`
+	Technique       string    `toml:"technique,omitempty"`
+	TechniqueGroup  int       `toml:"group,omitempty"`
 }

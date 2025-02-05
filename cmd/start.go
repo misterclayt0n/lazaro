@@ -69,7 +69,7 @@ var startCmd = &cobra.Command{
 			}
 		}
 		if selectedBlock == nil {
-		    return fmt.Errorf("Block '%s' for week %d not found in program", blockName, weekNumber)
+			return fmt.Errorf("Block '%s' for week %d not found in program", blockName, weekNumber)
 		}
 
 		// Create session state with correct block ID.
@@ -128,7 +128,9 @@ var startCmd = &cobra.Command{
 				TargetRPE:       pe.TargetRPE,
 				TargetRMPercent: pe.TargetRMPercent,
 				Program1RM:      pe.Program1RM,
-			    Options:         pe.Options,
+				Options:         pe.Options,
+				Technique:       pe.Technique,
+				TechniqueGroup:  pe.TechniqueGroup,
 			})
 		}
 

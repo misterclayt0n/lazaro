@@ -240,8 +240,8 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 							peID = generateID()
 							_, err = tx.ExecContext(ctx,
 								`INSERT INTO program_exercises
-								(id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm)
-								VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+								(id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, technique, technique_group)
+								VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 								peID, blockID, exerciseID, newEx.Sets, string(repsJSON),
 								string(targetRPEJSON), string(targetRMPercentJSON), newEx.ProgramNotes, newEx.Program1RM,
 							)
@@ -254,9 +254,9 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 					} else {
 						// Update the existing program exercise.
 						_, err = tx.ExecContext(ctx,
-							`UPDATE program_exercises SET sets = ?, reps = ?, target_rpe = ?, target_rm_percent = ?, notes = ?, program_1rm = ?
+							`UPDATE program_exercises SET sets = ?, reps = ?, target_rpe = ?, target_rm_percent = ?, notes = ?, program_1rm = ?, technique = ?, technique_group = ?
 							 WHERE id = ?`,
-							newEx.Sets, string(repsJSON), string(targetRPEJSON), string(targetRMPercentJSON), newEx.ProgramNotes, newEx.Program1RM,
+							newEx.Sets, string(repsJSON), string(targetRPEJSON), string(targetRMPercentJSON), newEx.ProgramNotes, newEx.Program1RM, newEx.Technique, newEx.TechniqueGroup,
 							peID,
 						)
 						if err != nil {
@@ -335,10 +335,10 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 						peID = generateID()
 						_, err = tx.ExecContext(ctx,
 							`INSERT INTO program_exercises
-                             (id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm)
-                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+                             (id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, technique, technique_group)
+                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 							peID, blockID, exerciseID, newEx.Sets, string(repsJSON),
-							string(targetRPEJSON), string(targetRMPercentJSON), newEx.ProgramNotes, newEx.Program1RM,
+							string(targetRPEJSON), string(targetRMPercentJSON), newEx.ProgramNotes, newEx.Program1RM, newEx.Technique, newEx.TechniqueGroup,
 						)
 						if err != nil {
 							return fmt.Errorf("Failed to insert program exercise: %w", err)
@@ -348,9 +348,9 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 					}
 				} else {
 					_, err = tx.ExecContext(ctx,
-						`UPDATE program_exercises SET sets = ?, reps = ?, target_rpe = ?, target_rm_percent = ?, notes = ?, program_1rm = ?
+						`UPDATE program_exercises SET sets = ?, reps = ?, target_rpe = ?, target_rm_percent = ?, notes = ?, program_1rm = ?, technique = ?, technique_group = ?
                          WHERE id = ?`,
-						newEx.Sets, string(repsJSON), string(targetRPEJSON), string(targetRMPercentJSON), newEx.ProgramNotes, newEx.Program1RM, peID,
+						newEx.Sets, string(repsJSON), string(targetRPEJSON), string(targetRMPercentJSON), newEx.ProgramNotes, newEx.Program1RM, newEx.Technique, newEx.TechniqueGroup, peID,
 					)
 					if err != nil {
 						return fmt.Errorf("Failed to update program exercise: %w", err)
@@ -422,8 +422,8 @@ func insertProgramExercises(ctx context.Context, tx *sql.Tx, blockID string, exe
 
 		_, err = tx.ExecContext(ctx,
 			`INSERT INTO program_exercises
-             (id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, options)
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+             (id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, options, technique, technique_group)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 			uuid.New().String(),
 			blockID,
 			exerciseID,
@@ -434,6 +434,8 @@ func insertProgramExercises(ctx context.Context, tx *sql.Tx, blockID string, exe
 			exerciseTOML.ProgramNotes,
 			exerciseTOML.Program1RM,
 			string(optionsJSON),
+			exerciseTOML.Technique,
+			exerciseTOML.TechniqueGroup,
 		)
 		if err != nil {
 			return fmt.Errorf("Failed to create program exercise: %w", err)
