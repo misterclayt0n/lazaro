@@ -140,7 +140,7 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 
 		// Load exercises in each block.
 		exerciseRows, err := s.DB.Query(`
-		    SELECT id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm
+		    SELECT id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, options
 		    FROM program_exercises
 		    WHERE program_block_id = ?
 		`, block.ID)
@@ -151,7 +151,7 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 
 		for exerciseRows.Next() {
 			var ex models.ProgramExercise
-			var repsJSON, targetRPEJSON, targetRMPercentJSON string // NOTE: Temporary variable to hold the JSON string.
+			var repsJSON, targetRPEJSON, targetRMPercentJSON, optionsJSON string // NOTE: Temporary variable to hold the JSON string.
 
 			if err := exerciseRows.Scan(
 				&ex.ID,
@@ -162,6 +162,7 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 				&targetRMPercentJSON,
 				&ex.ProgramNotes,
 				&ex.Program1RM,
+				&optionsJSON,
 			); err != nil {
 				return nil, fmt.Errorf("Failed to scan exercise: %w", err)
 			}
@@ -177,6 +178,10 @@ func (s *Storage) GetProgramByName(name string) (*models.Program, error) {
 
 			if err := json.Unmarshal([]byte(targetRMPercentJSON), &ex.TargetRMPercent); err != nil {
 				return nil, fmt.Errorf("Failed to unmarshal target_rm_percent: %w", err)
+			}
+
+			if err := json.Unmarshal([]byte(optionsJSON), &ex.Options); err != nil {
+				return nil, fmt.Errorf("Failed to unmarshal options: %w", err)
 			}
 
 			block.Exercises = append(block.Exercises, ex)

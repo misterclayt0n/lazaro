@@ -128,6 +128,7 @@ var startCmd = &cobra.Command{
 				TargetRPE:       pe.TargetRPE,
 				TargetRMPercent: pe.TargetRMPercent,
 				Program1RM:      pe.Program1RM,
+			    Options:         pe.Options,
 			})
 		}
 

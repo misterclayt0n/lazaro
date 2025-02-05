@@ -89,13 +89,14 @@ func initializeDB(db *sql.DB) error {
             target_rm_percent TEXT,
             notes TEXT,
             program_1rm REAL,
+            options TEXT,
             FOREIGN KEY (program_block_id) REFERENCES program_blocks(id) ON DELETE CASCADE,
             FOREIGN KEY (exercise_id) REFERENCES exercises(id)
         );
 
         CREATE TABLE IF NOT EXISTS training_sessions (
             id TEXT PRIMARY KEY,
-            program_block_id TEXT NOT NULL,  -- Changed from program_session_id
+            program_block_id TEXT NOT NULL,
             start_time TEXT NOT NULL,
             end_time TEXT,
             notes TEXT,

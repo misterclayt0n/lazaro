@@ -13,8 +13,9 @@
 - [x] Create a `delete_program` command.
 - [x] Create a `cancel-session` command.
 - [x] Create a `set-note` command.
-- [ ] BIG: Change swap-ex to only swap to a couple variations specified inside program.toml.
-- [ ] Remove the need for an `exercises.toml` file.
+- [x] BIG: Change swap-ex to only swap to a couple variations specified inside program.toml.
+- [ ] Remove `estimate_1rm` from `exercises.toml`. I want that thing to be calculated automatically.
+- [ ] Some way to view information about one particular exercise?
 - [ ] Easy session history:
   - [ ] Calendar of days trained.
   - [ ] Display historical information about one lift accross all programs and about only one program.

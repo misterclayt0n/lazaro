@@ -415,11 +415,15 @@ func insertProgramExercises(ctx context.Context, tx *sql.Tx, blockID string, exe
 		if err != nil {
 			return fmt.Errorf("Failed to marshal target_rm_percent: %w", err)
 		}
+		optionsJSON, err := json.Marshal(exerciseTOML.Options)
+		if err != nil {
+			return fmt.Errorf("Failed to marshal options: %w", err)
+		}
 
 		_, err = tx.ExecContext(ctx,
 			`INSERT INTO program_exercises
-             (id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm)
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+             (id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, options)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 			uuid.New().String(),
 			blockID,
 			exerciseID,
@@ -429,6 +433,7 @@ func insertProgramExercises(ctx context.Context, tx *sql.Tx, blockID string, exe
 			string(targetRMPercentJSON),
 			exerciseTOML.ProgramNotes,
 			exerciseTOML.Program1RM,
+			string(optionsJSON),
 		)
 		if err != nil {
 			return fmt.Errorf("Failed to create program exercise: %w", err)

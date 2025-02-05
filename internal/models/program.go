@@ -50,4 +50,5 @@ type ExerciseTOML struct {
 	TargetRMPercent []float32 `toml:"target_rm_percent,omitempty"`
 	ProgramNotes    string    `toml:"notes,omitempty"`
 	Program1RM      *float32  `toml:"program_1rm,omitempty"`
+	Options         []string  `toml:"options,omitempty"`
 }
