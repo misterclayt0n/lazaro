@@ -80,7 +80,7 @@ func (s *Storage) CreateProgram(tomlData []byte) error {
 				programID,
 				blockTOML.Name,
 				blockTOML.Description,
-				nil, // no week information provided
+				nil, // No week information provided.
 			)
 			if err != nil {
 				return fmt.Errorf("Failed to create program block: %w", err)

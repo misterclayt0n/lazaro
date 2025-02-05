@@ -68,6 +68,11 @@ var showProgramCmd = &cobra.Command{
 
 				fmt.Printf("%d. %s\n", i+1, ex.Name)
 
+				// Print additional options (variations) if available.
+				if len(pe.Options) > 0 {
+					fmt.Printf("   %s: %s\n", cyan("Options"), strings.Join(pe.Options, ", "))
+				}
+
 				// Build a target scheme display.
 				if len(pe.Reps) > 0 {
 					var targetParts []string
