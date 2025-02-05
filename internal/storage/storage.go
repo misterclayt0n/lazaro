@@ -9,7 +9,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/misterclayt0n/lazaro/internal/config"
-	_ "github.com/tursodatabase/go-libsql"
+  _ "github.com/tursodatabase/libsql-client-go/libsql"
 )
 
 type Storage struct {

@@ -7,13 +7,13 @@ require (
 	github.com/fatih/color v1.18.0
 	github.com/google/uuid v1.6.0
 	github.com/spf13/cobra v1.8.1
-	github.com/tursodatabase/go-libsql v0.0.0-20241221181756-6121e81fbf92
+	github.com/tursodatabase/libsql-client-go v0.0.0-20240902231107-85af5b9d094d
 )
 
 require (
 	github.com/antlr4-go/antlr/v4 v4.13.0 // indirect
+	github.com/coder/websocket v1.8.12 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/libsql/sqlite-antlr4-parser v0.0.0-20240327125255-dbf53b6cbf06 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
