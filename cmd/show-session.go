@@ -112,7 +112,14 @@ var showSessionCmd = &cobra.Command{
 func printExerciseDetails(se models.SessionExercise, tableIndent string, setColWidth, targetColWidth, currentColWidth, prevColWidth int, horizontalBorder, headerLine, midBorder, bottomBorder string, cyan, yellow, red, green func(a ...interface{}) string) {
 	ex := se.Exercise
 	// Print exercise header.
-	fmt.Printf("%s %s\n", cyan("• "+ex.Name), yellow("(Technique: "+se.Technique+")"))
+	var technique string
+	if se.Technique != "" {
+		technique = yellow("(Technique: "+se.Technique+")")
+	} else {
+		technique = ""
+	}
+
+	fmt.Printf("%s %s\n", cyan("• "+ex.Name), technique)
 	// Optional metadata.
 	if !ex.LastPerformed.IsZero() {
 		fmt.Printf("   %s %s\n", cyan("Last performed:"), ex.LastPerformed.Format("2006-01-02"))
