@@ -2,6 +2,7 @@ package storage
 
 import (
 	"database/sql"
+	"fmt"
 	"time"
 
 	"github.com/misterclayt0n/lazaro/internal/models"
@@ -133,13 +134,28 @@ func (s *Storage) GetSessionByID(sessionID string) (*models.TrainingSession, err
 
 // GetSessionsByDate returns all training sessions whose start_time matches the given date (formatted as "2006-01-02").
 func (s *Storage) GetSessionsByDate(dateStr string) ([]models.TrainingSession, error) {
+    // Load São Paulo location.
+    loc, err := time.LoadLocation("America/Sao_Paulo")
+    if err != nil {
+        return nil, fmt.Errorf("Failed to load location: %w", err)
+    }
+
+    // Parse the user input as "DD/MM/YY" in São Paulo time.
+    userDate, err := time.ParseInLocation("02/01/06", dateStr, loc)
+    if err != nil {
+        return nil, fmt.Errorf("Failed to parse date: %w", err)
+    }
+
+    // Format the date as YYYY-MM-DD (local date string)
+    localDate := userDate.Format("2006-01-02")
+
     query := `
         SELECT id, start_time, end_time, notes
         FROM training_sessions
-        WHERE date(start_time) = ?
+        WHERE date(datetime(start_time, '-3 hours')) = ?
         ORDER BY start_time DESC
     `
-    rows, err := s.DB.Query(query, dateStr)
+    rows, err := s.DB.Query(query, localDate)
     if err != nil {
         return nil, err
     }

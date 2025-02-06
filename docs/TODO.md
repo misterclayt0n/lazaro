@@ -22,6 +22,7 @@
 - [x] BIG: Change swap-ex to only swap to a couple variations specified inside program.toml.
 - [x] Remove `estimate_1rm` from `exercises.toml`. I want that thing to be calculated automatically.
 - [x] Some way to view information about one particular exercise?
+- [x] Fix the timezone problem, I'm hard coding it for now, but maybe in the future add an option for the user to prompt his timezone of whatever.
 - [ ] Easy session history:
   - [ ] Calendar of days trained.
   - [x] Look for a session in specific and display it (Search by ID).

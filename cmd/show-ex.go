@@ -70,9 +70,9 @@ var showExCmd = &cobra.Command{
 		// For each session, load and print the sets.
 		for i, ts := range sessions {
 			fmt.Printf("\n%s %d. %s\n", boldGreen("Session"), i+1, ts.ID)
-			fmt.Printf("   %s: %s\n", blue("Start Time"), ts.StartTime.Format(time.RFC1123))
+			fmt.Printf("   %s: %s\n", blue("Start Time"), utils.FormatSaoPaulo(ts.StartTime))
 			if ts.EndTime != nil {
-				fmt.Printf("   %s: %s\n", blue("End Time"), ts.EndTime.Format(time.RFC1123))
+				fmt.Printf("   %s: %s\n", blue("End Time"), utils.FormatSaoPaulo(*ts.EndTime))
 				duration := ts.EndTime.Sub(ts.StartTime).Round(time.Second)
 				fmt.Printf("   %s: %s\n", red("Duration"), duration)
 			}

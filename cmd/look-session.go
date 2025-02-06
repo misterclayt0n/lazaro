@@ -7,6 +7,7 @@ import (
 
 	"github.com/fatih/color"
 	"github.com/misterclayt0n/lazaro/internal/storage"
+	"github.com/misterclayt0n/lazaro/internal/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -32,17 +33,9 @@ var lookSessionCmd = &cobra.Command{
 
 		// If the --date flag is provided, search by date.
 		if dateStr != "" {
-			// Assume the user passes the date as "DD/MM/YY"
-			userDate, err := time.Parse("02/01/06", dateStr)
+			sessionsSummary, err := st.GetSessionsByDate(dateStr)
 			if err != nil {
-				return fmt.Errorf("Failed to parse date, please use DD/MM/YY format: %w", err)
-			}
-			isoDate := userDate.Format("2006-01-02") // e.g. "2025-02-05"
-
-			// Use our new storage function to get sessions by date.
-			sessionsSummary, err := st.GetSessionsByDate(isoDate)
-			if err != nil {
-				return fmt.Errorf("Failed to retrieve sessions for date %s: %w", isoDate, err)
+				return fmt.Errorf("Failed to retrieve sessions for date %s: %w", dateStr, err)
 			}
 			if len(sessionsSummary) == 0 {
 				fmt.Println(magenta("No sessions found on that date."))
@@ -50,7 +43,7 @@ var lookSessionCmd = &cobra.Command{
 			}
 
 			// Print header.
-			fmt.Println(boldGreen("Training Sessions on:"), yellow(isoDate))
+			fmt.Println(boldGreen("Training Sessions on:"), yellow(dateStr))
 			fmt.Println(strings.Repeat("=", 50))
 
 			// For each summary session, load full details by session ID.
@@ -73,9 +66,9 @@ var lookSessionCmd = &cobra.Command{
 
 				// Print header information.
 				fmt.Printf("\n%s %d. %s\n", boldGreen("Session"), i+1, session.ID)
-				fmt.Printf("   %s: %s\n", cyan("Start Time"), session.StartTime.Format(time.RFC1123))
+				fmt.Printf("   %s: %s\n", cyan("Start Time"), utils.FormatSaoPaulo(session.StartTime))
 				if session.EndTime != nil {
-					fmt.Printf("   %s: %s\n", blue("End Time"), session.EndTime.Format(time.RFC1123))
+					fmt.Printf("   %s: %s\n", blue("End Time"), utils.FormatSaoPaulo(*session.EndTime))
 					fmt.Printf("   %s: %s\n", red("Duration"), duration)
 				} else {
 					fmt.Printf("   %s: %s\n", red("Duration"), "In Progress")
