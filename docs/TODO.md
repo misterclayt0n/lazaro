@@ -29,3 +29,5 @@
   - [x] Look for a session by it's date (put a flag inside `look-session`)
   - [ ] Look for overall history of sessions -> All programs, per program, per day of program.
 - [ ] Some silly meta data, some command like `status`, which shows info like total weight lifted, number of sessions, hours at the gym, week streak?
+- [ ] setup dev env with local db with sqlite3
+- [ ] (Dumb idea) use sqlite as default, but create a command like `sync-db` that syncs a turso remote db with the local, kinda like github I guess...

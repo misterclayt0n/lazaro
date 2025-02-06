@@ -9,7 +9,9 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/misterclayt0n/lazaro/internal/config"
-  _ "github.com/tursodatabase/libsql-client-go/libsql"
+
+	// _ "github.com/tursodatabase/libsql-client-go/libsql"  // Production.
+	_ "github.com/mattn/go-sqlite3" // Development, never commit this.
 )
 
 type Storage struct {
@@ -30,7 +32,12 @@ func NewStorage() *Storage {
 		os.Exit(1)
 	}
 
-	db, err := sql.Open("libsql", connStr)
+	// Option 2: Hard-code a SQLite connection string for development.
+	// Uncomment the following lines to force using a local SQLite DB:
+	connStr = "file:./local.db?cache=shared&mode=rwc"
+	db, err := sql.Open("sqlite3", connStr)
+
+	// db, err := sql.Open("libsql", connStr)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Failed to open db %s: %s", connStr, err)
 		os.Exit(1)

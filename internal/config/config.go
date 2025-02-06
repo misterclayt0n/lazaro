@@ -38,5 +38,10 @@ func LoadConfig() (*Config, error) {
 		return nil, err
 	}
 
+	// Check for a DEV_MODE environment variable.
+	if os.Getenv("DEV_MODE") == "true" {
+		cfg.DB.ConnectionString = "file:./local.db?cache=shared&mode=rwc"
+	}
+
 	return &cfg, nil
 }
