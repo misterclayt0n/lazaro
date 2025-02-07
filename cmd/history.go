@@ -6,9 +6,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/cobra"
+	"github.com/fatih/color"
 	"github.com/misterclayt0n/lazaro/internal/models"
 	"github.com/misterclayt0n/lazaro/internal/storage"
+	"github.com/spf13/cobra"
 )
 
 var (
@@ -17,23 +18,22 @@ var (
 	filterDay     string
 )
 
-// historyCmd shows overall session history grouped by program and day.
 var historyCmd = &cobra.Command{
 	Use:   "history",
 	Short: "Display overall session history, optionally filtered by program and/or block and/or day",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		st := storage.NewStorage()
 
+		// Retrieve all basic sessions.
 		sessions, err := st.GetAllSessions()
 		if err != nil {
 			return fmt.Errorf("failed to retrieve sessions: %w", err)
 		}
 
-		// Case insensitive filtering by program name.
+		// Apply case-insensitive filters if provided.
 		if filterProgram != "" {
 			var filtered []*models.TrainingSession
 			for _, s := range sessions {
-				// Get the program name for this session.
 				progName, err := st.GetProgramNameForSession(s.ID)
 				if err != nil {
 					progName = "Unknown"
@@ -45,11 +45,9 @@ var historyCmd = &cobra.Command{
 			sessions = filtered
 		}
 
-		// Case insensitive filtering by block name.
 		if filterBlock != "" {
 			var filtered []*models.TrainingSession
 			for _, s := range sessions {
-				// Get the block name for this session.
 				blockName, err := st.GetProgramSessionName(s.ID)
 				if err != nil {
 					blockName = "Unknown"
@@ -61,7 +59,6 @@ var historyCmd = &cobra.Command{
 			sessions = filtered
 		}
 
-		// If filtering by day.
 		if filterDay != "" {
 			var parsedDay time.Time
 			parsedDay, err = time.Parse("2006-01-02", filterDay)
@@ -71,18 +68,16 @@ var historyCmd = &cobra.Command{
 			if err != nil {
 				return fmt.Errorf("failed to parse day: %w", err)
 			}
-
 			var filtered []*models.TrainingSession
 			for _, s := range sessions {
-				sessionDay := s.StartTime.Format("2006-01-02")
-				if sessionDay == parsedDay.Format("2006-01-02") {
+				if s.StartTime.Format("2006-01-02") == parsedDay.Format("2006-01-02") {
 					filtered = append(filtered, s)
 				}
 			}
 			sessions = filtered
 		}
 
-		// Group sessions by program name (using the new helper) and then by day.
+		// Group sessions by program name and then by day.
 		grouped := make(map[string]map[string][]*models.TrainingSession)
 		for _, s := range sessions {
 			progName, err := st.GetProgramNameForSession(s.ID)
@@ -96,21 +91,24 @@ var historyCmd = &cobra.Command{
 			grouped[progName][day] = append(grouped[progName][day], s)
 		}
 
-		// Sort and display the history.
+		// Sort program keys.
 		var programKeys []string
 		for p := range grouped {
 			programKeys = append(programKeys, p)
 		}
 		sort.Strings(programKeys)
+
+		// For each program, print a fancy header, then for each date, print the session lines.
 		for _, prog := range programKeys {
-			fmt.Printf("Program: %s\n", prog)
+			cyanBold := color.New(color.FgCyan, color.Bold).SprintFunc()
+			fmt.Printf("%s\n", cyanBold(prog))
 			var days []string
 			for d := range grouped[prog] {
 				days = append(days, d)
 			}
 			sort.Strings(days)
 			for _, d := range days {
-				fmt.Printf("  Date: %s\n", d)
+				printDateHeader(d)
 				sList := grouped[prog][d]
 				sort.Slice(sList, func(i, j int) bool {
 					return sList[i].StartTime.Before(sList[j].StartTime)
@@ -121,18 +119,29 @@ var historyCmd = &cobra.Command{
 						dur := s.EndTime.Sub(s.StartTime).Round(time.Second)
 						duration = dur.String()
 					}
-					fmt.Printf("    Session %s | Start: %s | Duration: %s\n",
-						s.ID,
-						s.StartTime.Format("15:04"),
-						duration,
-					)
+					printSessionLine(s.ID, s.StartTime.Format("15:04"), duration)
 				}
+				fmt.Println()
 			}
 			fmt.Println()
 		}
 
 		return nil
 	},
+}
+
+func printDateHeader(date string) {
+	// Underline the date header.
+	magentaBold := color.New(color.FgMagenta, color.Bold).SprintFunc()
+	fmt.Println(magentaBold("  Date: " + date))
+}
+
+func printSessionLine(id, start, duration string) {
+	// Print a bullet line with session details.
+	green := color.New(color.FgGreen).SprintFunc()
+	yellow := color.New(color.FgYellow).SprintFunc()
+	magenta := color.New(color.FgMagenta).SprintFunc()
+	fmt.Printf("    • %s | Start: %s | Duration: %s\n", magenta(id), yellow(start), green(duration))
 }
 
 func init() {
