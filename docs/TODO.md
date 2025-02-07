@@ -34,5 +34,5 @@
 - [x] Setup dev env with local db with sqlite3.
 - [ ] (Dumb idea) use sqlite as default, but create a command like `sync-db` that syncs a turso remote db with the local, kinda like github I guess...
 - [ ] UX changes:
-  - [ ] Print numbers for exercise order in `show-session`.
+  - [x] Print numbers for exercise order in `show-session`.
   - [ ] Probably big refactor, but show better error messages, sometimes even I get lost

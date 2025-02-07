@@ -11,21 +11,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var (
-	programName2 string // Name of the program to show.
-	dayFilter    string // Optional day (block name) filter.
-)
+var dayFilter string // Optional day (block name) filter.
+
 
 var showProgramCmd = &cobra.Command{
 	Use:   "show-program",
 	Short: "Display a visualization of an entire program (optionally filter by day)",
 	RunE: func(cmd *cobra.Command, args []string) error {
-		if programName2 == "" {
-			return fmt.Errorf("program name must be provided via --program flag")
-		}
+		programName := args[0]
 
 		st := storage.NewStorage()
-		prog, err := st.GetProgramByName(programName2)
+		prog, err := st.GetProgramByName(programName)
 		if err != nil {
 			return fmt.Errorf("failed to load program: %w", err)
 		}
@@ -113,7 +109,6 @@ var showProgramCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(showProgramCmd)
-	showProgramCmd.Flags().StringVarP(&programName2, "program", "p", "", "Name of the program (required)")
 	showProgramCmd.Flags().StringVarP(&dayFilter, "day", "d", "", "Filter by day (block name)")
 	showProgramCmd.MarkFlagRequired("program")
 }
