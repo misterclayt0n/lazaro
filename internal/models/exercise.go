@@ -41,6 +41,7 @@ type ExerciseSet struct {
 	Notes           string    `toml:"notes"`
 	Timestamp       time.Time `toml:"timestamp"`
 	IgnoreForOneRM  bool      `toml:"ignore_for_one_rm,omitempty" json:"ignore_for_one_rm,omitempty"`
+	Bodyweight      bool      `toml:"bodyweight,omitempty" json:"bodyweight,omitempty"`
 }
 
 type ProgramExercise struct {

@@ -147,7 +147,11 @@ func printExerciseDetails(se models.SessionExercise, tableIndent string, setColW
 		var prevSet string
 		if setIdx < len(se.PreviousSets) {
 			ps := se.PreviousSets[setIdx]
-			prevSet = fmt.Sprintf("%.1fkg × %d", ps.Weight, ps.Reps)
+			if ps.Weight == 0 && ps.Reps == 0 {
+				prevSet = "First time"
+			} else {
+				prevSet = fmt.Sprintf("%.1fkg × %d", ps.Weight, ps.Reps)
+			}
 		} else {
 			prevSet = "N/A"
 		}
@@ -157,7 +161,11 @@ func printExerciseDetails(se models.SessionExercise, tableIndent string, setColW
 		if set.Weight == 0 {
 			setStr = "Not completed"
 		} else {
-			setStr = fmt.Sprintf("%.1fkg × %d", set.Weight, set.Reps)
+			if set.Bodyweight {
+			    setStr = "Bodyweight"  // or simply "Bodyweight" if weight is 0
+			} else {
+				setStr = fmt.Sprintf("%.1fkg × %d", set.Weight, set.Reps)
+			}
 			existing1RM := float32(0)
 			if ex.BestSet != nil {
 				existing1RM = utils.CalculateEpley1RM(ex.BestSet.Weight, ex.BestSet.Reps)

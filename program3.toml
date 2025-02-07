@@ -40,3 +40,12 @@ sets = 3
 reps = ["15-20"]
 # program_1rm = 110.0
 technique = "hell"
+
+[[blocks.exercises]]
+name = "Incline Bench Press"
+sets = 3
+reps = ["5", "5", "5"]
+target_rm_percent = [95.0, 75.0, 85.0]
+program_1rm = 110.0
+options = ["Close-Grip Bench Press"]
+technique = "myoreps"

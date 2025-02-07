@@ -23,11 +23,16 @@
 - [x] Remove `estimate_1rm` from `exercises.toml`. I want that thing to be calculated automatically.
 - [x] Some way to view information about one particular exercise?
 - [x] Fix the timezone problem, I'm hard coding it for now, but maybe in the future add an option for the user to prompt his timezone of whatever.
+- [x] Prev sessions should look for the most recent session in the program block, and if not found, should look globally in the database.
+- [x] Bodyweight exercise support, a flag in `edit-set` that goes like `-bw`.
 - [ ] Easy session history:
   - [ ] Calendar of days trained.
   - [x] Look for a session in specific and display it (Search by ID).
   - [x] Look for a session by it's date (put a flag inside `look-session`)
   - [ ] Look for overall history of sessions -> All programs, per program, per day of program.
 - [ ] Some silly meta data, some command like `status`, which shows info like total weight lifted, number of sessions, hours at the gym, week streak?
-- [ ] setup dev env with local db with sqlite3
+- [x] Setup dev env with local db with sqlite3.
 - [ ] (Dumb idea) use sqlite as default, but create a command like `sync-db` that syncs a turso remote db with the local, kinda like github I guess...
+- [ ] UX changes:
+  - [ ] Print numbers for exercise order in `show-session`.
+  - [ ] Probably big refactor, but show better error messages, sometimes even I get lost

@@ -134,46 +134,154 @@ func (s *Storage) GetSessionByID(sessionID string) (*models.TrainingSession, err
 
 // GetSessionsByDate returns all training sessions whose start_time matches the given date (formatted as "2006-01-02").
 func (s *Storage) GetSessionsByDate(dateStr string) ([]models.TrainingSession, error) {
-    // Load São Paulo location.
-    loc, err := time.LoadLocation("America/Sao_Paulo")
-    if err != nil {
-        return nil, fmt.Errorf("Failed to load location: %w", err)
-    }
+	// Load São Paulo location.
+	loc, err := time.LoadLocation("America/Sao_Paulo")
+	if err != nil {
+		return nil, fmt.Errorf("Failed to load location: %w", err)
+	}
 
-    // Parse the user input as "DD/MM/YY" in São Paulo time.
-    userDate, err := time.ParseInLocation("02/01/06", dateStr, loc)
-    if err != nil {
-        return nil, fmt.Errorf("Failed to parse date: %w", err)
-    }
+	// Parse the user input as "DD/MM/YY" in São Paulo time.
+	userDate, err := time.ParseInLocation("02/01/06", dateStr, loc)
+	if err != nil {
+		return nil, fmt.Errorf("Failed to parse date: %w", err)
+	}
 
-    // Format the date as YYYY-MM-DD (local date string)
-    localDate := userDate.Format("2006-01-02")
+	// Format the date as YYYY-MM-DD (local date string).
+	localDate := userDate.Format("2006-01-02")
 
-    query := `
+	query := `
         SELECT id, start_time, end_time, notes
         FROM training_sessions
         WHERE date(datetime(start_time, '-3 hours')) = ?
         ORDER BY start_time DESC
     `
-    rows, err := s.DB.Query(query, localDate)
-    if err != nil {
-        return nil, err
-    }
-    defer rows.Close()
+	rows, err := s.DB.Query(query, localDate)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
 
-    var sessions []models.TrainingSession
-    for rows.Next() {
-        var ts models.TrainingSession
-        var startTime, endTimeStr string
-        if err := rows.Scan(&ts.ID, &startTime, &endTimeStr, &ts.Notes); err != nil {
-            continue
-        }
-        ts.StartTime, _ = time.Parse(time.RFC3339, startTime)
-        if endTimeStr != "" {
-            t, _ := time.Parse(time.RFC3339, endTimeStr)
-            ts.EndTime = &t
-        }
-        sessions = append(sessions, ts)
-    }
-    return sessions, nil
+	var sessions []models.TrainingSession
+	for rows.Next() {
+		var ts models.TrainingSession
+		var startTime, endTimeStr string
+		if err := rows.Scan(&ts.ID, &startTime, &endTimeStr, &ts.Notes); err != nil {
+			continue
+		}
+		ts.StartTime, _ = time.Parse(time.RFC3339, startTime)
+		if endTimeStr != "" {
+			t, _ := time.Parse(time.RFC3339, endTimeStr)
+			ts.EndTime = &t
+		}
+		sessions = append(sessions, ts)
+	}
+	return sessions, nil
+}
+
+func (s *Storage) GetValidPreviousSession(exerciseID, programBlockID string) (*models.TrainingSession, error) {
+	// We gotta search within the current block first.
+	session, err := s.getPreviousSessionForBlock(exerciseID, programBlockID)
+	if err != nil {
+		return nil, err
+	}
+	if session != nil && s.sessionHasValidSets(session, exerciseID) {
+		return session, nil
+	}
+
+	// If not found or invalid, we search globally (ignoring program block).
+	session, err = s.getPreviousSessionGlobal(exerciseID)
+	if err != nil {
+		return nil, err
+	}
+	if session != nil && s.sessionHasValidSets(session, exerciseID) {
+		return session, nil
+	}
+
+	// No valid session found.
+	return nil, nil
+}
+
+//
+// Helpers
+//
+
+// This is like the GetPreviousSession query but restricted to the given program block.
+func (s *Storage) getPreviousSessionForBlock(exerciseID, programBlockID string) (*models.TrainingSession, error) {
+	row := s.DB.QueryRow(`
+        SELECT ts.id, ts.start_time, ts.end_time
+        FROM training_sessions ts
+        JOIN training_session_exercises tse ON ts.id = tse.training_session_id
+        WHERE tse.exercise_id = ?
+          AND ts.program_block_id = ?
+          AND ts.end_time IS NOT NULL
+        ORDER BY ts.start_time DESC
+        LIMIT 1
+    `, exerciseID, programBlockID)
+
+	var session models.TrainingSession
+	var startTime string
+	var endTime sql.NullString
+
+	if err := row.Scan(&session.ID, &startTime, &endTime); err != nil {
+		if err == sql.ErrNoRows {
+			return nil, nil
+		}
+		return nil, err
+	}
+
+	session.StartTime, _ = time.Parse(time.RFC3339, startTime)
+	if endTime.Valid {
+		session.EndTime = new(time.Time)
+		*session.EndTime, _ = time.Parse(time.RFC3339, endTime.String)
+	}
+
+	return &session, nil
+}
+
+// Now, this actually searches for a session for the given exercise without filtering by program block.
+func (s *Storage) getPreviousSessionGlobal(exerciseID string) (*models.TrainingSession, error) {
+	row := s.DB.QueryRow(`
+        SELECT ts.id, ts.start_time, ts.end_time
+        FROM training_sessions ts
+        JOIN training_session_exercises tse ON ts.id = tse.training_session_id
+        WHERE tse.exercise_id = ?
+          AND ts.end_time IS NOT NULL
+        ORDER BY ts.start_time DESC
+        LIMIT 1
+    `, exerciseID)
+
+	var session models.TrainingSession
+	var startTime string
+	var endTime sql.NullString
+
+	if err := row.Scan(&session.ID, &startTime, &endTime); err != nil {
+		if err == sql.ErrNoRows {
+			return nil, nil
+		}
+		return nil, err
+	}
+
+	session.StartTime, _ = time.Parse(time.RFC3339, startTime)
+	if endTime.Valid {
+		session.EndTime = new(time.Time)
+		*session.EndTime, _ = time.Parse(time.RFC3339, endTime.String)
+	}
+	return &session, nil
+}
+
+// this functions returns true if the given session (for a specific exercise)
+// contains at least one set with non-zero weight and reps.
+func (s *Storage) sessionHasValidSets(session *models.TrainingSession, exerciseID string) bool {
+	sets, err := s.GetExerciseSetsForSession(session.ID, exerciseID)
+	if err != nil {
+		return false
+	}
+
+	for _, set := range sets {
+		if set.Weight > 0 && set.Reps > 0 {
+			return true
+		}
+	}
+
+	return false
 }

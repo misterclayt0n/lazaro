@@ -14,6 +14,7 @@ import (
 var (
 	setWeight float32
 	setReps   int
+	isBW      bool
 )
 
 var editSetCmd = &cobra.Command{
@@ -54,12 +55,17 @@ var editSetCmd = &cobra.Command{
 			return fmt.Errorf("Set index out of range")
 		}
 
+		if isBW {
+			setWeight = 0
+		}
+
 		// Update set.
 		exercise.Sets[setIndex] = models.ExerciseSet{
 			ID:        uuid.New().String(),
 			Weight:    setWeight,
 			Reps:      setReps,
 			Timestamp: time.Now().UTC(),
+			Bodyweight: isBW,
 		}
 
 		// Save changes.
@@ -75,7 +81,7 @@ var editSetCmd = &cobra.Command{
 func init() {
 	editSetCmd.Flags().Float32VarP(&setWeight, "weight", "w", 0, "Weight used")
 	editSetCmd.Flags().IntVarP(&setReps, "reps", "r", 0, "Reps performed")
-	editSetCmd.MarkFlagRequired("weight")
+    editSetCmd.Flags().BoolVarP(&isBW, "bodyweight", "b", false, "Mark the set as bodyweight (ignores -w)")
 	editSetCmd.MarkFlagRequired("reps")
 
 	rootCmd.AddCommand(editSetCmd)

@@ -96,7 +96,7 @@ var startCmd = &cobra.Command{
 			}
 
 			// Load previous session sets.
-			prevSession, err := st.GetPreviousSession(exercise.ID, selectedBlock.ID)
+			prevSession, err := st.GetValidPreviousSession(exercise.ID, selectedBlock.ID)
 			if err != nil {
 				return fmt.Errorf("Failed to get previous session: %w", err)
 			}
@@ -111,7 +111,7 @@ var startCmd = &cobra.Command{
 				if i < len(pe.Reps) {
 					targetReps[i] = pe.Reps[i]
 				} else if len(pe.Reps) > 0 {
-					// Use last specified rep scheme for remaining sets
+					// Use last specified rep scheme for remaining sets.
 					targetReps[i] = pe.Reps[len(pe.Reps)-1]
 				} else {
 					targetReps[i] = ""
