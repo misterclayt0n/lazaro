@@ -89,11 +89,21 @@ var lookSessionCmd = &cobra.Command{
 						// Print the sets in a table format.
 						sets := se.Sets
 						if len(sets) > 0 {
+							// Print table header.
 							fmt.Println("   " + boldGreen("Sets:"))
 							fmt.Printf("      %-4s | %-12s | %-5s\n", "Set", "Weight (kg)", "Reps")
 							fmt.Println("      " + strings.Repeat("─", 30))
 							for k, set := range sets {
-								fmt.Printf("      %-4d | %-12.1f | %-5d\n", k+1, set.Weight, set.Reps)
+								var weightStr string
+								if set.Bodyweight {
+									// If the set was done with bodyweight, show that instead of a numeric weight.
+									weightStr = "Bodyweight   " // NOTE: Hard coded spaces in this shit, I don't give a fuck.
+								} else if set.Weight == 0 {
+									weightStr = "Not completed"
+								} else {
+									weightStr = fmt.Sprintf("%.1fkg", set.Weight)
+								}
+								fmt.Printf("      %-4d | %-12s | %-5d\n", k+1, weightStr, set.Reps)
 							}
 						} else {
 							fmt.Println("   " + magenta("No set data available."))

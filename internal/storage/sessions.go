@@ -61,7 +61,7 @@ func (s *Storage) GetExerciseSetsForSession(sessionID, exerciseID string) ([]mod
 	}
 
 	rows, err := s.DB.Query(`
-		SELECT id, weight, reps, timestamp
+		SELECT id, weight, reps, timestamp, bodyweight
 		FROM exercise_sets
 		WHERE session_exercise_id = ?
 		ORDER BY timestamp ASC`,
@@ -76,10 +76,12 @@ func (s *Storage) GetExerciseSetsForSession(sessionID, exerciseID string) ([]mod
 	for rows.Next() {
 		var set models.ExerciseSet
 		var rawTime string
-		if err := rows.Scan(&set.ID, &set.Weight, &set.Reps, &rawTime); err != nil {
+		var bwInt int
+		if err := rows.Scan(&set.ID, &set.Weight, &set.Reps, &rawTime, &bwInt); err != nil {
 			continue
 		}
 		set.Timestamp, _ = time.Parse(time.RFC3339, rawTime)
+		set.Bodyweight = (bwInt == 1)
 		sets = append(sets, set)
 	}
 	return sets, nil

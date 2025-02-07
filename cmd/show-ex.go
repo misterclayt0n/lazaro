@@ -91,7 +91,15 @@ var showExCmd = &cobra.Command{
 				fmt.Printf("      %-4s | %-12s | %-5s\n", "Set", "Weight (kg)", "Reps")
 				fmt.Println("      " + strings.Repeat("─", 30))
 				for j, set := range sets {
-					fmt.Printf("      %-4d | %-12.1f | %-5d\n", j+1, set.Weight, set.Reps)
+					var weightStr string
+					if set.Bodyweight {
+						weightStr = "Bodyweight   " // Same shit here.
+					} else if set.Weight == 0 {
+						weightStr = "Not completed"
+					} else {
+						weightStr = fmt.Sprintf("%.1fkg", set.Weight)
+					}
+					fmt.Printf("      %-4d | %-12s | %-5d\n", j+1, weightStr, set.Reps)
 				}
 			} else {
 				fmt.Println("   " + magenta("No set data found for this session."))

@@ -10,6 +10,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/misterclayt0n/lazaro/internal/models"
+	"github.com/misterclayt0n/lazaro/internal/utils"
 )
 
 func (s *Storage) SaveSession(state *models.SessionState) error {
@@ -82,14 +83,15 @@ func (s *Storage) SaveSession(state *models.SessionState) error {
 
 			_, err = tx.ExecContext(ctx,
 				`INSERT INTO exercise_sets
-                (id, session_exercise_id, weight, reps, timestamp, ignore_for_one_rm)
-                VALUES (?, ?, ?, ?, ?, ?)`,
+                (id, session_exercise_id, weight, reps, timestamp, ignore_for_one_rm, bodyweight)
+                VALUES (?, ?, ?, ?, ?, ?, ?)`,
 				uuid.New().String(),
 				sessionExID,
 				set.Weight,
 				set.Reps,
 				set.Timestamp.Format(time.RFC3339),
 				ignoreVal,
+			    utils.BoolToInt(set.Bodyweight),
 			)
 			if err != nil {
 				return fmt.Errorf("Failed to save set: %w", err)

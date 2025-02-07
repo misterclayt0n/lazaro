@@ -114,7 +114,7 @@ func printExerciseDetails(se models.SessionExercise, tableIndent string, setColW
 	// Print exercise header.
 	var technique string
 	if se.Technique != "" {
-		technique = yellow("(Technique: "+se.Technique+")")
+		technique = yellow("(Technique: " + se.Technique + ")")
 	} else {
 		technique = ""
 	}
@@ -158,14 +158,13 @@ func printExerciseDetails(se models.SessionExercise, tableIndent string, setColW
 
 		// Build current set string.
 		var setStr string
-		if set.Weight == 0 {
+		if set.Bodyweight {
+			setStr = fmt.Sprintf("Bodyweight × %d", set.Reps)
+		} else if set.Weight == 0 {
 			setStr = "Not completed"
 		} else {
-			if set.Bodyweight {
-			    setStr = "Bodyweight"  // or simply "Bodyweight" if weight is 0
-			} else {
-				setStr = fmt.Sprintf("%.1fkg × %d", set.Weight, set.Reps)
-			}
+			setStr = fmt.Sprintf("%.1fkg × %d", set.Weight, set.Reps)
+
 			existing1RM := float32(0)
 			if ex.BestSet != nil {
 				existing1RM = utils.CalculateEpley1RM(ex.BestSet.Weight, ex.BestSet.Reps)

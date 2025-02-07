@@ -137,6 +137,7 @@ func InitializeDB(db *sql.DB) error {
 			notes TEXT,
 			timestamp TEXT NOT NULL,
 			ignore_for_one_rm INTEGER DEFAULT 0,
+		    bodyweight INTEGER DEFAULT 0,
 			FOREIGN KEY (session_exercise_id) REFERENCES training_session_exercises(id) ON DELETE CASCADE
 		);
 
