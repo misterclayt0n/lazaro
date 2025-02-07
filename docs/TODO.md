@@ -26,7 +26,7 @@
 - [x] Prev sessions should look for the most recent session in the program block, and if not found, should look globally in the database.
 - [x] Bodyweight exercise support, a flag in `edit-set` that goes like `-bw`.
 - [ ] Easy session history:
-  - [ ] Calendar of days trained.
+  - [x] Calendar of days trained.
   - [x] Look for a session in specific and display it (Search by ID).
   - [x] Look for a session by it's date (put a flag inside `look-session`)
   - [ ] Look for overall history of sessions -> All programs, per program, per day of program.

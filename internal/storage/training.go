@@ -91,7 +91,7 @@ func (s *Storage) SaveSession(state *models.SessionState) error {
 				set.Reps,
 				set.Timestamp.Format(time.RFC3339),
 				ignoreVal,
-			    utils.BoolToInt(set.Bodyweight),
+				utils.BoolToInt(set.Bodyweight),
 			)
 			if err != nil {
 				return fmt.Errorf("Failed to save set: %w", err)
@@ -250,13 +250,25 @@ func (s *Storage) GetTrainingSessionsForExercise(exerciseID string, limit int) (
 }
 
 func processHellSets(sets []models.ExerciseSet, minReps int) []models.ExerciseSet {
+	// Check if at least one set qualifies.
+	hasQualifying := false
+	for _, s := range sets {
+		if s.Reps >= minReps {
+			hasQualifying = true
+			break
+		}
+	}
+	// If none qualify, just return the original slice.
+	if !hasQualifying {
+		return sets
+	}
+
+	// Otherwise, filter the sets up to the first set that fails.
 	var processed []models.ExerciseSet
 	for _, s := range sets {
-		// Only keep sets that have at least the minimum reps.
 		if s.Reps < minReps {
-			break // End the hell chain when reps drop below the minimum.
+			break
 		}
-		// Mark these sets to be ignored for 1RM.
 		s.IgnoreForOneRM = true
 		processed = append(processed, s)
 	}

@@ -203,6 +203,55 @@ func (s *Storage) GetValidPreviousSession(exerciseID, programBlockID string) (*m
 	return nil, nil
 }
 
+func (s *Storage) GetSessionsBetween(start, end time.Time) ([]*models.TrainingSession, error) {
+	query := `
+		SELECT id, start_time, end_time, notes
+		FROM training_sessions
+		WHERE start_time BETWEEN ? AND ?
+		ORDER BY start_time ASC
+	`
+	rows, err := s.DB.Query(query, start.Format(time.RFC3339), end.Format(time.RFC3339))
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var sessions []*models.TrainingSession
+	for rows.Next() {
+		var ts models.TrainingSession
+		var startStr, endStr sql.NullString
+		if err := rows.Scan(&ts.ID, &startStr, &endStr, &ts.Notes); err != nil {
+			continue
+		}
+		if startStr.Valid {
+			ts.StartTime, _ = time.Parse(time.RFC3339, startStr.String)
+		}
+		if endStr.Valid && endStr.String != "" {
+			t, _ := time.Parse(time.RFC3339, endStr.String)
+			ts.EndTime = &t
+		}
+		sessions = append(sessions, &ts)
+	}
+	return sessions, nil
+}
+
+// GetProgramSessionName returns the program block name (i.e. the session name)
+// for the given training session ID by joining training_sessions and program_blocks.
+func (s *Storage) GetProgramSessionName(sessionID string) (string, error) {
+	var sessionName string
+	query := `
+      SELECT pb.name
+      FROM training_sessions ts
+      JOIN program_blocks pb ON ts.program_block_id = pb.id
+      WHERE ts.id = ?
+    `
+	err := s.DB.QueryRow(query, sessionID).Scan(&sessionName)
+	if err != nil {
+		return "", err
+	}
+	return sessionName, nil
+}
+
 //
 // Helpers
 //

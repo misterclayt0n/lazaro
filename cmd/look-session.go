@@ -163,10 +163,17 @@ var lookSessionCmd = &cobra.Command{
 			sets := se.Sets
 			if len(sets) > 0 {
 				fmt.Println("   " + boldGreen("Sets:"))
-				fmt.Printf("      %-4s | %-12s | %-5s\n", "Set", "Weight (kg)", "Reps")
 				fmt.Println("      " + strings.Repeat("─", 30))
 				for j, set := range sets {
-					fmt.Printf("      %-4d | %-12.1f | %-5d\n", j+1, set.Weight, set.Reps)
+					var weightStr string
+					if set.Bodyweight {
+						weightStr = "Bodyweight   " // NOTE: Maintain alignment with hardcoded spaces
+					} else if set.Weight == 0 {
+						weightStr = "Not completed"
+					} else {
+						weightStr = fmt.Sprintf("%.1fkg", set.Weight)
+					}
+					fmt.Printf("      %-4d | %-12s | %-5d\n", j+1, weightStr, set.Reps)
 				}
 			} else {
 				fmt.Println("   " + magenta("No set data available."))
