@@ -72,34 +72,33 @@ var showSessionCmd = &cobra.Command{
 			strings.Repeat("─", prevColWidth) + "┘"
 
 		// Instead of a simple loop, use an index to allow grouping.
+		exCounter := 1
 		for i := 0; i < len(state.Exercises); {
 			se := state.Exercises[i]
 			// If this exercise is part of a superset, group consecutive exercises with Technique "superset"
 			if strings.EqualFold(se.Technique, models.TechniqueSuperset) {
-				group := []string{se.Exercise.Name}
-				groupIndices := []int{i} // remember indices if you want to display sets per exercise later
+				groupIndices := []int{i}
 				j := i + 1
 				for j < len(state.Exercises) {
 					next := state.Exercises[j]
 					if strings.EqualFold(next.Technique, models.TechniqueSuperset) &&
 						next.TechniqueGroup == se.TechniqueGroup {
-						group = append(group, next.Exercise.Name)
 						groupIndices = append(groupIndices, j)
 						j++
 					} else {
 						break
 					}
 				}
-				// Print the superset header.
-				fmt.Printf("%s (Group %d): %s\n", cyan("Superset"), se.TechniqueGroup, strings.Join(group, " / "))
-				// Then print each exercise in the superset with its set details.
+				// Print each exercise in the superset with its own number.
 				for _, idx := range groupIndices {
-					printExerciseDetails(state.Exercises[idx], tableIndent, setColWidth, targetColWidth, currentColWidth, prevColWidth, horizontalBorder, headerLine, midBorder, bottomBorder, cyan, yellow, red, green)
+					printExerciseDetailsWithIndex := printExerciseDetailsWithIndex // alias if needed
+					printExerciseDetailsWithIndex(state.Exercises[idx], exCounter, tableIndent, setColWidth, targetColWidth, currentColWidth, prevColWidth, horizontalBorder, headerLine, midBorder, bottomBorder, cyan, yellow, red, green)
+					exCounter++
 				}
 				i = j // jump to the next non-superset exercise
 			} else {
-				// Otherwise, print normally.
-				printExerciseDetails(se, tableIndent, setColWidth, targetColWidth, currentColWidth, prevColWidth, horizontalBorder, headerLine, midBorder, bottomBorder, cyan, yellow, red, green)
+				printExerciseDetailsWithIndex(state.Exercises[i], exCounter, tableIndent, setColWidth, targetColWidth, currentColWidth, prevColWidth, horizontalBorder, headerLine, midBorder, bottomBorder, cyan, yellow, red, green)
+				exCounter++
 				i++
 			}
 		}
@@ -181,6 +180,114 @@ func printExerciseDetails(se models.SessionExercise, tableIndent string, setColW
 			targetRep = se.TargetReps[setIdx]
 		}
 
+		// Append target RPE and RM% info.
+		var parts []string
+		if setIdx < len(se.TargetRPE) {
+			parts = append(parts, fmt.Sprintf("@%.1f", se.TargetRPE[setIdx]))
+		}
+		if setIdx < len(se.TargetRMPercent) && se.Program1RM != nil {
+			calculated := *se.Program1RM * (se.TargetRMPercent[setIdx] / 100)
+			parts = append(parts, fmt.Sprintf("@%.0f%% (%.1fkg)", se.TargetRMPercent[setIdx], calculated))
+		}
+		if len(parts) > 0 {
+			targetRep += " " + strings.Join(parts, "/")
+		}
+
+		splitRep := strings.SplitN(targetRep, " ", 2)
+		repsPart := splitRep[0]
+		modifiersPart := ""
+		if len(splitRep) > 1 {
+			modifiersPart = splitRep[1]
+		}
+
+		availableSpace := targetColWidth - len(modifiersPart)
+		if availableSpace < 0 {
+			availableSpace = 0
+		}
+
+		formattedReps := fmt.Sprintf("%-*s", availableSpace, repsPart)
+		formattedTarget := formattedReps + modifiersPart
+
+		fmt.Printf(tableIndent+"│%-*d│%-*s│%-*s│%-*s│\n",
+			setColWidth, setIdx+1,
+			targetColWidth, formattedTarget,
+			currentColWidth, setStr,
+			prevColWidth, prevSet,
+		)
+	}
+	fmt.Println(bottomBorder)
+	fmt.Println()
+}
+
+// New helper: printExerciseDetailsWithIndex prints a single exercise’s details with its index.
+func printExerciseDetailsWithIndex(se models.SessionExercise, idx int, tableIndent string, setColWidth, targetColWidth, currentColWidth, prevColWidth int, horizontalBorder, headerLine, midBorder, bottomBorder string, cyan, yellow, red, green func(a ...interface{}) string) {
+	ex := se.Exercise
+	var technique string
+	if se.Technique != "" {
+		technique = yellow("(Technique: " + se.Technique + ")")
+	}
+	// Print the exercise header using the provided index.
+	fmt.Printf("%d - %s %s\n", idx, cyan(ex.Name), technique)
+	// Optional metadata.
+	if !ex.LastPerformed.IsZero() {
+		fmt.Printf("   %s %s\n", cyan("Last performed:"), ex.LastPerformed.Format("2006-01-02"))
+	}
+	if ex.BestSet != nil {
+		fmt.Printf("   %s %.1fkg × %d (1RM: %.1fkg)\n",
+			cyan("All-time PR:"), ex.BestSet.Weight, ex.BestSet.Reps,
+			utils.CalculateEpley1RM(ex.BestSet.Weight, ex.BestSet.Reps))
+	}
+	if se.ProgramNotes != "" {
+		fmt.Printf("   %s %s\n", cyan("Program Notes:"), se.ProgramNotes)
+	}
+	if se.SessionNotes != "" {
+		fmt.Printf("   %s %s\n", green("Session Notes:"), se.SessionNotes)
+	}
+
+	// Print the table header for sets.
+	fmt.Println(horizontalBorder)
+	fmt.Println(headerLine)
+	fmt.Println(midBorder)
+
+	// Print each set.
+	for setIdx, set := range se.Sets {
+		// Build previous set string.
+		var prevSet string
+		if setIdx < len(se.PreviousSets) {
+			ps := se.PreviousSets[setIdx]
+			if ps.Weight == 0 && ps.Reps == 0 {
+				prevSet = "First time"
+			} else {
+				prevSet = fmt.Sprintf("%.1fkg × %d", ps.Weight, ps.Reps)
+			}
+		} else {
+			prevSet = "N/A"
+		}
+
+		// Build current set string.
+		var setStr string
+		if set.Bodyweight {
+			setStr = fmt.Sprintf("Bodyweight × %d", set.Reps)
+		} else if set.Weight == 0 {
+			setStr = "Not completed"
+		} else {
+			setStr = fmt.Sprintf("%.1fkg × %d", set.Weight, set.Reps)
+
+			existing1RM := float32(0)
+			if ex.BestSet != nil {
+				existing1RM = utils.CalculateEpley1RM(ex.BestSet.Weight, ex.BestSet.Reps)
+			}
+			current1RM := utils.CalculateEpley1RM(set.Weight, set.Reps)
+			if current1RM > existing1RM && !strings.EqualFold(se.Technique, models.TechniqueMyoreps) && !strings.EqualFold(se.Technique, models.TechniqueHell) {
+				setStr += " ★"
+			}
+		}
+
+		// Build target string.
+		var targetRep string
+		if setIdx < len(se.TargetReps) {
+			targetRep = se.TargetReps[setIdx]
+		}
 		// Append target RPE and RM% info.
 		var parts []string
 		if setIdx < len(se.TargetRPE) {
