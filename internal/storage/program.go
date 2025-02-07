@@ -455,3 +455,20 @@ func insertProgramExercises(ctx context.Context, tx *sql.Tx, blockID string, exe
 	}
 	return nil
 }
+
+// GetProgramNameForSession returns the program name for the given training session ID.
+func (s *Storage) GetProgramNameForSession(sessionID string) (string, error) {
+	var programName string
+	query := `
+      SELECT p.name
+      FROM training_sessions ts
+      JOIN program_blocks pb ON ts.program_block_id = pb.id
+      JOIN programs p ON pb.program_id = p.id
+      WHERE ts.id = ?
+    `
+	err := s.DB.QueryRow(query, sessionID).Scan(&programName)
+	if err != nil {
+		return "", err
+	}
+	return programName, nil
+}

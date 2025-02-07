@@ -107,7 +107,6 @@ var showSessionCmd = &cobra.Command{
 	},
 }
 
-// printExerciseDetails prints one SessionExercise's details (similar to your existing code).
 func printExerciseDetails(se models.SessionExercise, tableIndent string, setColWidth, targetColWidth, currentColWidth, prevColWidth int, horizontalBorder, headerLine, midBorder, bottomBorder string, cyan, yellow, red, green func(a ...interface{}) string) {
 	ex := se.Exercise
 	// Print exercise header.
@@ -140,7 +139,6 @@ func printExerciseDetails(se models.SessionExercise, tableIndent string, setColW
 	fmt.Println(headerLine)
 	fmt.Println(midBorder)
 
-	// Print each set (this is the same as your code).
 	for setIdx, set := range se.Sets {
 		// Build previous set string.
 		var prevSet string

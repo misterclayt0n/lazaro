@@ -28,7 +28,6 @@ var swapExerciseCmd = &cobra.Command{
 		exercise := &state.Exercises[idx-1]
 
 		// For this example, assume the allowed options are stored in a field in the SessionExercise.
-		// (You might copy over the Options from the ProgramExercise when starting the session.)
 		allowedOptions := exercise.Options
 
 		if len(allowedOptions) == 0 {

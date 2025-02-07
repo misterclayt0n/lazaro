@@ -252,6 +252,36 @@ func (s *Storage) GetProgramSessionName(sessionID string) (string, error) {
 	return sessionName, nil
 }
 
+// GetAllSessions retrieves all training sessions ordered by start time descending.
+func (s *Storage) GetAllSessions() ([]*models.TrainingSession, error) {
+	query := `
+        SELECT id, start_time, end_time, notes
+        FROM training_sessions
+        ORDER BY start_time DESC
+    `
+	rows, err := s.DB.Query(query)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var sessions []*models.TrainingSession
+	for rows.Next() {
+		var ts models.TrainingSession
+		var startStr, endStr string
+		if err := rows.Scan(&ts.ID, &startStr, &endStr, &ts.Notes); err != nil {
+			continue
+		}
+		ts.StartTime, _ = time.Parse(time.RFC3339, startStr)
+		if endStr != "" {
+			t, _ := time.Parse(time.RFC3339, endStr)
+			ts.EndTime = &t
+		}
+		sessions = append(sessions, &ts)
+	}
+	return sessions, nil
+}
+
 //
 // Helpers
 //

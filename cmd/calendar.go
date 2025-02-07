@@ -62,8 +62,6 @@ var calendarCmd = &cobra.Command{
 			day := s.StartTime.In(time.Local).Day()
 			sessionsByDay[day] = append(sessionsByDay[day], s)
 
-			// Use the program name from the training session’s Program field.
-			// (The helper function GetProgramSessionName looks it up via the session’s program_block_id.)
 			prog, err := st.GetProgramSessionName(s.ID)
 			if err != nil || strings.TrimSpace(prog) == "" {
 				prog = "Default"
