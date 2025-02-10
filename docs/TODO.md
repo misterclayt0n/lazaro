@@ -32,7 +32,4 @@
   - [x] Look for overall history of sessions -> All programs, per program, per day of program.
 - [x] Some silly meta data, some command like `status`, which shows info like total weight lifted, number of sessions, hours at the gym, week streak?
 - [x] Setup dev env with local db with sqlite3.
-- [ ] (Dumb idea) use sqlite as default, but create a command like `sync-db` that syncs a turso remote db with the local, kinda like github I guess...
-- [ ] UX changes:
-  - [x] Print numbers for exercise order in `show-session`.
-  - [ ] Probably big refactor, but show better error messages, sometimes even I get lost
+- [x] Print numbers for exercise order in `show-session`.
