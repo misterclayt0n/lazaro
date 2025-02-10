@@ -240,10 +240,21 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 							peID = generateID()
 							_, err = tx.ExecContext(ctx,
 								`INSERT INTO program_exercises
-								(id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, technique, technique_group)
-								VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-								peID, blockID, exerciseID, newEx.Sets, string(repsJSON),
-								string(targetRPEJSON), string(targetRMPercentJSON), newEx.ProgramNotes, newEx.Program1RM,
+						         (id, program_block_id, exercise_id, sets, reps, target_rpe, target_rm_percent, notes, program_1rm, options, technique, technique_group, order_index)
+						         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+								peID,
+								blockID,
+								exerciseID,
+								newEx.Sets,
+								string(repsJSON),
+								string(targetRPEJSON),
+								string(targetRMPercentJSON),
+								newEx.ProgramNotes,
+								newEx.Program1RM,
+								"[]",
+								newEx.Technique,
+								newEx.TechniqueGroup,
+								0,
 							)
 							if err != nil {
 								return fmt.Errorf("Failed to insert program exercise: %w", err)
