@@ -200,7 +200,7 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 				}
 
 				// Process exercises for this block.
-				for _, newEx := range newBlock.Exercises {
+				for index, newEx := range newBlock.Exercises {
 					var exerciseID string
 					err := tx.QueryRowContext(ctx,
 						"SELECT id FROM exercises WHERE name = ?",
@@ -225,6 +225,10 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 					targetRMPercentJSON, err := json.Marshal(newEx.TargetRMPercent)
 					if err != nil {
 						return fmt.Errorf("Failed to marshal target_rm_percent: %w", err)
+					}
+					optionsJSON, err := json.Marshal(newEx.Options)
+					if err != nil {
+						return fmt.Errorf("Failed to marshal options: %w", err)
 					}
 
 					// Check if a program_exercise for this exercise already exists in this block.
@@ -265,9 +269,18 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 					} else {
 						// Update the existing program exercise.
 						_, err = tx.ExecContext(ctx,
-							`UPDATE program_exercises SET sets = ?, reps = ?, target_rpe = ?, target_rm_percent = ?, notes = ?, program_1rm = ?, technique = ?, technique_group = ?
-							 WHERE id = ?`,
-							newEx.Sets, string(repsJSON), string(targetRPEJSON), string(targetRMPercentJSON), newEx.ProgramNotes, newEx.Program1RM, newEx.Technique, newEx.TechniqueGroup,
+							`UPDATE program_exercises SET sets = ?, reps = ?, target_rpe = ?, target_rm_percent = ?, notes = ?, program_1rm = ?, options = ?, technique = ?, technique_group = ?, order_index = ?
+						     WHERE id = ?`,
+							newEx.Sets,
+							string(repsJSON),
+							string(targetRPEJSON),
+							string(targetRMPercentJSON),
+							newEx.ProgramNotes,
+							newEx.Program1RM,
+							string(optionsJSON), // include options here
+							newEx.Technique,
+							newEx.TechniqueGroup,
+							index, // update the order_index based on TOML order
 							peID,
 						)
 						if err != nil {
@@ -310,7 +323,7 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 			}
 
 			// Process exercises in the block.
-			for _, newEx := range newBlock.Exercises {
+			for index, newEx := range newBlock.Exercises {
 				var exerciseID string
 				err := tx.QueryRowContext(ctx,
 					"SELECT id FROM exercises WHERE name = ?",
@@ -334,6 +347,10 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 				targetRMPercentJSON, err := json.Marshal(newEx.TargetRMPercent)
 				if err != nil {
 					return fmt.Errorf("Failed to marshal target_rm_percent: %w", err)
+				}
+				optionsJSON, err := json.Marshal(newEx.Options)
+				if err != nil {
+					return fmt.Errorf("Failed to marshal options: %w", err)
 				}
 
 				var peID string
@@ -359,9 +376,19 @@ func (s *Storage) UpdateProgram(tomlData []byte) error {
 					}
 				} else {
 					_, err = tx.ExecContext(ctx,
-						`UPDATE program_exercises SET sets = ?, reps = ?, target_rpe = ?, target_rm_percent = ?, notes = ?, program_1rm = ?, technique = ?, technique_group = ?
-                         WHERE id = ?`,
-						newEx.Sets, string(repsJSON), string(targetRPEJSON), string(targetRMPercentJSON), newEx.ProgramNotes, newEx.Program1RM, newEx.Technique, newEx.TechniqueGroup, peID,
+						`UPDATE program_exercises SET sets = ?, reps = ?, target_rpe = ?, target_rm_percent = ?, notes = ?, program_1rm = ?, options = ?, technique = ?, technique_group = ?, order_index = ?
+		        	     WHERE id = ?`,
+						newEx.Sets,
+						string(repsJSON),
+						string(targetRPEJSON),
+						string(targetRMPercentJSON),
+						newEx.ProgramNotes,
+						newEx.Program1RM,
+						string(optionsJSON),
+						newEx.Technique,
+						newEx.TechniqueGroup,
+						index, // Update the order_index using the loop index
+						peID,
 					)
 					if err != nil {
 						return fmt.Errorf("Failed to update program exercise: %w", err)
