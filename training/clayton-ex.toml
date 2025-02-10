@@ -1,0 +1,299 @@
+#
+# Chest
+#
+
+[[exercise]]
+name = "Bench Press"
+description = "Flat bench barbell press"
+primary_muscle = "Chest"
+
+[[exercise]]
+name = "Weighted Dip"
+description = "Full stretch with pause at the bottom always"
+primary_muscle = "Chest"
+
+[[exercise]]
+name = "Machine Incline Press"
+description = "Full stretch with pause at the bottom always, don't need to lock out to be consider a rep"
+primary_muscle = "Chest"
+
+[[exercise]]
+name = "Barbell Incline Press"
+description = "Pause the bar on the chest for 1 second"
+primary_muscle = "Chest"
+
+[[exercise]]
+name = "Fly Machine"
+description = "Try to stretch the pecs as much as possible"
+primary_muscle = "Chest"
+
+#
+# Back
+#
+
+[[exercise]]
+name = "Sumo Deadlift"
+description = "Yes"
+primary_muscle = "Back"
+
+[[exercise]]
+name = "Bent Over Row"
+description = "Stop at the bottom, full stretch"
+primary_muscle = "Back"
+
+[[exercise]]
+name = "Machine Row"
+description = "Full range of motion always with big stretch, pause for 1 second"
+primary_muscle = "Back"
+
+[[exercise]]
+name = "Cable Row"
+description = "Full range of motion always with big stretch, pause for 1 second"
+primary_muscle = "Back"
+
+[[exercise]]
+name = "Pull-Up"
+description = "Full stretch with pause at the bottom always"
+primary_muscle = "Back"
+
+[[exercise]]
+name = "Chin-Up"
+description = "Full stretch with pause at the bottom always"
+primary_muscle = "Back"
+
+[[exercise]]
+name = "Weighted Pull-Up"
+description = "Full stretch with pause at the bottom always"
+primary_muscle = "Back"
+
+#
+# Shoulders
+#
+
+[[exercise]]
+name = "Machine Overhead Press"
+description = "Don't need to lockout, but need full stretch"
+primary_muscle = "Shoulders"
+
+[[exercise]]
+name = "Barbell Overhead Press"
+description = "Pause at face level, drive with your shoulders"
+primary_muscle = "Shoulders"
+
+[[exercise]]
+name = "Cable Lateral Raise"
+description = "Can't go wrong, just deep stretch and control the reps"
+primary_muscle = "Shoulders"
+
+[[exercise]]
+name = "Seated Dumbbell Lateral Raise"
+description = "Try to be as stable as possible"
+primary_muscle = "Shoulders"
+
+[[exercise]]
+name = "Machine Lateral Raise"
+description = "Pause at the bottom"
+primary_muscle = "Shoulders"
+
+#
+# Triceps
+#
+
+[[exercise]]
+name = "Cable Overhead Tricep Extension"
+description = "Deep stretch, look for the elbows"
+primary_muscle = "Triceps"
+
+[[exercise]]
+name = "Dumbbell Skull Crusher"
+description = "Deep stretch, look for the elbows"
+primary_muscle = "Triceps"
+
+[[exercise]]
+name = "Barbell Skull Crusher"
+description = "Pause at the bottom, move your shoulders a bit to get more ROM"
+primary_muscle = "Triceps"
+
+[[exercise]]
+name = "JM Press"
+description = "Elbows up, kind of like you're punching the weight"
+primary_muscle = "Triceps"
+
+[[exercise]]
+name = "Smith JM Press"
+description = "Elbows up, kind of like you're punching the weight"
+primary_muscle = "Triceps"
+
+[[exercise]]
+name = "Tricep Pushdown"
+description = "Cable with the bar, stretch and 1 second pause at the top"
+primary_muscle = "Triceps"
+
+[[exercise]]
+name = "Rope Pushdown"
+description = "Stretch and 1 second pause at the top"
+primary_muscle = "Triceps"
+
+#
+# Biceps
+#
+
+[[exercise]]
+name = "Bayesian Cable Curl"
+description = "One arm at a time, lean forward"
+primary_muscle = "Biceps"
+
+[[exercise]]
+name = "Cable Curl"
+description = "Simple cable curl"
+primary_muscle = "Biceps"
+
+[[exercise]]
+name = "Standing Dumbbell Curl"
+description = "This can be bilateral or unilateral, but count as if bilateral"
+primary_muscle = "Biceps"
+
+[[exercise]]
+name = "Incline Dumbbell Curl"
+description = "This can be bilateral or unilateral, but count as if bilateral"
+primary_muscle = "Biceps"
+
+[[exercise]]
+name = "Dumbbell Hammer Curl"
+description = "This can be bilateral or unilateral, but count as if bilateral"
+primary_muscle = "Biceps"
+
+[[exercise]]
+name = "EZ Bar Preacher Curl"
+description = "Always go to absolute stretch and full ROM"
+primary_muscle = "Biceps"
+
+[[exercise]]
+name = "Standing EZ Bar Curl"
+description = "Minimize swing, cheating is allowed, just use common sense"
+primary_muscle = "Biceps"
+
+[[exercise]]
+name = "Cable Hammer Curl"
+description = "Minimize swing, cheating is allowed, just use common sense"
+primary_muscle = "Biceps"
+
+[[exercise]]
+name = "Reverse EZ Bar Curl"
+description = "Minimize swing, cheating is allowed, just use common sense"
+primary_muscle = "Biceps"
+
+#
+# Forearms
+#
+
+[[exercise]]
+name = "Reverse Wrist Curl"
+description = "Keep your forearm glued to your leg"
+primary_muscle = "Forearms"
+
+[[exercise]]
+name = "Dumbbell Wrist Curl"
+description = "Keep your forearm glued to your leg"
+primary_muscle = "Forearms"
+
+[[exercise]]
+name = "Cable Wrist Curl"
+description = "Do this on your back"
+primary_muscle = "Forearms"
+
+#
+# Quads
+#
+
+[[exercise]]
+name = "High Bar Squat"
+description = "Full depth barbell high bar back squat"
+primary_muscle = "Quadriceps"
+
+[[exercise]]
+name = "Single Leg Press"
+description = "Pause for 1 second at the bottom"
+primary_muscle = "Quadriceps"
+
+[[exercise]]
+name = "Machine Leg Press"
+description = "Pause for 1 second at the bottom"
+primary_muscle = "Quadriceps"
+
+[[exercise]]
+name = "Leg Press"
+description = "Pause for 1 second at the bottom"
+primary_muscle = "Quadriceps"
+
+[[exercise]]
+name = "Hack Squat"
+description = "Pause for 1 second at the bottom"
+primary_muscle = "Quadriceps"
+
+[[exercise]]
+name = "Belt Squat"
+description = "Pause for 1 second at the bottom"
+primary_muscle = "Quadriceps"
+
+[[exercise]]
+name = "Leg Extension"
+description = "Push the seat a bit back"
+primary_muscle = "Quadriceps"
+
+[[exercise]]
+name = "Sissy Squat"
+description = "Absolute stretch at the bottom"
+primary_muscle = "Quadriceps"
+
+#
+# Hamstrings
+#
+
+[[exercise]]
+name = "Lying Leg Curl"
+description = "Pause at the bottom for 1 second"
+primary_muscle = "Hamstrings"
+
+[[exercise]]
+name = "Seated Leg Curl"
+description = "Pause at the top for 1 second"
+primary_muscle = "Hamstrings"
+
+[[exercise]]
+name = "RDL"
+description = "Push hips back"
+primary_muscle = "Hamstrings"
+
+[[exercise]]
+name = "SLDL"
+description = "Dead stop at every rep"
+primary_muscle = "Hamstrings"
+
+#
+# Calves
+#
+
+[[exercise]]
+name = "Standing Smith Calf Raise"
+description = "Put a pad to go for a deep stretch on the calves"
+primary_muscle = "Calves"
+
+[[exercise]]
+name = "Leg Press Calf Raise"
+description = "No secret here"
+primary_muscle = "Calves"
+
+#
+# Abs
+#
+
+[[exercise]]
+name = "Machine Ab Crunch"
+description = "Breath out as you stretch and in as you crunch"
+primary_muscle = "Abs"
+
+[[exercise]]
+name = "Weighted Abs"
+description = "Breath out as you stretch and in as you crunch"
+primary_muscle = "Abs"

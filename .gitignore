@@ -1,7 +1,5 @@
 main
 lazaro
 .env
-berserk.toml
-clayton-ex.toml
 current_session.toml
-lazaro.db
+training/lazaro.db
