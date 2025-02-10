@@ -8,38 +8,20 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/misterclayt0n/lazaro/internal/config"
 
-	// _ "github.com/tursodatabase/libsql-client-go/libsql"  // Production.
-	_ "github.com/tursodatabase/go-libsql"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 type Storage struct {
 	DB *sql.DB
 }
 
+const dbConnStr string = "file:./lazaro.db?cache=shared&mode=rwc"
+
 func NewStorage() *Storage {
-	cfg, err := config.LoadConfig()
+	db, err := sql.Open("sqlite3", dbConnStr)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Failed to load configuration: %v\n", err)
-		os.Exit(1)
-	}
-
-	// Use the connection string from the configuration.
-	connStr := cfg.DB.ConnectionString
-	if connStr == "" {
-		fmt.Fprintln(os.Stderr, "Database connection string not set in configuration")
-		os.Exit(1)
-	}
-
-	// Hard-code a SQLite connection string for development.
-	// Uncomment the following lines to force using a local SQLite DB:
-	// connStr = "file:./local.db?cache=shared&mode=rwc"
-	db, err := sql.Open("libsql", connStr)
-
-	// db, err := sql.Open("libsql", connStr)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Failed to open db %s: %s", connStr, err)
+		fmt.Fprintf(os.Stderr, "Failed to open db %s: %s", dbConnStr, err)
 		os.Exit(1)
 	}
 

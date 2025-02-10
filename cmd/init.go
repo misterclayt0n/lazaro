@@ -3,80 +3,30 @@ package cmd
 import (
 	"database/sql"
 	"fmt"
-	"os"
-	"path/filepath"
 
-	"github.com/BurntSushi/toml"
-	"github.com/misterclayt0n/lazaro/internal/config"
+	_ "github.com/mattn/go-sqlite3" // required for SQLite
 	"github.com/misterclayt0n/lazaro/internal/storage"
 	"github.com/spf13/cobra"
 )
 
-var (
-	initDB bool // new flag to trigger DB initialization
-)
-
 var initSetupCmd = &cobra.Command{
-	Use:   "init-config",
-	Short: "Set up persistent configuration for Lazaro and optionally initialize the database",
+	Use:   "init",
+	Short: "Create the database file lazaro.db",
 	RunE: func(cmd *cobra.Command, args []string) error {
-		// If --init-db is passed, load the config and initialize the database tables.
-		if initDB {
-			cfg, err := config.LoadConfig()
-			if err != nil {
-				return fmt.Errorf("failed to load configuration: %w", err)
-			}
-			db, err := sql.Open("libsql", cfg.DB.ConnectionString)
-			if err != nil {
-				return fmt.Errorf("failed to open database: %w", err)
-			}
-			// Call the exported initialization function.
-			if err := storage.InitializeDB(db); err != nil {
-				return fmt.Errorf("failed to initialize database: %w", err)
-			}
-			fmt.Println("✅ Database initialized successfully")
-			return nil
-		}
-
-		// Otherwise, do the usual configuration setup:
-		var connString string
-		fmt.Print("Enter database connection string (e.g. libsql://[DATABASE].turso.io?authToken=[TOKEN]): ")
-		fmt.Scanln(&connString)
-
-		cfg := config.Config{
-			DB: config.DBConfig{
-				ConnectionString: connString,
-			},
-		}
-
-		path, err := config.GetConfigPath()
+		db, err := sql.Open("sqlite3", "file:./lazaro.db?cache=shared&mode=rwc")
 		if err != nil {
-			return err
+			return fmt.Errorf("Failed to open database: %w", err)
 		}
+		defer db.Close()
 
-		// Ensure the configuration directory exists.
-		dir := filepath.Dir(path)
-		if err := os.MkdirAll(dir, 0755); err != nil {
-			return err
+		if err := storage.InitializeDB(db); err != nil {
+			return fmt.Errorf("Failed to initialize database: %w", err)
 		}
-
-		f, err := os.Create(path)
-		if err != nil {
-			return err
-		}
-		defer f.Close()
-
-		if err := toml.NewEncoder(f).Encode(cfg); err != nil {
-			return err
-		}
-
-		fmt.Println("✅ Configuration saved successfully at", path)
+		fmt.Println("✅ Database initialized successfully as lazaro.db")
 		return nil
 	},
 }
 
 func init() {
-	// Add the new flag.
-	initSetupCmd.Flags().BoolVar(&initDB, "init-db", false, "Initialize the database tables")
 	rootCmd.AddCommand(initSetupCmd)
 }

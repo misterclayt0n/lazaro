@@ -13,10 +13,10 @@ import (
 
 var dayFilter string // Optional day (block name) filter.
 
-
 var showProgramCmd = &cobra.Command{
 	Use:   "show-program",
 	Short: "Display a visualization of an entire program (optionally filter by day)",
+	Args:  cobra.ExactArgs(1), // Require exactly one argument
 	RunE: func(cmd *cobra.Command, args []string) error {
 		programName := args[0]
 

@@ -2,21 +2,13 @@ package utils
 
 import (
 	"os"
-	"path/filepath"
 
 	"github.com/BurntSushi/toml"
 	"github.com/misterclayt0n/lazaro/internal/models"
 )
 
 func getSessionPath() (string, error) {
-	home, err := os.UserHomeDir()
-	if err != nil {
-		return "", err
-	}
-
-	dir := filepath.Join(home, ".config", "lazaro")
-	os.MkdirAll(dir, 0755)
-	return filepath.Join(dir, "current_session.toml"), nil
+	return "current_session.toml", nil // I have removed the whole config thing, so fuck it
 }
 
 func SaveSessionState(state *models.SessionState) error {
