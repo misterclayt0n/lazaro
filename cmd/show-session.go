@@ -241,6 +241,9 @@ func printExerciseDetailsWithIndex(se models.SessionExercise, idx int, tableInde
 	if se.SessionNotes != "" {
 		fmt.Printf("   %s %s\n", green("Session Notes:"), se.SessionNotes)
 	}
+	if len(se.Options) > 0 {
+        fmt.Printf("   %s %s\n", cyan("Available options:"), strings.Join(se.Options, ", "))
+	}
 
 	// Print the table header for sets.
 	fmt.Println(horizontalBorder)
