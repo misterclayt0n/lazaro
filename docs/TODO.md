@@ -33,6 +33,6 @@
 - [x] Setup dev env with local db with sqlite3.
 - [x] Print numbers for exercise order in `show-session`.
 - [ ] Be able to record sessions with specific dates (a command like `record-session` -- This should take again some sort of file).
-- [ ] Change `add-exercise` to add a new exercise during the current session (with no target).
+- [x] Change `add-exercise` to add a new exercise during the current session (with no target).
 - [ ] Add `add-set` to add a new set to a given exercise during a session (also no target).
 - [x] Change `edit-set` behavior, it should only accept the exercise index, weight and reps. with the set being an additional flag if needed.
