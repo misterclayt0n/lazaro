@@ -14,30 +14,62 @@ import (
 )
 
 var (
-	exerciseName        string
-	exerciseDesc        string
-	exerciseMuscle      string
+	exerciseName string
+	numSets      int
 )
 
 var addExerciseCmd = &cobra.Command{
 	Use:   "add-exercise",
 	Short: "Create a new exercise from the command line",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		if !utils.SessionExists() {
+			return fmt.Errorf("No active session")
+		}
+
 		st := storage.NewStorage()
 
-		exercise := models.Exercise{
-			ID:             uuid.New().String(),
-			Name:           exerciseName,
-			Description:    exerciseDesc,
-			PrimaryMuscle:  exerciseMuscle,
-			CreatedAt:      time.Now().UTC(),
+		exercise, err := st.GetExerciseByName(exerciseName)
+		if err != nil {
+			return fmt.Errorf("Exercise '%s' not found in database: %w", exerciseName, err)
 		}
 
-		if err := st.CreateExercise(exercise); err != nil {
-			return fmt.Errorf("Failed to create exercise: %w", err)
+		state, err := utils.LoadSessionState()
+		if err != nil {
+			return fmt.Errorf("Failed to load session state: %w", err)
 		}
 
-		fmt.Printf("✅ Created exercise: %s\n", exercise.Name)
+		// Try to get previous sets for this exercise (from the last valid session
+		// in the current program block). If none is found, prevSets remains nil.
+		var prevSets []models.ExerciseSet
+		prevSession, err := st.GetValidPreviousSession(exercise.ID, state.ProgramBlockID)
+		if err == nil && prevSession != nil {
+			prevSets = getSetsForExercise(prevSession, exercise.ID)
+		}
+		alignedPrevSets := utils.AlignPreviousSets(prevSets, numSets)
+
+		newSets := make([]models.ExerciseSet, numSets)
+		targetReps := make([]string, numSets)
+		targetRPE := make([]float32, numSets)
+		targetRMPercent := make([]float32, numSets)
+
+		newSessionExercise := models.SessionExercise{
+			ID:              uuid.New().String(),
+			Exercise:        *exercise,
+			Sets:            newSets,
+			PreviousSets:    alignedPrevSets,
+			ProgramNotes:    "",
+			SessionNotes:    "",
+			TargetReps:      targetReps,
+			TargetRPE:       targetRPE,
+			TargetRMPercent: targetRMPercent,
+		}
+
+		state.Exercises = append(state.Exercises, newSessionExercise)
+		if err := utils.SaveSessionState(state); err != nil {
+			return fmt.Errorf("Failed to update session state: %w", err)
+		}
+
+		fmt.Printf("✅ Added exercise '%s' with %d sets to the current session\n", exercise.Name, numSets)
 		return nil
 	},
 }
@@ -79,12 +111,10 @@ var importExercisesCmd = &cobra.Command{
 }
 
 func init() {
-	addExerciseCmd.Flags().StringVarP(&exerciseName, "name", "n", "", "Exercise name")
-	addExerciseCmd.Flags().StringVarP(&exerciseDesc, "description", "d", "", "Exercise description")
-	addExerciseCmd.Flags().StringVarP(&exerciseMuscle, "muscle", "m", "", "Primary muscle group")
-
+	addExerciseCmd.Flags().StringVarP(&exerciseName, "name", "n", "", "Exercise name (must already exist in the database)")
+	addExerciseCmd.Flags().IntVarP(&numSets, "sets", "s", 0, "Number of sets for this exercise")
 	addExerciseCmd.MarkFlagRequired("name")
-	addExerciseCmd.MarkFlagRequired("muscle")
+	addExerciseCmd.MarkFlagRequired("sets")
 
 	rootCmd.AddCommand(addExerciseCmd)
 	rootCmd.AddCommand(importExercisesCmd)
