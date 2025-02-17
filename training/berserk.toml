@@ -1,3 +1,5 @@
+# fix machine abs + calves + fly machine
+
 name = "Berserk"
 description = "Modifed version of candito's 6 week program in order to suit my personal needs. Become the greatest of all time, the absolute GOAT"
 
@@ -26,7 +28,7 @@ options = ["Machine Row"]
 [[weeks.blocks.exercises]]
 name = "Weighted Dip"
 sets = 3
-reps = ["4-8", "6-10", "AMRAP"]
+reps = ["4-8", "4-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -38,36 +40,36 @@ target_rpe = [10.0, 10.0, 10.0]
 [[weeks.blocks.exercises]]
 name = "Machine Overhead Press"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Barbell Overhead Press"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Overhead Tricep Extension"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Dumbbell Skull Crusher", "Barbell Skull Crusher"]
 
 [[weeks.blocks.exercises]]
 name = "Bayesian Cable Curl"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Cable Curl", "Standing Dumbbell Curl", "Incline Dumbbell Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Lateral Raise"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Dumbbell Lateral Raise"]
 
 [[weeks.blocks.exercises]]
 name = "Standing Smith Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Leg Press Calf Raise"]
 technique = "hell"
 
@@ -93,14 +95,14 @@ program_1rm = 200.0
 [[weeks.blocks.exercises]]
 name = "Lying Leg Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Leg Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Single Leg Press"
 sets = 2
-reps = ["8-12", "8-12"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Machine Leg Press", "Leg Press", "Hack Squat", "Belt Squat"]
 notes = "Take some rest between legs"
@@ -131,9 +133,9 @@ options = ["Weighted Abs"]
 
 [[weeks.blocks.exercises]]
 name = "Leg Press Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Standing Smith Calf Raise"]
 technique = "hell"
 
@@ -167,42 +169,42 @@ notes = "BW on the last set"
 [[weeks.blocks.exercises]]
 name = "Machine Incline Press"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Barbell Incline Press"]
 
 [[weeks.blocks.exercises]]
 name = "Machine Row"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Cable Row"]
 
 [[weeks.blocks.exercises]]
 name = "JM Press"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Smith JM Press", "Barbell Skull Crusher", "Dumbbell Skull Crusher"]
 
 [[weeks.blocks.exercises]]
 name = "EZ Bar Preacher Curl"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Standing EZ Bar Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Tricep Pushdown"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Rope Pushdown"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Hammer Curl"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Dumbbell Hammer Curl", "Reverse EZ Bar Curl"]
 
@@ -235,14 +237,14 @@ program_1rm = 200.0
 [[weeks.blocks.exercises]]
 name = "Seated Leg Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Lying Leg Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Leg Press"
 sets = 2
-reps = ["8-12", "8-12"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Machine Leg Press", "Single Leg Press", "Hack Squat", "Belt Squat"]
 
@@ -272,9 +274,9 @@ options = ["Weighted Abs"]
 
 [[weeks.blocks.exercises]]
 name = "Standing Smith Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Leg Press Calf Raise"]
 technique = "hell"
 
@@ -308,27 +310,27 @@ options = ["Chin-Up"]
 [[weeks.blocks.exercises]]
 name = "Barbell Skull Crusher"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["JM Press", "Dumbbell Skull Crusher", "Smith JM Press"]
 
 [[weeks.blocks.exercises]]
 name = "Standing EZ Bar Curl"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Standing Dumbbell Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Overhead Tricep Extension"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
 name = "Incline Dumbbell Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -350,10 +352,9 @@ technique = "hell"
 [[weeks.blocks.exercises]]
 name = "Seated Dumbbell Lateral Raise"
 sets = 3
-reps = ["AMRAP", "AMRAP", "AMRAP"]
+reps = ["6-8", "6-8", "6-8"]
 target_rpe = [10.0, 10.0, 10.0]
 options = ["Machine Lateral Raise"]
-technique = "hell"
 
 [[weeks.blocks.exercises]]
 name = "Cable Wrist Curl"
@@ -388,7 +389,7 @@ options = ["Machine Row"]
 [[weeks.blocks.exercises]]
 name = "Weighted Dip"
 sets = 3
-reps = ["4-8", "6-10", "AMRAP"]
+reps = ["4-8", "4-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -400,36 +401,36 @@ target_rpe = [10.0, 10.0, 10.0]
 [[weeks.blocks.exercises]]
 name = "Machine Overhead Press"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Barbell Overhead Press"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Overhead Tricep Extension"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Dumbbell Skull Crusher", "Barbell Skull Crusher"]
 
 [[weeks.blocks.exercises]]
 name = "Bayesian Cable Curl"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Cable Curl", "Standing Dumbbell Curl", "Incline Dumbbell Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Lateral Raise"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Dumbbell Lateral Raise"]
 
 [[weeks.blocks.exercises]]
 name = "Standing Smith Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Leg Press Calf Raise"]
 technique = "hell"
 
@@ -457,7 +458,7 @@ options = ["RDL"]
 [[weeks.blocks.exercises]]
 name = "Lying Leg Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Leg Curl"]
 
@@ -488,8 +489,8 @@ options = ["Weighted Abs"]
 [[weeks.blocks.exercises]]
 name = "Leg Press Calf Raise"
 sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Standing Smith Calf Raise"]
 technique = "hell"
 
@@ -523,42 +524,42 @@ notes = "BW on the last set"
 [[weeks.blocks.exercises]]
 name = "Machine Incline Press"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Barbell Incline Press"]
 
 [[weeks.blocks.exercises]]
 name = "Machine Row"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Cable Row"]
 
 [[weeks.blocks.exercises]]
 name = "JM Press"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Smith JM Press", "Barbell Skull Crusher", "Dumbbell Skull Crusher"]
 
 [[weeks.blocks.exercises]]
 name = "EZ Bar Preacher Curl"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Standing EZ Bar Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Tricep Pushdown"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Rope Pushdown"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Hammer Curl"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Dumbbell Hammer Curl", "Reverse EZ Bar Curl"]
 
@@ -576,9 +577,9 @@ description = "This day is really gonna suck, like, a lot"
 
 [[weeks.blocks.exercises]]
 name = "High Bar Squat"
-sets = 10
+sets = 11
 reps = ["10", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3"]
-target_rm_percent = [80, 80, 80, 80, 80, 80, 80, 80, 80, 80]
+target_rm_percent = [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80]
 program_1rm = 150.0
 notes = "Reduce weight by 5kg for the following sets. And follow the protocol:\n   If you did 10 reps - perform 10x3.\n   If you did 8-9 reps - perform 8x3.\n   If you did 7 reps - perform 5x3.\n   If you did less than 7 reps - skip backdowns and reduce 1rm by 2.5%"
 
@@ -593,7 +594,7 @@ options = ["RDL"]
 [[weeks.blocks.exercises]]
 name = "Lying Leg Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Leg Curl"]
 
@@ -623,9 +624,9 @@ options = ["Weighted Abs"]
 
 [[weeks.blocks.exercises]]
 name = "Leg Press Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Standing Smith Calf Raise"]
 technique = "hell"
 
@@ -659,27 +660,27 @@ options = ["Chin-Up"]
 [[weeks.blocks.exercises]]
 name = "Barbell Skull Crusher"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["JM Press", "Dumbbell Skull Crusher", "Smith JM Press"]
 
 [[weeks.blocks.exercises]]
 name = "Standing EZ Bar Curl"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Standing Dumbbell Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Overhead Tricep Extension"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
 name = "Incline Dumbbell Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -701,10 +702,9 @@ technique = "hell"
 [[weeks.blocks.exercises]]
 name = "Seated Dumbbell Lateral Raise"
 sets = 3
-reps = ["AMRAP", "AMRAP", "AMRAP"]
+reps = ["6-8", "6-8", "6-8"]
 target_rpe = [10.0, 10.0, 10.0]
 options = ["Machine Lateral Raise"]
-technique = "hell"
 
 [[weeks.blocks.exercises]]
 name = "Cable Wrist Curl"
@@ -739,7 +739,7 @@ options = ["Machine Row"]
 [[weeks.blocks.exercises]]
 name = "Weighted Dip"
 sets = 3
-reps = ["4-8", "6-10", "AMRAP"]
+reps = ["4-8", "4-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -751,36 +751,36 @@ target_rpe = [10.0, 10.0, 10.0]
 [[weeks.blocks.exercises]]
 name = "Machine Overhead Press"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Barbell Overhead Press"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Overhead Tricep Extension"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Dumbbell Skull Crusher", "Barbell Skull Crusher"]
 
 [[weeks.blocks.exercises]]
 name = "Bayesian Cable Curl"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Cable Curl", "Standing Dumbbell Curl", "Incline Dumbbell Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Lateral Raise"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Dumbbell Lateral Raise"]
 
 [[weeks.blocks.exercises]]
 name = "Standing Smith Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Leg Press Calf Raise"]
 technique = "hell"
 
@@ -806,14 +806,14 @@ program_1rm = 200.0
 [[weeks.blocks.exercises]]
 name = "Lying Leg Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Leg Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Single Leg Press"
 sets = 2
-reps = ["8-12", "8-12"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Machine Leg Press", "Leg Press", "Hack Squat", "Belt Squat"]
 notes = "Take some rest between legs"
@@ -844,9 +844,9 @@ options = ["Weighted Abs"]
 
 [[weeks.blocks.exercises]]
 name = "Leg Press Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Standing Smith Calf Raise"]
 technique = "hell"
 
@@ -880,42 +880,42 @@ notes = "BW on the last set"
 [[weeks.blocks.exercises]]
 name = "Machine Incline Press"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Barbell Incline Press"]
 
 [[weeks.blocks.exercises]]
 name = "Machine Row"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Cable Row"]
 
 [[weeks.blocks.exercises]]
 name = "JM Press"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Smith JM Press", "Barbell Skull Crusher", "Dumbbell Skull Crusher"]
 
 [[weeks.blocks.exercises]]
 name = "EZ Bar Preacher Curl"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Standing EZ Bar Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Tricep Pushdown"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Rope Pushdown"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Hammer Curl"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Dumbbell Hammer Curl", "Reverse EZ Bar Curl"]
 
@@ -948,14 +948,14 @@ options = ["RDL"]
 [[weeks.blocks.exercises]]
 name = "Seated Leg Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Lying Leg Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Leg Press"
 sets = 2
-reps = ["8-12", "8-12"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Machine Leg Press", "Single Leg Press", "Hack Squat", "Belt Squat"]
 
@@ -985,9 +985,9 @@ options = ["Weighted Abs"]
 
 [[weeks.blocks.exercises]]
 name = "Standing Smith Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Leg Press Calf Raise"]
 technique = "hell"
 
@@ -1020,27 +1020,27 @@ options = ["Chin-Up"]
 [[weeks.blocks.exercises]]
 name = "Barbell Skull Crusher"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6=8", "6=8"]
 target_rpe = [8.0, 8.0]
 options = ["JM Press", "Dumbbell Skull Crusher", "Smith JM Press"]
 
 [[weeks.blocks.exercises]]
 name = "Standing EZ Bar Curl"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6=8", "6=8"]
 target_rpe = [8.0, 8.0]
 options = ["Standing Dumbbell Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Overhead Tricep Extension"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
 name = "Incline Dumbbell Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -1062,10 +1062,9 @@ technique = "hell"
 [[weeks.blocks.exercises]]
 name = "Seated Dumbbell Lateral Raise"
 sets = 3
-reps = ["AMRAP", "AMRAP", "AMRAP"]
+reps = ["6-8", "6-8", "6-8"]
 target_rpe = [10.0, 10.0, 10.0]
 options = ["Machine Lateral Raise"]
-technique = "hell"
 
 [[weeks.blocks.exercises]]
 name = "Cable Wrist Curl"
@@ -1100,7 +1099,7 @@ options = ["Machine Row"]
 [[weeks.blocks.exercises]]
 name = "Weighted Dip"
 sets = 3
-reps = ["4-8", "6-10", "AMRAP"]
+reps = ["4-8", "4-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -1112,36 +1111,36 @@ target_rpe = [10.0, 10.0, 10.0]
 [[weeks.blocks.exercises]]
 name = "Machine Overhead Press"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Barbell Overhead Press"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Overhead Tricep Extension"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Dumbbell Skull Crusher", "Barbell Skull Crusher"]
 
 [[weeks.blocks.exercises]]
 name = "Bayesian Cable Curl"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Cable Curl", "Standing Dumbbell Curl", "Incline Dumbbell Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Lateral Raise"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Dumbbell Lateral Raise"]
 
 [[weeks.blocks.exercises]]
 name = "Standing Smith Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Leg Press Calf Raise"]
 technique = "hell"
 
@@ -1167,14 +1166,14 @@ options = ["RDL"]
 [[weeks.blocks.exercises]]
 name = "Lying Leg Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Leg Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Single Leg Press"
 sets = 2
-reps = ["8-12", "8-12"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Machine Leg Press", "Leg Press", "Hack Squat", "Belt Squat"]
 notes = "Take some rest between legs"
@@ -1205,9 +1204,9 @@ options = ["Weighted Abs"]
 
 [[weeks.blocks.exercises]]
 name = "Leg Press Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Standing Smith Calf Raise"]
 technique = "hell"
 
@@ -1241,42 +1240,42 @@ notes = "BW on the last set"
 [[weeks.blocks.exercises]]
 name = "Machine Incline Press"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Barbell Incline Press"]
 
 [[weeks.blocks.exercises]]
 name = "Machine Row"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Cable Row"]
 
 [[weeks.blocks.exercises]]
 name = "JM Press"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Smith JM Press", "Barbell Skull Crusher", "Dumbbell Skull Crusher"]
 
 [[weeks.blocks.exercises]]
 name = "EZ Bar Preacher Curl"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Standing EZ Bar Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Tricep Pushdown"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Rope Pushdown"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Hammer Curl"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Dumbbell Hammer Curl", "Reverse EZ Bar Curl"]
 
@@ -1299,6 +1298,67 @@ reps = ["3", "1-2"]
 target_rm_percent = [91.5, 95]
 program_1rm = 150.0
 
+[[weeks.blocks.exercises]]
+name = "Sumo Deadlift"
+sets = 2
+reps = ["3", "1-2"]
+target_rm_percent = [91.5, 95]
+program_1rm = 150.0
+
+[[weeks.blocks.exercises]]
+name = "Seated Leg Curl"
+sets = 3
+reps = ["6-8", "6-8", "AMRAP"]
+target_rpe = [8.0, 8.0, 10.0]
+options = ["Lying Leg Curl"]
+
+[[weeks.blocks.exercises]]
+name = "Leg Press"
+sets = 2
+reps = ["6-8", "6-8"]
+target_rpe = [8.0, 8.0]
+options = ["Machine Leg Press", "Single Leg Press", "Hack Squat", "Belt Squat"]
+
+[[weeks.blocks.exercises]]
+name = "Leg Extension"
+sets = 2
+reps = ["AMRAP", "AMRAP"]
+target_rpe = [10.0, 10.0]
+technique = "superset"
+group = 1
+
+[[weeks.blocks.exercises]]
+name = "Sissy Squat"
+sets = 2
+reps = ["AMRAP", "AMRAP"]
+target_rpe = [10.0, 10.0]
+technique = "superset"
+group = 1
+
+[[weeks.blocks.exercises]]
+name = "Machine Ab Crunch"
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
+technique = "hell"
+options = ["Weighted Abs"]
+
+[[weeks.blocks.exercises]]
+name = "Standing Smith Calf Raise"
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
+options = ["Leg Press Calf Raise"]
+technique = "hell"
+
+[[weeks.blocks.exercises]]
+name = "Cable Wrist Curl"
+sets = 3
+reps = ["AMRAP", "AMRAP", "AMRAP"]
+target_rpe = [10.0, 10.0, 10.0]
+options = ["Dumbbell Wrist Curl"]
+technique = "hell"
+
 # Week 4 Day 5
 [[weeks.blocks]]
 name = "Upper Day 3"
@@ -1307,7 +1367,7 @@ description = "Tertiary upper body day"
 [[weeks.blocks.exercises]]
 name = "Fly Machine"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -1320,27 +1380,27 @@ options = ["Chin-Up"]
 [[weeks.blocks.exercises]]
 name = "Barbell Skull Crusher"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["JM Press", "Dumbbell Skull Crusher", "Smith JM Press"]
 
 [[weeks.blocks.exercises]]
 name = "Standing EZ Bar Curl"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Standing Dumbbell Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Overhead Tricep Extension"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
 name = "Incline Dumbbell Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -1362,10 +1422,9 @@ technique = "hell"
 [[weeks.blocks.exercises]]
 name = "Seated Dumbbell Lateral Raise"
 sets = 3
-reps = ["AMRAP", "AMRAP", "AMRAP"]
+reps = ["6-8", "6-8", "6-8"]
 target_rpe = [10.0, 10.0, 10.0]
 options = ["Machine Lateral Raise"]
-technique = "hell"
 
 [[weeks.blocks.exercises]]
 name = "Cable Wrist Curl"
@@ -1401,7 +1460,7 @@ options = ["Machine Row"]
 [[weeks.blocks.exercises]]
 name = "Weighted Dip"
 sets = 3
-reps = ["4-8", "6-10", "AMRAP"]
+reps = ["4-8", "4-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -1413,36 +1472,36 @@ target_rpe = [10.0, 10.0, 10.0]
 [[weeks.blocks.exercises]]
 name = "Machine Overhead Press"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Barbell Overhead Press"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Overhead Tricep Extension"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Dumbbell Skull Crusher", "Barbell Skull Crusher"]
 
 [[weeks.blocks.exercises]]
 name = "Bayesian Cable Curl"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Cable Curl", "Standing Dumbbell Curl", "Incline Dumbbell Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Lateral Raise"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Dumbbell Lateral Raise"]
 
 [[weeks.blocks.exercises]]
 name = "Standing Smith Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Leg Press Calf Raise"]
 technique = "hell"
 
@@ -1469,14 +1528,14 @@ program_1rm = 200.0
 [[weeks.blocks.exercises]]
 name = "Lying Leg Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Leg Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Single Leg Press"
 sets = 2
-reps = ["8-12", "8-12"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Machine Leg Press", "Leg Press", "Hack Squat", "Belt Squat"]
 notes = "Take some rest between legs"
@@ -1507,9 +1566,9 @@ options = ["Weighted Abs"]
 
 [[weeks.blocks.exercises]]
 name = "Leg Press Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Standing Smith Calf Raise"]
 technique = "hell"
 
@@ -1529,7 +1588,7 @@ description = "Secondary upper body day"
 [[weeks.blocks.exercises]]
 name = "Barbell Incline Press"
 sets = 3
-reps = ["6-10", "6-10", "6-10"]
+reps = ["6-8", "6-8", "6-8"]
 target_rpe = [8.0, 8.0, 8.0]
 options = ["Machine Incline Press"]
 
@@ -1543,42 +1602,42 @@ notes = "BW on the last set"
 [[weeks.blocks.exercises]]
 name = "Machine Incline Press"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Barbell Incline Press"]
 
 [[weeks.blocks.exercises]]
 name = "Machine Row"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Cable Row"]
 
 [[weeks.blocks.exercises]]
 name = "JM Press"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Smith JM Press", "Barbell Skull Crusher", "Dumbbell Skull Crusher"]
 
 [[weeks.blocks.exercises]]
 name = "EZ Bar Preacher Curl"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Standing EZ Bar Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Tricep Pushdown"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Rope Pushdown"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Hammer Curl"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Dumbbell Hammer Curl", "Reverse EZ Bar Curl"]
 
@@ -1604,14 +1663,14 @@ notes = "Rep the fuck out of this shit"
 [[weeks.blocks.exercises]]
 name = "Seated Leg Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Lying Leg Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Leg Press"
 sets = 2
-reps = ["8-12", "8-12"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Machine Leg Press", "Single Leg Press", "Hack Squat", "Belt Squat"]
 
@@ -1641,9 +1700,9 @@ options = ["Weighted Abs"]
 
 [[weeks.blocks.exercises]]
 name = "Standing Smith Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Leg Press Calf Raise"]
 technique = "hell"
 
@@ -1663,7 +1722,7 @@ description = "Tertiary upper body day"
 [[weeks.blocks.exercises]]
 name = "Fly Machine"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -1676,27 +1735,27 @@ options = ["Chin-Up"]
 [[weeks.blocks.exercises]]
 name = "Barbell Skull Crusher"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["JM Press", "Dumbbell Skull Crusher", "Smith JM Press"]
 
 [[weeks.blocks.exercises]]
 name = "Standing EZ Bar Curl"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Standing Dumbbell Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Overhead Tricep Extension"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
 name = "Incline Dumbbell Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -1718,10 +1777,9 @@ technique = "hell"
 [[weeks.blocks.exercises]]
 name = "Seated Dumbbell Lateral Raise"
 sets = 3
-reps = ["AMRAP", "AMRAP", "AMRAP"]
+reps = ["6-8", "6-8", "6-8"]
 target_rpe = [10.0, 10.0, 10.0]
 options = ["Machine Lateral Raise"]
-technique = "hell"
 
 [[weeks.blocks.exercises]]
 name = "Cable Wrist Curl"
@@ -1757,7 +1815,7 @@ options = ["Machine Row"]
 [[weeks.blocks.exercises]]
 name = "Weighted Dip"
 sets = 3
-reps = ["4-8", "6-10", "AMRAP"]
+reps = ["4-8", "4-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -1769,36 +1827,36 @@ target_rpe = [10.0, 10.0, 10.0]
 [[weeks.blocks.exercises]]
 name = "Machine Overhead Press"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Barbell Overhead Press"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Overhead Tricep Extension"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Dumbbell Skull Crusher", "Barbell Skull Crusher"]
 
 [[weeks.blocks.exercises]]
 name = "Bayesian Cable Curl"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Cable Curl", "Standing Dumbbell Curl", "Incline Dumbbell Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Lateral Raise"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Dumbbell Lateral Raise"]
 
 [[weeks.blocks.exercises]]
 name = "Standing Smith Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Leg Press Calf Raise"]
 technique = "hell"
 
@@ -1825,14 +1883,14 @@ program_1rm = 200.0
 [[weeks.blocks.exercises]]
 name = "Lying Leg Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Seated Leg Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Single Leg Press"
 sets = 2
-reps = ["8-12", "8-12"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Machine Leg Press", "Leg Press", "Hack Squat", "Belt Squat"]
 notes = "Take some rest between legs"
@@ -1863,9 +1921,9 @@ options = ["Weighted Abs"]
 
 [[weeks.blocks.exercises]]
 name = "Leg Press Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Standing Smith Calf Raise"]
 technique = "hell"
 
@@ -1885,7 +1943,7 @@ description = "Secondary upper body day"
 [[weeks.blocks.exercises]]
 name = "Barbell Incline Press"
 sets = 3
-reps = ["6-10", "6-10", "6-10"]
+reps = ["6-8", "6-8", "6-8"]
 target_rpe = [8.0, 8.0, 8.0]
 options = ["Machine Incline Press"]
 
@@ -1899,42 +1957,42 @@ notes = "BW on the last set"
 [[weeks.blocks.exercises]]
 name = "Machine Incline Press"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Barbell Incline Press"]
 
 [[weeks.blocks.exercises]]
 name = "Machine Row"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Cable Row"]
 
 [[weeks.blocks.exercises]]
 name = "JM Press"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Smith JM Press", "Barbell Skull Crusher", "Dumbbell Skull Crusher"]
 
 [[weeks.blocks.exercises]]
 name = "EZ Bar Preacher Curl"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Standing EZ Bar Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Tricep Pushdown"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Rope Pushdown"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Hammer Curl"
 sets = 3
-reps = ["6-10", "6-10", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Dumbbell Hammer Curl", "Reverse EZ Bar Curl"]
 
@@ -1960,14 +2018,14 @@ notes = "New 1RM"
 [[weeks.blocks.exercises]]
 name = "Seated Leg Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 options = ["Lying Leg Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Leg Press"
 sets = 2
-reps = ["8-12", "8-12"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Machine Leg Press", "Single Leg Press", "Hack Squat", "Belt Squat"]
 
@@ -1997,9 +2055,9 @@ options = ["Weighted Abs"]
 
 [[weeks.blocks.exercises]]
 name = "Standing Smith Calf Raise"
-sets = 3
-reps = ["10-15", "10-15", "10-15"]
-target_rpe = [10.0, 10.0, 10.0]
+sets = 2
+reps = ["10-15", "10-15"]
+target_rpe = [10.0, 10.0]
 options = ["Leg Press Calf Raise"]
 technique = "hell"
 
@@ -2019,7 +2077,7 @@ description = "Tertiary upper body day"
 [[weeks.blocks.exercises]]
 name = "Fly Machine"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -2032,27 +2090,27 @@ options = ["Chin-Up"]
 [[weeks.blocks.exercises]]
 name = "Barbell Skull Crusher"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["JM Press", "Dumbbell Skull Crusher", "Smith JM Press"]
 
 [[weeks.blocks.exercises]]
 name = "Standing EZ Bar Curl"
 sets = 2
-reps = ["6-10", "6-10"]
+reps = ["6-8", "6-8"]
 target_rpe = [8.0, 8.0]
 options = ["Standing Dumbbell Curl"]
 
 [[weeks.blocks.exercises]]
 name = "Cable Overhead Tricep Extension"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
 name = "Incline Dumbbell Curl"
 sets = 3
-reps = ["8-12", "8-12", "AMRAP"]
+reps = ["6-8", "6-8", "AMRAP"]
 target_rpe = [8.0, 8.0, 10.0]
 
 [[weeks.blocks.exercises]]
@@ -2074,10 +2132,9 @@ technique = "hell"
 [[weeks.blocks.exercises]]
 name = "Seated Dumbbell Lateral Raise"
 sets = 3
-reps = ["AMRAP", "AMRAP", "AMRAP"]
+reps = ["6-8", "6-8", "6-8"]
 target_rpe = [10.0, 10.0, 10.0]
 options = ["Machine Lateral Raise"]
-technique = "hell"
 
 [[weeks.blocks.exercises]]
 name = "Cable Wrist Curl"
