@@ -1,0 +1,5729 @@
+[[exercise_sets]]
+  bodyweight = 0
+  id = "84b46bff-67e8-42ea-9705-be1455f386b3"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "e3f49428-34dc-4d92-b19d-2e3389bc3784"
+  timestamp = "2025-02-10T17:48:51Z"
+  weight = 55.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "a29d34a3-1209-4db7-8437-1f4831fea220"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "e3f49428-34dc-4d92-b19d-2e3389bc3784"
+  timestamp = "2025-02-10T17:54:06Z"
+  weight = 75.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "6b19ff74-e222-4d3a-b6bb-549498d7b7b7"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "e3f49428-34dc-4d92-b19d-2e3389bc3784"
+  timestamp = "2025-02-10T18:00:41Z"
+  weight = 80.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "5ede3792-2a04-45ec-ac48-75a6a3103864"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "e3f49428-34dc-4d92-b19d-2e3389bc3784"
+  timestamp = "2025-02-10T18:00:49Z"
+  weight = 85.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "9b542dec-abdc-46bb-b97e-731de26b4b19"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "a0c50d8b-938b-4091-96d3-5c644639e8d5"
+  timestamp = "2025-02-10T18:10:16Z"
+  weight = 110.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "4c8ac119-7107-455b-b4ee-a1ac880c0351"
+  ignore_for_one_rm = 0
+  reps = 9
+  session_exercise_id = "a0c50d8b-938b-4091-96d3-5c644639e8d5"
+  timestamp = "2025-02-10T18:14:02Z"
+  weight = 85.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "57961098-ecd7-4988-9e5a-4470e29e8566"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "a0c50d8b-938b-4091-96d3-5c644639e8d5"
+  timestamp = "2025-02-10T18:18:37Z"
+  weight = 85.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "e403a599-b014-4dd7-b00a-e31261b13eb2"
+  ignore_for_one_rm = 0
+  reps = 11
+  session_exercise_id = "a0c50d8b-938b-4091-96d3-5c644639e8d5"
+  timestamp = "2025-02-10T18:26:29Z"
+  weight = 65.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "5ab01835-d04e-498b-82f4-3763a408d8bf"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "98a8acf8-20b3-4e66-8d65-c5ebf12859e6"
+  timestamp = "2025-02-10T18:26:44Z"
+  weight = 20.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f4973452-54da-42df-ba0c-34a6536d350f"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "98a8acf8-20b3-4e66-8d65-c5ebf12859e6"
+  timestamp = "2025-02-10T18:30:11Z"
+  weight = 20.0
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "39508e4c-e5f5-4749-b623-34cc741f6b02"
+  ignore_for_one_rm = 0
+  reps = 14
+  session_exercise_id = "98a8acf8-20b3-4e66-8d65-c5ebf12859e6"
+  timestamp = "2025-02-10T18:30:16Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "ed7149ec-5d51-4b6e-8bab-d58cfb768d18"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "3dd4bfa5-1a70-4de7-b367-0fdd69c04f47"
+  timestamp = "2025-02-10T18:31:40Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "5c591f1e-2b64-47b1-8c46-c6f04193277e"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "3dd4bfa5-1a70-4de7-b367-0fdd69c04f47"
+  timestamp = "2025-02-10T18:33:40Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "7f1e3c0c-fa86-4e30-8887-4b296c83a53e"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "3dd4bfa5-1a70-4de7-b367-0fdd69c04f47"
+  timestamp = "2025-02-10T18:35:24Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "41634067-66bf-4764-bd17-8a9a4a5e178b"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "0faebde5-b9ff-4755-80bf-3b1efe6358cf"
+  timestamp = "2025-02-10T18:37:38Z"
+  weight = 58.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "98a489e2-59d8-46a0-ba04-77f969a5428d"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "0faebde5-b9ff-4755-80bf-3b1efe6358cf"
+  timestamp = "2025-02-10T18:39:29Z"
+  weight = 58.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "127eb212-f596-4ce0-b1b0-3f4b06d793b7"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "d46aef57-f02a-44b7-a427-786fd69d3d75"
+  timestamp = "2025-02-10T18:48:42Z"
+  weight = 32.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "c94ea947-3cef-4023-989b-94e923c32432"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "d46aef57-f02a-44b7-a427-786fd69d3d75"
+  timestamp = "2025-02-10T18:50:28Z"
+  weight = 32.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "0fd3e83a-3010-439d-80d1-1c88a17372f5"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "d46aef57-f02a-44b7-a427-786fd69d3d75"
+  timestamp = "2025-02-10T18:52:34Z"
+  weight = 32.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "fc1fe049-868c-4233-88bb-739465d4a676"
+  ignore_for_one_rm = 0
+  reps = 9
+  session_exercise_id = "e938f235-f0ae-484c-a2fe-56cef5592d1b"
+  timestamp = "2025-02-10T18:43:12Z"
+  weight = 15.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7d9fffa5-6a37-4426-b1a2-2e7e0650c8f3"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "e938f235-f0ae-484c-a2fe-56cef5592d1b"
+  timestamp = "2025-02-10T18:45:10Z"
+  weight = 15.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "9dafd3ea-fb65-46cd-a704-ebdb1b71c0b7"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "e938f235-f0ae-484c-a2fe-56cef5592d1b"
+  timestamp = "2025-02-10T18:46:56Z"
+  weight = 15.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "6738f756-d2e2-40a3-8aab-07ac89af98bf"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "8f8dc7cc-11f3-45f8-b26f-d8fe8fea4807"
+  timestamp = "2025-02-10T18:54:37Z"
+  weight = 7.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b0dab271-0e08-4b52-8524-36646e3d096b"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "8f8dc7cc-11f3-45f8-b26f-d8fe8fea4807"
+  timestamp = "2025-02-10T18:56:41Z"
+  weight = 7.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f82b5463-b437-4e42-8e10-00d665f630b6"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "8f8dc7cc-11f3-45f8-b26f-d8fe8fea4807"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "6e6e85a9-11c4-4cba-aa0b-d7f17407f393"
+  ignore_for_one_rm = 1
+  reps = 19
+  session_exercise_id = "635dd983-2e08-464d-b563-8cbcf6448097"
+  timestamp = "2025-02-10T19:03:48Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "0bf4de69-dfd1-462c-b855-56394f4c550f"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "7c7009dc-50ec-42a1-b6ac-1266707a59ed"
+  timestamp = "2025-02-11T19:42:15Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "13ae74dd-1b69-498c-95a1-7bee37f49c4e"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "7c7009dc-50ec-42a1-b6ac-1266707a59ed"
+  timestamp = "2025-02-11T19:47:59Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1fd3e010-0436-4f52-8963-da23eca5cbea"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "7c7009dc-50ec-42a1-b6ac-1266707a59ed"
+  timestamp = "2025-02-11T19:57:44Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "dad235bf-9d16-4a6c-bc39-05ca8a1a4fdc"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "7c7009dc-50ec-42a1-b6ac-1266707a59ed"
+  timestamp = "2025-02-11T20:00:42Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "c8ad5992-d583-4c45-a375-0185461f2ac5"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "aff63c41-555b-4e91-8b08-733ac9945d47"
+  timestamp = "2025-02-11T20:14:24Z"
+  weight = 160.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "57fdd9e0-3e71-4f74-9ac7-82e9f7faf33d"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "aff63c41-555b-4e91-8b08-733ac9945d47"
+  timestamp = "2025-02-11T20:24:52Z"
+  weight = 160.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2782dac9-dff0-4383-991d-64eeb3efe877"
+  ignore_for_one_rm = 0
+  reps = 9
+  session_exercise_id = "c20dd575-b2f3-48a7-aaed-66e187a26973"
+  timestamp = "2025-02-11T20:26:28Z"
+  weight = 60.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7bdfecf8-6f96-404b-97c7-f8937b1c4b60"
+  ignore_for_one_rm = 0
+  reps = 12
+  session_exercise_id = "c20dd575-b2f3-48a7-aaed-66e187a26973"
+  timestamp = "2025-02-11T20:28:25Z"
+  weight = 60.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1c2e3dae-b1f4-4c4d-afba-6f5b9566c6ec"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "c20dd575-b2f3-48a7-aaed-66e187a26973"
+  timestamp = "2025-02-11T20:30:44Z"
+  weight = 60.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "302066a0-cdbd-459d-b6e5-8e389e2991bb"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "2e5794c4-4920-4bb0-9006-60bca1622b3d"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "eb0b70e2-77c6-4ac9-a215-8a899d38070e"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "2e5794c4-4920-4bb0-9006-60bca1622b3d"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "23ca9497-3130-4a9b-9fe0-bde83cb348c2"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "173711f5-42ac-40b8-b9ab-04cb78e29fe1"
+  timestamp = "2025-02-11T20:33:01Z"
+  weight = 85.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "89382a62-91ce-48b6-b338-b05f0340e4b3"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "173711f5-42ac-40b8-b9ab-04cb78e29fe1"
+  timestamp = "2025-02-11T20:35:36Z"
+  weight = 85.5
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "fb1e5a1c-0c2b-45bb-af81-2fa23d6da83a"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "929a2a2c-ddaa-4e22-9e74-98328578d331"
+  timestamp = "2025-02-11T20:33:12Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "a896de70-3a58-4593-8acd-6ead5bc2b47c"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "929a2a2c-ddaa-4e22-9e74-98328578d331"
+  timestamp = "2025-02-11T20:35:39Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "20936e34-0fe4-49f6-beb5-d0d28eee3ec6"
+  ignore_for_one_rm = 1
+  reps = 8
+  session_exercise_id = "3da71f5c-120b-43cd-a96d-ca273b66ac34"
+  timestamp = "2025-02-11T20:45:13Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "80efa618-2029-44b0-bcd8-7cd43584db7f"
+  ignore_for_one_rm = 1
+  reps = 11
+  session_exercise_id = "3da71f5c-120b-43cd-a96d-ca273b66ac34"
+  timestamp = "2025-02-11T20:47:32Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "4c195313-c767-4c76-ad0f-eff4d5c4439a"
+  ignore_for_one_rm = 1
+  reps = 0
+  session_exercise_id = "1ba2acc9-a078-4075-ac08-cadb711b2d46"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "6655d889-71e3-4d10-b44d-9b8e02532d12"
+  ignore_for_one_rm = 1
+  reps = 0
+  session_exercise_id = "1ba2acc9-a078-4075-ac08-cadb711b2d46"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "a368a135-06ac-4f6c-b447-b1cac1b31db1"
+  ignore_for_one_rm = 1
+  reps = 0
+  session_exercise_id = "1ba2acc9-a078-4075-ac08-cadb711b2d46"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "43b4512c-f9db-49be-b2d7-bc852d4f0e52"
+  ignore_for_one_rm = 1
+  reps = 23
+  session_exercise_id = "b1b5b7a5-a255-4297-9eca-55af8b383816"
+  timestamp = "2025-02-11T20:38:53Z"
+  weight = 35.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "8626701b-ad70-4bd4-9d04-0e9eee5c15a6"
+  ignore_for_one_rm = 1
+  reps = 22
+  session_exercise_id = "b1b5b7a5-a255-4297-9eca-55af8b383816"
+  timestamp = "2025-02-11T20:41:03Z"
+  weight = 35.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2820f5b0-55e9-47af-88f3-527ecded9698"
+  ignore_for_one_rm = 1
+  reps = 14
+  session_exercise_id = "b1b5b7a5-a255-4297-9eca-55af8b383816"
+  timestamp = "2025-02-11T20:43:12Z"
+  weight = 35.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "33be09cf-78a0-4640-af5a-aaf4e713c7ab"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "b3b9820b-600f-4596-94c0-659c9aba54ef"
+  timestamp = "2025-02-12T20:17:31Z"
+  weight = 55.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "d01ce2af-ed87-4b8a-9214-1f3a38e4bf0e"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "b3b9820b-600f-4596-94c0-659c9aba54ef"
+  timestamp = "2025-02-12T20:20:33Z"
+  weight = 75.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "be369b74-8535-4b29-9f38-615970edf36a"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "b3b9820b-600f-4596-94c0-659c9aba54ef"
+  timestamp = "2025-02-12T20:23:02Z"
+  weight = 80.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b2b00d49-d771-4d5b-8d1e-8770abe259fa"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "b3b9820b-600f-4596-94c0-659c9aba54ef"
+  timestamp = "2025-02-12T20:27:09Z"
+  weight = 85.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "6ead64e6-1264-4633-bf04-7f784a34514d"
+  ignore_for_one_rm = 0
+  reps = 3
+  session_exercise_id = "b060cfe6-8af0-4ef1-af6b-ecca5c1b6222"
+  timestamp = "2025-02-12T20:33:02Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b2630134-47fb-4b8a-90ce-20873b7a7067"
+  ignore_for_one_rm = 0
+  reps = 3
+  session_exercise_id = "b060cfe6-8af0-4ef1-af6b-ecca5c1b6222"
+  timestamp = "2025-02-12T20:33:06Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "c5b5d6b8-e2ee-4019-be2a-14758aac8750"
+  ignore_for_one_rm = 0
+  reps = 11
+  session_exercise_id = "b060cfe6-8af0-4ef1-af6b-ecca5c1b6222"
+  timestamp = "2025-02-12T20:35:58Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "ac2e0832-f483-47d8-ab41-f2ae90406c57"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "43f67c0f-dd17-4e7e-9ddf-2084d945b8a3"
+  timestamp = "2025-02-12T20:40:41Z"
+  weight = 80.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2080be04-e30f-4c62-9557-0a28c01f25d1"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "43f67c0f-dd17-4e7e-9ddf-2084d945b8a3"
+  timestamp = "2025-02-12T20:40:42Z"
+  weight = 80.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "ac4ac782-74f9-4c21-a034-73bc7655c765"
+  ignore_for_one_rm = 0
+  reps = 9
+  session_exercise_id = "43f67c0f-dd17-4e7e-9ddf-2084d945b8a3"
+  timestamp = "2025-02-12T20:45:02Z"
+  weight = 80.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "8c9614c7-7f18-471b-9bde-2f8ccf507538"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "5ba789ba-fe7b-45fd-aac1-baf4db91902d"
+  timestamp = "2025-02-12T20:48:26Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "d88d978b-d674-4034-a686-66eca825e16b"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "5ba789ba-fe7b-45fd-aac1-baf4db91902d"
+  timestamp = "2025-02-12T20:50:27Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "8ad3bba7-7859-480f-9278-132ec04a2628"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "5ba789ba-fe7b-45fd-aac1-baf4db91902d"
+  timestamp = "2025-02-12T20:53:39Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "895c2b72-fd00-4bea-a00e-6ed5840e5948"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "235890bc-548e-4f7f-99cc-5766d1354fd2"
+  timestamp = "2025-02-12T20:56:32Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1e64aaaa-6027-495c-bd44-1b8a16383627"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "235890bc-548e-4f7f-99cc-5766d1354fd2"
+  timestamp = "2025-02-12T20:59:01Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2f883516-494d-4dba-acd8-43a0a2dc6310"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "0adc3993-5fa9-4206-a21f-2ccf07322577"
+  timestamp = "2025-02-12T21:03:22Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7c57cef4-9d7b-4be7-bb59-c6cfcf221d77"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "0adc3993-5fa9-4206-a21f-2ccf07322577"
+  timestamp = "2025-02-12T21:06:54Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1575681e-e8c3-4a03-9a48-3ca2762d1f49"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "fec80ef7-375d-4ce5-a915-3e1ee5c1af55"
+  timestamp = "2025-02-12T21:10:44Z"
+  weight = 32.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2b851ac4-ccf3-49ae-829c-c2d00c9b4fb5"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "fec80ef7-375d-4ce5-a915-3e1ee5c1af55"
+  timestamp = "2025-02-12T21:12:58Z"
+  weight = 32.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1af0e479-143b-4892-8d29-3c7a631e8276"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "fec80ef7-375d-4ce5-a915-3e1ee5c1af55"
+  timestamp = "2025-02-12T21:15:13Z"
+  weight = 32.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "12dd88ac-3585-4de9-bdfe-dbe15b714186"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "299a15fe-bf82-4914-8588-50695c837b5d"
+  timestamp = "2025-02-12T21:16:56Z"
+  weight = 18.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b1e521d2-243f-4484-840c-19b2be31fece"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "299a15fe-bf82-4914-8588-50695c837b5d"
+  timestamp = "2025-02-12T21:18:38Z"
+  weight = 18.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f0e219ef-7b80-4220-b6e4-addd992fabaf"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "299a15fe-bf82-4914-8588-50695c837b5d"
+  timestamp = "2025-02-12T21:20:52Z"
+  weight = 18.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2e23084f-6730-4daf-87aa-25ef7f107078"
+  ignore_for_one_rm = 1
+  reps = 0
+  session_exercise_id = "4d94658d-62a4-47f1-9ece-08bae4615052"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "5cdb58e1-397a-4430-b013-14975ef04138"
+  ignore_for_one_rm = 1
+  reps = 0
+  session_exercise_id = "4d94658d-62a4-47f1-9ece-08bae4615052"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "e08be59b-dfc1-4bd6-80c8-63bc3f7b9763"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "54e15b5c-0592-4b5b-afae-9cd591e528eb"
+  timestamp = "2025-02-13T18:08:15Z"
+  weight = 105.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "342d8c09-1a6d-49bd-995a-7cefb0d9d34a"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "54e15b5c-0592-4b5b-afae-9cd591e528eb"
+  timestamp = "2025-02-13T18:13:24Z"
+  weight = 105.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1b9fa77b-1fcc-4b03-a40c-557e1b15bf76"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "54e15b5c-0592-4b5b-afae-9cd591e528eb"
+  timestamp = "2025-02-13T18:19:07Z"
+  weight = 105.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "fa2cda9c-68af-42e7-8fe6-58bb4ded7d40"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "54e15b5c-0592-4b5b-afae-9cd591e528eb"
+  timestamp = "2025-02-13T18:29:55Z"
+  weight = 105.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "51a37de8-b5aa-43e0-8c49-b8a51960c1f7"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "f75e91bf-d7dc-4d8d-a870-6296fa1bec17"
+  timestamp = "2025-02-13T18:37:51Z"
+  weight = 140.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "83522a55-6726-4c44-9af7-57cb6ec14bdb"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "f75e91bf-d7dc-4d8d-a870-6296fa1bec17"
+  timestamp = "2025-02-13T18:47:25Z"
+  weight = 140.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "eef9021c-3e1a-4935-a217-7eb62248e7a4"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "1428d2f7-dafd-4414-898e-1b76b1b14dc0"
+  timestamp = "2025-02-13T18:56:03Z"
+  weight = 58.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "74fd6e8a-2ee7-43b1-b6ea-5835179b43b9"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "1428d2f7-dafd-4414-898e-1b76b1b14dc0"
+  timestamp = "2025-02-13T18:59:51Z"
+  weight = 58.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f7997098-dd55-4d75-8907-96318acb6771"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "1428d2f7-dafd-4414-898e-1b76b1b14dc0"
+  timestamp = "2025-02-13T19:02:31Z"
+  weight = 58.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "a8bd4791-d074-4a58-bc2f-7c18439e85c4"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "4fd9d102-bbd6-4788-a6cc-3cdf304d2a3e"
+  timestamp = "2025-02-13T18:50:53Z"
+  weight = 121.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7b3c4850-6336-46f9-b968-6eb2874c8589"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "4fd9d102-bbd6-4788-a6cc-3cdf304d2a3e"
+  timestamp = "2025-02-13T18:54:26Z"
+  weight = 121.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "41116fb4-8de2-458f-b425-2d7daa9789aa"
+  ignore_for_one_rm = 0
+  reps = 14
+  session_exercise_id = "b2400b1e-1988-4278-be75-c011cced9e60"
+  timestamp = "2025-02-13T19:04:40Z"
+  weight = 85.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2f65f008-7839-4157-8010-b8241e2b678f"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "b2400b1e-1988-4278-be75-c011cced9e60"
+  timestamp = "2025-02-13T19:07:23Z"
+  weight = 85.5
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "f9060baf-b702-45fc-a668-af9e40feb35b"
+  ignore_for_one_rm = 0
+  reps = 9
+  session_exercise_id = "e52cdca5-c43a-4fe1-9788-a3da4f4f89ed"
+  timestamp = "2025-02-13T19:04:55Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "8d578622-9a75-4223-963c-46d932d06ba2"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "e52cdca5-c43a-4fe1-9788-a3da4f4f89ed"
+  timestamp = "2025-02-13T19:07:28Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "e22fcac8-bf5e-4331-8516-dc29167a7d6a"
+  ignore_for_one_rm = 1
+  reps = 0
+  session_exercise_id = "9e9cbcf0-dd9b-44fd-910f-c72a94aeb828"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "028c747d-036c-428d-b6f4-fa12206ac85b"
+  ignore_for_one_rm = 1
+  reps = 0
+  session_exercise_id = "9e9cbcf0-dd9b-44fd-910f-c72a94aeb828"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "cc9427e7-a955-490a-8842-0b36177739f8"
+  ignore_for_one_rm = 1
+  reps = 22
+  session_exercise_id = "6179e95a-0a40-416d-bb45-1620fad1b776"
+  timestamp = "2025-02-13T19:12:08Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "3a5719e3-4aa4-4338-aa65-ce833827a26f"
+  ignore_for_one_rm = 1
+  reps = 16
+  session_exercise_id = "6179e95a-0a40-416d-bb45-1620fad1b776"
+  timestamp = "2025-02-13T19:14:42Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1163b2b8-06fe-4d72-979f-5818c00c47b6"
+  ignore_for_one_rm = 1
+  reps = 0
+  session_exercise_id = "b9b818b0-4700-4487-87eb-6511251fdc29"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "3edacd01-2e17-4d4e-9e25-a062c94763dd"
+  ignore_for_one_rm = 1
+  reps = 0
+  session_exercise_id = "b9b818b0-4700-4487-87eb-6511251fdc29"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b321675f-f590-4f9d-997e-83cdc59a2ceb"
+  ignore_for_one_rm = 1
+  reps = 0
+  session_exercise_id = "b9b818b0-4700-4487-87eb-6511251fdc29"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "e9020bee-8ff7-46dd-87db-42471b17721a"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "db245cc8-1faa-42b1-bf75-3f40d313edb0"
+  timestamp = "2025-02-14T18:27:42Z"
+  weight = 85.0
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "d55ea18a-7d4b-44b2-a7f9-775b503bbb3a"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "ec77d66f-8250-49e0-bc82-6aee8af76888"
+  timestamp = "2025-02-14T18:30:07Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "5d7a087e-db1b-4b8a-9a11-43c16c628bed"
+  ignore_for_one_rm = 0
+  reps = 9
+  session_exercise_id = "ec77d66f-8250-49e0-bc82-6aee8af76888"
+  timestamp = "2025-02-14T18:32:46Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 1
+  id = "a145135e-dcba-4a63-90a8-119488da1527"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "ec77d66f-8250-49e0-bc82-6aee8af76888"
+  timestamp = "2025-02-14T18:34:57Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "150f3a46-d2ba-47c3-91ab-01ce72162ec9"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "a3471248-974e-4ee4-90b8-91084ef5c157"
+  timestamp = "2025-02-14T18:38:07Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "46649258-f176-4342-bec3-a098b3ed27c9"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "a3471248-974e-4ee4-90b8-91084ef5c157"
+  timestamp = "2025-02-14T18:40:06Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1cf5e17d-b59b-4544-b94b-4c23b925f9a6"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "56729a7b-ddb6-4561-ab3e-d4bc94e4e295"
+  timestamp = "2025-02-14T18:42:51Z"
+  weight = 18.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "a706e914-1636-498d-8b52-1cc9c9e46a3a"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "56729a7b-ddb6-4561-ab3e-d4bc94e4e295"
+  timestamp = "2025-02-14T18:46:25Z"
+  weight = 18.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "53cc79ab-c4c3-4951-8ccf-11188d763662"
+  ignore_for_one_rm = 0
+  reps = 12
+  session_exercise_id = "83cde447-65a7-4734-b40f-5178f40d375c"
+  timestamp = "2025-02-14T18:47:44Z"
+  weight = 28.75
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f679e70a-75f3-435a-9afc-7a07744f3c9a"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "83cde447-65a7-4734-b40f-5178f40d375c"
+  timestamp = "2025-02-14T18:49:48Z"
+  weight = 28.75
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2912ef44-f786-4558-bf8a-1060dd0c77b5"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "83cde447-65a7-4734-b40f-5178f40d375c"
+  timestamp = "2025-02-14T18:53:00Z"
+  weight = 28.75
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "dc2caffc-ab05-4175-979b-fdfba19cacb7"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "37a59234-0d19-4fe3-9b23-d291f5d1d1d7"
+  timestamp = "2025-02-14T18:54:39Z"
+  weight = 16.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "9d2eec38-f732-4e11-b4a1-e93821074e94"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "37a59234-0d19-4fe3-9b23-d291f5d1d1d7"
+  timestamp = "2025-02-14T18:57:15Z"
+  weight = 16.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "752b2a7f-310d-49b7-b658-5aa570225dc6"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "37a59234-0d19-4fe3-9b23-d291f5d1d1d7"
+  timestamp = "2025-02-14T19:00:32Z"
+  weight = 16.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "04f9164d-3d00-4a26-8cbe-10af52e645a6"
+  ignore_for_one_rm = 1
+  reps = 14
+  session_exercise_id = "ad9551f2-4e44-4179-91cb-0dedbeee708b"
+  timestamp = "2025-02-14T19:10:00Z"
+  weight = 20.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "14b09cd7-57a7-415b-b344-21542f578bd3"
+  ignore_for_one_rm = 1
+  reps = 12
+  session_exercise_id = "ad9551f2-4e44-4179-91cb-0dedbeee708b"
+  timestamp = "2025-02-14T19:14:35Z"
+  weight = 20.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "90fb7064-a127-4686-b8ef-2af5a01eb309"
+  ignore_for_one_rm = 1
+  reps = 23
+  session_exercise_id = "8d529ee8-c7e4-4f36-8772-bf1330b6c7b7"
+  timestamp = "2025-02-14T19:03:59Z"
+  weight = 32.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1f66f278-c492-43ab-bb10-e5d3a1e65b8e"
+  ignore_for_one_rm = 1
+  reps = 16
+  session_exercise_id = "8d529ee8-c7e4-4f36-8772-bf1330b6c7b7"
+  timestamp = "2025-02-14T19:06:58Z"
+  weight = 32.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "ccd0f7b0-8e1e-44ff-a7bc-c424288c4ab9"
+  ignore_for_one_rm = 1
+  reps = 10
+  session_exercise_id = "1f43d6a8-32a4-4abf-b3b1-b144a687bc65"
+  timestamp = "2025-02-14T19:15:46Z"
+  weight = 12.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "6c5c3ec5-c699-4fdf-a3b3-c726c65055db"
+  ignore_for_one_rm = 1
+  reps = 11
+  session_exercise_id = "1f43d6a8-32a4-4abf-b3b1-b144a687bc65"
+  timestamp = "2025-02-14T19:18:47Z"
+  weight = 12.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "77d1b1cc-363a-49fb-a7d9-213e5b2eb53d"
+  ignore_for_one_rm = 1
+  reps = 25
+  session_exercise_id = "50f7b519-1ff7-4cc9-b2a1-9770a712565f"
+  timestamp = "2025-02-14T19:22:45Z"
+  weight = 36.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "69086049-a46e-4e53-a8b9-74a691cf5714"
+  ignore_for_one_rm = 1
+  reps = 15
+  session_exercise_id = "50f7b519-1ff7-4cc9-b2a1-9770a712565f"
+  timestamp = "2025-02-14T19:27:28Z"
+  weight = 36.0
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Flat bench barbell press"
+  estimated_one_rm = 0.0
+  id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  name = "Bench Press"
+  primary_muscle = "Chest"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Full stretch with pause at the bottom always"
+  estimated_one_rm = 0.0
+  id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+  name = "Weighted Dip"
+  primary_muscle = "Chest"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Full stretch with pause at the bottom always, don't need to lock out to be consider a rep"
+  estimated_one_rm = 0.0
+  id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+  name = "Machine Incline Press"
+  primary_muscle = "Chest"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Pause the bar on the chest for 1 second"
+  estimated_one_rm = 0.0
+  id = "e1a0189b-b18c-4461-89e4-95cf6c8bd7bb"
+  name = "Barbell Incline Press"
+  primary_muscle = "Chest"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Try to stretch the pecs as much as possible"
+  estimated_one_rm = 0.0
+  id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+  name = "Fly Machine"
+  primary_muscle = "Chest"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Yes"
+  estimated_one_rm = 0.0
+  id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+  name = "Sumo Deadlift"
+  primary_muscle = "Back"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Stop at the bottom, full stretch"
+  estimated_one_rm = 0.0
+  id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+  name = "Bent Over Row"
+  primary_muscle = "Back"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Full range of motion always with big stretch, pause for 1 second"
+  estimated_one_rm = 0.0
+  id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+  name = "Machine Row"
+  primary_muscle = "Back"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Full range of motion always with big stretch, pause for 1 second"
+  estimated_one_rm = 0.0
+  id = "ce738f93-8d0f-4a7c-a6df-18d9257745db"
+  name = "Cable Row"
+  primary_muscle = "Back"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Full stretch with pause at the bottom always"
+  estimated_one_rm = 0.0
+  id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  name = "Pull-Up"
+  primary_muscle = "Back"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Full stretch with pause at the bottom always"
+  estimated_one_rm = 0.0
+  id = "5d836d9d-aa29-4832-976c-45a17fa7b141"
+  name = "Chin-Up"
+  primary_muscle = "Back"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Full stretch with pause at the bottom always"
+  estimated_one_rm = 0.0
+  id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+  name = "Weighted Pull-Up"
+  primary_muscle = "Back"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Don't need to lockout, but need full stretch"
+  estimated_one_rm = 0.0
+  id = "e0c58361-536a-4111-afd5-60188f0b6447"
+  name = "Machine Overhead Press"
+  primary_muscle = "Shoulders"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Pause at face level, drive with your shoulders"
+  estimated_one_rm = 0.0
+  id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+  name = "Barbell Overhead Press"
+  primary_muscle = "Shoulders"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Can't go wrong, just deep stretch and control the reps"
+  estimated_one_rm = 0.0
+  id = "74ba898e-4fa5-48c5-97dd-fb4a34331b1c"
+  name = "Cable Lateral Raise"
+  primary_muscle = "Shoulders"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Try to be as stable as possible"
+  estimated_one_rm = 0.0
+  id = "8625a7ec-07da-4716-b446-94986f324656"
+  name = "Seated Dumbbell Lateral Raise"
+  primary_muscle = "Shoulders"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Pause at the bottom"
+  estimated_one_rm = 0.0
+  id = "ce01f789-a5e4-489d-83d6-be18c81ed15a"
+  name = "Machine Lateral Raise"
+  primary_muscle = "Shoulders"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Deep stretch, look for the elbows"
+  estimated_one_rm = 0.0
+  id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  name = "Cable Overhead Tricep Extension"
+  primary_muscle = "Triceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Deep stretch, look for the elbows"
+  estimated_one_rm = 0.0
+  id = "76aad2b7-7c18-4896-a656-00665d9adefc"
+  name = "Dumbbell Skull Crusher"
+  primary_muscle = "Triceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Pause at the bottom, move your shoulders a bit to get more ROM"
+  estimated_one_rm = 0.0
+  id = "57155170-9937-4f82-a611-a2878d073c4a"
+  name = "Barbell Skull Crusher"
+  primary_muscle = "Triceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Elbows up, kind of like you're punching the weight"
+  estimated_one_rm = 0.0
+  id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+  name = "JM Press"
+  primary_muscle = "Triceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Elbows up, kind of like you're punching the weight"
+  estimated_one_rm = 0.0
+  id = "215bdffc-62b4-4bb7-ae90-5ff2342661e8"
+  name = "Smith JM Press"
+  primary_muscle = "Triceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Cable with the bar, stretch and 1 second pause at the top"
+  estimated_one_rm = 0.0
+  id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  name = "Tricep Pushdown"
+  primary_muscle = "Triceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Stretch and 1 second pause at the top"
+  estimated_one_rm = 0.0
+  id = "954b1d2a-9b20-4688-a5eb-cfb2c1866ff5"
+  name = "Rope Pushdown"
+  primary_muscle = "Triceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "One arm at a time, lean forward"
+  estimated_one_rm = 0.0
+  id = "e4faeda9-0070-4910-b690-fb84edfad075"
+  name = "Bayesian Cable Curl"
+  primary_muscle = "Biceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Simple cable curl"
+  estimated_one_rm = 0.0
+  id = "43b7d511-5a8d-48ec-ac2d-5e00e761256e"
+  name = "Cable Curl"
+  primary_muscle = "Biceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "This can be bilateral or unilateral, but count as if bilateral"
+  estimated_one_rm = 0.0
+  id = "2eea5a6c-9716-48c6-9ff6-4cce5e820a95"
+  name = "Standing Dumbbell Curl"
+  primary_muscle = "Biceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "This can be bilateral or unilateral, but count as if bilateral"
+  estimated_one_rm = 0.0
+  id = "747335b7-2f37-40cf-a205-ae3868096577"
+  name = "Incline Dumbbell Curl"
+  primary_muscle = "Biceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "This can be bilateral or unilateral, but count as if bilateral"
+  estimated_one_rm = 0.0
+  id = "e994a6a3-9911-415b-afc6-da82787f3641"
+  name = "Dumbbell Hammer Curl"
+  primary_muscle = "Biceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Always go to absolute stretch and full ROM"
+  estimated_one_rm = 0.0
+  id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+  name = "EZ Bar Preacher Curl"
+  primary_muscle = "Biceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Minimize swing, cheating is allowed, just use common sense"
+  estimated_one_rm = 0.0
+  id = "48bb54c6-af25-45a8-aaae-409aad70a1e6"
+  name = "Standing EZ Bar Curl"
+  primary_muscle = "Biceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Minimize swing, cheating is allowed, just use common sense"
+  estimated_one_rm = 0.0
+  id = "11829513-8731-4912-8315-0ea143248e48"
+  name = "Cable Hammer Curl"
+  primary_muscle = "Biceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Minimize swing, cheating is allowed, just use common sense"
+  estimated_one_rm = 0.0
+  id = "3e64096a-f6f8-4bc0-8110-aff7992be6cc"
+  name = "Reverse EZ Bar Curl"
+  primary_muscle = "Biceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Keep your forearm glued to your leg"
+  estimated_one_rm = 0.0
+  id = "62fd86f1-b963-4479-a981-3bcb207f6fdf"
+  name = "Reverse Wrist Curl"
+  primary_muscle = "Forearms"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Keep your forearm glued to your leg"
+  estimated_one_rm = 0.0
+  id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
+  name = "Dumbbell Wrist Curl"
+  primary_muscle = "Forearms"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Do this on your back"
+  estimated_one_rm = 0.0
+  id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  name = "Cable Wrist Curl"
+  primary_muscle = "Forearms"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Full depth barbell high bar back squat"
+  estimated_one_rm = 0.0
+  id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  name = "High Bar Squat"
+  primary_muscle = "Quadriceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Pause for 1 second at the bottom"
+  estimated_one_rm = 0.0
+  id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+  name = "Single Leg Press"
+  primary_muscle = "Quadriceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Pause for 1 second at the bottom"
+  estimated_one_rm = 0.0
+  id = "fd1b7922-9691-4407-8434-56a671a20e01"
+  name = "Machine Leg Press"
+  primary_muscle = "Quadriceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Pause for 1 second at the bottom"
+  estimated_one_rm = 0.0
+  id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+  name = "Leg Press"
+  primary_muscle = "Quadriceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Pause for 1 second at the bottom"
+  estimated_one_rm = 0.0
+  id = "abc7548c-00db-4a2a-8b6e-87c453308dc5"
+  name = "Hack Squat"
+  primary_muscle = "Quadriceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Pause for 1 second at the bottom"
+  estimated_one_rm = 0.0
+  id = "c18218bc-4573-4560-b11b-3aec99b39682"
+  name = "Belt Squat"
+  primary_muscle = "Quadriceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Push the seat a bit back"
+  estimated_one_rm = 0.0
+  id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  name = "Leg Extension"
+  primary_muscle = "Quadriceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Absolute stretch at the bottom"
+  estimated_one_rm = 0.0
+  id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  name = "Sissy Squat"
+  primary_muscle = "Quadriceps"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Pause at the bottom for 1 second"
+  estimated_one_rm = 0.0
+  id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+  name = "Lying Leg Curl"
+  primary_muscle = "Hamstrings"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Pause at the top for 1 second"
+  estimated_one_rm = 0.0
+  id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+  name = "Seated Leg Curl"
+  primary_muscle = "Hamstrings"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Push hips back"
+  estimated_one_rm = 0.0
+  id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
+  name = "RDL"
+  primary_muscle = "Hamstrings"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Dead stop at every rep"
+  estimated_one_rm = 0.0
+  id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+  name = "SLDL"
+  primary_muscle = "Hamstrings"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Put a pad to go for a deep stretch on the calves"
+  estimated_one_rm = 0.0
+  id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  name = "Standing Smith Calf Raise"
+  primary_muscle = "Calves"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "No secret here"
+  estimated_one_rm = 0.0
+  id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  name = "Leg Press Calf Raise"
+  primary_muscle = "Calves"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Breath out as you stretch and in as you crunch"
+  estimated_one_rm = 0.0
+  id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  name = "Machine Ab Crunch"
+  primary_muscle = "Abs"
+
+[[exercises]]
+  created_at = "2025-02-10T17:05:31Z"
+  description = "Breath out as you stretch and in as you crunch"
+  estimated_one_rm = 0.0
+  id = "bdfdf74c-397a-483e-9809-6fa14b1cb62e"
+  name = "Weighted Abs"
+  primary_muscle = "Abs"
+
+[[program_blocks]]
+  description = "Primary upper body day"
+  id = "a86814a8-a89a-4739-8137-fe1f5ffc3304"
+  name = "Upper Day 1"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 1
+
+[[program_blocks]]
+  description = "Primary lower body day"
+  id = "6c7cddb2-04bf-44ec-81c6-048651eee2c8"
+  name = "Lower Day 1"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 1
+
+[[program_blocks]]
+  description = "Secondary upper body day"
+  id = "d369200a-5083-45cd-b7c1-c44faead6066"
+  name = "Upper Day 2"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 1
+
+[[program_blocks]]
+  description = "Secondary lower body day"
+  id = "9ac2cb1d-96c4-40a9-b40b-f94e3b516d88"
+  name = "Lower Day 2"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 1
+
+[[program_blocks]]
+  description = "Tertiary upper body day"
+  id = "afdd832b-cc81-43b7-8b56-a640ab1a6602"
+  name = "Upper Day 3"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 1
+
+[[program_blocks]]
+  description = "Primary upper body day"
+  id = "99b67697-707f-4408-9687-c6e7ac93e269"
+  name = "Upper Day 1"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 2
+
+[[program_blocks]]
+  description = "Primary lower body day"
+  id = "e40da485-e3b4-41d5-931f-8ecf48b6a06a"
+  name = "Lower Day 1"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 2
+
+[[program_blocks]]
+  description = "Secondary upper body day"
+  id = "0683a78f-ddc7-4e53-8114-ed0d931e4e39"
+  name = "Upper Day 2"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 2
+
+[[program_blocks]]
+  description = "This day is really gonna suck, like, a lot"
+  id = "aab09aa5-74aa-4f06-a88e-d9fb5a1eaf17"
+  name = "Lower Day 2"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 2
+
+[[program_blocks]]
+  description = "Tertiary upper body day"
+  id = "ea2a8464-7df4-495e-9edc-7b9dba7d8349"
+  name = "Upper Day 3"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 2
+
+[[program_blocks]]
+  description = "Primary upper body day"
+  id = "5a445ea9-5ba3-4d6b-ba0d-eb25569d3bb8"
+  name = "Upper Day 1"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 3
+
+[[program_blocks]]
+  description = "Primary lower body day"
+  id = "5e6b78ab-19fc-4776-8150-7751d5872c94"
+  name = "Lower Day 1"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 3
+
+[[program_blocks]]
+  description = "Secondary upper body day"
+  id = "253459d0-a13e-4ebb-9abb-32620784f7ca"
+  name = "Upper Day 2"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 3
+
+[[program_blocks]]
+  description = "Secondary lower body day"
+  id = "8a398272-eaa8-425a-9b39-70b9354f321b"
+  name = "Lower Day 2"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 3
+
+[[program_blocks]]
+  description = "Tertiary upper body day"
+  id = "0b0ddfcb-967f-412e-9948-9d0ed10a402b"
+  name = "Upper Day 3"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 3
+
+[[program_blocks]]
+  description = "Primary upper body day"
+  id = "83e94ab9-89da-4e19-b5ba-864d0ca51aaf"
+  name = "Upper Day 1"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 4
+
+[[program_blocks]]
+  description = "Primary lower body day"
+  id = "5a4cd9a9-61aa-46a8-a1e9-c8e6aa0248eb"
+  name = "Lower Day 1"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 4
+
+[[program_blocks]]
+  description = "Secondary upper body day"
+  id = "3de9e48c-f439-445b-897d-89bb75add14d"
+  name = "Upper Day 2"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 4
+
+[[program_blocks]]
+  description = "Secondary lower body day"
+  id = "ef525a76-b0ed-4bcc-a072-439138468832"
+  name = "Lower Day 2"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 4
+
+[[program_blocks]]
+  description = "Tertiary upper body day"
+  id = "53f4b589-8021-4207-a553-b2216c72cc07"
+  name = "Upper Day 3"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 4
+
+[[program_blocks]]
+  description = "Primary upper body day"
+  id = "fb0cec16-5043-4d91-b80f-8d063a975b78"
+  name = "Upper Day 1"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 5
+
+[[program_blocks]]
+  description = "Primary lower body day"
+  id = "6adc7f6b-eb31-4f29-8d17-a131fd104013"
+  name = "Lower Day 1"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 5
+
+[[program_blocks]]
+  description = "Secondary upper body day"
+  id = "e65eb5ef-0ef1-41e9-815d-87800d6ac6b6"
+  name = "Upper Day 2"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 5
+
+[[program_blocks]]
+  description = ""
+  id = "13c210b7-01b5-4ebb-9c9f-b049f16a7dca"
+  name = "Lower Day 2"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 5
+
+[[program_blocks]]
+  description = "Tertiary upper body day"
+  id = "76c879c5-31c4-4509-ad37-961c76498ad6"
+  name = "Upper Day 3"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 5
+
+[[program_blocks]]
+  description = "Primary upper body day"
+  id = "586ac950-60d4-430c-937b-51e77d1f0c96"
+  name = "Upper Day 1"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 6
+
+[[program_blocks]]
+  description = "Primary lower body day"
+  id = "0f51798b-8ed5-4cee-a26d-a467a906e420"
+  name = "Lower Day 1"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 6
+
+[[program_blocks]]
+  description = "Secondary upper body day"
+  id = "4654e8d8-e50b-4062-9cd5-e1e1daed5ca3"
+  name = "Upper Day 2"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 6
+
+[[program_blocks]]
+  description = ""
+  id = "d395be87-61dc-4854-93eb-a96176211a4a"
+  name = "Lower Day 2"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 6
+
+[[program_blocks]]
+  description = "Tertiary upper body day"
+  id = "fefc1d1c-78d2-42ba-add7-d5ab207a05e0"
+  name = "Upper Day 3"
+  program_id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  week = 6
+
+[[program_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "7feda26f-9e10-476a-a2be-1bff61254242"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 110.0
+  program_block_id = "a86814a8-a89a-4739-8137-fe1f5ffc3304"
+  reps = "[\"10\",\"10\",\"8\",\"6\"]"
+  sets = 4
+  target_rm_percent = "[50,67.5,75,77.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+  id = "4810c4a4-a424-4d39-8503-01aace2ec2dc"
+  notes = ""
+  options = "[\"Machine Row\"]"
+  order_index = 1
+  program_block_id = "a86814a8-a89a-4739-8137-fe1f5ffc3304"
+  reps = "[\"4-8\",\"6-10\",\"6-10\",\"10+\"]"
+  sets = 4
+  target_rm_percent = "null"
+  target_rpe = "[9,8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+  id = "dfe2b6a0-9de1-4fab-b517-3137fd320463"
+  notes = ""
+  options = "null"
+  order_index = 2
+  program_block_id = "a86814a8-a89a-4739-8137-fe1f5ffc3304"
+  reps = "[\"4-8\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "e7d2aaad-44da-43d5-81ed-6338c4dcfdc5"
+  notes = ""
+  options = "null"
+  order_index = 3
+  program_block_id = "a86814a8-a89a-4739-8137-fe1f5ffc3304"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+  id = "864e4b3f-7f51-470d-a121-a23cf121325a"
+  notes = ""
+  options = "[\"Barbell Overhead Press\"]"
+  order_index = 4
+  program_block_id = "a86814a8-a89a-4739-8137-fe1f5ffc3304"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "bf241a12-162a-4178-87c5-9a4e881d1518"
+  notes = ""
+  options = "[\"Dumbbell Skull Crusher\",\"Barbell Skull Crusher\"]"
+  order_index = 5
+  program_block_id = "a86814a8-a89a-4739-8137-fe1f5ffc3304"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+  id = "adc95f9f-61e3-4a4e-8f79-e953222e8712"
+  notes = ""
+  options = "[\"Cable Curl\",\"Standing Dumbbell Curl\",\"Incline Dumbbell Curl\"]"
+  order_index = 6
+  program_block_id = "a86814a8-a89a-4739-8137-fe1f5ffc3304"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "74ba898e-4fa5-48c5-97dd-fb4a34331b1c"
+  id = "c8aaa509-40ff-4f54-b32b-fa99f6bf1e36"
+  notes = ""
+  options = "[\"Seated Dumbbell Lateral Raise\"]"
+  order_index = 7
+  program_block_id = "a86814a8-a89a-4739-8137-fe1f5ffc3304"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "f5f3fc08-920d-411f-8181-9e0089249536"
+  notes = ""
+  options = "[\"Leg Press Calf Raise\"]"
+  order_index = 8
+  program_block_id = "a86814a8-a89a-4739-8137-fe1f5ffc3304"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "339da129-cd06-453b-b984-506ccddadb1f"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 150.0
+  program_block_id = "6c7cddb2-04bf-44ec-81c6-048651eee2c8"
+  reps = "[\"6\",\"6\",\"6\",\"6\"]"
+  sets = 4
+  target_rm_percent = "[80,80,80,80]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+  id = "da3c6e9c-fb7c-4c98-b83e-f1498ae9ded0"
+  notes = ""
+  options = "null"
+  order_index = 1
+  program_1rm = 200.0
+  program_block_id = "6c7cddb2-04bf-44ec-81c6-048651eee2c8"
+  reps = "[\"6\",\"6\"]"
+  sets = 2
+  target_rm_percent = "[80,80]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+  id = "95c04955-44cf-4ca2-953c-5d93deb69f3e"
+  notes = ""
+  options = "[\"Seated Leg Curl\"]"
+  order_index = 2
+  program_block_id = "6c7cddb2-04bf-44ec-81c6-048651eee2c8"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+  id = "a9d66906-bac0-44d6-84e2-29915cdc44bc"
+  notes = "Take some rest between legs"
+  options = "[\"Machine Leg Press\",\"Leg Press\",\"Hack Squat\",\"Belt Squat\"]"
+  order_index = 3
+  program_block_id = "6c7cddb2-04bf-44ec-81c6-048651eee2c8"
+  reps = "[\"8-12\",\"8-12\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "b8bf941b-9981-470b-ac90-8d326261abc7"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "6c7cddb2-04bf-44ec-81c6-048651eee2c8"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "72265907-fa50-4836-b5e1-cc4600fbc46d"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "6c7cddb2-04bf-44ec-81c6-048651eee2c8"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "d644b6bf-6027-44da-af0a-f73e9dd99d6e"
+  notes = ""
+  options = "[\"Weighted Abs\"]"
+  order_index = 6
+  program_block_id = "6c7cddb2-04bf-44ec-81c6-048651eee2c8"
+  reps = "[\"10-15\",\"10-15\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  id = "f0a29c92-fe96-4a05-ba14-696fff343e33"
+  notes = ""
+  options = "[\"Standing Smith Calf Raise\"]"
+  order_index = 7
+  program_block_id = "6c7cddb2-04bf-44ec-81c6-048651eee2c8"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "452546bf-88fb-4313-9f5a-6a0e8b39ae51"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 8
+  program_block_id = "6c7cddb2-04bf-44ec-81c6-048651eee2c8"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "9979bd14-18a9-4e05-b4b8-9003886533e0"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 110.0
+  program_block_id = "d369200a-5083-45cd-b7c1-c44faead6066"
+  reps = "[\"10\",\"10\",\"8\",\"6\"]"
+  sets = 4
+  target_rm_percent = "[50,67.5,75,77.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+  id = "dfc2a973-7ab0-49fc-be1b-d45e1813b61a"
+  notes = "BW on the last set"
+  options = "null"
+  order_index = 1
+  program_block_id = "d369200a-5083-45cd-b7c1-c44faead6066"
+  reps = "[\"3-6\",\"3-6\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+  id = "f88e261f-0fe4-47ec-a766-1289f5ba1da8"
+  notes = ""
+  options = "[\"Barbell Incline Press\"]"
+  order_index = 2
+  program_block_id = "d369200a-5083-45cd-b7c1-c44faead6066"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+  id = "af50e672-10fa-4221-aab4-f23c11823c4b"
+  notes = ""
+  options = "[\"Cable Row\"]"
+  order_index = 3
+  program_block_id = "d369200a-5083-45cd-b7c1-c44faead6066"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+  id = "c36b2c3d-31c5-46d0-a9c4-1ed3102b6364"
+  notes = ""
+  options = "[\"Smith JM Press\",\"Barbell Skull Crusher\",\"Dumbbell Skull Crusher\"]"
+  order_index = 4
+  program_block_id = "d369200a-5083-45cd-b7c1-c44faead6066"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+  id = "26fe0fc7-ed5b-4c15-b038-9c8b2777fe69"
+  notes = ""
+  options = "[\"Standing EZ Bar Curl\"]"
+  order_index = 5
+  program_block_id = "d369200a-5083-45cd-b7c1-c44faead6066"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "7f085b9b-fcc8-4adb-82e3-727cf9ed6d2f"
+  notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 6
+  program_block_id = "d369200a-5083-45cd-b7c1-c44faead6066"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+  id = "3357ab08-f34e-4953-96d0-0588df4a9697"
+  notes = ""
+  options = "[\"Dumbbell Hammer Curl\",\"Reverse EZ Bar Curl\"]"
+  order_index = 7
+  program_block_id = "d369200a-5083-45cd-b7c1-c44faead6066"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "62fd86f1-b963-4479-a981-3bcb207f6fdf"
+  id = "8f709ea3-457c-468b-bece-737b812573cc"
+  notes = ""
+  options = "null"
+  order_index = 8
+  program_block_id = "d369200a-5083-45cd-b7c1-c44faead6066"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "b1f20f5b-6dad-4401-ba52-d3eb066b46b7"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 150.0
+  program_block_id = "9ac2cb1d-96c4-40a9-b40b-f94e3b516d88"
+  reps = "[\"8\",\"8\",\"8\",\"8\"]"
+  sets = 4
+  target_rm_percent = "[70,70,70,70]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+  id = "9dd096f2-85d3-447c-b862-c618820891f7"
+  notes = ""
+  options = "null"
+  order_index = 1
+  program_1rm = 200.0
+  program_block_id = "9ac2cb1d-96c4-40a9-b40b-f94e3b516d88"
+  reps = "[\"8\",\"8\"]"
+  sets = 2
+  target_rm_percent = "[70,70]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+  id = "da9d7267-363a-4f3c-b69e-d945f2992763"
+  notes = ""
+  options = "[\"Lying Leg Curl\"]"
+  order_index = 2
+  program_block_id = "9ac2cb1d-96c4-40a9-b40b-f94e3b516d88"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+  id = "70f4cde0-8460-490c-b880-0c25babfc67d"
+  notes = ""
+  options = "[\"Machine Leg Press\",\"Single Leg Press\",\"Hack Squat\",\"Belt Squat\"]"
+  order_index = 3
+  program_block_id = "9ac2cb1d-96c4-40a9-b40b-f94e3b516d88"
+  reps = "[\"8-12\",\"8-12\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "f7c5c72e-e2d3-4143-919d-603f3064f25b"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "9ac2cb1d-96c4-40a9-b40b-f94e3b516d88"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "aeff3ec6-760d-42a4-a22c-cccf6eb0ddca"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "9ac2cb1d-96c4-40a9-b40b-f94e3b516d88"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "9418e70a-909b-4530-a1ff-bfe43145b7fa"
+  notes = ""
+  options = "[\"Weighted Abs\"]"
+  order_index = 6
+  program_block_id = "9ac2cb1d-96c4-40a9-b40b-f94e3b516d88"
+  reps = "[\"10-15\",\"10-15\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "b6fbbeec-8bd5-4339-8c89-68eedb4c358c"
+  notes = ""
+  options = "[\"Leg Press Calf Raise\"]"
+  order_index = 7
+  program_block_id = "9ac2cb1d-96c4-40a9-b40b-f94e3b516d88"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "b30cdd2d-6ba1-41a0-b8e6-6a4d487f3405"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 8
+  program_block_id = "9ac2cb1d-96c4-40a9-b40b-f94e3b516d88"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "6a8b00d0-7a1f-4d2d-86cd-ed6f54e36329"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 110.0
+  program_block_id = "afdd832b-cc81-43b7-8b56-a640ab1a6602"
+  reps = "[\"AMRAP\"]"
+  sets = 1
+  target_rm_percent = "[80]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "7fcc2a31-f5cc-4075-b858-1f0dc3ed1319"
+  notes = ""
+  options = "[\"Chin-Up\"]"
+  order_index = 1
+  program_block_id = "afdd832b-cc81-43b7-8b56-a640ab1a6602"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "57155170-9937-4f82-a611-a2878d073c4a"
+  id = "73219530-6681-45d5-af88-b3fe465df99b"
+  notes = ""
+  options = "[\"JM Press\",\"Dumbbell Skull Crusher\",\"Smith JM Press\"]"
+  order_index = 2
+  program_block_id = "afdd832b-cc81-43b7-8b56-a640ab1a6602"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "48bb54c6-af25-45a8-aaae-409aad70a1e6"
+  id = "1f9504da-931d-41d5-b4a1-671bddd7f18c"
+  notes = ""
+  options = "[\"Standing Dumbbell Curl\"]"
+  order_index = 3
+  program_block_id = "afdd832b-cc81-43b7-8b56-a640ab1a6602"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "caf52619-3e3e-4d43-8781-c82e93a95e0d"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "afdd832b-cc81-43b7-8b56-a640ab1a6602"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "747335b7-2f37-40cf-a205-ae3868096577"
+  id = "f050c363-b009-4904-b7cb-3697dd605ba0"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "afdd832b-cc81-43b7-8b56-a640ab1a6602"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e64096a-f6f8-4bc0-8110-aff7992be6cc"
+  id = "aaabc561-e9bb-4fb7-a421-1a9cba57147c"
+  notes = ""
+  options = "[\"Dumbell Hammer Curl\"]"
+  order_index = 6
+  program_block_id = "afdd832b-cc81-43b7-8b56-a640ab1a6602"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "9c2e1f7c-a671-4ac5-99de-7131bc52bdcc"
+  notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 7
+  program_block_id = "afdd832b-cc81-43b7-8b56-a640ab1a6602"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8625a7ec-07da-4716-b446-94986f324656"
+  id = "c2898af6-12c4-4af0-8fe3-6ba38097b412"
+  notes = ""
+  options = "[\"Machine Lateral Raise\"]"
+  order_index = 8
+  program_block_id = "afdd832b-cc81-43b7-8b56-a640ab1a6602"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "70f1a762-fb56-43bc-957b-873fa1d4f6fb"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 9
+  program_block_id = "afdd832b-cc81-43b7-8b56-a640ab1a6602"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "0740377d-d558-464e-b78b-b7de47649f83"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 110.0
+  program_block_id = "99b67697-707f-4408-9687-c6e7ac93e269"
+  reps = "[\"10\",\"8\",\"6-8\"]"
+  sets = 3
+  target_rm_percent = "[72.5,77.5,81.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+  id = "26364e01-820f-4789-b624-a68a7f67c806"
+  notes = ""
+  options = "[\"Machine Row\"]"
+  order_index = 1
+  program_block_id = "99b67697-707f-4408-9687-c6e7ac93e269"
+  reps = "[\"4-8\",\"6-10\",\"6-10\",\"10+\"]"
+  sets = 4
+  target_rm_percent = "null"
+  target_rpe = "[9,8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+  id = "e44b7b4c-53e8-492b-bd23-74bf0a243b2a"
+  notes = ""
+  options = "null"
+  order_index = 2
+  program_block_id = "99b67697-707f-4408-9687-c6e7ac93e269"
+  reps = "[\"4-8\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "25b487c5-33d6-4ee2-8b1d-0e9aeef856aa"
+  notes = ""
+  options = "null"
+  order_index = 3
+  program_block_id = "99b67697-707f-4408-9687-c6e7ac93e269"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+  id = "a516354a-807b-4d10-a8d8-09cabba0066f"
+  notes = ""
+  options = "[\"Barbell Overhead Press\"]"
+  order_index = 4
+  program_block_id = "99b67697-707f-4408-9687-c6e7ac93e269"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "85639602-c102-453b-acc4-a343ed15ae55"
+  notes = ""
+  options = "[\"Dumbbell Skull Crusher\",\"Barbell Skull Crusher\"]"
+  order_index = 5
+  program_block_id = "99b67697-707f-4408-9687-c6e7ac93e269"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+  id = "1dc37903-e3bc-431f-91c4-ec7497559663"
+  notes = ""
+  options = "[\"Cable Curl\",\"Standing Dumbbell Curl\",\"Incline Dumbbell Curl\"]"
+  order_index = 6
+  program_block_id = "99b67697-707f-4408-9687-c6e7ac93e269"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "74ba898e-4fa5-48c5-97dd-fb4a34331b1c"
+  id = "09ee9acc-f87f-4dd4-98db-049801d03600"
+  notes = ""
+  options = "[\"Seated Dumbbell Lateral Raise\"]"
+  order_index = 7
+  program_block_id = "99b67697-707f-4408-9687-c6e7ac93e269"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "f5a81e7e-8453-4e23-a4ae-281e49011cfd"
+  notes = ""
+  options = "[\"Leg Press Calf Raise\"]"
+  order_index = 8
+  program_block_id = "99b67697-707f-4408-9687-c6e7ac93e269"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "e1596c31-1806-4a8a-91f6-c0638d50a86b"
+  notes = "Extra volume - Do the 10 rep set, then perform the remaining 5x3 with 60 seconds rest in between. \n   If you were not able to complete a minimum of 8 reps of the first set, reduce the max by 2.5%"
+  options = "null"
+  order_index = 0
+  program_1rm = 150.0
+  program_block_id = "e40da485-e3b4-41d5-931f-8ecf48b6a06a"
+  reps = "[\"10\",\"3\",\"3\",\"3\",\"3\",\"3\"]"
+  sets = 6
+  target_rm_percent = "[80,80,80,80,80,80]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+  id = "71cebec2-2a70-4514-bde8-a1e167759f0f"
+  notes = "Do not deadlift today"
+  options = "[\"RDL\"]"
+  order_index = 1
+  program_block_id = "e40da485-e3b4-41d5-931f-8ecf48b6a06a"
+  reps = "[\"8\",\"8\",\"8\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+  id = "51b03d3f-505f-48b3-9371-c13348b4371f"
+  notes = ""
+  options = "[\"Seated Leg Curl\"]"
+  order_index = 2
+  program_block_id = "e40da485-e3b4-41d5-931f-8ecf48b6a06a"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "f0657530-13a9-493c-b0f7-5e4f3ab3fa3b"
+  notes = ""
+  options = "null"
+  order_index = 3
+  program_block_id = "e40da485-e3b4-41d5-931f-8ecf48b6a06a"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "bef58ea6-3eed-4fe2-85ee-bcea054be0c0"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "e40da485-e3b4-41d5-931f-8ecf48b6a06a"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "2713d9c0-cffd-4d3b-a981-1e1467ba4006"
+  notes = ""
+  options = "[\"Weighted Abs\"]"
+  order_index = 5
+  program_block_id = "e40da485-e3b4-41d5-931f-8ecf48b6a06a"
+  reps = "[\"10-15\",\"10-15\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  id = "e11bbe59-d367-4fd2-b5a6-ffb98e387eae"
+  notes = ""
+  options = "[\"Standing Smith Calf Raise\"]"
+  order_index = 6
+  program_block_id = "e40da485-e3b4-41d5-931f-8ecf48b6a06a"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "9f1b565f-17fb-4a35-a96d-a50372b03cd6"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 7
+  program_block_id = "e40da485-e3b4-41d5-931f-8ecf48b6a06a"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "dd8397c8-74c5-4f63-9815-5dfa761c6120"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 110.0
+  program_block_id = "0683a78f-ddc7-4e53-8114-ed0d931e4e39"
+  reps = "[\"10\",\"8\",\"6-8\"]"
+  sets = 3
+  target_rm_percent = "[72.5,77.5,81.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+  id = "609a13db-145e-4318-b859-0e23d6e99099"
+  notes = "BW on the last set"
+  options = "null"
+  order_index = 1
+  program_block_id = "0683a78f-ddc7-4e53-8114-ed0d931e4e39"
+  reps = "[\"3-6\",\"3-6\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+  id = "9d2331aa-f5cf-4f24-8285-8460e8873424"
+  notes = ""
+  options = "[\"Barbell Incline Press\"]"
+  order_index = 2
+  program_block_id = "0683a78f-ddc7-4e53-8114-ed0d931e4e39"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+  id = "5c5b5e68-93cf-4b70-8f43-b5f31f394cc9"
+  notes = ""
+  options = "[\"Cable Row\"]"
+  order_index = 3
+  program_block_id = "0683a78f-ddc7-4e53-8114-ed0d931e4e39"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+  id = "c9e16d6e-d04d-4c63-9bc7-005a669db609"
+  notes = ""
+  options = "[\"Smith JM Press\",\"Barbell Skull Crusher\",\"Dumbbell Skull Crusher\"]"
+  order_index = 4
+  program_block_id = "0683a78f-ddc7-4e53-8114-ed0d931e4e39"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+  id = "36e4e469-5bd6-4b04-8a09-386d95f5cad3"
+  notes = ""
+  options = "[\"Standing EZ Bar Curl\"]"
+  order_index = 5
+  program_block_id = "0683a78f-ddc7-4e53-8114-ed0d931e4e39"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "493aa6ad-6b02-46b3-a622-971d4c21da30"
+  notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 6
+  program_block_id = "0683a78f-ddc7-4e53-8114-ed0d931e4e39"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+  id = "1d08a9b0-0a44-48dc-8c80-5d9b526565a4"
+  notes = ""
+  options = "[\"Dumbbell Hammer Curl\",\"Reverse EZ Bar Curl\"]"
+  order_index = 7
+  program_block_id = "0683a78f-ddc7-4e53-8114-ed0d931e4e39"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "62fd86f1-b963-4479-a981-3bcb207f6fdf"
+  id = "311475a3-a859-4b71-a8ce-722e94403fe4"
+  notes = ""
+  options = "null"
+  order_index = 8
+  program_block_id = "0683a78f-ddc7-4e53-8114-ed0d931e4e39"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "796f2530-587b-4d8d-a228-3b2235790e69"
+  notes = "Reduce weight by 5kg for the following sets. And follow the protocol:\n   If you did 10 reps - perform 10x3.\n   If you did 8-9 reps - perform 8x3.\n   If you did 7 reps - perform 5x3.\n   If you did less than 7 reps - skip backdowns and reduce 1rm by 2.5%"
+  options = "null"
+  order_index = 0
+  program_1rm = 150.0
+  program_block_id = "aab09aa5-74aa-4f06-a88e-d9fb5a1eaf17"
+  reps = "[\"10\",\"3\",\"3\",\"3\",\"3\",\"3\",\"3\",\"3\",\"3\",\"3\",\"3\"]"
+  sets = 10
+  target_rm_percent = "[80,80,80,80,80,80,80,80,80,80]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+  id = "92061edd-febe-469c-bc78-04afbfee719b"
+  notes = "Do not deadlift today"
+  options = "[\"RDL\"]"
+  order_index = 1
+  program_block_id = "aab09aa5-74aa-4f06-a88e-d9fb5a1eaf17"
+  reps = "[\"8\",\"8\",\"8\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+  id = "08b9c32c-1753-4bfb-8c92-2fb1540ec604"
+  notes = ""
+  options = "[\"Seated Leg Curl\"]"
+  order_index = 2
+  program_block_id = "aab09aa5-74aa-4f06-a88e-d9fb5a1eaf17"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "8c81f8a7-9e2c-4c1b-b9b0-ba77393e4fac"
+  notes = ""
+  options = "null"
+  order_index = 3
+  program_block_id = "aab09aa5-74aa-4f06-a88e-d9fb5a1eaf17"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "50728622-db43-401a-97b3-4d3097a42e08"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "aab09aa5-74aa-4f06-a88e-d9fb5a1eaf17"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "926d523e-22de-42a9-b72c-88a4e79dc303"
+  notes = ""
+  options = "[\"Weighted Abs\"]"
+  order_index = 5
+  program_block_id = "aab09aa5-74aa-4f06-a88e-d9fb5a1eaf17"
+  reps = "[\"10-15\",\"10-15\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  id = "0aa358fb-28b6-4e53-8b5b-af9d68f468fa"
+  notes = ""
+  options = "[\"Standing Smith Calf Raise\"]"
+  order_index = 6
+  program_block_id = "aab09aa5-74aa-4f06-a88e-d9fb5a1eaf17"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "a5e7e1f8-2f52-44d8-a132-e2361b790780"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 7
+  program_block_id = "aab09aa5-74aa-4f06-a88e-d9fb5a1eaf17"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "b9276c28-195c-46d4-bedd-b5e64287ede8"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 110.0
+  program_block_id = "ea2a8464-7df4-495e-9edc-7b9dba7d8349"
+  reps = "[\"AMRAP\"]"
+  sets = 1
+  target_rm_percent = "[80]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "fb6acc8a-583e-4927-88ce-85a2a62d657b"
+  notes = ""
+  options = "[\"Chin-Up\"]"
+  order_index = 1
+  program_block_id = "ea2a8464-7df4-495e-9edc-7b9dba7d8349"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "57155170-9937-4f82-a611-a2878d073c4a"
+  id = "9a87a0c3-2a61-4e87-8b5e-5ad1ded39f09"
+  notes = ""
+  options = "[\"JM Press\",\"Dumbbell Skull Crusher\",\"Smith JM Press\"]"
+  order_index = 2
+  program_block_id = "ea2a8464-7df4-495e-9edc-7b9dba7d8349"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "48bb54c6-af25-45a8-aaae-409aad70a1e6"
+  id = "4550327c-2adf-439c-b5ba-59f90ee92d3f"
+  notes = ""
+  options = "[\"Standing Dumbbell Curl\"]"
+  order_index = 3
+  program_block_id = "ea2a8464-7df4-495e-9edc-7b9dba7d8349"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "eb830e4b-2433-4996-b495-a729a4c87898"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "ea2a8464-7df4-495e-9edc-7b9dba7d8349"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "747335b7-2f37-40cf-a205-ae3868096577"
+  id = "2fb61b49-fe4b-4963-8ab6-5867dbec137d"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "ea2a8464-7df4-495e-9edc-7b9dba7d8349"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e64096a-f6f8-4bc0-8110-aff7992be6cc"
+  id = "1536631c-3410-42a5-8131-db07675b5fb7"
+  notes = ""
+  options = "[\"Dumbell Hammer Curl\"]"
+  order_index = 6
+  program_block_id = "ea2a8464-7df4-495e-9edc-7b9dba7d8349"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "a766d2d4-38cd-4cc3-99d2-6eefecc6be78"
+  notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 7
+  program_block_id = "ea2a8464-7df4-495e-9edc-7b9dba7d8349"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8625a7ec-07da-4716-b446-94986f324656"
+  id = "9700db62-225e-4091-80de-a8c065611210"
+  notes = ""
+  options = "[\"Machine Lateral Raise\"]"
+  order_index = 8
+  program_block_id = "ea2a8464-7df4-495e-9edc-7b9dba7d8349"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "d671505a-4f30-4189-9a52-ec45abfa9a88"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 9
+  program_block_id = "ea2a8464-7df4-495e-9edc-7b9dba7d8349"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "c2af3320-aaa2-4d2f-84de-7c88668e140f"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 110.0
+  program_block_id = "5a445ea9-5ba3-4d6b-ba0d-eb25569d3bb8"
+  reps = "[\"4-6\",\"4-6\",\"4-6\"]"
+  sets = 3
+  target_rm_percent = "[85,85,85]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+  id = "30c11833-ce60-4c52-babb-b53beff556c9"
+  notes = ""
+  options = "[\"Machine Row\"]"
+  order_index = 1
+  program_block_id = "5a445ea9-5ba3-4d6b-ba0d-eb25569d3bb8"
+  reps = "[\"4-8\",\"6-10\",\"6-10\",\"10+\"]"
+  sets = 4
+  target_rm_percent = "null"
+  target_rpe = "[9,8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+  id = "91a9190d-916a-4d2f-a7e8-182fdc29bb2d"
+  notes = ""
+  options = "null"
+  order_index = 2
+  program_block_id = "5a445ea9-5ba3-4d6b-ba0d-eb25569d3bb8"
+  reps = "[\"4-8\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "a8eb15a6-6080-4d06-b6e6-d62d1d2a7dde"
+  notes = ""
+  options = "null"
+  order_index = 3
+  program_block_id = "5a445ea9-5ba3-4d6b-ba0d-eb25569d3bb8"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+  id = "c6b47e3f-c0e6-4097-8cac-07e5c8065c22"
+  notes = ""
+  options = "[\"Barbell Overhead Press\"]"
+  order_index = 4
+  program_block_id = "5a445ea9-5ba3-4d6b-ba0d-eb25569d3bb8"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "a38699e8-d59c-4084-aa39-2cac5cc873a9"
+  notes = ""
+  options = "[\"Dumbbell Skull Crusher\",\"Barbell Skull Crusher\"]"
+  order_index = 5
+  program_block_id = "5a445ea9-5ba3-4d6b-ba0d-eb25569d3bb8"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+  id = "71bd8ea5-8991-4c2a-8d0f-17a59f65db52"
+  notes = ""
+  options = "[\"Cable Curl\",\"Standing Dumbbell Curl\",\"Incline Dumbbell Curl\"]"
+  order_index = 6
+  program_block_id = "5a445ea9-5ba3-4d6b-ba0d-eb25569d3bb8"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "74ba898e-4fa5-48c5-97dd-fb4a34331b1c"
+  id = "673d6468-6b88-43f2-85e6-7c62af614107"
+  notes = ""
+  options = "[\"Seated Dumbbell Lateral Raise\"]"
+  order_index = 7
+  program_block_id = "5a445ea9-5ba3-4d6b-ba0d-eb25569d3bb8"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "1cb0e376-a226-432b-85e3-dd17701e4e1e"
+  notes = ""
+  options = "[\"Leg Press Calf Raise\"]"
+  order_index = 8
+  program_block_id = "5a445ea9-5ba3-4d6b-ba0d-eb25569d3bb8"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "1630d4d8-fe97-40ec-9c29-e109cb6292e5"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 150.0
+  program_block_id = "5e6b78ab-19fc-4776-8150-7751d5872c94"
+  reps = "[\"4-6\",\"4-6\",\"4-6\"]"
+  sets = 3
+  target_rm_percent = "[86.5,86.5,86.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+  id = "9bf9d10e-b0e8-4012-b3b6-c2591efbf66f"
+  notes = ""
+  options = "null"
+  order_index = 1
+  program_1rm = 200.0
+  program_block_id = "5e6b78ab-19fc-4776-8150-7751d5872c94"
+  reps = "[\"3-6\",\"3-6\"]"
+  sets = 2
+  target_rm_percent = "[87.5,87.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+  id = "d9a0b136-10ae-454b-9acb-256362925dd9"
+  notes = ""
+  options = "[\"Seated Leg Curl\"]"
+  order_index = 2
+  program_block_id = "5e6b78ab-19fc-4776-8150-7751d5872c94"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+  id = "27619b4a-3b71-4e1d-9de2-b6374fed8973"
+  notes = "Take some rest between legs"
+  options = "[\"Machine Leg Press\",\"Leg Press\",\"Hack Squat\",\"Belt Squat\"]"
+  order_index = 3
+  program_block_id = "5e6b78ab-19fc-4776-8150-7751d5872c94"
+  reps = "[\"8-12\",\"8-12\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "7f9813c1-b069-4c6e-9333-f9620919313f"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "5e6b78ab-19fc-4776-8150-7751d5872c94"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "95f538f0-3256-465f-aa58-421a6a4ab4bf"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "5e6b78ab-19fc-4776-8150-7751d5872c94"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "290c7c0b-af5b-4a61-af6f-165e66b6d7f6"
+  notes = ""
+  options = "[\"Weighted Abs\"]"
+  order_index = 6
+  program_block_id = "5e6b78ab-19fc-4776-8150-7751d5872c94"
+  reps = "[\"10-15\",\"10-15\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  id = "875599d4-50ac-41b9-a815-edbc144d85de"
+  notes = ""
+  options = "[\"Standing Smith Calf Raise\"]"
+  order_index = 7
+  program_block_id = "5e6b78ab-19fc-4776-8150-7751d5872c94"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "bbf1d125-ff20-4b49-a9f2-ed19cc184e39"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 8
+  program_block_id = "5e6b78ab-19fc-4776-8150-7751d5872c94"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "6f7d8158-39c4-4448-b7de-6e23ed88d40e"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 110.0
+  program_block_id = "253459d0-a13e-4ebb-9abb-32620784f7ca"
+  reps = "[\"4-6\",\"4-6\",\"4-6\"]"
+  sets = 3
+  target_rm_percent = "[86.5,86.5,86.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+  id = "fc3d8d02-0058-4785-8567-408f1ba26076"
+  notes = "BW on the last set"
+  options = "null"
+  order_index = 1
+  program_block_id = "253459d0-a13e-4ebb-9abb-32620784f7ca"
+  reps = "[\"3-6\",\"3-6\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+  id = "732e23cb-cb44-4116-956b-451b09eb81c0"
+  notes = ""
+  options = "[\"Barbell Incline Press\"]"
+  order_index = 2
+  program_block_id = "253459d0-a13e-4ebb-9abb-32620784f7ca"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+  id = "d02070c3-d673-4f86-979d-a588c488e510"
+  notes = ""
+  options = "[\"Cable Row\"]"
+  order_index = 3
+  program_block_id = "253459d0-a13e-4ebb-9abb-32620784f7ca"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+  id = "96508bd0-79b4-467c-871e-504d755c1f76"
+  notes = ""
+  options = "[\"Smith JM Press\",\"Barbell Skull Crusher\",\"Dumbbell Skull Crusher\"]"
+  order_index = 4
+  program_block_id = "253459d0-a13e-4ebb-9abb-32620784f7ca"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+  id = "918c2380-9ea8-4310-9287-3f676e25d200"
+  notes = ""
+  options = "[\"Standing EZ Bar Curl\"]"
+  order_index = 5
+  program_block_id = "253459d0-a13e-4ebb-9abb-32620784f7ca"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "aecaeba4-d062-4d65-b844-aa1e1556f94c"
+  notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 6
+  program_block_id = "253459d0-a13e-4ebb-9abb-32620784f7ca"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+  id = "75ff30f8-3a2b-4913-ad6a-ce4a131d2458"
+  notes = ""
+  options = "[\"Dumbbell Hammer Curl\",\"Reverse EZ Bar Curl\"]"
+  order_index = 7
+  program_block_id = "253459d0-a13e-4ebb-9abb-32620784f7ca"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "62fd86f1-b963-4479-a981-3bcb207f6fdf"
+  id = "6d27567f-c0e5-4a66-b5a8-88d5e8235d15"
+  notes = ""
+  options = "null"
+  order_index = 8
+  program_block_id = "253459d0-a13e-4ebb-9abb-32620784f7ca"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "26337f0a-a983-4b26-ac7c-ba8f253955ca"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 150.0
+  program_block_id = "8a398272-eaa8-425a-9b39-70b9354f321b"
+  reps = "[\"4-6\"]"
+  sets = 1
+  target_rm_percent = "[87.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+  id = "8f3fd294-f2d6-48af-a7da-b787ab96ce55"
+  notes = ""
+  options = "[\"RDL\"]"
+  order_index = 1
+  program_block_id = "8a398272-eaa8-425a-9b39-70b9354f321b"
+  reps = "[\"8\",\"8\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+  id = "733a3be8-0555-4610-9218-24f672e894e2"
+  notes = ""
+  options = "[\"Lying Leg Curl\"]"
+  order_index = 2
+  program_block_id = "8a398272-eaa8-425a-9b39-70b9354f321b"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+  id = "abf65d0d-44ec-4c89-8713-769d5794e802"
+  notes = ""
+  options = "[\"Machine Leg Press\",\"Single Leg Press\",\"Hack Squat\",\"Belt Squat\"]"
+  order_index = 3
+  program_block_id = "8a398272-eaa8-425a-9b39-70b9354f321b"
+  reps = "[\"8-12\",\"8-12\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "13d5e212-d1cd-4124-a300-df227b91eac5"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "8a398272-eaa8-425a-9b39-70b9354f321b"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "6e89f46d-82c2-4329-a851-d2cc6f7f81da"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "8a398272-eaa8-425a-9b39-70b9354f321b"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "c15cdd3d-bc45-4431-941e-ea0756a9c664"
+  notes = ""
+  options = "[\"Weighted Abs\"]"
+  order_index = 6
+  program_block_id = "8a398272-eaa8-425a-9b39-70b9354f321b"
+  reps = "[\"10-15\",\"10-15\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "b31d9841-a856-4768-8d84-b15375f04965"
+  notes = ""
+  options = "[\"Leg Press Calf Raise\"]"
+  order_index = 7
+  program_block_id = "8a398272-eaa8-425a-9b39-70b9354f321b"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "b172c3cc-6929-4155-a86a-97ef16a2d135"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 8
+  program_block_id = "8a398272-eaa8-425a-9b39-70b9354f321b"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+  id = "09302cc1-97b8-4d07-b10a-107267dfaa4d"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_block_id = "0b0ddfcb-967f-412e-9948-9d0ed10a402b"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "203ebfd8-5644-46fb-81dd-61c53d18c171"
+  notes = ""
+  options = "[\"Chin-Up\"]"
+  order_index = 1
+  program_block_id = "0b0ddfcb-967f-412e-9948-9d0ed10a402b"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "57155170-9937-4f82-a611-a2878d073c4a"
+  id = "94f39563-2580-4126-8eb3-eed312917c7e"
+  notes = ""
+  options = "[\"JM Press\",\"Dumbbell Skull Crusher\",\"Smith JM Press\"]"
+  order_index = 2
+  program_block_id = "0b0ddfcb-967f-412e-9948-9d0ed10a402b"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "48bb54c6-af25-45a8-aaae-409aad70a1e6"
+  id = "cce970be-5b93-41b1-a61d-d91ef40e5c67"
+  notes = ""
+  options = "[\"Standing Dumbbell Curl\"]"
+  order_index = 3
+  program_block_id = "0b0ddfcb-967f-412e-9948-9d0ed10a402b"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "ae10336f-33dc-4964-8a4b-d8852ac2909f"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "0b0ddfcb-967f-412e-9948-9d0ed10a402b"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "747335b7-2f37-40cf-a205-ae3868096577"
+  id = "01fc6ad8-a6f8-4c60-ac60-d0ece2d6163d"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "0b0ddfcb-967f-412e-9948-9d0ed10a402b"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e64096a-f6f8-4bc0-8110-aff7992be6cc"
+  id = "384f2171-bb05-491c-9178-78075b484ad7"
+  notes = ""
+  options = "[\"Dumbell Hammer Curl\"]"
+  order_index = 6
+  program_block_id = "0b0ddfcb-967f-412e-9948-9d0ed10a402b"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "110fb225-1107-45b3-bc24-f8521ddf407e"
+  notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 7
+  program_block_id = "0b0ddfcb-967f-412e-9948-9d0ed10a402b"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8625a7ec-07da-4716-b446-94986f324656"
+  id = "5a5b2079-687b-46d0-9683-5f85416e0251"
+  notes = ""
+  options = "[\"Machine Lateral Raise\"]"
+  order_index = 8
+  program_block_id = "0b0ddfcb-967f-412e-9948-9d0ed10a402b"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "1bc7abac-11c5-4df4-9ff3-da0bbb9e2a0d"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 9
+  program_block_id = "0b0ddfcb-967f-412e-9948-9d0ed10a402b"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "fbb35670-9d10-442c-880c-2b756a40f50d"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 110.0
+  program_block_id = "83e94ab9-89da-4e19-b5ba-864d0ca51aaf"
+  reps = "[\"3\",\"3\",\"3\"]"
+  sets = 3
+  target_rm_percent = "[86,88.5,90]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+  id = "49b10823-c40d-4327-8962-454f2b6c36d3"
+  notes = ""
+  options = "[\"Machine Row\"]"
+  order_index = 1
+  program_block_id = "83e94ab9-89da-4e19-b5ba-864d0ca51aaf"
+  reps = "[\"4-8\",\"6-10\",\"6-10\",\"10+\"]"
+  sets = 4
+  target_rm_percent = "null"
+  target_rpe = "[9,8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+  id = "9bbe76a4-5cbb-4849-b89c-7808c357d78e"
+  notes = ""
+  options = "null"
+  order_index = 2
+  program_block_id = "83e94ab9-89da-4e19-b5ba-864d0ca51aaf"
+  reps = "[\"4-8\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "75fc007c-bbc0-47ad-8251-19f212574ac3"
+  notes = ""
+  options = "null"
+  order_index = 3
+  program_block_id = "83e94ab9-89da-4e19-b5ba-864d0ca51aaf"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+  id = "4258f3b1-1318-4a48-8c7d-e3e921fa1b62"
+  notes = ""
+  options = "[\"Barbell Overhead Press\"]"
+  order_index = 4
+  program_block_id = "83e94ab9-89da-4e19-b5ba-864d0ca51aaf"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "3fa4726c-b18a-42db-b883-3f53432c9964"
+  notes = ""
+  options = "[\"Dumbbell Skull Crusher\",\"Barbell Skull Crusher\"]"
+  order_index = 5
+  program_block_id = "83e94ab9-89da-4e19-b5ba-864d0ca51aaf"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+  id = "187125b4-bf60-4f03-b133-9164397172a6"
+  notes = ""
+  options = "[\"Cable Curl\",\"Standing Dumbbell Curl\",\"Incline Dumbbell Curl\"]"
+  order_index = 6
+  program_block_id = "83e94ab9-89da-4e19-b5ba-864d0ca51aaf"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "74ba898e-4fa5-48c5-97dd-fb4a34331b1c"
+  id = "61fc6550-b387-4c66-8b78-12f0c9645ceb"
+  notes = ""
+  options = "[\"Seated Dumbbell Lateral Raise\"]"
+  order_index = 7
+  program_block_id = "83e94ab9-89da-4e19-b5ba-864d0ca51aaf"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "8bdae7e4-9e1e-40c1-ab1f-d343725479ea"
+  notes = ""
+  options = "[\"Leg Press Calf Raise\"]"
+  order_index = 8
+  program_block_id = "83e94ab9-89da-4e19-b5ba-864d0ca51aaf"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "a75a7923-b940-41cf-934f-f906384c9ce3"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 150.0
+  program_block_id = "5a4cd9a9-61aa-46a8-a1e9-c8e6aa0248eb"
+  reps = "[\"3\",\"3\",\"3\"]"
+  sets = 3
+  target_rm_percent = "[88.5,90,91.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+  id = "87916622-cb9d-4999-a7b0-65b47ea0960e"
+  notes = ""
+  options = "[\"RDL\"]"
+  order_index = 1
+  program_block_id = "5a4cd9a9-61aa-46a8-a1e9-c8e6aa0248eb"
+  reps = "[\"6\",\"6\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+  id = "bf464c08-c374-45a3-b38b-f5902d1e0d23"
+  notes = ""
+  options = "[\"Seated Leg Curl\"]"
+  order_index = 2
+  program_block_id = "5a4cd9a9-61aa-46a8-a1e9-c8e6aa0248eb"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+  id = "a777450f-f2fd-4688-a003-7cb867b85c0e"
+  notes = "Take some rest between legs"
+  options = "[\"Machine Leg Press\",\"Leg Press\",\"Hack Squat\",\"Belt Squat\"]"
+  order_index = 3
+  program_block_id = "5a4cd9a9-61aa-46a8-a1e9-c8e6aa0248eb"
+  reps = "[\"8-12\",\"8-12\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "1f812d22-13e4-4183-9e8b-cb822b9d2274"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "5a4cd9a9-61aa-46a8-a1e9-c8e6aa0248eb"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "61f7a338-2944-4b5a-930f-fe6318a4e70d"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "5a4cd9a9-61aa-46a8-a1e9-c8e6aa0248eb"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "b4aaae73-1ffb-4049-a7b2-2eb9e8e3b1dc"
+  notes = ""
+  options = "[\"Weighted Abs\"]"
+  order_index = 6
+  program_block_id = "5a4cd9a9-61aa-46a8-a1e9-c8e6aa0248eb"
+  reps = "[\"10-15\",\"10-15\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  id = "af078a93-1eee-4b1e-b1e8-8b7d4b0aa8bd"
+  notes = ""
+  options = "[\"Standing Smith Calf Raise\"]"
+  order_index = 7
+  program_block_id = "5a4cd9a9-61aa-46a8-a1e9-c8e6aa0248eb"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "1cdc830b-48c8-4c18-8be2-3f80d617c6c9"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 8
+  program_block_id = "5a4cd9a9-61aa-46a8-a1e9-c8e6aa0248eb"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "0ea5f3d4-c35c-4d09-8a8b-7d9a2f695ccb"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 110.0
+  program_block_id = "3de9e48c-f439-445b-897d-89bb75add14d"
+  reps = "[\"3\",\"3\",\"3\"]"
+  sets = 3
+  target_rm_percent = "[87.5,90,95]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+  id = "9af73db7-65d8-42ea-9ba8-cfd30aa3707a"
+  notes = "BW on the last set"
+  options = "null"
+  order_index = 1
+  program_block_id = "3de9e48c-f439-445b-897d-89bb75add14d"
+  reps = "[\"3-6\",\"3-6\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+  id = "5091779d-b3e4-4334-a582-f7f0dad429ef"
+  notes = ""
+  options = "[\"Barbell Incline Press\"]"
+  order_index = 2
+  program_block_id = "3de9e48c-f439-445b-897d-89bb75add14d"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+  id = "12f1a915-0c27-4223-9d74-705635846306"
+  notes = ""
+  options = "[\"Cable Row\"]"
+  order_index = 3
+  program_block_id = "3de9e48c-f439-445b-897d-89bb75add14d"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+  id = "26c15cfe-90bb-4901-9d22-cf5b2f4b14c0"
+  notes = ""
+  options = "[\"Smith JM Press\",\"Barbell Skull Crusher\",\"Dumbbell Skull Crusher\"]"
+  order_index = 4
+  program_block_id = "3de9e48c-f439-445b-897d-89bb75add14d"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+  id = "904a7b90-6ff6-4ba1-ab47-aae4ffc316ef"
+  notes = ""
+  options = "[\"Standing EZ Bar Curl\"]"
+  order_index = 5
+  program_block_id = "3de9e48c-f439-445b-897d-89bb75add14d"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "e7897635-838f-48d1-a8f7-f23a186a4f79"
+  notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 6
+  program_block_id = "3de9e48c-f439-445b-897d-89bb75add14d"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+  id = "0fb1f926-911c-4fd4-9b6c-b3e0adea05de"
+  notes = ""
+  options = "[\"Dumbbell Hammer Curl\",\"Reverse EZ Bar Curl\"]"
+  order_index = 7
+  program_block_id = "3de9e48c-f439-445b-897d-89bb75add14d"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "62fd86f1-b963-4479-a981-3bcb207f6fdf"
+  id = "427b8882-dcb9-4db3-923f-dd4fb60926c3"
+  notes = ""
+  options = "null"
+  order_index = 8
+  program_block_id = "3de9e48c-f439-445b-897d-89bb75add14d"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "87f44b30-09aa-4fa6-a2d3-11ffd7ee8610"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_1rm = 150.0
+  program_block_id = "ef525a76-b0ed-4bcc-a072-439138468832"
+  reps = "[\"3\",\"1-2\"]"
+  sets = 2
+  target_rm_percent = "[91.5,95]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+  id = "b84628cf-ab9e-40d5-8d4d-c63d5f0b6728"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_block_id = "53f4b589-8021-4207-a553-b2216c72cc07"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "99f65ceb-ad2d-4c2c-be3b-7802cd34c542"
+  notes = ""
+  options = "[\"Chin-Up\"]"
+  order_index = 1
+  program_block_id = "53f4b589-8021-4207-a553-b2216c72cc07"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "57155170-9937-4f82-a611-a2878d073c4a"
+  id = "64989aa1-6649-4950-8170-93f0781ce527"
+  notes = ""
+  options = "[\"JM Press\",\"Dumbbell Skull Crusher\",\"Smith JM Press\"]"
+  order_index = 2
+  program_block_id = "53f4b589-8021-4207-a553-b2216c72cc07"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "48bb54c6-af25-45a8-aaae-409aad70a1e6"
+  id = "a8123c00-9b4e-4226-bdff-e62034116b22"
+  notes = ""
+  options = "[\"Standing Dumbbell Curl\"]"
+  order_index = 3
+  program_block_id = "53f4b589-8021-4207-a553-b2216c72cc07"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "ac13d076-2d62-499e-bdfa-8b8cfeb4bdc2"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "53f4b589-8021-4207-a553-b2216c72cc07"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "747335b7-2f37-40cf-a205-ae3868096577"
+  id = "ed72903e-79da-4247-a78e-7f3a4aabe974"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "53f4b589-8021-4207-a553-b2216c72cc07"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e64096a-f6f8-4bc0-8110-aff7992be6cc"
+  id = "ba0ed931-6667-4774-a1a7-7e6aa8d1ae73"
+  notes = ""
+  options = "[\"Dumbell Hammer Curl\"]"
+  order_index = 6
+  program_block_id = "53f4b589-8021-4207-a553-b2216c72cc07"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "8357c9b4-d3d9-42e7-9de5-c1f35b6c9f97"
+  notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 7
+  program_block_id = "53f4b589-8021-4207-a553-b2216c72cc07"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8625a7ec-07da-4716-b446-94986f324656"
+  id = "641377bc-9bc6-45fd-b730-e729f0e499ac"
+  notes = ""
+  options = "[\"Machine Lateral Raise\"]"
+  order_index = 8
+  program_block_id = "53f4b589-8021-4207-a553-b2216c72cc07"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "48a40658-9937-438b-812f-3f6acf4b9160"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 9
+  program_block_id = "53f4b589-8021-4207-a553-b2216c72cc07"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "91b93398-64ae-4259-a2a8-e5774a7f067f"
+  notes = "Rep the fuck out of this shit"
+  options = "null"
+  order_index = 0
+  program_1rm = 110.0
+  program_block_id = "fb0cec16-5043-4d91-b80f-8d063a975b78"
+  reps = "[\"1-4\"]"
+  sets = 1
+  target_rm_percent = "[97.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+  id = "3490e850-d23d-402b-a400-889052a38c06"
+  notes = ""
+  options = "[\"Machine Row\"]"
+  order_index = 1
+  program_block_id = "fb0cec16-5043-4d91-b80f-8d063a975b78"
+  reps = "[\"4-8\",\"6-10\",\"6-10\",\"10+\"]"
+  sets = 4
+  target_rm_percent = "null"
+  target_rpe = "[9,8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+  id = "2fb9fcb7-222c-4185-9654-d458021b92b5"
+  notes = ""
+  options = "null"
+  order_index = 2
+  program_block_id = "fb0cec16-5043-4d91-b80f-8d063a975b78"
+  reps = "[\"4-8\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "ec440753-ef18-43a7-8735-3214d9f1a5b1"
+  notes = ""
+  options = "null"
+  order_index = 3
+  program_block_id = "fb0cec16-5043-4d91-b80f-8d063a975b78"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+  id = "b744d4e7-f1bd-4d39-b07b-5b659e832397"
+  notes = ""
+  options = "[\"Barbell Overhead Press\"]"
+  order_index = 4
+  program_block_id = "fb0cec16-5043-4d91-b80f-8d063a975b78"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "c3f59257-81be-45d3-a9ef-4f6b95950f14"
+  notes = ""
+  options = "[\"Dumbbell Skull Crusher\",\"Barbell Skull Crusher\"]"
+  order_index = 5
+  program_block_id = "fb0cec16-5043-4d91-b80f-8d063a975b78"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+  id = "18e35993-36ec-4ba3-9b90-f0e63f20ab7d"
+  notes = ""
+  options = "[\"Cable Curl\",\"Standing Dumbbell Curl\",\"Incline Dumbbell Curl\"]"
+  order_index = 6
+  program_block_id = "fb0cec16-5043-4d91-b80f-8d063a975b78"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "74ba898e-4fa5-48c5-97dd-fb4a34331b1c"
+  id = "826e172e-0eac-435e-af68-099587e4164d"
+  notes = ""
+  options = "[\"Seated Dumbbell Lateral Raise\"]"
+  order_index = 7
+  program_block_id = "fb0cec16-5043-4d91-b80f-8d063a975b78"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "8b361f12-49a6-45c4-9df2-832c76a500d4"
+  notes = ""
+  options = "[\"Leg Press Calf Raise\"]"
+  order_index = 8
+  program_block_id = "fb0cec16-5043-4d91-b80f-8d063a975b78"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "675e2ad9-2a59-4531-b522-7495a22f2228"
+  notes = "Rep the fuck out of this shit"
+  options = "null"
+  order_index = 0
+  program_1rm = 150.0
+  program_block_id = "6adc7f6b-eb31-4f29-8d17-a131fd104013"
+  reps = "[\"1-4\"]"
+  sets = 1
+  target_rm_percent = "[97.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+  id = "ce88f317-03b7-4805-b1dd-00c396d52fc0"
+  notes = ""
+  options = "null"
+  order_index = 1
+  program_1rm = 200.0
+  program_block_id = "6adc7f6b-eb31-4f29-8d17-a131fd104013"
+  reps = "[\"4\",\"4\",\"2\"]"
+  sets = 3
+  target_rm_percent = "[67.5,70,72.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+  id = "f029e279-bd39-4f9c-99c9-fe22382b5a73"
+  notes = ""
+  options = "[\"Seated Leg Curl\"]"
+  order_index = 2
+  program_block_id = "6adc7f6b-eb31-4f29-8d17-a131fd104013"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+  id = "a61c83bd-7e3c-4b3a-9dca-b353d4f38fa3"
+  notes = "Take some rest between legs"
+  options = "[\"Machine Leg Press\",\"Leg Press\",\"Hack Squat\",\"Belt Squat\"]"
+  order_index = 3
+  program_block_id = "6adc7f6b-eb31-4f29-8d17-a131fd104013"
+  reps = "[\"8-12\",\"8-12\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "15b82781-8ed9-427e-9bc3-f4a7e661624a"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "6adc7f6b-eb31-4f29-8d17-a131fd104013"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "4733b068-ad2b-4247-9425-c69cdc80b62f"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "6adc7f6b-eb31-4f29-8d17-a131fd104013"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "49ee7429-edc4-4536-8ac2-606e90b47886"
+  notes = ""
+  options = "[\"Weighted Abs\"]"
+  order_index = 6
+  program_block_id = "6adc7f6b-eb31-4f29-8d17-a131fd104013"
+  reps = "[\"10-15\",\"10-15\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  id = "9a4f9267-f0a6-46bf-ae80-28cbab081a92"
+  notes = ""
+  options = "[\"Standing Smith Calf Raise\"]"
+  order_index = 7
+  program_block_id = "6adc7f6b-eb31-4f29-8d17-a131fd104013"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "d9a30c54-f203-4d41-94b1-a2153b182f93"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 8
+  program_block_id = "6adc7f6b-eb31-4f29-8d17-a131fd104013"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e1a0189b-b18c-4461-89e4-95cf6c8bd7bb"
+  id = "d978a891-a2e3-499a-9a69-1ecb559f3a9a"
+  notes = ""
+  options = "[\"Machine Incline Press\"]"
+  order_index = 0
+  program_block_id = "e65eb5ef-0ef1-41e9-815d-87800d6ac6b6"
+  reps = "[\"6-10\",\"6-10\",\"6-10\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+  id = "9c7454b8-58c5-404a-93d1-36523fdd3209"
+  notes = "BW on the last set"
+  options = "null"
+  order_index = 1
+  program_block_id = "e65eb5ef-0ef1-41e9-815d-87800d6ac6b6"
+  reps = "[\"3-6\",\"3-6\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+  id = "19a9b00a-6ec7-4f44-a854-6ca6b2b87336"
+  notes = ""
+  options = "[\"Barbell Incline Press\"]"
+  order_index = 2
+  program_block_id = "e65eb5ef-0ef1-41e9-815d-87800d6ac6b6"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+  id = "5163a636-dbe5-4181-9824-23e7f49261a3"
+  notes = ""
+  options = "[\"Cable Row\"]"
+  order_index = 3
+  program_block_id = "e65eb5ef-0ef1-41e9-815d-87800d6ac6b6"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+  id = "a84fc0c6-ae21-4c5a-9642-37533e070c48"
+  notes = ""
+  options = "[\"Smith JM Press\",\"Barbell Skull Crusher\",\"Dumbbell Skull Crusher\"]"
+  order_index = 4
+  program_block_id = "e65eb5ef-0ef1-41e9-815d-87800d6ac6b6"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+  id = "61500dca-04cb-466e-8e36-081ec5d56cce"
+  notes = ""
+  options = "[\"Standing EZ Bar Curl\"]"
+  order_index = 5
+  program_block_id = "e65eb5ef-0ef1-41e9-815d-87800d6ac6b6"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "73191003-12c4-4fc5-8b7a-7c1725bdaa1b"
+  notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 6
+  program_block_id = "e65eb5ef-0ef1-41e9-815d-87800d6ac6b6"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+  id = "cb9bf503-3008-48cc-94da-acdb6f81d605"
+  notes = ""
+  options = "[\"Dumbbell Hammer Curl\",\"Reverse EZ Bar Curl\"]"
+  order_index = 7
+  program_block_id = "e65eb5ef-0ef1-41e9-815d-87800d6ac6b6"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "62fd86f1-b963-4479-a981-3bcb207f6fdf"
+  id = "e6fb0a76-96fe-4ea2-9365-bf540178a6e5"
+  notes = ""
+  options = "null"
+  order_index = 8
+  program_block_id = "e65eb5ef-0ef1-41e9-815d-87800d6ac6b6"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+  id = "5b09180b-8486-415c-a58b-a4cde205c55b"
+  notes = "Rep the fuck out of this shit"
+  options = "null"
+  order_index = 0
+  program_1rm = 200.0
+  program_block_id = "13c210b7-01b5-4ebb-9c9f-b049f16a7dca"
+  reps = "[\"1-4\"]"
+  sets = 1
+  target_rm_percent = "[97.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+  id = "b34739c5-edf2-4fa6-8b5c-b16058c5780b"
+  notes = ""
+  options = "[\"Lying Leg Curl\"]"
+  order_index = 1
+  program_block_id = "13c210b7-01b5-4ebb-9c9f-b049f16a7dca"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+  id = "39216d80-f324-47bc-980a-46f95401a178"
+  notes = ""
+  options = "[\"Machine Leg Press\",\"Single Leg Press\",\"Hack Squat\",\"Belt Squat\"]"
+  order_index = 2
+  program_block_id = "13c210b7-01b5-4ebb-9c9f-b049f16a7dca"
+  reps = "[\"8-12\",\"8-12\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "edfc12ec-e860-489d-aa4e-503f965dc037"
+  notes = ""
+  options = "null"
+  order_index = 3
+  program_block_id = "13c210b7-01b5-4ebb-9c9f-b049f16a7dca"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "4143f078-9353-4272-b494-eb0d0c8fb40e"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "13c210b7-01b5-4ebb-9c9f-b049f16a7dca"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "1544c134-510e-4c0c-b8b9-126e736fedd2"
+  notes = ""
+  options = "[\"Weighted Abs\"]"
+  order_index = 5
+  program_block_id = "13c210b7-01b5-4ebb-9c9f-b049f16a7dca"
+  reps = "[\"10-15\",\"10-15\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "c5b01ffa-b426-46ff-a044-cea06c221f38"
+  notes = ""
+  options = "[\"Leg Press Calf Raise\"]"
+  order_index = 6
+  program_block_id = "13c210b7-01b5-4ebb-9c9f-b049f16a7dca"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "3ebe967c-49ce-4814-9c06-c3a9b0a46ccc"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 7
+  program_block_id = "13c210b7-01b5-4ebb-9c9f-b049f16a7dca"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+  id = "bbea49e4-e989-4ee9-b8f0-cbb26046ad66"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_block_id = "76c879c5-31c4-4509-ad37-961c76498ad6"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "dbf31614-d78c-4240-a81a-71379d2af6dd"
+  notes = ""
+  options = "[\"Chin-Up\"]"
+  order_index = 1
+  program_block_id = "76c879c5-31c4-4509-ad37-961c76498ad6"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "57155170-9937-4f82-a611-a2878d073c4a"
+  id = "62a05170-74e8-4c77-a30c-a56d54b3d38a"
+  notes = ""
+  options = "[\"JM Press\",\"Dumbbell Skull Crusher\",\"Smith JM Press\"]"
+  order_index = 2
+  program_block_id = "76c879c5-31c4-4509-ad37-961c76498ad6"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "48bb54c6-af25-45a8-aaae-409aad70a1e6"
+  id = "489ea626-d24e-41a0-acd7-4d6da0d9fd49"
+  notes = ""
+  options = "[\"Standing Dumbbell Curl\"]"
+  order_index = 3
+  program_block_id = "76c879c5-31c4-4509-ad37-961c76498ad6"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "255abb33-687c-4d6e-92a3-d73b3d31a9f3"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "76c879c5-31c4-4509-ad37-961c76498ad6"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "747335b7-2f37-40cf-a205-ae3868096577"
+  id = "b74bf578-8cac-4532-90d0-4a31c4d671c9"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "76c879c5-31c4-4509-ad37-961c76498ad6"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e64096a-f6f8-4bc0-8110-aff7992be6cc"
+  id = "45bf956f-726a-4214-b0f4-4064e7f071ba"
+  notes = ""
+  options = "[\"Dumbell Hammer Curl\"]"
+  order_index = 6
+  program_block_id = "76c879c5-31c4-4509-ad37-961c76498ad6"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "1a71ead0-e0a9-4b36-a73c-dd0654c29b06"
+  notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 7
+  program_block_id = "76c879c5-31c4-4509-ad37-961c76498ad6"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8625a7ec-07da-4716-b446-94986f324656"
+  id = "2e95b539-4ffd-42b4-acff-44600f8b6850"
+  notes = ""
+  options = "[\"Machine Lateral Raise\"]"
+  order_index = 8
+  program_block_id = "76c879c5-31c4-4509-ad37-961c76498ad6"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "48e6442e-2a4e-45fe-84d9-1fa5aa290914"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 9
+  program_block_id = "76c879c5-31c4-4509-ad37-961c76498ad6"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "79e57449-3b3a-48df-bf83-bddc9de146a2"
+  notes = "New 1RM"
+  options = "null"
+  order_index = 0
+  program_1rm = 110.0
+  program_block_id = "586ac950-60d4-430c-937b-51e77d1f0c96"
+  reps = "[\"1\"]"
+  sets = 1
+  target_rm_percent = "null"
+  target_rpe = "[10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+  id = "feae28df-8f62-43df-a989-5c341dc4e6ef"
+  notes = ""
+  options = "[\"Machine Row\"]"
+  order_index = 1
+  program_block_id = "586ac950-60d4-430c-937b-51e77d1f0c96"
+  reps = "[\"4-8\",\"6-10\",\"6-10\",\"10+\"]"
+  sets = 4
+  target_rm_percent = "null"
+  target_rpe = "[9,8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+  id = "85e09cfd-c90c-4ed7-bead-714206b3ef3a"
+  notes = ""
+  options = "null"
+  order_index = 2
+  program_block_id = "586ac950-60d4-430c-937b-51e77d1f0c96"
+  reps = "[\"4-8\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "10d52dfb-cf34-4246-97d8-18b55211e7ca"
+  notes = ""
+  options = "null"
+  order_index = 3
+  program_block_id = "586ac950-60d4-430c-937b-51e77d1f0c96"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+  id = "35d969d1-9463-477e-a30c-de04be046ef0"
+  notes = ""
+  options = "[\"Barbell Overhead Press\"]"
+  order_index = 4
+  program_block_id = "586ac950-60d4-430c-937b-51e77d1f0c96"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "5d34bb15-cc5d-4a3f-92e7-bcdbe9165ed5"
+  notes = ""
+  options = "[\"Dumbbell Skull Crusher\",\"Barbell Skull Crusher\"]"
+  order_index = 5
+  program_block_id = "586ac950-60d4-430c-937b-51e77d1f0c96"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+  id = "bf7ca62e-1d27-4274-af32-dac94d34e1d6"
+  notes = ""
+  options = "[\"Cable Curl\",\"Standing Dumbbell Curl\",\"Incline Dumbbell Curl\"]"
+  order_index = 6
+  program_block_id = "586ac950-60d4-430c-937b-51e77d1f0c96"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "74ba898e-4fa5-48c5-97dd-fb4a34331b1c"
+  id = "d29ef0b8-7d22-4b1c-aae4-edbd5440adf2"
+  notes = ""
+  options = "[\"Seated Dumbbell Lateral Raise\"]"
+  order_index = 7
+  program_block_id = "586ac950-60d4-430c-937b-51e77d1f0c96"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "90fc1aa6-65ed-4bd6-9e57-3852c73c5c7b"
+  notes = ""
+  options = "[\"Leg Press Calf Raise\"]"
+  order_index = 8
+  program_block_id = "586ac950-60d4-430c-937b-51e77d1f0c96"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "260d532f-c475-49a3-a89c-54275276b58d"
+  notes = "New 1RM"
+  options = "null"
+  order_index = 0
+  program_1rm = 150.0
+  program_block_id = "0f51798b-8ed5-4cee-a26d-a467a906e420"
+  reps = "[\"1\"]"
+  sets = 1
+  target_rm_percent = "null"
+  target_rpe = "[10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+  id = "c4959200-4255-4cad-ad36-e803557f57de"
+  notes = ""
+  options = "null"
+  order_index = 1
+  program_1rm = 200.0
+  program_block_id = "0f51798b-8ed5-4cee-a26d-a467a906e420"
+  reps = "[\"4\",\"4\",\"2\"]"
+  sets = 3
+  target_rm_percent = "[67.5,70,72.5]"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+  id = "075a954e-020e-4941-be76-162306f036d7"
+  notes = ""
+  options = "[\"Seated Leg Curl\"]"
+  order_index = 2
+  program_block_id = "0f51798b-8ed5-4cee-a26d-a467a906e420"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+  id = "ba27e5f4-5b33-4e8a-bce7-485a597ec85e"
+  notes = "Take some rest between legs"
+  options = "[\"Machine Leg Press\",\"Leg Press\",\"Hack Squat\",\"Belt Squat\"]"
+  order_index = 3
+  program_block_id = "0f51798b-8ed5-4cee-a26d-a467a906e420"
+  reps = "[\"8-12\",\"8-12\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "71476c0c-fee2-42f3-a73a-58e6423345dc"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "0f51798b-8ed5-4cee-a26d-a467a906e420"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "1a5d3782-ea71-48ef-acd2-3e920f669ad1"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "0f51798b-8ed5-4cee-a26d-a467a906e420"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "294bd2d1-3b5a-4354-a179-b229f7f35c84"
+  notes = ""
+  options = "[\"Weighted Abs\"]"
+  order_index = 6
+  program_block_id = "0f51798b-8ed5-4cee-a26d-a467a906e420"
+  reps = "[\"10-15\",\"10-15\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  id = "84c32eb3-725c-42f0-9b70-ac8d2f094448"
+  notes = ""
+  options = "[\"Standing Smith Calf Raise\"]"
+  order_index = 7
+  program_block_id = "0f51798b-8ed5-4cee-a26d-a467a906e420"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "25fcd9c6-f716-4f47-bc2e-a1bd03dc4984"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 8
+  program_block_id = "0f51798b-8ed5-4cee-a26d-a467a906e420"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e1a0189b-b18c-4461-89e4-95cf6c8bd7bb"
+  id = "b2a9e535-bb25-4efa-a167-0463abb49384"
+  notes = ""
+  options = "[\"Machine Incline Press\"]"
+  order_index = 0
+  program_block_id = "4654e8d8-e50b-4062-9cd5-e1e1daed5ca3"
+  reps = "[\"6-10\",\"6-10\",\"6-10\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+  id = "aa810033-ec7d-4c7e-b9f8-7925b3e7a587"
+  notes = "BW on the last set"
+  options = "null"
+  order_index = 1
+  program_block_id = "4654e8d8-e50b-4062-9cd5-e1e1daed5ca3"
+  reps = "[\"3-6\",\"3-6\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+  id = "e2ddc9fc-a043-4ea3-a3ad-14bfe629916a"
+  notes = ""
+  options = "[\"Barbell Incline Press\"]"
+  order_index = 2
+  program_block_id = "4654e8d8-e50b-4062-9cd5-e1e1daed5ca3"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+  id = "0d89a945-a968-4b85-a314-6a0e9227af71"
+  notes = ""
+  options = "[\"Cable Row\"]"
+  order_index = 3
+  program_block_id = "4654e8d8-e50b-4062-9cd5-e1e1daed5ca3"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+  id = "2a929209-c385-4a3f-b8e4-a19573ff8262"
+  notes = ""
+  options = "[\"Smith JM Press\",\"Barbell Skull Crusher\",\"Dumbbell Skull Crusher\"]"
+  order_index = 4
+  program_block_id = "4654e8d8-e50b-4062-9cd5-e1e1daed5ca3"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+  id = "d02a12d8-22c9-4930-a540-4bb4e9d63e3b"
+  notes = ""
+  options = "[\"Standing EZ Bar Curl\"]"
+  order_index = 5
+  program_block_id = "4654e8d8-e50b-4062-9cd5-e1e1daed5ca3"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "86b41265-2523-48ca-bd10-fa26b075132a"
+  notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 6
+  program_block_id = "4654e8d8-e50b-4062-9cd5-e1e1daed5ca3"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+  id = "b9b5b070-c13f-4a8f-97f2-6aa062f2845a"
+  notes = ""
+  options = "[\"Dumbbell Hammer Curl\",\"Reverse EZ Bar Curl\"]"
+  order_index = 7
+  program_block_id = "4654e8d8-e50b-4062-9cd5-e1e1daed5ca3"
+  reps = "[\"6-10\",\"6-10\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "62fd86f1-b963-4479-a981-3bcb207f6fdf"
+  id = "bf92167f-9aa6-44af-9a9a-f29e243cc634"
+  notes = ""
+  options = "null"
+  order_index = 8
+  program_block_id = "4654e8d8-e50b-4062-9cd5-e1e1daed5ca3"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+  id = "58120492-9fc1-467d-9639-f87124d05b41"
+  notes = "New 1RM"
+  options = "null"
+  order_index = 0
+  program_1rm = 200.0
+  program_block_id = "d395be87-61dc-4854-93eb-a96176211a4a"
+  reps = "[\"1\"]"
+  sets = 1
+  target_rm_percent = "null"
+  target_rpe = "[10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+  id = "904b189d-e17f-4280-a1a5-54b8a14bd180"
+  notes = ""
+  options = "[\"Lying Leg Curl\"]"
+  order_index = 1
+  program_block_id = "d395be87-61dc-4854-93eb-a96176211a4a"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+  id = "4e646e16-78f3-47dd-9291-91cac0a5c699"
+  notes = ""
+  options = "[\"Machine Leg Press\",\"Single Leg Press\",\"Hack Squat\",\"Belt Squat\"]"
+  order_index = 2
+  program_block_id = "d395be87-61dc-4854-93eb-a96176211a4a"
+  reps = "[\"8-12\",\"8-12\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "ece13522-19b6-4257-bed7-02e9a45d4cd1"
+  notes = ""
+  options = "null"
+  order_index = 3
+  program_block_id = "d395be87-61dc-4854-93eb-a96176211a4a"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "ac6b5e17-4595-4318-b0cf-c2a3e65a2305"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "d395be87-61dc-4854-93eb-a96176211a4a"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "superset"
+  technique_group = 1
+
+[[program_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "5518266d-5f93-4da8-8f62-b7bff3971408"
+  notes = ""
+  options = "[\"Weighted Abs\"]"
+  order_index = 5
+  program_block_id = "d395be87-61dc-4854-93eb-a96176211a4a"
+  reps = "[\"10-15\",\"10-15\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "13173709-5393-4534-9627-31e89e8078db"
+  notes = ""
+  options = "[\"Leg Press Calf Raise\"]"
+  order_index = 6
+  program_block_id = "d395be87-61dc-4854-93eb-a96176211a4a"
+  reps = "[\"10-15\",\"10-15\",\"10-15\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "f46addf5-31b1-4f0c-aae5-05044714eb93"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 7
+  program_block_id = "d395be87-61dc-4854-93eb-a96176211a4a"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+  id = "73a43213-877f-4e01-972a-62fddf7da74b"
+  notes = ""
+  options = "null"
+  order_index = 0
+  program_block_id = "fefc1d1c-78d2-42ba-add7-d5ab207a05e0"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "f05c16c3-7a4b-4631-99ce-349a5ea54b2e"
+  notes = ""
+  options = "[\"Chin-Up\"]"
+  order_index = 1
+  program_block_id = "fefc1d1c-78d2-42ba-add7-d5ab207a05e0"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "57155170-9937-4f82-a611-a2878d073c4a"
+  id = "e675b50d-fb83-40d1-8389-7f87c8d9e20f"
+  notes = ""
+  options = "[\"JM Press\",\"Dumbbell Skull Crusher\",\"Smith JM Press\"]"
+  order_index = 2
+  program_block_id = "fefc1d1c-78d2-42ba-add7-d5ab207a05e0"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "48bb54c6-af25-45a8-aaae-409aad70a1e6"
+  id = "6e893796-3aa3-4e13-8082-3faff00d5429"
+  notes = ""
+  options = "[\"Standing Dumbbell Curl\"]"
+  order_index = 3
+  program_block_id = "fefc1d1c-78d2-42ba-add7-d5ab207a05e0"
+  reps = "[\"6-10\",\"6-10\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[8,8]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "ed8bfbd7-52ef-4c25-963f-362a2c947300"
+  notes = ""
+  options = "null"
+  order_index = 4
+  program_block_id = "fefc1d1c-78d2-42ba-add7-d5ab207a05e0"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "747335b7-2f37-40cf-a205-ae3868096577"
+  id = "a7a25623-272b-4141-a70f-5caba8d13acb"
+  notes = ""
+  options = "null"
+  order_index = 5
+  program_block_id = "fefc1d1c-78d2-42ba-add7-d5ab207a05e0"
+  reps = "[\"8-12\",\"8-12\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[8,8,10]"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e64096a-f6f8-4bc0-8110-aff7992be6cc"
+  id = "56fbb6b5-bba2-4cc6-87ee-5b4b7a5223c3"
+  notes = ""
+  options = "[\"Dumbell Hammer Curl\"]"
+  order_index = 6
+  program_block_id = "fefc1d1c-78d2-42ba-add7-d5ab207a05e0"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "c7b114a0-594d-4e4e-ae3a-886c80b18320"
+  notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 7
+  program_block_id = "fefc1d1c-78d2-42ba-add7-d5ab207a05e0"
+  reps = "[\"AMRAP\",\"AMRAP\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "[10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8625a7ec-07da-4716-b446-94986f324656"
+  id = "c2bd5b3c-d71b-43ba-a195-7aa66d2304b1"
+  notes = ""
+  options = "[\"Machine Lateral Raise\"]"
+  order_index = 8
+  program_block_id = "fefc1d1c-78d2-42ba-add7-d5ab207a05e0"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "0e77056a-98de-4b11-87da-0bac859118d5"
+  notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 9
+  program_block_id = "fefc1d1c-78d2-42ba-add7-d5ab207a05e0"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "[10,10,10]"
+  technique = "hell"
+  technique_group = 0
+
+[[programs]]
+  created_at = "2025-02-10T17:05:46Z"
+  description = "Modifed version of candito's 6 week program in order to suit my personal needs. Become the greatest of all time, the absolute GOAT"
+  id = "57bf2f24-3de5-4fe8-b55a-bb9ac5f05f9f"
+  name = "Berserk"
+
+[[training_session_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "e3f49428-34dc-4d92-b19d-2e3389bc3784"
+  notes = ""
+  training_session_id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
+
+[[training_session_exercises]]
+  exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+  id = "a0c50d8b-938b-4091-96d3-5c644639e8d5"
+  notes = ""
+  training_session_id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
+
+[[training_session_exercises]]
+  exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+  id = "98a8acf8-20b3-4e66-8d65-c5ebf12859e6"
+  notes = ""
+  training_session_id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
+
+[[training_session_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "3dd4bfa5-1a70-4de7-b367-0fdd69c04f47"
+  notes = ""
+  training_session_id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
+
+[[training_session_exercises]]
+  exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+  id = "0faebde5-b9ff-4755-80bf-3b1efe6358cf"
+  notes = ""
+  training_session_id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
+
+[[training_session_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "d46aef57-f02a-44b7-a427-786fd69d3d75"
+  notes = ""
+  training_session_id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
+
+[[training_session_exercises]]
+  exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+  id = "e938f235-f0ae-484c-a2fe-56cef5592d1b"
+  notes = ""
+  training_session_id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
+
+[[training_session_exercises]]
+  exercise_id = "74ba898e-4fa5-48c5-97dd-fb4a34331b1c"
+  id = "8f8dc7cc-11f3-45f8-b26f-d8fe8fea4807"
+  notes = ""
+  training_session_id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
+
+[[training_session_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "635dd983-2e08-464d-b563-8cbcf6448097"
+  notes = ""
+  training_session_id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
+
+[[training_session_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "7c7009dc-50ec-42a1-b6ac-1266707a59ed"
+  notes = ""
+  training_session_id = "c71f575f-5fc8-4dc6-aac4-7621a6665fbd"
+
+[[training_session_exercises]]
+  exercise_id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+  id = "aff63c41-555b-4e91-8b08-733ac9945d47"
+  notes = ""
+  training_session_id = "c71f575f-5fc8-4dc6-aac4-7621a6665fbd"
+
+[[training_session_exercises]]
+  exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+  id = "c20dd575-b2f3-48a7-aaed-66e187a26973"
+  notes = ""
+  training_session_id = "c71f575f-5fc8-4dc6-aac4-7621a6665fbd"
+
+[[training_session_exercises]]
+  exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+  id = "2e5794c4-4920-4bb0-9006-60bca1622b3d"
+  notes = ""
+  training_session_id = "c71f575f-5fc8-4dc6-aac4-7621a6665fbd"
+
+[[training_session_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "173711f5-42ac-40b8-b9ab-04cb78e29fe1"
+  notes = ""
+  training_session_id = "c71f575f-5fc8-4dc6-aac4-7621a6665fbd"
+
+[[training_session_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "929a2a2c-ddaa-4e22-9e74-98328578d331"
+  notes = ""
+  training_session_id = "c71f575f-5fc8-4dc6-aac4-7621a6665fbd"
+
+[[training_session_exercises]]
+  exercise_id = "bdfdf74c-397a-483e-9809-6fa14b1cb62e"
+  id = "3da71f5c-120b-43cd-a96d-ca273b66ac34"
+  notes = ""
+  training_session_id = "c71f575f-5fc8-4dc6-aac4-7621a6665fbd"
+
+[[training_session_exercises]]
+  exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  id = "1ba2acc9-a078-4075-ac08-cadb711b2d46"
+  notes = ""
+  training_session_id = "c71f575f-5fc8-4dc6-aac4-7621a6665fbd"
+
+[[training_session_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "b1b5b7a5-a255-4297-9eca-55af8b383816"
+  notes = ""
+  training_session_id = "c71f575f-5fc8-4dc6-aac4-7621a6665fbd"
+
+[[training_session_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "b3b9820b-600f-4596-94c0-659c9aba54ef"
+  notes = ""
+  training_session_id = "ecb8f844-fff1-4bc9-b3e0-9cddcdf935eb"
+
+[[training_session_exercises]]
+  exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+  id = "b060cfe6-8af0-4ef1-af6b-ecca5c1b6222"
+  notes = ""
+  training_session_id = "ecb8f844-fff1-4bc9-b3e0-9cddcdf935eb"
+
+[[training_session_exercises]]
+  exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+  id = "43f67c0f-dd17-4e7e-9ddf-2084d945b8a3"
+  notes = ""
+  training_session_id = "ecb8f844-fff1-4bc9-b3e0-9cddcdf935eb"
+
+[[training_session_exercises]]
+  exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+  id = "5ba789ba-fe7b-45fd-aac1-baf4db91902d"
+  notes = ""
+  training_session_id = "ecb8f844-fff1-4bc9-b3e0-9cddcdf935eb"
+
+[[training_session_exercises]]
+  exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+  id = "235890bc-548e-4f7f-99cc-5766d1354fd2"
+  notes = ""
+  training_session_id = "ecb8f844-fff1-4bc9-b3e0-9cddcdf935eb"
+
+[[training_session_exercises]]
+  exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+  id = "0adc3993-5fa9-4206-a21f-2ccf07322577"
+  notes = ""
+  training_session_id = "ecb8f844-fff1-4bc9-b3e0-9cddcdf935eb"
+
+[[training_session_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "fec80ef7-375d-4ce5-a915-3e1ee5c1af55"
+  notes = ""
+  training_session_id = "ecb8f844-fff1-4bc9-b3e0-9cddcdf935eb"
+
+[[training_session_exercises]]
+  exercise_id = "e994a6a3-9911-415b-afc6-da82787f3641"
+  id = "299a15fe-bf82-4914-8588-50695c837b5d"
+  notes = ""
+  training_session_id = "ecb8f844-fff1-4bc9-b3e0-9cddcdf935eb"
+
+[[training_session_exercises]]
+  exercise_id = "62fd86f1-b963-4479-a981-3bcb207f6fdf"
+  id = "4d94658d-62a4-47f1-9ece-08bae4615052"
+  notes = ""
+  training_session_id = "ecb8f844-fff1-4bc9-b3e0-9cddcdf935eb"
+
+[[training_session_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "54e15b5c-0592-4b5b-afae-9cd591e528eb"
+  notes = ""
+  training_session_id = "c71cf2d5-3f3f-4e49-b267-4152c2676408"
+
+[[training_session_exercises]]
+  exercise_id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+  id = "f75e91bf-d7dc-4d8d-a870-6296fa1bec17"
+  notes = ""
+  training_session_id = "c71cf2d5-3f3f-4e49-b267-4152c2676408"
+
+[[training_session_exercises]]
+  exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+  id = "1428d2f7-dafd-4414-898e-1b76b1b14dc0"
+  notes = ""
+  training_session_id = "c71cf2d5-3f3f-4e49-b267-4152c2676408"
+
+[[training_session_exercises]]
+  exercise_id = "fd1b7922-9691-4407-8434-56a671a20e01"
+  id = "4fd9d102-bbd6-4788-a6cc-3cdf304d2a3e"
+  notes = ""
+  training_session_id = "c71cf2d5-3f3f-4e49-b267-4152c2676408"
+
+[[training_session_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "b2400b1e-1988-4278-be75-c011cced9e60"
+  notes = ""
+  training_session_id = "c71cf2d5-3f3f-4e49-b267-4152c2676408"
+
+[[training_session_exercises]]
+  exercise_id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
+  id = "e52cdca5-c43a-4fe1-9788-a3da4f4f89ed"
+  notes = ""
+  training_session_id = "c71cf2d5-3f3f-4e49-b267-4152c2676408"
+
+[[training_session_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "9e9cbcf0-dd9b-44fd-910f-c72a94aeb828"
+  notes = ""
+  training_session_id = "c71cf2d5-3f3f-4e49-b267-4152c2676408"
+
+[[training_session_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "6179e95a-0a40-416d-bb45-1620fad1b776"
+  notes = ""
+  training_session_id = "c71cf2d5-3f3f-4e49-b267-4152c2676408"
+
+[[training_session_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "b9b818b0-4700-4487-87eb-6511251fdc29"
+  notes = ""
+  training_session_id = "c71cf2d5-3f3f-4e49-b267-4152c2676408"
+
+[[training_session_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "db245cc8-1faa-42b1-bf75-3f40d313edb0"
+  notes = ""
+  training_session_id = "2708a275-f35b-4007-ae17-7c6371f14877"
+
+[[training_session_exercises]]
+  exercise_id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
+  id = "ec77d66f-8250-49e0-bc82-6aee8af76888"
+  notes = ""
+  training_session_id = "2708a275-f35b-4007-ae17-7c6371f14877"
+
+[[training_session_exercises]]
+  exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+  id = "a3471248-974e-4ee4-90b8-91084ef5c157"
+  notes = ""
+  training_session_id = "2708a275-f35b-4007-ae17-7c6371f14877"
+
+[[training_session_exercises]]
+  exercise_id = "2eea5a6c-9716-48c6-9ff6-4cce5e820a95"
+  id = "56729a7b-ddb6-4561-ab3e-d4bc94e4e295"
+  notes = ""
+  training_session_id = "2708a275-f35b-4007-ae17-7c6371f14877"
+
+[[training_session_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "83cde447-65a7-4734-b40f-5178f40d375c"
+  notes = "change this to 6-10"
+  training_session_id = "2708a275-f35b-4007-ae17-7c6371f14877"
+
+[[training_session_exercises]]
+  exercise_id = "747335b7-2f37-40cf-a205-ae3868096577"
+  id = "37a59234-0d19-4fe3-9b23-d291f5d1d1d7"
+  notes = "change this to 6-10"
+  training_session_id = "2708a275-f35b-4007-ae17-7c6371f14877"
+
+[[training_session_exercises]]
+  exercise_id = "3e64096a-f6f8-4bc0-8110-aff7992be6cc"
+  id = "ad9551f2-4e44-4179-91cb-0dedbeee708b"
+  notes = ""
+  training_session_id = "2708a275-f35b-4007-ae17-7c6371f14877"
+
+[[training_session_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "8d529ee8-c7e4-4f36-8772-bf1330b6c7b7"
+  notes = ""
+  training_session_id = "2708a275-f35b-4007-ae17-7c6371f14877"
+
+[[training_session_exercises]]
+  exercise_id = "8625a7ec-07da-4716-b446-94986f324656"
+  id = "1f43d6a8-32a4-4abf-b3b1-b144a687bc65"
+  notes = ""
+  training_session_id = "2708a275-f35b-4007-ae17-7c6371f14877"
+
+[[training_session_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "50f7b519-1ff7-4cc9-b2a1-9770a712565f"
+  notes = ""
+  training_session_id = "2708a275-f35b-4007-ae17-7c6371f14877"
+
+[[training_sessions]]
+  end_time = "2025-02-10T19:03:55Z"
+  id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
+  notes = ""
+  program_block_id = "a86814a8-a89a-4739-8137-fe1f5ffc3304"
+  start_time = "2025-02-10T17:45:37Z"
+
+[[training_sessions]]
+  end_time = "2025-02-11T20:49:17Z"
+  id = "c71f575f-5fc8-4dc6-aac4-7621a6665fbd"
+  notes = ""
+  program_block_id = "6c7cddb2-04bf-44ec-81c6-048651eee2c8"
+  start_time = "2025-02-11T19:24:01Z"
+
+[[training_sessions]]
+  end_time = "2025-02-12T21:21:01Z"
+  id = "ecb8f844-fff1-4bc9-b3e0-9cddcdf935eb"
+  notes = ""
+  program_block_id = "d369200a-5083-45cd-b7c1-c44faead6066"
+  start_time = "2025-02-12T20:11:28Z"
+
+[[training_sessions]]
+  end_time = "2025-02-13T19:16:08Z"
+  id = "c71cf2d5-3f3f-4e49-b267-4152c2676408"
+  notes = ""
+  program_block_id = "9ac2cb1d-96c4-40a9-b40b-f94e3b516d88"
+  start_time = "2025-02-13T17:57:00Z"
+
+[[training_sessions]]
+  end_time = "2025-02-14T19:27:36Z"
+  id = "2708a275-f35b-4007-ae17-7c6371f14877"
+  notes = ""
+  program_block_id = "afdd832b-cc81-43b7-8b56-a640ab1a6602"
+  start_time = "2025-02-14T18:20:46Z"
