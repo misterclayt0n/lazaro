@@ -95,6 +95,11 @@ name = "Machine Lateral Raise"
 description = "Pause at the bottom"
 primary_muscle = "Shoulders"
 
+[[exercise]]
+name = "Dumbbell Lateral Raise"
+description = "Unilateral work, lean sideways"
+primary_muscle = "Shoulders"
+
 #
 # Triceps
 #
@@ -182,6 +187,12 @@ primary_muscle = "Biceps"
 name = "Reverse EZ Bar Curl"
 description = "Minimize swing, cheating is allowed, just use common sense"
 primary_muscle = "Biceps"
+
+[[exercise]]
+name = "Incline Machine Curl"
+description = "Fixed elbows at the pads"
+primary_muscle = "Biceps"
+
 
 #
 # Forearms

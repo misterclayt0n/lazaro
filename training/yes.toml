@@ -1,0 +1,59 @@
+name = "Yes"
+description = "No words to describe yet"
+
+[[blocks]]
+name = "Upper Day 1"
+description = "Primary bench day"
+
+[[blocks.exercises]]
+name = "Bench Press"
+sets = 3
+reps = ["4-6", "4-6", "6-8"]
+program_1rm = 110.0
+
+[[blocks.exercises]]
+name = "Bent Over Row"
+sets = 3
+reps = ["6-8", "6-8", "6-8"]
+options = ["Machine Row"]
+
+[[blocks.exercises]]
+name = "Weighted Dip"
+sets = 3
+reps = ["6-8", "6-8", "AMRAP"]
+
+[[blocks.exercises]]
+name = "Weighted Pull-Up"
+sets = 3
+reps = ["6-8", "6-8", "6-8"]
+
+[[blocks.exercises]]
+name = "Machine Overhead Press"
+sets = 2
+reps = ["6-8", "6-8"]
+options = ["Barbell Overhead Press"]
+
+[[blocks.exercises]]
+name = "Cable Overhead Tricep Extension"
+sets = 3
+reps = ["6-8", "6-8", "AMRAP"]
+options = ["Dumbbell Skull Crusher", "Barbell Skull Crusher"]
+
+[[blocks.exercises]]
+name = "Bayesian Cable Curl"
+sets = 3
+reps = ["6-8", "6-8", "AMRAP"]
+options = ["Cable Curl", "Standing Dumbbell Curl", "Incline Dumbbell Curl", "Incline Machine Curl"]
+
+[[blocks.exercises]]
+name = "Dumbbell Lateral Raise"
+sets = 3
+reps = ["6-8", "6-8", "AMRAP"]
+options = ["Seated Dumbbell Lateral Raise", "Cable Lateral Raise"]
+
+[[blocks.exercises]]
+name = "Standing Smith Calf Raise"
+sets = 2
+reps = ["10-15", "10-15"]
+options = ["Leg Press Calf Raise"]
+technique = "hell"
