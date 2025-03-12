@@ -4120,6 +4120,12 @@
   name = "Upper Day 1"
   program_id = "61acdfd9-f528-4c4c-8954-8efb7e0ee66c"
 
+[[program_blocks]]
+  description = "Primary squat day"
+  id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
+  name = "Lower Day 1"
+  program_id = "61acdfd9-f528-4c4c-8954-8efb7e0ee66c"
+
 [[program_exercises]]
   exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
   id = "7feda26f-9e10-476a-a2be-1bff61254242"
@@ -8078,11 +8084,108 @@
   options = "[\"Leg Press Calf Raise\"]"
   order_index = 8
   program_block_id = "5f5a7658-3261-4a62-bee4-99a07ba0c6c4"
-  reps = "[\"10-15\",\"10-15\"]"
+  reps = "[\"6-8\",\"6-8\"]"
   sets = 2
   target_rm_percent = "null"
   target_rpe = "null"
-  technique = "hell"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "c38d4eb3-179e-47df-8e45-8d92a8e0b27e"
+  notes = ""
+  program_1rm = 150.0
+  program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
+  reps = "[\"4-6\",\"4-6\",\"6-8\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
+  id = "fb348d75-54b0-4c4a-8846-ab7df380fa31"
+  notes = ""
+  program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
+  reps = "[\"6-8\",\"6-8\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+  id = "1f51185b-123d-4e5f-848c-bfb2a10f1213"
+  notes = "Take some rest between legs"
+  program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
+  reps = "[\"6-8\",\"6-8\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+  id = "474e2c2b-3029-47cf-bc96-f6b811746a62"
+  notes = ""
+  program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
+  reps = "[\"6-8\",\"6-8\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "30f40f12-73ce-46c4-9aab-cf327caa4036"
+  notes = ""
+  program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
+  reps = "[\"6-8\",\"6-8\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "bb56df54-c9f0-4602-930a-82009647af40"
+  notes = ""
+  program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
+  reps = "[\"6-8\",\"6-8\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  id = "43f27a97-797c-4c05-9352-fcd8bb1f0e10"
+  notes = ""
+  program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
+  reps = "[\"6-8\",\"6-8\"]"
+  sets = 2
+  target_rm_percent = "null"
+  target_rpe = "null"
+  technique = ""
+  technique_group = 0
+
+[[program_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "29ff20e8-f7d4-4ef8-95cc-c76e3b41c060"
+  notes = ""
+  program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
+  reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
+  sets = 3
+  target_rm_percent = "null"
+  target_rpe = "null"
+  technique = ""
   technique_group = 0
 
 [[programs]]

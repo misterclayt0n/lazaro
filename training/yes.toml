@@ -54,6 +54,58 @@ options = ["Seated Dumbbell Lateral Raise", "Cable Lateral Raise"]
 [[blocks.exercises]]
 name = "Standing Smith Calf Raise"
 sets = 2
-reps = ["10-15", "10-15"]
+reps = ["6-8", "6-8"]
 options = ["Leg Press Calf Raise"]
-technique = "hell"
+
+[[blocks]]
+name = "Lower Day 1"
+description = "Primary squat day"
+
+[[blocks.exercises]]
+name = "High Bar Squat"
+sets = 3
+reps = ["4-6", "4-6", "6-8"]
+program_1rm = 150.0
+options = ["Smith Machine Squat", "Hack Squat", "Belt Squat"]
+
+[[blocks.exercises]]
+name = "RDL"
+sets = 2
+reps = ["6-8", "6-8"]
+options = ["SLDL"]
+
+[[blocks.exercises]]
+name = "Single Leg Press"
+sets = 2
+reps = ["6-8", "6-8"]
+notes = "Take some rest between legs"
+
+[[blocks.exercises]]
+name = "Lying Leg Curl"
+sets = 3
+reps = ["6-8", "6-8", "AMRAP"]
+options = ["Seated Leg Curl"]
+
+[[blocks.exercises]]
+name = "Leg Extension"
+sets = 3
+reps = ["6-8", "6-8", "AMRAP"]
+options = ["Sissy Squat"]
+
+[[blocks.exercises]]
+name = "Machine Ab Crunch"
+sets = 2
+reps = ["6-8", "6-8"]
+options = ["Weighted Abs"]
+
+[[blocks.exercises]]
+name = "Leg Press Calf Raise"
+sets = 2
+reps = ["6-8", "6-8"]
+options = ["Standing Smith Calf Raise"]
+
+[[blocks.exercises]]
+name = "Cable Wrist Curl"
+sets = 3
+reps = ["AMRAP", "AMRAP", "AMRAP"]
+options = ["Dumbbell Wrist Curl"]

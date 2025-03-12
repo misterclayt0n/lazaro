@@ -223,6 +223,11 @@ description = "Full depth barbell high bar back squat"
 primary_muscle = "Quadriceps"
 
 [[exercise]]
+name = "Smith Machine Squat"
+description = "Full range of motion always, brace as hard as you can"
+primary_muscle = "Quadriceps"
+
+[[exercise]]
 name = "Single Leg Press"
 description = "Pause for 1 second at the bottom"
 primary_muscle = "Quadriceps"
