@@ -8095,6 +8095,8 @@
   exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
   id = "c38d4eb3-179e-47df-8e45-8d92a8e0b27e"
   notes = ""
+  options = "[\"Smith Machine Squat\",\"Hack Squat\",\"Belt Squat\"]"
+  order_index = 0
   program_1rm = 150.0
   program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
   reps = "[\"4-6\",\"4-6\",\"6-8\"]"
@@ -8108,6 +8110,8 @@
   exercise_id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
   id = "fb348d75-54b0-4c4a-8846-ab7df380fa31"
   notes = ""
+  options = "[\"SLDL\"]"
+  order_index = 1
   program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
   reps = "[\"6-8\",\"6-8\"]"
   sets = 2
@@ -8120,6 +8124,8 @@
   exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
   id = "1f51185b-123d-4e5f-848c-bfb2a10f1213"
   notes = "Take some rest between legs"
+  options = "null"
+  order_index = 2
   program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
   reps = "[\"6-8\",\"6-8\"]"
   sets = 2
@@ -8132,6 +8138,8 @@
   exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
   id = "474e2c2b-3029-47cf-bc96-f6b811746a62"
   notes = ""
+  options = "[\"Seated Leg Curl\"]"
+  order_index = 3
   program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
   reps = "[\"6-8\",\"6-8\",\"AMRAP\"]"
   sets = 3
@@ -8144,6 +8152,8 @@
   exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
   id = "30f40f12-73ce-46c4-9aab-cf327caa4036"
   notes = ""
+  options = "[\"Sissy Squat\"]"
+  order_index = 4
   program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
   reps = "[\"6-8\",\"6-8\",\"AMRAP\"]"
   sets = 3
@@ -8156,6 +8166,8 @@
   exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
   id = "bb56df54-c9f0-4602-930a-82009647af40"
   notes = ""
+  options = "[\"Weighted Abs\"]"
+  order_index = 5
   program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
   reps = "[\"6-8\",\"6-8\"]"
   sets = 2
@@ -8168,6 +8180,8 @@
   exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
   id = "43f27a97-797c-4c05-9352-fcd8bb1f0e10"
   notes = ""
+  options = "[\"Standing Smith Calf Raise\"]"
+  order_index = 6
   program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
   reps = "[\"6-8\",\"6-8\"]"
   sets = 2
@@ -8180,6 +8194,8 @@
   exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
   id = "29ff20e8-f7d4-4ef8-95cc-c76e3b41c060"
   notes = ""
+  options = "[\"Dumbbell Wrist Curl\"]"
+  order_index = 7
   program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
   reps = "[\"AMRAP\",\"AMRAP\",\"AMRAP\"]"
   sets = 3
