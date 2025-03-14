@@ -30,7 +30,7 @@ reps = ["6-8", "6-8", "6-8"]
 [[blocks.exercises]]
 name = "Machine Overhead Press"
 sets = 2
-reps = ["6-8", "6-8"]
+reps = ["4-8", "4-8"]
 options = ["Barbell Overhead Press"]
 
 [[blocks.exercises]]
@@ -109,3 +109,68 @@ name = "Cable Wrist Curl"
 sets = 3
 reps = ["AMRAP", "AMRAP", "AMRAP"]
 options = ["Dumbbell Wrist Curl"]
+
+[[blocks]]
+name = "Upper Day 2"
+description = "Secondary upper body day"
+
+[[blocks.exercises]]
+name = "Close Grip Bench Press"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Bench Press"]
+
+[[blocks.exercises]]
+name = "Weighted Pull-Up"
+sets = 2
+reps = ["3-6", "3-6"]
+notes = "BW on the last set"
+options = ["Lat Pulldown"]
+
+[[blocks.exercises]]
+name = "Machine Incline Press"
+sets = 2
+reps = ["6-8", "6-8"]
+options = ["Barbell Incline Press"]
+
+[[blocks.exercises]]
+name = "Machine Row"
+sets = 2
+reps = ["6-8", "6-8"]
+options = ["Cable Row"]
+
+[[blocks.exercises]]
+name = "Machine Overhead Press"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Barbell Overhead Press"]
+
+[[blocks.exercises]]
+name = "EZ Bar Preacher Curl"
+sets = 2
+reps = ["6-8", "6-8"]
+options = ["Standing EZ Bar Curl", "Dumbbell Preacher Curl"]
+
+[[blocks.exercises]]
+name = "JM Press"
+sets = 2
+reps = ["6-8", "6-8"]
+options = ["Smith JM Press", "Barbell Skull Crusher", "Dumbbell Skull Crusher"]
+
+[[blocks.exercises]]
+name = "Cable Hammer Curl"
+sets = 2
+reps = ["6-8", "6-8"]
+options = ["Dumbbell Hammer Curl", "Reverse EZ Bar Curl"]
+
+[[blocks.exercises]]
+name = "Tricep Pushdown"
+sets = 2
+reps = ["6-8", "6-8"]
+options = ["Rope Pushdown"]
+
+[[blocks.exercises]]
+name = "Dumbbell Wrist Curl"
+sets = 2
+reps = ["AMRAP", "AMRAP"]
+options = ["Cable Wrist Curl"]

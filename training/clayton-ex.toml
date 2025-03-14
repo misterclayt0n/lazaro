@@ -1,9 +1,15 @@
+
 #
 # Chest
 #
 
 [[exercise]]
 name = "Bench Press"
+description = "Flat bench barbell press"
+primary_muscle = "Chest"
+
+[[exercise]]
+name = "Close Grip Bench Press"
 description = "Flat bench barbell press"
 primary_muscle = "Chest"
 
@@ -53,6 +59,11 @@ primary_muscle = "Back"
 
 [[exercise]]
 name = "Pull-Up"
+description = "Full stretch with pause at the bottom always"
+primary_muscle = "Back"
+
+[[exercise]]
+name = "Lat Pulldown"
 description = "Full stretch with pause at the bottom always"
 primary_muscle = "Back"
 
@@ -174,6 +185,11 @@ description = "Always go to absolute stretch and full ROM"
 primary_muscle = "Biceps"
 
 [[exercise]]
+name = "Dumbbell Preacher Curl"
+description = "Always go to absolute stretch and full ROM"
+primary_muscle = "Biceps"
+
+[[exercise]]
 name = "Standing EZ Bar Curl"
 description = "Minimize swing, cheating is allowed, just use common sense"
 primary_muscle = "Biceps"
@@ -192,7 +208,6 @@ primary_muscle = "Biceps"
 name = "Incline Machine Curl"
 description = "Fixed elbows at the pads"
 primary_muscle = "Biceps"
-
 
 #
 # Forearms
