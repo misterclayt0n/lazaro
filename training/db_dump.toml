@@ -8426,6 +8426,8 @@
   exercise_id = "bf8a1c09-aa5f-4c8b-ba79-4ac72a8224ce"
   id = "95426504-58ef-4304-872d-5dd4f1ab4ca7"
   notes = ""
+  options = "[\"Bench Press\"]"
+  order_index = 0
   program_block_id = "6f88e577-de0e-4f1a-bb8d-d9b39c1cbf5e"
   reps = "[\"4-8\",\"4-8\"]"
   sets = 2
@@ -8438,6 +8440,8 @@
   exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
   id = "fe2dd941-0b6d-494d-b7dd-86202dce42ca"
   notes = "BW on the last set"
+  options = "[\"Lat Pulldown\"]"
+  order_index = 1
   program_block_id = "6f88e577-de0e-4f1a-bb8d-d9b39c1cbf5e"
   reps = "[\"3-6\",\"3-6\"]"
   sets = 2
@@ -8450,6 +8454,8 @@
   exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
   id = "046dc349-cd1d-4483-8530-1f34eccc50f2"
   notes = ""
+  options = "[\"Barbell Incline Press\"]"
+  order_index = 2
   program_block_id = "6f88e577-de0e-4f1a-bb8d-d9b39c1cbf5e"
   reps = "[\"6-8\",\"6-8\"]"
   sets = 2
@@ -8462,6 +8468,8 @@
   exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
   id = "4041dff3-e044-4daa-aea3-1968e990c783"
   notes = ""
+  options = "[\"Cable Row\"]"
+  order_index = 3
   program_block_id = "6f88e577-de0e-4f1a-bb8d-d9b39c1cbf5e"
   reps = "[\"6-8\",\"6-8\"]"
   sets = 2
@@ -8474,6 +8482,8 @@
   exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
   id = "a8381ff5-b523-4e5f-9b98-0f2d77b6676c"
   notes = ""
+  options = "[\"Barbell Overhead Press\"]"
+  order_index = 4
   program_block_id = "6f88e577-de0e-4f1a-bb8d-d9b39c1cbf5e"
   reps = "[\"4-8\",\"4-8\"]"
   sets = 2
@@ -8486,6 +8496,8 @@
   exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
   id = "a7e9e75a-79a8-4d59-abd0-2156d419442b"
   notes = ""
+  options = "[\"Standing EZ Bar Curl\",\"Dumbbell Preacher Curl\"]"
+  order_index = 5
   program_block_id = "6f88e577-de0e-4f1a-bb8d-d9b39c1cbf5e"
   reps = "[\"6-8\",\"6-8\"]"
   sets = 2
@@ -8498,6 +8510,8 @@
   exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
   id = "fb986888-58d1-4449-aad6-faadffc7578a"
   notes = ""
+  options = "[\"Smith JM Press\",\"Barbell Skull Crusher\",\"Dumbbell Skull Crusher\"]"
+  order_index = 6
   program_block_id = "6f88e577-de0e-4f1a-bb8d-d9b39c1cbf5e"
   reps = "[\"6-8\",\"6-8\"]"
   sets = 2
@@ -8510,6 +8524,8 @@
   exercise_id = "11829513-8731-4912-8315-0ea143248e48"
   id = "71b8c143-801e-4585-9163-49b302479be1"
   notes = ""
+  options = "[\"Dumbbell Hammer Curl\",\"Reverse EZ Bar Curl\"]"
+  order_index = 7
   program_block_id = "6f88e577-de0e-4f1a-bb8d-d9b39c1cbf5e"
   reps = "[\"6-8\",\"6-8\"]"
   sets = 2
@@ -8522,6 +8538,8 @@
   exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
   id = "8046344e-a4fa-4299-a007-fa843eb140ed"
   notes = ""
+  options = "[\"Rope Pushdown\"]"
+  order_index = 8
   program_block_id = "6f88e577-de0e-4f1a-bb8d-d9b39c1cbf5e"
   reps = "[\"6-8\",\"6-8\"]"
   sets = 2
@@ -8534,6 +8552,8 @@
   exercise_id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
   id = "13660cab-1343-40c9-aac3-0aab3513264f"
   notes = ""
+  options = "[\"Cable Wrist Curl\"]"
+  order_index = 9
   program_block_id = "6f88e577-de0e-4f1a-bb8d-d9b39c1cbf5e"
   reps = "[\"AMRAP\",\"AMRAP\"]"
   sets = 2
