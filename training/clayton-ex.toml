@@ -165,6 +165,11 @@ description = "Simple cable curl"
 primary_muscle = "Biceps"
 
 [[exercise]]
+name = "Machine Incline Curl"
+description = "Incline curls but on a machine"
+primary_muscle = "Biceps"
+
+[[exercise]]
 name = "Standing Dumbbell Curl"
 description = "This can be bilateral or unilateral, but count as if bilateral"
 primary_muscle = "Biceps"
@@ -235,6 +240,11 @@ primary_muscle = "Forearms"
 [[exercise]]
 name = "High Bar Squat"
 description = "Full depth barbell high bar back squat"
+primary_muscle = "Quadriceps"
+
+[[exercise]]
+name = "Paused High Bar Squat"
+description = "Full depth paused barbell high bar back squat"
 primary_muscle = "Quadriceps"
 
 [[exercise]]
