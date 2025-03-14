@@ -3472,8 +3472,188 @@
   timestamp = "0001-01-01T00:00:00Z"
   weight = 0.0
 
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7c5ee42a-ff48-4fcc-a678-8b83488d8c28"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "b059efac-a656-4ac9-852e-c70fcea81f6e"
+  timestamp = "2025-03-13T00:28:32Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2413b029-7831-4d7c-8967-9f47374ef660"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "b059efac-a656-4ac9-852e-c70fcea81f6e"
+  timestamp = "2025-03-13T00:33:07Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7834a345-ace3-4f17-a453-ca4a2dd07f4c"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "b059efac-a656-4ac9-852e-c70fcea81f6e"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "a9377645-354e-45e0-84b9-23fb5592a660"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "60d0dd35-d667-47e4-b810-e9732901e5d3"
+  timestamp = "2025-03-13T00:37:36Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "ca0d2ae6-e11b-4cd6-83bb-606277ba05e7"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "60d0dd35-d667-47e4-b810-e9732901e5d3"
+  timestamp = "2025-03-13T00:42:34Z"
+  weight = 140.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "30efb36f-b78a-44d2-8a40-8049dd81a59b"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "719e1cf7-94c0-4447-bd52-541f3e08eb86"
+  timestamp = "2025-03-13T01:06:22Z"
+  weight = 55.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "a0e828a9-e816-40e8-ad58-2733cf75200c"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "719e1cf7-94c0-4447-bd52-541f3e08eb86"
+  timestamp = "2025-03-13T01:10:25Z"
+  weight = 55.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "818174fe-9e87-43d1-9800-6f4b4556650f"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "f61153db-7adb-4432-b8a5-4ef7a791d260"
+  timestamp = "2025-03-13T00:49:12Z"
+  weight = 75.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "dc8a2035-5f35-4009-8022-94c282aa745d"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "f61153db-7adb-4432-b8a5-4ef7a791d260"
+  timestamp = "2025-03-13T00:50:22Z"
+  weight = 89.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "55a07911-30f6-4b35-83fb-29d0a7e546ae"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "f61153db-7adb-4432-b8a5-4ef7a791d260"
+  timestamp = "2025-03-13T00:55:50Z"
+  weight = 89.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "c035b3f5-a7dc-4633-8dd1-acece792dd57"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "7bc9191d-b023-4c0a-a2a8-3f90cd8e4bc2"
+  timestamp = "2025-03-13T00:58:26Z"
+  weight = 117.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "9cf66f9c-0544-42d9-80a9-89ebd50c4c36"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "7bc9191d-b023-4c0a-a2a8-3f90cd8e4bc2"
+  timestamp = "2025-03-13T01:02:02Z"
+  weight = 138.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1633bd6e-1d84-480b-89de-6a577b22123a"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "7bc9191d-b023-4c0a-a2a8-3f90cd8e4bc2"
+  timestamp = "2025-03-13T01:02:04Z"
+  weight = 138.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "adcd6255-c8db-4433-9583-f05b2baa8874"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "ba2159d1-238a-40d4-922c-74e8e237ea45"
+  timestamp = "2025-03-13T01:16:15Z"
+  weight = 50.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "ff08582b-bd1c-4f10-a280-c5d9d7cf1ef4"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "ba2159d1-238a-40d4-922c-74e8e237ea45"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "9a6724fb-7150-4698-b1e9-ac386105a21c"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "576ade11-7edb-4da6-9edb-254b282706a3"
+  timestamp = "2025-03-13T01:12:21Z"
+  weight = 195.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "c94a4c4f-1033-40e3-84da-9f3e150cc96d"
+  ignore_for_one_rm = 0
+  reps = 9
+  session_exercise_id = "576ade11-7edb-4da6-9edb-254b282706a3"
+  timestamp = "2025-03-13T01:13:22Z"
+  weight = 195.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1d6e87c7-599b-42c3-b534-c347be0781a3"
+  ignore_for_one_rm = 0
+  reps = 20
+  session_exercise_id = "ea1fa0a2-7d2e-43b3-825b-70f5fc8892b3"
+  timestamp = "2025-03-13T01:23:41Z"
+  weight = 36.20000076293945
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "5dbf2f15-97e1-4a29-8363-f9c962d5689c"
+  ignore_for_one_rm = 0
+  reps = 11
+  session_exercise_id = "ea1fa0a2-7d2e-43b3-825b-70f5fc8892b3"
+  timestamp = "2025-03-13T01:27:17Z"
+  weight = 40.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2964b9e3-7e35-4757-8278-30758c99b1bf"
+  ignore_for_one_rm = 0
+  reps = 11
+  session_exercise_id = "ea1fa0a2-7d2e-43b3-825b-70f5fc8892b3"
+  timestamp = "2025-03-13T01:27:24Z"
+  weight = 40.0
+
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Flat bench barbell press"
   estimated_one_rm = 0.0
   id = "35837b73-367b-4316-9de2-f55fe73f630e"
@@ -3481,7 +3661,7 @@
   primary_muscle = "Chest"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Full stretch with pause at the bottom always"
   estimated_one_rm = 0.0
   id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
@@ -3489,7 +3669,7 @@
   primary_muscle = "Chest"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Full stretch with pause at the bottom always, don't need to lock out to be consider a rep"
   estimated_one_rm = 0.0
   id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
@@ -3497,7 +3677,7 @@
   primary_muscle = "Chest"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Pause the bar on the chest for 1 second"
   estimated_one_rm = 0.0
   id = "e1a0189b-b18c-4461-89e4-95cf6c8bd7bb"
@@ -3505,7 +3685,7 @@
   primary_muscle = "Chest"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Try to stretch the pecs as much as possible"
   estimated_one_rm = 0.0
   id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
@@ -3513,7 +3693,7 @@
   primary_muscle = "Chest"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Yes"
   estimated_one_rm = 0.0
   id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
@@ -3521,7 +3701,7 @@
   primary_muscle = "Back"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Stop at the bottom, full stretch"
   estimated_one_rm = 0.0
   id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
@@ -3529,7 +3709,7 @@
   primary_muscle = "Back"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Full range of motion always with big stretch, pause for 1 second"
   estimated_one_rm = 0.0
   id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
@@ -3537,7 +3717,7 @@
   primary_muscle = "Back"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Full range of motion always with big stretch, pause for 1 second"
   estimated_one_rm = 0.0
   id = "ce738f93-8d0f-4a7c-a6df-18d9257745db"
@@ -3545,7 +3725,7 @@
   primary_muscle = "Back"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Full stretch with pause at the bottom always"
   estimated_one_rm = 0.0
   id = "c2767ff7-6a15-42d7-92ef-4ab58e881ddb"
@@ -3553,7 +3733,7 @@
   primary_muscle = "Back"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Full stretch with pause at the bottom always"
   estimated_one_rm = 0.0
   id = "5d836d9d-aa29-4832-976c-45a17fa7b141"
@@ -3561,7 +3741,7 @@
   primary_muscle = "Back"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Full stretch with pause at the bottom always"
   estimated_one_rm = 0.0
   id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
@@ -3569,7 +3749,7 @@
   primary_muscle = "Back"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Don't need to lockout, but need full stretch"
   estimated_one_rm = 0.0
   id = "e0c58361-536a-4111-afd5-60188f0b6447"
@@ -3577,7 +3757,7 @@
   primary_muscle = "Shoulders"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Pause at face level, drive with your shoulders"
   estimated_one_rm = 0.0
   id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
@@ -3585,7 +3765,7 @@
   primary_muscle = "Shoulders"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Can't go wrong, just deep stretch and control the reps"
   estimated_one_rm = 0.0
   id = "74ba898e-4fa5-48c5-97dd-fb4a34331b1c"
@@ -3593,7 +3773,7 @@
   primary_muscle = "Shoulders"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Try to be as stable as possible"
   estimated_one_rm = 0.0
   id = "8625a7ec-07da-4716-b446-94986f324656"
@@ -3601,7 +3781,7 @@
   primary_muscle = "Shoulders"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Pause at the bottom"
   estimated_one_rm = 0.0
   id = "ce01f789-a5e4-489d-83d6-be18c81ed15a"
@@ -3609,7 +3789,7 @@
   primary_muscle = "Shoulders"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Deep stretch, look for the elbows"
   estimated_one_rm = 0.0
   id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
@@ -3617,7 +3797,7 @@
   primary_muscle = "Triceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Deep stretch, look for the elbows"
   estimated_one_rm = 0.0
   id = "76aad2b7-7c18-4896-a656-00665d9adefc"
@@ -3625,7 +3805,7 @@
   primary_muscle = "Triceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Pause at the bottom, move your shoulders a bit to get more ROM"
   estimated_one_rm = 0.0
   id = "57155170-9937-4f82-a611-a2878d073c4a"
@@ -3633,7 +3813,7 @@
   primary_muscle = "Triceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Elbows up, kind of like you're punching the weight"
   estimated_one_rm = 0.0
   id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
@@ -3641,7 +3821,7 @@
   primary_muscle = "Triceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Elbows up, kind of like you're punching the weight"
   estimated_one_rm = 0.0
   id = "215bdffc-62b4-4bb7-ae90-5ff2342661e8"
@@ -3649,7 +3829,7 @@
   primary_muscle = "Triceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Cable with the bar, stretch and 1 second pause at the top"
   estimated_one_rm = 0.0
   id = "db2b345d-8817-4447-83b1-24637cd37e9c"
@@ -3657,7 +3837,7 @@
   primary_muscle = "Triceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Stretch and 1 second pause at the top"
   estimated_one_rm = 0.0
   id = "954b1d2a-9b20-4688-a5eb-cfb2c1866ff5"
@@ -3665,7 +3845,7 @@
   primary_muscle = "Triceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "One arm at a time, lean forward"
   estimated_one_rm = 0.0
   id = "e4faeda9-0070-4910-b690-fb84edfad075"
@@ -3673,7 +3853,7 @@
   primary_muscle = "Biceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Simple cable curl"
   estimated_one_rm = 0.0
   id = "43b7d511-5a8d-48ec-ac2d-5e00e761256e"
@@ -3681,7 +3861,7 @@
   primary_muscle = "Biceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "This can be bilateral or unilateral, but count as if bilateral"
   estimated_one_rm = 0.0
   id = "2eea5a6c-9716-48c6-9ff6-4cce5e820a95"
@@ -3689,7 +3869,7 @@
   primary_muscle = "Biceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "This can be bilateral or unilateral, but count as if bilateral"
   estimated_one_rm = 0.0
   id = "747335b7-2f37-40cf-a205-ae3868096577"
@@ -3697,7 +3877,7 @@
   primary_muscle = "Biceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "This can be bilateral or unilateral, but count as if bilateral"
   estimated_one_rm = 0.0
   id = "e994a6a3-9911-415b-afc6-da82787f3641"
@@ -3705,7 +3885,7 @@
   primary_muscle = "Biceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Always go to absolute stretch and full ROM"
   estimated_one_rm = 0.0
   id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
@@ -3713,7 +3893,7 @@
   primary_muscle = "Biceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Minimize swing, cheating is allowed, just use common sense"
   estimated_one_rm = 0.0
   id = "48bb54c6-af25-45a8-aaae-409aad70a1e6"
@@ -3721,7 +3901,7 @@
   primary_muscle = "Biceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Minimize swing, cheating is allowed, just use common sense"
   estimated_one_rm = 0.0
   id = "11829513-8731-4912-8315-0ea143248e48"
@@ -3729,7 +3909,7 @@
   primary_muscle = "Biceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Minimize swing, cheating is allowed, just use common sense"
   estimated_one_rm = 0.0
   id = "3e64096a-f6f8-4bc0-8110-aff7992be6cc"
@@ -3737,7 +3917,7 @@
   primary_muscle = "Biceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Keep your forearm glued to your leg"
   estimated_one_rm = 0.0
   id = "62fd86f1-b963-4479-a981-3bcb207f6fdf"
@@ -3745,7 +3925,7 @@
   primary_muscle = "Forearms"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Keep your forearm glued to your leg"
   estimated_one_rm = 0.0
   id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
@@ -3753,7 +3933,7 @@
   primary_muscle = "Forearms"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Do this on your back"
   estimated_one_rm = 0.0
   id = "ed3cd093-e12b-4216-b28e-35390c826415"
@@ -3761,7 +3941,7 @@
   primary_muscle = "Forearms"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Full depth barbell high bar back squat"
   estimated_one_rm = 0.0
   id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
@@ -3769,7 +3949,7 @@
   primary_muscle = "Quadriceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Pause for 1 second at the bottom"
   estimated_one_rm = 0.0
   id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
@@ -3777,7 +3957,7 @@
   primary_muscle = "Quadriceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Pause for 1 second at the bottom"
   estimated_one_rm = 0.0
   id = "fd1b7922-9691-4407-8434-56a671a20e01"
@@ -3785,7 +3965,7 @@
   primary_muscle = "Quadriceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Pause for 1 second at the bottom"
   estimated_one_rm = 0.0
   id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
@@ -3793,7 +3973,7 @@
   primary_muscle = "Quadriceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Pause for 1 second at the bottom"
   estimated_one_rm = 0.0
   id = "abc7548c-00db-4a2a-8b6e-87c453308dc5"
@@ -3801,7 +3981,7 @@
   primary_muscle = "Quadriceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Pause for 1 second at the bottom"
   estimated_one_rm = 0.0
   id = "c18218bc-4573-4560-b11b-3aec99b39682"
@@ -3809,7 +3989,7 @@
   primary_muscle = "Quadriceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Push the seat a bit back"
   estimated_one_rm = 0.0
   id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
@@ -3817,7 +3997,7 @@
   primary_muscle = "Quadriceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Absolute stretch at the bottom"
   estimated_one_rm = 0.0
   id = "7c9253db-3efe-45f3-9971-10a7bf03c84a"
@@ -3825,7 +4005,7 @@
   primary_muscle = "Quadriceps"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Pause at the bottom for 1 second"
   estimated_one_rm = 0.0
   id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
@@ -3833,7 +4013,7 @@
   primary_muscle = "Hamstrings"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Pause at the top for 1 second"
   estimated_one_rm = 0.0
   id = "46a87b35-49fa-4dea-b86e-7546b033103f"
@@ -3841,7 +4021,7 @@
   primary_muscle = "Hamstrings"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Push hips back"
   estimated_one_rm = 0.0
   id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
@@ -3849,7 +4029,7 @@
   primary_muscle = "Hamstrings"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Dead stop at every rep"
   estimated_one_rm = 0.0
   id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
@@ -3857,7 +4037,7 @@
   primary_muscle = "Hamstrings"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Put a pad to go for a deep stretch on the calves"
   estimated_one_rm = 0.0
   id = "323673b3-eda6-460f-8868-a12f56ba1da3"
@@ -3865,7 +4045,7 @@
   primary_muscle = "Calves"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "No secret here"
   estimated_one_rm = 0.0
   id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
@@ -3873,7 +4053,7 @@
   primary_muscle = "Calves"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Breath out as you stretch and in as you crunch"
   estimated_one_rm = 0.0
   id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
@@ -3881,7 +4061,7 @@
   primary_muscle = "Abs"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Breath out as you stretch and in as you crunch"
   estimated_one_rm = 0.0
   id = "bdfdf74c-397a-483e-9809-6fa14b1cb62e"
@@ -3889,7 +4069,7 @@
   primary_muscle = "Abs"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:26Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Unilateral work, lean sideways"
   estimated_one_rm = 0.0
   id = "f19b6bd8-0964-4118-8188-0a8044e7548c"
@@ -3897,12 +4077,20 @@
   primary_muscle = "Shoulders"
 
 [[exercises]]
-  created_at = "2025-03-10T18:15:27Z"
+  created_at = "2025-03-13T00:26:01Z"
   description = "Fixed elbows at the pads"
   estimated_one_rm = 0.0
   id = "0cc5e54e-5928-4c23-b6b7-c9bae116a278"
   name = "Incline Machine Curl"
   primary_muscle = "Biceps"
+
+[[exercises]]
+  created_at = "2025-03-13T00:26:01Z"
+  description = "Full range of motion always, brace as hard as you can"
+  estimated_one_rm = 0.0
+  id = "c79c90c9-d7bc-4ef0-98d0-96ad73619517"
+  name = "Smith Machine Squat"
+  primary_muscle = "Quadriceps"
 
 [[program_blocks]]
   description = "Primary upper body day"
@@ -9092,6 +9280,54 @@
   notes = ""
   training_session_id = "7ee8bc64-6a16-4a80-aded-0a02dea7a426"
 
+[[training_session_exercises]]
+  exercise_id = "c79c90c9-d7bc-4ef0-98d0-96ad73619517"
+  id = "b059efac-a656-4ac9-852e-c70fcea81f6e"
+  notes = ""
+  training_session_id = "f27f9eb7-8375-405a-8ef9-9fd3ffd4df2a"
+
+[[training_session_exercises]]
+  exercise_id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
+  id = "60d0dd35-d667-47e4-b810-e9732901e5d3"
+  notes = ""
+  training_session_id = "f27f9eb7-8375-405a-8ef9-9fd3ffd4df2a"
+
+[[training_session_exercises]]
+  exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+  id = "719e1cf7-94c0-4447-bd52-541f3e08eb86"
+  notes = ""
+  training_session_id = "f27f9eb7-8375-405a-8ef9-9fd3ffd4df2a"
+
+[[training_session_exercises]]
+  exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+  id = "f61153db-7adb-4432-b8a5-4ef7a791d260"
+  notes = ""
+  training_session_id = "f27f9eb7-8375-405a-8ef9-9fd3ffd4df2a"
+
+[[training_session_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "7bc9191d-b023-4c0a-a2a8-3f90cd8e4bc2"
+  notes = ""
+  training_session_id = "f27f9eb7-8375-405a-8ef9-9fd3ffd4df2a"
+
+[[training_session_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "ba2159d1-238a-40d4-922c-74e8e237ea45"
+  notes = ""
+  training_session_id = "f27f9eb7-8375-405a-8ef9-9fd3ffd4df2a"
+
+[[training_session_exercises]]
+  exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  id = "576ade11-7edb-4da6-9edb-254b282706a3"
+  notes = ""
+  training_session_id = "f27f9eb7-8375-405a-8ef9-9fd3ffd4df2a"
+
+[[training_session_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "ea1fa0a2-7d2e-43b3-825b-70f5fc8892b3"
+  notes = ""
+  training_session_id = "f27f9eb7-8375-405a-8ef9-9fd3ffd4df2a"
+
 [[training_sessions]]
   end_time = "2025-02-10T19:03:55Z"
   id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
@@ -9203,3 +9439,10 @@
   notes = ""
   program_block_id = "5f5a7658-3261-4a62-bee4-99a07ba0c6c4"
   start_time = "2025-03-10T18:31:53Z"
+
+[[training_sessions]]
+  end_time = "2025-03-13T01:27:30Z"
+  id = "f27f9eb7-8375-405a-8ef9-9fd3ffd4df2a"
+  notes = ""
+  program_block_id = "b27aaf64-c0da-4ec4-b4c4-4a1e51c152c6"
+  start_time = "2025-03-13T00:26:07Z"
