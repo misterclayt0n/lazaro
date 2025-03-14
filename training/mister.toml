@@ -1,0 +1,268 @@
+name = "Mister"
+description = "No need for description"
+
+[[blocks]]
+name = "Upper Day 1"
+description = "Primary bench day"
+
+[[blocks.exercises]]
+name = "Bench Press"
+sets = 3
+reps = ["4-6", "4-6", "6-8"]
+program_1rm = 110.0
+
+[[blocks.exercises]]
+name = "Bent Over Row"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Machine Row"]
+
+[[blocks.exercises]]
+name = "Weighted Dip"
+sets = 2
+reps = ["4-8", "4-8"]
+
+[[blocks.exercises]]
+name = "Weighted Pull-Up"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Machine Incline Press"]
+
+[[blocks.exercises]]
+name = "Machine Overhead Press"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Barbell Overhead Press"]
+
+[[blocks.exercises]]
+name = "Cable Overhead Tricep Extension"
+sets = 3
+reps = ["4-8", "4-8", "AMRAP"]
+options = ["Dumbbell Skull Crusher", "Barbell Skull Crusher"]
+
+[[blocks.exercises]]
+name = "Bayesian Cable Curl"
+sets = 3
+reps = ["4-8", "4-8", "AMRAP"]
+options = ["Cable Curl", "Standing Dumbbell Curl", "Incline Dumbbell Curl", "Incline Machine Curl"]
+
+[[blocks.exercises]]
+name = "Dumbbell Lateral Raise"
+sets = 3
+reps = ["4-8", "4-8", "AMRAP"]
+options = ["Seated Dumbbell Lateral Raise", "Cable Lateral Raise"]
+
+[[blocks.exercises]]
+name = "Standing Smith Calf Raise"
+sets = 3
+reps = ["4-8", "4-8", "4-8"]
+options = ["Leg Press Calf Raise"]
+
+[[blocks]]
+name = "Lower Day 1"
+description = "Primary squat day"
+
+[[blocks.exercises]]
+name = "High Bar Squat"
+sets = 3
+reps = ["4-6", "4-6", "6-8"]
+program_1rm = 150.0
+options = ["Smith Machine Squat", "Hack Squat", "Belt Squat"]
+
+[[blocks.exercises]]
+name = "RDL"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["SLDL"]
+
+[[blocks.exercises]]
+name = "Single Leg Press"
+sets = 2
+reps = ["4-8", "4-8"]
+notes = "Take some rest between legs"
+
+[[blocks.exercises]]
+name = "Lying Leg Curl"
+sets = 3
+reps = ["4-8", "4-8", "AMRAP"]
+options = ["Seated Leg Curl"]
+
+[[blocks.exercises]]
+name = "Leg Extension"
+sets = 3
+reps = ["4-8", "4-8", "AMRAP"]
+options = ["Sissy Squat"]
+
+[[blocks.exercises]]
+name = "Machine Ab Crunch"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Weighted Abs"]
+
+[[blocks.exercises]]
+name = "Leg Press Calf Raise"
+sets = 3
+reps = ["4-8", "4-8", "4-8"]
+options = ["Standing Smith Calf Raise"]
+
+[[blocks.exercises]]
+name = "Cable Wrist Curl"
+sets = 3
+reps = ["AMRAP", "AMRAP", "AMRAP"]
+options = ["Dumbbell Wrist Curl"]
+
+[[blocks]]
+name = "Upper Day 2"
+description = "Secondary upper body day"
+
+[[blocks.exercises]]
+name = "Barbell Overhead Press"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Machine Overhead Press"]
+
+[[blocks.exercises]]
+name = "Weighted Pull-Up"
+sets = 2
+reps = ["3-6", "3-6"]
+options = ["Lat Pulldown"]
+
+[[blocks.exercises]]
+name = "Machine Incline Press"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Barbell Incline Press"]
+
+[[blocks.exercises]]
+name = "Machine Row"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Cable Row"]
+
+[[blocks.exercises]]
+name = "EZ Bar Preacher Curl"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Standing EZ Bar Curl", "Dumbbell Preacher Curl"]
+
+[[blocks.exercises]]
+name = "JM Press"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Smith JM Press", "Barbell Skull Crusher", "Dumbbell Skull Crusher"]
+
+[[blocks.exercises]]
+name = "Cable Hammer Curl"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Dumbbell Hammer Curl", "Reverse EZ Bar Curl", "Cable Curl", "Bayesian Cable Curl", "Machine Incline Curl"]
+
+[[blocks.exercises]]
+name = "Tricep Pushdown"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Rope Pushdown"]
+
+[[blocks.exercises]]
+name = "Dumbbell Wrist Curl"
+sets = 2
+reps = ["AMRAP", "AMRAP"]
+options = ["Cable Wrist Curl"]
+
+[[blocks]]
+name = "Lower Day 2"
+description = "Secondary squat day"
+
+[[blocks.exercises]]
+name = "Paused High Bar Squat"
+sets = 2
+reps = ["4-6", "4-6"]
+options = ["Smith Machine Squat", "Hack Squat", "Belt Squat"]
+
+[[blocks.exercises]]
+name = "Seated Leg Curl"
+sets = 3
+reps = ["4-8", "4-8", "AMRAP"]
+options = ["Lying Leg Curl"]
+
+[[blocks.exercises]]
+name = "Leg Press"
+sets = 2
+reps = ["6-8", "6-8"]
+options = ["Machine Leg Press", "Single Leg Press", "Hack Squat", "Belt Squat"]
+
+[[blocks.exercises]]
+name = "Leg Extension"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Sissy Squat"]
+
+[[blocks.exercises]]
+name = "Machine Ab Crunch"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Weighted Abs"]
+
+[[blocks.exercises]]
+name = "Standing Smith Calf Raise"
+sets = 3
+reps = ["4-8", "4-8", "4-8"]
+options = ["Leg Press Calf Raise"]
+
+[[blocks.exercises]]
+name = "Cable Wrist Curl"
+sets = 3
+reps = ["AMRAP", "AMRAP", "AMRAP"]
+options = ["Dumbbell Wrist Curl"]
+
+[[blocks]]
+name = "Upper Day 3"
+description = "Tertiary upper body day"
+
+[[blocks.exercises]]
+name = "Bench Press"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Close Grip Bench Press", "Machine Incline Press"]
+
+[[blocks.exercises]]
+name = "Machine Row"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Cable Row"]
+
+[[blocks.exercises]]
+name = "Barbell Skull Crusher"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["JM Press", "Dumbbell Skull Crusher", "Smith JM Press"]
+
+[[blocks.exercises]]
+name = "EZ Bar Preacher Curl"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Standing EZ Bar Curl", "Dumbbell Preacher Curl"]
+
+[[blocks.exercises]]
+name = "Tricep Pushdown"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Rope Pushdown"]
+
+[[blocks.exercises]]
+name = "Reverse EZ Bar Curl"
+sets = 2
+reps = ["4-8", "4-8"]
+options = ["Dumbell Hammer Curl", "Incline Dumbbell Curl", "Machine Incline Curl"]
+
+[[blocks.exercises]]
+name = "Seated Dumbbell Lateral Raise"
+sets = 3
+reps = ["4-8", "4-8", "4-8"]
+options = ["Machine Lateral Raise"]
+
+[[blocks.exercises]]
+name = "Cable Wrist Curl"
+sets = 3
+reps = ["AMRAP", "AMRAP", "AMRAP"]
+options = ["Dumbbell Wrist Curl"]
