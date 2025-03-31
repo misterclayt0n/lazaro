@@ -3832,6 +3832,1743 @@
   timestamp = "0001-01-01T00:00:00Z"
   weight = 0.0
 
+[[exercise_sets]]
+  bodyweight = 0
+  id = "c81a4ce0-0b4d-47fa-94b4-f8c31a673ca1"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "875e0e1e-82b8-48d3-89d1-53b98f0ed5e7"
+  timestamp = "2025-03-14T19:05:09Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f31a5e12-c255-41e7-9059-fb62a1c82124"
+  ignore_for_one_rm = 0
+  reps = 3
+  session_exercise_id = "875e0e1e-82b8-48d3-89d1-53b98f0ed5e7"
+  timestamp = "2025-03-14T19:08:10Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "a105bae2-166c-47ac-b6e7-b6996d170317"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "d568eea6-572c-40b4-afbd-80e0d81147c7"
+  timestamp = "2025-03-14T19:12:15Z"
+  weight = 89.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "d10f84c7-9c9a-468f-9a3a-e76ceaea8850"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "d568eea6-572c-40b4-afbd-80e0d81147c7"
+  timestamp = "2025-03-14T19:17:25Z"
+  weight = 96.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7c5d9b66-3506-4808-bcf7-5b252c64fd05"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "d568eea6-572c-40b4-afbd-80e0d81147c7"
+  timestamp = "2025-03-14T19:21:19Z"
+  weight = 96.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "0c26bc16-56fa-422d-8511-dba49a19eea4"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "983307da-7b7d-4df2-b425-76352cee2ad3"
+  timestamp = "2025-03-14T19:30:33Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2d9ace8a-388d-4fd4-b7c0-f72e92478c8a"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "983307da-7b7d-4df2-b425-76352cee2ad3"
+  timestamp = "2025-03-14T19:30:52Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f73773fb-aedf-45f1-a68b-986f4346d160"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "6a006ff6-02e8-4a3d-b170-629a40b0b215"
+  timestamp = "2025-03-14T19:42:56Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "698c404b-fe72-4d78-992d-a7d070633c8b"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "6a006ff6-02e8-4a3d-b170-629a40b0b215"
+  timestamp = "2025-03-14T19:42:57Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7eb4b8db-412c-4cc2-a9a6-60de57e4040a"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "17dfcaa4-a915-49f7-9875-66724464a043"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "a66e173e-e430-4f2a-bef8-c8b59e9aca5d"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "17dfcaa4-a915-49f7-9875-66724464a043"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "e786ae8f-ebfc-4ff4-9343-61706334140e"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "15f452af-58cc-4b0e-aa27-f90f4a635e94"
+  timestamp = "2025-03-14T19:44:34Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "abfae37f-636f-4576-8b35-d1bdbd879b4f"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "15f452af-58cc-4b0e-aa27-f90f4a635e94"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "218124f1-c6ec-496b-8877-3238a30365dd"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "15f452af-58cc-4b0e-aa27-f90f4a635e94"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "257dfdf6-db66-4f40-8f02-abb2d1a1e081"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "4e9a0e39-289a-4122-bea6-e7b2432a61dc"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "eb4cba6e-c446-4032-b84f-ea6d4c672a95"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "4e9a0e39-289a-4122-bea6-e7b2432a61dc"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "5c8d9da5-f7c6-4c74-87d5-410cbf654ac7"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "4e9a0e39-289a-4122-bea6-e7b2432a61dc"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "93e9d204-1c2f-427b-8bac-fa7a5b04ac0b"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "b304399a-17eb-4277-96c3-c34111c7a721"
+  timestamp = "2025-03-15T20:06:49Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "fe58d42c-0443-44e5-bee6-9b162bd3f7a9"
+  ignore_for_one_rm = 0
+  reps = 1
+  session_exercise_id = "b304399a-17eb-4277-96c3-c34111c7a721"
+  timestamp = "2025-03-15T20:15:50Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "60148df5-ee0c-4e76-ae5a-d80076d6794b"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "5bfc57d6-87f4-4ad2-8244-185fb2ff594a"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "c62ce7ed-727c-45ce-8899-2f23d11a89c8"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "5bfc57d6-87f4-4ad2-8244-185fb2ff594a"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1cdd8f19-d307-45d0-bb00-9ed1a638ac63"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "03c7a497-7a48-41a0-a082-11f6c71f6627"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "ac4faf40-0965-4862-9d49-8d013788f7b2"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "03c7a497-7a48-41a0-a082-11f6c71f6627"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "8ef2249d-2ad1-40c7-b992-57d436aff72b"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "d19c3d0a-5b75-4514-b707-96403e1762b8"
+  timestamp = "2025-03-15T20:33:01Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "e2a09aa6-49d9-4c1f-b8ec-fabef719970a"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "d19c3d0a-5b75-4514-b707-96403e1762b8"
+  timestamp = "2025-03-15T20:38:03Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "20dc119d-8522-45dc-8327-1f000e9684f0"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "58c16439-46b2-48f6-a572-1f45e4d7953a"
+  timestamp = "2025-03-15T20:40:38Z"
+  weight = 36.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "22b48bf7-31e8-4c42-bc96-bafd935b96b7"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "58c16439-46b2-48f6-a572-1f45e4d7953a"
+  timestamp = "2025-03-15T20:43:26Z"
+  weight = 36.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "13c45479-5b06-45b8-9005-36d43a63bf84"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "4a96013e-2069-4336-b838-cd82ab07a2fa"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "e4fc5a3b-5260-44a2-8091-a392447ad29d"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "4a96013e-2069-4336-b838-cd82ab07a2fa"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "c194fbff-f258-4ec6-8299-345c37218aed"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "2cd1f4af-6067-4549-aeb1-c903623922d1"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "41980c44-eea7-4984-b75f-cad2d05e8c2c"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "2cd1f4af-6067-4549-aeb1-c903623922d1"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "6286cf5c-8907-4ccb-9223-631331183beb"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "2cd1f4af-6067-4549-aeb1-c903623922d1"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7d5f7e15-a11a-4004-8f79-4d9347123d59"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "2523c4aa-d714-46f4-ad95-4de8926ed552"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "bdbbf948-66da-4bea-86bf-22e052fa6c30"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "2523c4aa-d714-46f4-ad95-4de8926ed552"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2b94a628-b7fd-4a92-acaa-bb355828c3e5"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "2523c4aa-d714-46f4-ad95-4de8926ed552"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "60baf2b0-6ecb-4d80-83b5-bda6bf95f831"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "b29546f4-82df-456f-9362-920990359874"
+  timestamp = "2025-03-17T18:03:37Z"
+  weight = 105.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "4c7e2008-02e6-4f2e-89b0-817848ff71d4"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "b29546f4-82df-456f-9362-920990359874"
+  timestamp = "2025-03-17T18:10:38Z"
+  weight = 105.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "403396f2-dae3-4d4d-ab89-a81df7db4ac6"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "b29546f4-82df-456f-9362-920990359874"
+  timestamp = "2025-03-17T18:13:28Z"
+  weight = 95.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "318938e1-6cd2-49a4-98c0-034aec7218c8"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "713d19b8-77ef-4cc4-9ff2-2108445df074"
+  timestamp = "2025-03-17T18:22:59Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "d32ed1b6-de38-46f6-b1d8-f09852ccfced"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "713d19b8-77ef-4cc4-9ff2-2108445df074"
+  timestamp = "2025-03-17T18:28:18Z"
+  weight = 160.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f0c66335-b7fe-43d2-aeb0-0f004d5df5d0"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "5e16b925-7edf-4c75-ae96-347ac6b98c57"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1fd05efe-6130-4f0a-993c-760bd8e94ac7"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "5e16b925-7edf-4c75-ae96-347ac6b98c57"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "130c4562-6402-46e6-ac8a-277bdeeb8ba3"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "3d972f63-1673-4329-8ddd-4bb8ef2110aa"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "6327831f-d02c-45d2-9205-cff943cedafa"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "3d972f63-1673-4329-8ddd-4bb8ef2110aa"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "bf53ca24-0d15-4c22-b78a-1cd5efa45b19"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "7d7c6b72-ac51-4a15-a7f1-ebcef264b264"
+  timestamp = "2025-03-17T18:51:09Z"
+  weight = 67.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "4bc4facf-bc92-4341-bae1-20c2c8021da0"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "7d7c6b72-ac51-4a15-a7f1-ebcef264b264"
+  timestamp = "2025-03-17T18:54:14Z"
+  weight = 67.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "4a852ee7-9ca7-4768-8b2b-e83cd697a9db"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "df6d5b84-5745-4598-a262-4eb1b1f32dfd"
+  timestamp = "2025-03-17T18:57:31Z"
+  weight = 36.20000076293945
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "a7377929-ce07-4ded-b9ef-a6d13db26243"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "df6d5b84-5745-4598-a262-4eb1b1f32dfd"
+  timestamp = "2025-03-17T19:01:01Z"
+  weight = 40.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "da9aabc7-824e-4f78-8059-bd53964937e8"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "df6d5b84-5745-4598-a262-4eb1b1f32dfd"
+  timestamp = "2025-03-17T19:02:56Z"
+  weight = 47.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "0fcbe567-84ab-4b10-9e21-e671fc3fe751"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "ff1de7c3-56b5-43b0-82f7-23cb3ad6b669"
+  timestamp = "2025-03-17T18:54:35Z"
+  weight = 21.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "ccc891b3-b123-4ae4-a72c-213a78014206"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "ff1de7c3-56b5-43b0-82f7-23cb3ad6b669"
+  timestamp = "2025-03-17T18:56:00Z"
+  weight = 21.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f2386f8e-e808-40cd-804c-e20cf7f7db8f"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "ff1de7c3-56b5-43b0-82f7-23cb3ad6b669"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "d96f1287-a719-4403-924c-5c54e9eaa30d"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "f2daf3d2-f392-4d78-9a6d-5a6f2cfc55ef"
+  timestamp = "2025-03-17T19:03:53Z"
+  weight = 14.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b990d7c4-c5f5-46ec-9128-3e54f22699ac"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "f2daf3d2-f392-4d78-9a6d-5a6f2cfc55ef"
+  timestamp = "2025-03-17T19:06:52Z"
+  weight = 14.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b9bc31de-1dab-487c-9a12-1a0de47a101b"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "f2daf3d2-f392-4d78-9a6d-5a6f2cfc55ef"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b633d040-fe1e-4c7d-abf1-25a3be2028e7"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "5704c2f0-5502-42c5-9485-4d4e9e0ff5ab"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "be8a4a5d-74c3-44c7-87fd-83a5fdd7ea55"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "5704c2f0-5502-42c5-9485-4d4e9e0ff5ab"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "6aac0ed3-0e8c-489e-9b93-d2d6a9169e3d"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "5704c2f0-5502-42c5-9485-4d4e9e0ff5ab"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "980e1e96-4d85-41b0-9a4b-bf3244b65e8c"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "e57e39ab-fcc6-4172-95d9-c763af9fae79"
+  timestamp = "2025-03-19T18:39:26Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "49ff9c48-e5be-4360-b9a6-9e4bdcdebd5c"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "e57e39ab-fcc6-4172-95d9-c763af9fae79"
+  timestamp = "2025-03-19T18:47:38Z"
+  weight = 130.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "14ab29bf-5eac-4383-a4ba-ddf567b3856f"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "e57e39ab-fcc6-4172-95d9-c763af9fae79"
+  timestamp = "2025-03-19T18:53:15Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "e1d780e1-0514-4399-8682-e956f8de2ba7"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "987a2712-b1bc-40a1-b571-eeadb29d7723"
+  timestamp = "2025-03-19T18:56:36Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "95c34e30-d489-41a2-9403-e36e60cb5b94"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "987a2712-b1bc-40a1-b571-eeadb29d7723"
+  timestamp = "2025-03-19T19:00:53Z"
+  weight = 140.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "96f0d0fb-5cea-4c1a-836f-52936a84920a"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "c2a48b77-e8e0-4eda-ab64-f0feb2fbf341"
+  timestamp = "2025-03-19T19:10:36Z"
+  weight = 80.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "0045c8ea-fd97-47cd-857b-8104ff0168af"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "c2a48b77-e8e0-4eda-ab64-f0feb2fbf341"
+  timestamp = "2025-03-19T19:14:18Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "36d43bc5-f79c-4069-9c97-78835678a6a0"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "17ea25a9-c601-4443-982d-7e0d3c6586bf"
+  timestamp = "2025-03-19T19:18:41Z"
+  weight = 74.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "39cb5866-4ccc-4a81-9ffe-7469c23ec522"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "17ea25a9-c601-4443-982d-7e0d3c6586bf"
+  timestamp = "2025-03-19T19:21:06Z"
+  weight = 95.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2b3f1f52-2055-4258-a341-87a603b0d0fb"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "17ea25a9-c601-4443-982d-7e0d3c6586bf"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "333b0ba9-bda6-4853-8a37-1297039c6961"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "7d49422d-25ce-4866-ae3d-f24890a80185"
+  timestamp = "2025-03-19T19:29:58Z"
+  weight = 130.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b218f4ec-b1e7-417b-8abf-cccb1ac020f1"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "7d49422d-25ce-4866-ae3d-f24890a80185"
+  timestamp = "2025-03-19T19:32:34Z"
+  weight = 130.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2bbe1e57-fcbf-494d-9f02-92a29d72a237"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "7d49422d-25ce-4866-ae3d-f24890a80185"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "e2006ba1-46d9-463b-b259-e21c21087dc8"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "6994118f-a0c4-4aa3-899f-143d1f4d0814"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "9b6af517-54cd-4567-a20b-a0d18d9db9d7"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "6994118f-a0c4-4aa3-899f-143d1f4d0814"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "5634eb27-a635-44ac-ae4e-6916f62bb5e6"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "3bf2e20c-05be-498e-9aeb-87e5bcda19f2"
+  timestamp = "2025-03-19T19:34:06Z"
+  weight = 175.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1610d8a4-90b1-4d1b-ba98-5945cc1cef2c"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "3bf2e20c-05be-498e-9aeb-87e5bcda19f2"
+  timestamp = "2025-03-19T19:36:23Z"
+  weight = 220.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "c4ec2170-67a6-4d53-b0b4-c5cb750f3446"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "3bf2e20c-05be-498e-9aeb-87e5bcda19f2"
+  timestamp = "2025-03-19T19:37:36Z"
+  weight = 220.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "86045d4b-e92b-4343-b33d-f07ce9e1edad"
+  ignore_for_one_rm = 0
+  reps = 13
+  session_exercise_id = "1337b518-0036-41bb-85ed-893a472aefbb"
+  timestamp = "2025-03-19T19:24:03Z"
+  weight = 40.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2002732b-5474-455a-94ad-3727750193b7"
+  ignore_for_one_rm = 0
+  reps = 11
+  session_exercise_id = "1337b518-0036-41bb-85ed-893a472aefbb"
+  timestamp = "2025-03-19T19:25:18Z"
+  weight = 45.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "c1131b79-d10c-4edc-8c86-fceec52c1eb4"
+  ignore_for_one_rm = 0
+  reps = 9
+  session_exercise_id = "1337b518-0036-41bb-85ed-893a472aefbb"
+  timestamp = "2025-03-19T19:27:10Z"
+  weight = 45.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "dca9e86b-accc-4c23-9cd1-ff6539f2eabd"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "376e7fe8-3842-4cdf-869e-af0f25dd59a7"
+  timestamp = "2025-03-20T17:39:58Z"
+  weight = 60.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b5056432-01a6-41b3-8964-39c350dcc012"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "376e7fe8-3842-4cdf-869e-af0f25dd59a7"
+  timestamp = "2025-03-20T17:49:05Z"
+  weight = 70.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "0ea65ac1-c69c-415b-ae39-d412d0c2509d"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "d1dcc96b-ae17-490f-933e-c438d12d5647"
+  timestamp = "2025-03-20T17:59:19Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "577ad422-5d52-466d-887c-23f2a69043ce"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "d1dcc96b-ae17-490f-933e-c438d12d5647"
+  timestamp = "2025-03-20T17:59:20Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "14a884af-1d68-47aa-b875-8ef63ef74632"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "80836a76-62f5-4635-b48f-ffe7d81a04a8"
+  timestamp = "2025-03-20T18:05:54Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "4b1c37c3-6334-4940-a011-4bdcbfe812ea"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "80836a76-62f5-4635-b48f-ffe7d81a04a8"
+  timestamp = "2025-03-20T18:08:51Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "cb64d6ba-be25-4cb8-b5bc-2543526d46ba"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "1ea94da8-5b00-4c6b-a7f8-43db74bbf83c"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b1fa8a74-370a-4274-9535-797102628434"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "1ea94da8-5b00-4c6b-a7f8-43db74bbf83c"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "4673451a-8af0-4d01-8535-cf64af149642"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "e8d146c8-79d1-49ce-b008-2ac20976b407"
+  timestamp = "2025-03-20T18:26:20Z"
+  weight = 40.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "ab004488-0615-4385-a7e7-358f52e92b98"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "e8d146c8-79d1-49ce-b008-2ac20976b407"
+  timestamp = "2025-03-20T18:30:23Z"
+  weight = 40.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2c06427d-23a3-4ede-bf9e-080f07716f55"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "adb7d28a-235e-4824-ab7b-9358bceeba2e"
+  timestamp = "2025-03-20T18:17:54Z"
+  weight = 40.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "75fd3f1d-7075-4fff-b5ec-cb399f625f35"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "adb7d28a-235e-4824-ab7b-9358bceeba2e"
+  timestamp = "2025-03-20T18:21:06Z"
+  weight = 40.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "02e5e79d-93ef-4fa7-8ddb-dab24f3b7484"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "c41e81e1-b483-4696-a02c-fb34e2f3008f"
+  timestamp = "2025-03-20T18:35:22Z"
+  weight = 42.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "d63f5872-ad53-4d4b-8820-5924e99650fc"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "c41e81e1-b483-4696-a02c-fb34e2f3008f"
+  timestamp = "2025-03-20T18:38:00Z"
+  weight = 42.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "ca6ab20f-abdd-441e-b528-b789d080972b"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "ebf9e936-f0e7-42a8-930c-e5f181a4d4a3"
+  timestamp = "2025-03-20T18:32:08Z"
+  weight = 40.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "68aa62d6-11f2-4729-abe4-78717067bc7d"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "ebf9e936-f0e7-42a8-930c-e5f181a4d4a3"
+  timestamp = "2025-03-20T18:34:31Z"
+  weight = 42.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "5fc6c9f7-281e-4ad6-8309-32cadb44adc9"
+  ignore_for_one_rm = 0
+  reps = 12
+  session_exercise_id = "58260874-a77a-4cc0-aad6-587e96401b11"
+  timestamp = "2025-03-20T18:39:06Z"
+  weight = 35.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "83d0b498-c6f5-45b9-af3b-3c733dc6de04"
+  ignore_for_one_rm = 0
+  reps = 9
+  session_exercise_id = "58260874-a77a-4cc0-aad6-587e96401b11"
+  timestamp = "2025-03-20T18:39:52Z"
+  weight = 42.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "447e2a75-4b0a-4afc-82e6-0a14c8174230"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "c0fffb40-c058-4d6b-82f1-13e2164bce01"
+  timestamp = "2025-03-21T17:37:34Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1ecacce6-d19e-4d00-9b04-fe53fdb94880"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "c0fffb40-c058-4d6b-82f1-13e2164bce01"
+  timestamp = "2025-03-21T17:41:20Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2d953667-085a-4f2b-a322-500ea72ada57"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "33e54a18-68fd-47c4-8a21-a3252540b57e"
+  timestamp = "2025-03-21T17:47:11Z"
+  weight = 76.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "914bcdca-869c-4f42-8453-0a54bef5304b"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "33e54a18-68fd-47c4-8a21-a3252540b57e"
+  timestamp = "2025-03-21T17:50:37Z"
+  weight = 85.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f6bcb4a8-1b20-41e6-a02b-bdae8ba79472"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "33e54a18-68fd-47c4-8a21-a3252540b57e"
+  timestamp = "2025-03-21T17:53:20Z"
+  weight = 85.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7c99d6b3-8909-4699-b2c0-88b8a7388398"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "96b08b1d-4e01-4ff1-8470-313c5ad0dc8c"
+  timestamp = "2025-03-21T18:02:57Z"
+  weight = 240.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1829a404-e95d-44a2-b90c-de21987da841"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "96b08b1d-4e01-4ff1-8470-313c5ad0dc8c"
+  timestamp = "2025-03-21T18:03:01Z"
+  weight = 240.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "0f76d949-255e-4376-a202-56eee06c0164"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "b12ddc52-5539-4157-bbda-808db662514e"
+  timestamp = "2025-03-21T18:07:25Z"
+  weight = 130.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "5e4be58c-7e6e-4191-852a-5bc69dc59a61"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "b12ddc52-5539-4157-bbda-808db662514e"
+  timestamp = "2025-03-21T18:10:12Z"
+  weight = 130.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7735d91f-f016-468e-a472-610385e68e0e"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "931d375a-a1a4-447c-9b95-34a452a9597f"
+  timestamp = "2025-03-21T18:20:46Z"
+  weight = 50.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7fca0d1c-be41-4c42-b1b5-4d9c276207be"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "931d375a-a1a4-447c-9b95-34a452a9597f"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "3f42d264-bcd8-4874-bc18-de7a92620c4c"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "c1b9d3c1-4be9-4ab4-8aea-26a02d969f1e"
+  timestamp = "2025-03-21T18:13:42Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "14e9e068-151b-4b8e-a69f-c58d58e52ec5"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "c1b9d3c1-4be9-4ab4-8aea-26a02d969f1e"
+  timestamp = "2025-03-21T18:15:48Z"
+  weight = 140.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2f179299-af94-4149-a62b-ba6dbd777e19"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "c1b9d3c1-4be9-4ab4-8aea-26a02d969f1e"
+  timestamp = "2025-03-21T18:19:30Z"
+  weight = 160.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "3ee74afb-ebf9-4fcb-9fdc-547d065a58db"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "82621ac9-7099-40f8-b5f0-572ea59790d1"
+  timestamp = "2025-03-21T18:25:42Z"
+  weight = 42.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "844b6ab3-64a8-4251-8c33-358bf00d3b22"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "82621ac9-7099-40f8-b5f0-572ea59790d1"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "992b6044-7704-41c5-a8da-1bd22bf69c46"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "82621ac9-7099-40f8-b5f0-572ea59790d1"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "d09db504-1a46-43c3-b2f3-48ba218cdc19"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "c8fb9b94-5b76-4631-8f45-527163caf8e8"
+  timestamp = "2025-03-25T17:40:26Z"
+  weight = 110.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "9461db3a-af55-4bd8-8317-5baa53342e90"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "c8fb9b94-5b76-4631-8f45-527163caf8e8"
+  timestamp = "2025-03-25T17:45:28Z"
+  weight = 110.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f1f68fb2-419b-4098-8af5-d1a13eba2451"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "c8fb9b94-5b76-4631-8f45-527163caf8e8"
+  timestamp = "2025-03-25T17:51:07Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "aa5f6af6-c790-4bd2-8272-308b6b1fde2c"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "a8ef310f-7e1e-4437-95ce-e5a3c3fab006"
+  timestamp = "2025-03-25T17:56:39Z"
+  weight = 160.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "d829acf1-54fd-4b37-a757-5138f3c2e5ad"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "a8ef310f-7e1e-4437-95ce-e5a3c3fab006"
+  timestamp = "2025-03-25T18:00:46Z"
+  weight = 160.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7a783d19-b8f5-46a6-809e-4003d4b393e7"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "335809df-8d65-4b88-8577-34bf394a49da"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "5932bb16-89e1-4a51-8b01-cb43955eb505"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "335809df-8d65-4b88-8577-34bf394a49da"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "38414842-2374-49f3-890a-378e9a55e0df"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "fc65a268-6227-48a7-8197-37ca8d4080fd"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "afa4c59a-aff6-4d6f-bcd4-da9d8e427468"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "fc65a268-6227-48a7-8197-37ca8d4080fd"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "86d5eda9-0036-4203-9ecf-3479876ff8f2"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "813d53ec-70fb-4bb8-a159-127198a8c83a"
+  timestamp = "2025-03-25T18:21:11Z"
+  weight = 76.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f84c9ae6-f6ff-473b-9b87-f38d0989e5d3"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "813d53ec-70fb-4bb8-a159-127198a8c83a"
+  timestamp = "2025-03-25T18:25:07Z"
+  weight = 76.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "a07ddf37-00d1-45e8-b3f0-254cbb59579d"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "02cb576d-59a8-415a-8e17-97f0e69149d3"
+  timestamp = "2025-03-25T18:40:00Z"
+  weight = 40.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "9fd4f4b1-0761-4074-beda-25189c054c82"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "02cb576d-59a8-415a-8e17-97f0e69149d3"
+  timestamp = "2025-03-25T18:45:48Z"
+  weight = 47.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "da7943a9-2a2c-41e8-99f2-771821842db3"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "02cb576d-59a8-415a-8e17-97f0e69149d3"
+  timestamp = "2025-03-25T18:48:03Z"
+  weight = 47.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "ec0bcfff-1f6b-44d3-94f7-969cdd1b5725"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "968e0a10-555d-480e-ac72-079f8ef58537"
+  timestamp = "2025-03-25T18:30:53Z"
+  weight = 30.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "6afdef51-96a0-4d3e-8686-f60e4fc2dcc9"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "968e0a10-555d-480e-ac72-079f8ef58537"
+  timestamp = "2025-03-25T18:33:58Z"
+  weight = 35.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b4508cf9-4494-4741-8ae1-cf7f09a2fea3"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "968e0a10-555d-480e-ac72-079f8ef58537"
+  timestamp = "2025-03-25T18:37:53Z"
+  weight = 40.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "905a305c-aeaf-48e2-9ef1-01b725bb2e6b"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "c5781dc8-f3fc-4ced-802e-dbb4ac90c749"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "51c6b28f-6aa1-4141-a2e7-5da48bed21c2"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "c5781dc8-f3fc-4ced-802e-dbb4ac90c749"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "ee156e28-4c44-4328-b734-222be11552c2"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "c5781dc8-f3fc-4ced-802e-dbb4ac90c749"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "32bcdc24-ee5b-4736-bc8b-c5b8da6fd02f"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "ee38670e-97cf-45d2-bca7-9446a22aa670"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1d53d388-0a1e-45e5-bf56-97eb521eed37"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "ee38670e-97cf-45d2-bca7-9446a22aa670"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "de2c4607-fb42-48b8-a69e-ffaa669a22ae"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "ee38670e-97cf-45d2-bca7-9446a22aa670"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "19df1efe-8632-4d52-9fdc-ed0592e9b5be"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "da6e3f16-83c3-4753-8032-63f20d6093bc"
+  timestamp = "2025-03-26T18:19:00Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "deb6b2d3-4412-4db2-90f5-5e87dae9a8e7"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "da6e3f16-83c3-4753-8032-63f20d6093bc"
+  timestamp = "2025-03-26T18:25:25Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "5efa998d-c3c2-4b86-a133-30de93e64c0e"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "da6e3f16-83c3-4753-8032-63f20d6093bc"
+  timestamp = "2025-03-26T18:33:37Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "cd722aeb-086d-4431-aed5-12a0ab75a190"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "07f286b0-6c95-49c4-a3a9-1b72e15c76e5"
+  timestamp = "2025-03-26T18:38:44Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "e22e7161-637e-4c5a-99f5-290839e695e9"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "07f286b0-6c95-49c4-a3a9-1b72e15c76e5"
+  timestamp = "2025-03-26T18:43:25Z"
+  weight = 140.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "21e9f378-9075-4d83-b6b1-078cce9d8f1b"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "984af7e4-f9ef-48f3-a447-a1fb3ed426ca"
+  timestamp = "2025-03-26T18:51:35Z"
+  weight = 85.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f49ef29a-faf9-4d77-8b07-dde8240176d3"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "984af7e4-f9ef-48f3-a447-a1fb3ed426ca"
+  timestamp = "2025-03-26T18:55:55Z"
+  weight = 85.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "6a6e7f8e-9b16-4d50-8a50-4c81321ca660"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "26423dcf-23fa-450e-b4d1-1d57eb14b7ff"
+  timestamp = "2025-03-26T18:58:46Z"
+  weight = 81.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "129a4334-047b-474a-bdac-7f1619e8c97a"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "26423dcf-23fa-450e-b4d1-1d57eb14b7ff"
+  timestamp = "2025-03-26T19:04:58Z"
+  weight = 95.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "30ec4d4b-2764-4d6f-b5af-e1c447bd9842"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "26423dcf-23fa-450e-b4d1-1d57eb14b7ff"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "5c7bedad-3e8c-4070-86c3-2035474b0ba8"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "17d98482-2d24-4cd6-b4b5-db85a16c03b5"
+  timestamp = "2025-03-26T19:07:49Z"
+  weight = 130.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "d5bafa44-be7b-4924-be02-371df7fead31"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "17d98482-2d24-4cd6-b4b5-db85a16c03b5"
+  timestamp = "2025-03-26T19:11:01Z"
+  weight = 130.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1e01c332-d1db-41ee-a412-f2777f8d8212"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "17d98482-2d24-4cd6-b4b5-db85a16c03b5"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "607f4c0f-4cde-491b-bc93-7bfcb1039fde"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "1f871564-d5e6-4cde-8841-7b0bd13bd25b"
+  timestamp = "2025-03-26T19:13:35Z"
+  weight = 50.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "b0989eca-eb6f-41eb-94a1-de8f7f6c9442"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "1f871564-d5e6-4cde-8841-7b0bd13bd25b"
+  timestamp = "2025-03-26T19:16:26Z"
+  weight = 50.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "62befa80-5ce3-4f75-8da6-9cce45f242cb"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "c57940d0-b495-4c97-aa7f-d7efce51a13a"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "9f8fefb6-fabf-4597-b959-7358341312cc"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "c57940d0-b495-4c97-aa7f-d7efce51a13a"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "89911b1f-0ac6-4ea6-839a-a4c5a6da5279"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "c57940d0-b495-4c97-aa7f-d7efce51a13a"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "e8c73eef-758a-455c-8a45-cd184f328182"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "8b07bf74-7e63-4fce-924a-e80cc3540270"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "9a18d668-9bc4-4af4-a8d4-57f87c53ea17"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "8b07bf74-7e63-4fce-924a-e80cc3540270"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1313aa8f-0c49-4a11-810c-42215390296b"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "8b07bf74-7e63-4fce-924a-e80cc3540270"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f2286153-9d0c-4d3e-bf9d-7d50b9d2b900"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "0e5f9e56-ea3c-49b9-afa4-b3cc5e997721"
+  timestamp = "2025-03-27T18:43:56Z"
+  weight = 70.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7c6b832a-97ca-42f3-979d-833d431650ef"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "0e5f9e56-ea3c-49b9-afa4-b3cc5e997721"
+  timestamp = "2025-03-27T18:51:08Z"
+  weight = 70.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "61ddead1-49b8-4dba-bebb-d0d9b3a28894"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "4c41c2ef-62c1-43ad-84fe-cd55cd179c2d"
+  timestamp = "2025-03-27T18:54:24Z"
+  weight = 93.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "999ec8dd-94f9-4000-838c-419cc9b78a3d"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "4c41c2ef-62c1-43ad-84fe-cd55cd179c2d"
+  timestamp = "2025-03-27T18:58:07Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "54e202c3-025a-430f-8cfb-32ba5b5e74dc"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "76dad554-aafc-4338-903a-11a6caaf54f0"
+  timestamp = "2025-03-27T19:04:07Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "55a6296d-8534-4b69-8119-820cfaa0f963"
+  ignore_for_one_rm = 0
+  reps = 3
+  session_exercise_id = "76dad554-aafc-4338-903a-11a6caaf54f0"
+  timestamp = "2025-03-27T19:08:58Z"
+  weight = 140.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "6f615878-5e15-4904-bed6-f4bf6570bbc6"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "154607ae-b05f-42d3-a6e0-c960b2a40bfa"
+  timestamp = "2025-03-27T19:13:26Z"
+  weight = 100.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "76fe11ba-bdc0-42ac-a3e6-d85fe0219fbf"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "154607ae-b05f-42d3-a6e0-c960b2a40bfa"
+  timestamp = "2025-03-27T19:17:11Z"
+  weight = 113.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "5d7591e5-65ab-4355-a13f-6df09850162f"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "f6ba834d-049a-49b9-961c-dece8315d03f"
+  timestamp = "2025-03-27T19:33:18Z"
+  weight = 40.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "4e0d9a59-0031-4cbf-9daa-c78ce3cb08ac"
+  ignore_for_one_rm = 0
+  reps = 4
+  session_exercise_id = "f6ba834d-049a-49b9-961c-dece8315d03f"
+  timestamp = "2025-03-27T19:40:12Z"
+  weight = 40.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "96733b1c-9704-4126-8241-991c45232daf"
+  ignore_for_one_rm = 0
+  reps = 6
+  session_exercise_id = "321a02d4-ea5a-4615-a4a6-e4801e0612d0"
+  timestamp = "2025-03-27T19:23:38Z"
+  weight = 50.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "8a0f1757-d460-4f78-a0f5-f527cdbdfb29"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "321a02d4-ea5a-4615-a4a6-e4801e0612d0"
+  timestamp = "2025-03-27T19:28:49Z"
+  weight = 50.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "71c5e09f-48c0-41fe-a99c-fe71758c21bf"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "554c8261-9985-4426-88d2-677217dc1121"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "bb60c542-688a-49f5-8c3d-fc796c906c37"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "554c8261-9985-4426-88d2-677217dc1121"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "fc1072d3-65bb-481a-8765-e73724d5e552"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "ce04024b-0961-426a-abfe-c0a65882bcd4"
+  timestamp = "2025-03-27T19:41:34Z"
+  weight = 43.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1140149e-6b2c-4450-99d1-3282e60b04cf"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "ce04024b-0961-426a-abfe-c0a65882bcd4"
+  timestamp = "2025-03-27T19:47:14Z"
+  weight = 47.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "2741ddb3-edc3-444f-94bf-fd6646264cb5"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "e73b31d5-6ac3-4fb3-b185-3e82ad06c8ed"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "e3f91efd-3dad-49a0-9f80-4b8163f4fe30"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "e73b31d5-6ac3-4fb3-b185-3e82ad06c8ed"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "957eeed4-b67d-4083-b27b-49ca2ba1d95f"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "2c5a4eff-5bb0-4c3a-a820-733fea0c06ba"
+  timestamp = "2025-03-28T17:30:27Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "ab51012a-898c-4e7e-8a83-735eb036cfec"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "2c5a4eff-5bb0-4c3a-a820-733fea0c06ba"
+  timestamp = "2025-03-28T17:38:27Z"
+  weight = 120.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f880f991-92c4-4ec2-94c7-31ad95196376"
+  ignore_for_one_rm = 0
+  reps = 5
+  session_exercise_id = "0f015dbf-fe43-4e48-9d48-12cda28cb817"
+  timestamp = "2025-03-28T17:46:44Z"
+  weight = 85.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "bd305297-360d-4f6e-b4a3-c24257df9260"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "0f015dbf-fe43-4e48-9d48-12cda28cb817"
+  timestamp = "2025-03-28T17:49:33Z"
+  weight = 85.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "a24f7b4f-83cf-4700-b0b9-d57e16a9e7c6"
+  ignore_for_one_rm = 0
+  reps = 9
+  session_exercise_id = "0f015dbf-fe43-4e48-9d48-12cda28cb817"
+  timestamp = "2025-03-28T17:54:46Z"
+  weight = 85.5
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "7b9af19c-8c7a-485f-94f7-7ae2f3fde56a"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "25ec4f95-87f3-428b-a4a2-0ac5db1715d4"
+  timestamp = "2025-03-28T18:08:20Z"
+  weight = 148.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "8b4ac0f5-b4be-43dc-a916-b280fe3025fc"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "25ec4f95-87f3-428b-a4a2-0ac5db1715d4"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "39c2ef0b-ee8c-4282-91ff-86c78e905abe"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "104a8462-6eb7-421d-8cb1-a07b89797578"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "d4a33b26-d3a5-431c-a017-869282efba0c"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "104a8462-6eb7-421d-8cb1-a07b89797578"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "3ea84a67-26dc-4c8d-834f-d5483638c761"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "71793afa-49af-4d8b-9af1-ba6b55e780cc"
+  timestamp = "2025-03-28T17:58:42Z"
+  weight = 50.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "79eccbbf-6a05-4d68-87b8-4d8dbcc9202f"
+  ignore_for_one_rm = 0
+  reps = 7
+  session_exercise_id = "71793afa-49af-4d8b-9af1-ba6b55e780cc"
+  timestamp = "2025-03-28T18:01:42Z"
+  weight = 55.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "20b8f473-ce7f-4708-b7ee-03e40b793e61"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "6fa82e98-8e63-4035-bfaa-062b16f857af"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "88e0b646-22f9-4632-adf9-edc9c348bd04"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "6fa82e98-8e63-4035-bfaa-062b16f857af"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "f466998b-a06f-4afa-b5ae-9f19f7eb2b3e"
+  ignore_for_one_rm = 0
+  reps = 0
+  session_exercise_id = "6fa82e98-8e63-4035-bfaa-062b16f857af"
+  timestamp = "0001-01-01T00:00:00Z"
+  weight = 0.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "9996cb85-8171-476f-a594-d36169a1a326"
+  ignore_for_one_rm = 0
+  reps = 10
+  session_exercise_id = "2a996886-6a39-4e00-8a18-2b1b964d711c"
+  timestamp = "2025-03-28T18:16:10Z"
+  weight = 16.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "d4fa6e64-51df-45e5-8523-6353bd6c133c"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "2a996886-6a39-4e00-8a18-2b1b964d711c"
+  timestamp = "2025-03-28T18:21:19Z"
+  weight = 20.0
+
+[[exercise_sets]]
+  bodyweight = 0
+  id = "1f4a6f6d-cd1c-485f-9496-0daab33e5e61"
+  ignore_for_one_rm = 0
+  reps = 8
+  session_exercise_id = "2a996886-6a39-4e00-8a18-2b1b964d711c"
+  timestamp = "2025-03-28T18:21:20Z"
+  weight = 20.0
+
 [[exercises]]
   created_at = "2025-03-14T18:22:19Z"
   description = "Flat bench barbell press"
@@ -10570,6 +12307,492 @@
   notes = ""
   training_session_id = "4cd065a7-549f-49ad-816c-40087bf48b67"
 
+[[training_session_exercises]]
+  exercise_id = "c79c90c9-d7bc-4ef0-98d0-96ad73619517"
+  id = "875e0e1e-82b8-48d3-89d1-53b98f0ed5e7"
+  notes = ""
+  training_session_id = "897c0dbf-04d7-435e-a76d-10216a98df28"
+
+[[training_session_exercises]]
+  exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+  id = "d568eea6-572c-40b4-afbd-80e0d81147c7"
+  notes = ""
+  training_session_id = "897c0dbf-04d7-435e-a76d-10216a98df28"
+
+[[training_session_exercises]]
+  exercise_id = "abc7548c-00db-4a2a-8b6e-87c453308dc5"
+  id = "983307da-7b7d-4df2-b425-76352cee2ad3"
+  notes = ""
+  training_session_id = "897c0dbf-04d7-435e-a76d-10216a98df28"
+
+[[training_session_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "6a006ff6-02e8-4a3d-b170-629a40b0b215"
+  notes = ""
+  training_session_id = "897c0dbf-04d7-435e-a76d-10216a98df28"
+
+[[training_session_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "17dfcaa4-a915-49f7-9875-66724464a043"
+  notes = ""
+  training_session_id = "897c0dbf-04d7-435e-a76d-10216a98df28"
+
+[[training_session_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "15f452af-58cc-4b0e-aa27-f90f4a635e94"
+  notes = ""
+  training_session_id = "897c0dbf-04d7-435e-a76d-10216a98df28"
+
+[[training_session_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "4e9a0e39-289a-4122-bea6-e7b2432a61dc"
+  notes = ""
+  training_session_id = "897c0dbf-04d7-435e-a76d-10216a98df28"
+
+[[training_session_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "b304399a-17eb-4277-96c3-c34111c7a721"
+  notes = ""
+  training_session_id = "a573fe19-1166-4691-a54b-b910c3f6ea77"
+
+[[training_session_exercises]]
+  exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+  id = "5bfc57d6-87f4-4ad2-8244-185fb2ff594a"
+  notes = ""
+  training_session_id = "a573fe19-1166-4691-a54b-b910c3f6ea77"
+
+[[training_session_exercises]]
+  exercise_id = "57155170-9937-4f82-a611-a2878d073c4a"
+  id = "03c7a497-7a48-41a0-a082-11f6c71f6627"
+  notes = ""
+  training_session_id = "a573fe19-1166-4691-a54b-b910c3f6ea77"
+
+[[training_session_exercises]]
+  exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+  id = "d19c3d0a-5b75-4514-b707-96403e1762b8"
+  notes = ""
+  training_session_id = "a573fe19-1166-4691-a54b-b910c3f6ea77"
+
+[[training_session_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "58c16439-46b2-48f6-a572-1f45e4d7953a"
+  notes = ""
+  training_session_id = "a573fe19-1166-4691-a54b-b910c3f6ea77"
+
+[[training_session_exercises]]
+  exercise_id = "4643f7f0-1ea2-44cb-8ccb-9b58ab8a6611"
+  id = "4a96013e-2069-4336-b838-cd82ab07a2fa"
+  notes = ""
+  training_session_id = "a573fe19-1166-4691-a54b-b910c3f6ea77"
+
+[[training_session_exercises]]
+  exercise_id = "8625a7ec-07da-4716-b446-94986f324656"
+  id = "2cd1f4af-6067-4549-aeb1-c903623922d1"
+  notes = ""
+  training_session_id = "a573fe19-1166-4691-a54b-b910c3f6ea77"
+
+[[training_session_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "2523c4aa-d714-46f4-ad95-4de8926ed552"
+  notes = ""
+  training_session_id = "a573fe19-1166-4691-a54b-b910c3f6ea77"
+
+[[training_session_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "b29546f4-82df-456f-9362-920990359874"
+  notes = ""
+  training_session_id = "69f41ca0-40ce-4c88-ab45-c4f7a1d7dcb5"
+
+[[training_session_exercises]]
+  exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+  id = "713d19b8-77ef-4cc4-9ff2-2108445df074"
+  notes = ""
+  training_session_id = "69f41ca0-40ce-4c88-ab45-c4f7a1d7dcb5"
+
+[[training_session_exercises]]
+  exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+  id = "5e16b925-7edf-4c75-ae96-347ac6b98c57"
+  notes = ""
+  training_session_id = "69f41ca0-40ce-4c88-ab45-c4f7a1d7dcb5"
+
+[[training_session_exercises]]
+  exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+  id = "3d972f63-1673-4329-8ddd-4bb8ef2110aa"
+  notes = ""
+  training_session_id = "69f41ca0-40ce-4c88-ab45-c4f7a1d7dcb5"
+
+[[training_session_exercises]]
+  exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+  id = "7d7c6b72-ac51-4a15-a7f1-ebcef264b264"
+  notes = ""
+  training_session_id = "69f41ca0-40ce-4c88-ab45-c4f7a1d7dcb5"
+
+[[training_session_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "df6d5b84-5745-4598-a262-4eb1b1f32dfd"
+  notes = ""
+  training_session_id = "69f41ca0-40ce-4c88-ab45-c4f7a1d7dcb5"
+
+[[training_session_exercises]]
+  exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+  id = "ff1de7c3-56b5-43b0-82f7-23cb3ad6b669"
+  notes = ""
+  training_session_id = "69f41ca0-40ce-4c88-ab45-c4f7a1d7dcb5"
+
+[[training_session_exercises]]
+  exercise_id = "f19b6bd8-0964-4118-8188-0a8044e7548c"
+  id = "f2daf3d2-f392-4d78-9a6d-5a6f2cfc55ef"
+  notes = ""
+  training_session_id = "69f41ca0-40ce-4c88-ab45-c4f7a1d7dcb5"
+
+[[training_session_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "5704c2f0-5502-42c5-9485-4d4e9e0ff5ab"
+  notes = ""
+  training_session_id = "69f41ca0-40ce-4c88-ab45-c4f7a1d7dcb5"
+
+[[training_session_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "e57e39ab-fcc6-4172-95d9-c763af9fae79"
+  notes = ""
+  training_session_id = "1e7e9a76-6bfd-4058-b8df-e57b4ca7883e"
+
+[[training_session_exercises]]
+  exercise_id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
+  id = "987a2712-b1bc-40a1-b571-eeadb29d7723"
+  notes = ""
+  training_session_id = "1e7e9a76-6bfd-4058-b8df-e57b4ca7883e"
+
+[[training_session_exercises]]
+  exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+  id = "c2a48b77-e8e0-4eda-ab64-f0feb2fbf341"
+  notes = ""
+  training_session_id = "1e7e9a76-6bfd-4058-b8df-e57b4ca7883e"
+
+[[training_session_exercises]]
+  exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+  id = "17ea25a9-c601-4443-982d-7e0d3c6586bf"
+  notes = ""
+  training_session_id = "1e7e9a76-6bfd-4058-b8df-e57b4ca7883e"
+
+[[training_session_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "7d49422d-25ce-4866-ae3d-f24890a80185"
+  notes = ""
+  training_session_id = "1e7e9a76-6bfd-4058-b8df-e57b4ca7883e"
+
+[[training_session_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "6994118f-a0c4-4aa3-899f-143d1f4d0814"
+  notes = ""
+  training_session_id = "1e7e9a76-6bfd-4058-b8df-e57b4ca7883e"
+
+[[training_session_exercises]]
+  exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  id = "3bf2e20c-05be-498e-9aeb-87e5bcda19f2"
+  notes = ""
+  training_session_id = "1e7e9a76-6bfd-4058-b8df-e57b4ca7883e"
+
+[[training_session_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "1337b518-0036-41bb-85ed-893a472aefbb"
+  notes = ""
+  training_session_id = "1e7e9a76-6bfd-4058-b8df-e57b4ca7883e"
+
+[[training_session_exercises]]
+  exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+  id = "376e7fe8-3842-4cdf-869e-af0f25dd59a7"
+  notes = ""
+  training_session_id = "5af8d30a-ebb5-4d17-a431-34e55fd419e0"
+
+[[training_session_exercises]]
+  exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+  id = "d1dcc96b-ae17-490f-933e-c438d12d5647"
+  notes = ""
+  training_session_id = "5af8d30a-ebb5-4d17-a431-34e55fd419e0"
+
+[[training_session_exercises]]
+  exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+  id = "80836a76-62f5-4635-b48f-ffe7d81a04a8"
+  notes = ""
+  training_session_id = "5af8d30a-ebb5-4d17-a431-34e55fd419e0"
+
+[[training_session_exercises]]
+  exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+  id = "1ea94da8-5b00-4c6b-a7f8-43db74bbf83c"
+  notes = ""
+  training_session_id = "5af8d30a-ebb5-4d17-a431-34e55fd419e0"
+
+[[training_session_exercises]]
+  exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+  id = "e8d146c8-79d1-49ce-b008-2ac20976b407"
+  notes = ""
+  training_session_id = "5af8d30a-ebb5-4d17-a431-34e55fd419e0"
+
+[[training_session_exercises]]
+  exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+  id = "adb7d28a-235e-4824-ab7b-9358bceeba2e"
+  notes = ""
+  training_session_id = "5af8d30a-ebb5-4d17-a431-34e55fd419e0"
+
+[[training_session_exercises]]
+  exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+  id = "c41e81e1-b483-4696-a02c-fb34e2f3008f"
+  notes = ""
+  training_session_id = "5af8d30a-ebb5-4d17-a431-34e55fd419e0"
+
+[[training_session_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "ebf9e936-f0e7-42a8-930c-e5f181a4d4a3"
+  notes = ""
+  training_session_id = "5af8d30a-ebb5-4d17-a431-34e55fd419e0"
+
+[[training_session_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "58260874-a77a-4cc0-aad6-587e96401b11"
+  notes = ""
+  training_session_id = "5af8d30a-ebb5-4d17-a431-34e55fd419e0"
+
+[[training_session_exercises]]
+  exercise_id = "4db7342f-b484-4a1a-a731-360c1ac8499f"
+  id = "c0fffb40-c058-4d6b-82f1-13e2164bce01"
+  notes = ""
+  training_session_id = "31308230-d125-4cbd-b11f-1c793e4a3bd4"
+
+[[training_session_exercises]]
+  exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+  id = "33e54a18-68fd-47c4-8a21-a3252540b57e"
+  notes = ""
+  training_session_id = "31308230-d125-4cbd-b11f-1c793e4a3bd4"
+
+[[training_session_exercises]]
+  exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+  id = "96b08b1d-4e01-4ff1-8470-313c5ad0dc8c"
+  notes = ""
+  training_session_id = "31308230-d125-4cbd-b11f-1c793e4a3bd4"
+
+[[training_session_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "b12ddc52-5539-4157-bbda-808db662514e"
+  notes = ""
+  training_session_id = "31308230-d125-4cbd-b11f-1c793e4a3bd4"
+
+[[training_session_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "931d375a-a1a4-447c-9b95-34a452a9597f"
+  notes = ""
+  training_session_id = "31308230-d125-4cbd-b11f-1c793e4a3bd4"
+
+[[training_session_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "c1b9d3c1-4be9-4ab4-8aea-26a02d969f1e"
+  notes = ""
+  training_session_id = "31308230-d125-4cbd-b11f-1c793e4a3bd4"
+
+[[training_session_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "82621ac9-7099-40f8-b5f0-572ea59790d1"
+  notes = ""
+  training_session_id = "31308230-d125-4cbd-b11f-1c793e4a3bd4"
+
+[[training_session_exercises]]
+  exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+  id = "c8fb9b94-5b76-4631-8f45-527163caf8e8"
+  notes = ""
+  training_session_id = "e7fc103e-c0a2-42f6-8467-6aed26cf3fe0"
+
+[[training_session_exercises]]
+  exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+  id = "a8ef310f-7e1e-4437-95ce-e5a3c3fab006"
+  notes = ""
+  training_session_id = "e7fc103e-c0a2-42f6-8467-6aed26cf3fe0"
+
+[[training_session_exercises]]
+  exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+  id = "335809df-8d65-4b88-8577-34bf394a49da"
+  notes = "did incline bench"
+  training_session_id = "e7fc103e-c0a2-42f6-8467-6aed26cf3fe0"
+
+[[training_session_exercises]]
+  exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+  id = "fc65a268-6227-48a7-8197-37ca8d4080fd"
+  notes = "did pulldowns"
+  training_session_id = "e7fc103e-c0a2-42f6-8467-6aed26cf3fe0"
+
+[[training_session_exercises]]
+  exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+  id = "813d53ec-70fb-4bb8-a159-127198a8c83a"
+  notes = ""
+  training_session_id = "e7fc103e-c0a2-42f6-8467-6aed26cf3fe0"
+
+[[training_session_exercises]]
+  exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+  id = "02cb576d-59a8-415a-8e17-97f0e69149d3"
+  notes = ""
+  training_session_id = "e7fc103e-c0a2-42f6-8467-6aed26cf3fe0"
+
+[[training_session_exercises]]
+  exercise_id = "43b7d511-5a8d-48ec-ac2d-5e00e761256e"
+  id = "968e0a10-555d-480e-ac72-079f8ef58537"
+  notes = ""
+  training_session_id = "e7fc103e-c0a2-42f6-8467-6aed26cf3fe0"
+
+[[training_session_exercises]]
+  exercise_id = "f19b6bd8-0964-4118-8188-0a8044e7548c"
+  id = "c5781dc8-f3fc-4ced-802e-dbb4ac90c749"
+  notes = ""
+  training_session_id = "e7fc103e-c0a2-42f6-8467-6aed26cf3fe0"
+
+[[training_session_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "ee38670e-97cf-45d2-bca7-9446a22aa670"
+  notes = ""
+  training_session_id = "e7fc103e-c0a2-42f6-8467-6aed26cf3fe0"
+
+[[training_session_exercises]]
+  exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+  id = "da6e3f16-83c3-4753-8032-63f20d6093bc"
+  notes = "did paused squats"
+  training_session_id = "1194dd5d-6013-4584-a396-0fdc56b4c69b"
+
+[[training_session_exercises]]
+  exercise_id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
+  id = "07f286b0-6c95-49c4-a3a9-1b72e15c76e5"
+  notes = ""
+  training_session_id = "1194dd5d-6013-4584-a396-0fdc56b4c69b"
+
+[[training_session_exercises]]
+  exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+  id = "984af7e4-f9ef-48f3-a447-a1fb3ed426ca"
+  notes = "did machine leg press"
+  training_session_id = "1194dd5d-6013-4584-a396-0fdc56b4c69b"
+
+[[training_session_exercises]]
+  exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+  id = "26423dcf-23fa-450e-b4d1-1d57eb14b7ff"
+  notes = ""
+  training_session_id = "1194dd5d-6013-4584-a396-0fdc56b4c69b"
+
+[[training_session_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "17d98482-2d24-4cd6-b4b5-db85a16c03b5"
+  notes = ""
+  training_session_id = "1194dd5d-6013-4584-a396-0fdc56b4c69b"
+
+[[training_session_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "1f871564-d5e6-4cde-8841-7b0bd13bd25b"
+  notes = ""
+  training_session_id = "1194dd5d-6013-4584-a396-0fdc56b4c69b"
+
+[[training_session_exercises]]
+  exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+  id = "c57940d0-b495-4c97-aa7f-d7efce51a13a"
+  notes = ""
+  training_session_id = "1194dd5d-6013-4584-a396-0fdc56b4c69b"
+
+[[training_session_exercises]]
+  exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+  id = "8b07bf74-7e63-4fce-924a-e80cc3540270"
+  notes = ""
+  training_session_id = "1194dd5d-6013-4584-a396-0fdc56b4c69b"
+
+[[training_session_exercises]]
+  exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+  id = "0e5f9e56-ea3c-49b9-afa4-b3cc5e997721"
+  notes = ""
+  training_session_id = "a22eb2d0-4939-49da-92b1-2ce14a963e1b"
+
+[[training_session_exercises]]
+  exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+  id = "4c41c2ef-62c1-43ad-84fe-cd55cd179c2d"
+  notes = ""
+  training_session_id = "a22eb2d0-4939-49da-92b1-2ce14a963e1b"
+
+[[training_session_exercises]]
+  exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+  id = "76dad554-aafc-4338-903a-11a6caaf54f0"
+  notes = ""
+  training_session_id = "a22eb2d0-4939-49da-92b1-2ce14a963e1b"
+
+[[training_session_exercises]]
+  exercise_id = "ce738f93-8d0f-4a7c-a6df-18d9257745db"
+  id = "154607ae-b05f-42d3-a6e0-c960b2a40bfa"
+  notes = ""
+  training_session_id = "a22eb2d0-4939-49da-92b1-2ce14a963e1b"
+
+[[training_session_exercises]]
+  exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+  id = "f6ba834d-049a-49b9-961c-dece8315d03f"
+  notes = ""
+  training_session_id = "a22eb2d0-4939-49da-92b1-2ce14a963e1b"
+
+[[training_session_exercises]]
+  exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+  id = "321a02d4-ea5a-4615-a4a6-e4801e0612d0"
+  notes = ""
+  training_session_id = "a22eb2d0-4939-49da-92b1-2ce14a963e1b"
+
+[[training_session_exercises]]
+  exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+  id = "554c8261-9985-4426-88d2-677217dc1121"
+  notes = "did preacher hammer curl"
+  training_session_id = "a22eb2d0-4939-49da-92b1-2ce14a963e1b"
+
+[[training_session_exercises]]
+  exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+  id = "ce04024b-0961-426a-abfe-c0a65882bcd4"
+  notes = ""
+  training_session_id = "a22eb2d0-4939-49da-92b1-2ce14a963e1b"
+
+[[training_session_exercises]]
+  exercise_id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
+  id = "e73b31d5-6ac3-4fb3-b185-3e82ad06c8ed"
+  notes = ""
+  training_session_id = "a22eb2d0-4939-49da-92b1-2ce14a963e1b"
+
+[[training_session_exercises]]
+  exercise_id = "4db7342f-b484-4a1a-a731-360c1ac8499f"
+  id = "2c5a4eff-5bb0-4c3a-a820-733fea0c06ba"
+  notes = ""
+  training_session_id = "2d229f5a-7d0f-4fec-8d53-5a9626b00166"
+
+[[training_session_exercises]]
+  exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+  id = "0f015dbf-fe43-4e48-9d48-12cda28cb817"
+  notes = ""
+  training_session_id = "2d229f5a-7d0f-4fec-8d53-5a9626b00166"
+
+[[training_session_exercises]]
+  exercise_id = "fd1b7922-9691-4407-8434-56a671a20e01"
+  id = "25ec4f95-87f3-428b-a4a2-0ac5db1715d4"
+  notes = ""
+  training_session_id = "2d229f5a-7d0f-4fec-8d53-5a9626b00166"
+
+[[training_session_exercises]]
+  exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+  id = "104a8462-6eb7-421d-8cb1-a07b89797578"
+  notes = ""
+  training_session_id = "2d229f5a-7d0f-4fec-8d53-5a9626b00166"
+
+[[training_session_exercises]]
+  exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+  id = "71793afa-49af-4d8b-9af1-ba6b55e780cc"
+  notes = ""
+  training_session_id = "2d229f5a-7d0f-4fec-8d53-5a9626b00166"
+
+[[training_session_exercises]]
+  exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+  id = "6fa82e98-8e63-4035-bfaa-062b16f857af"
+  notes = ""
+  training_session_id = "2d229f5a-7d0f-4fec-8d53-5a9626b00166"
+
+[[training_session_exercises]]
+  exercise_id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
+  id = "2a996886-6a39-4e00-8a18-2b1b964d711c"
+  notes = ""
+  training_session_id = "2d229f5a-7d0f-4fec-8d53-5a9626b00166"
+
 [[training_sessions]]
   end_time = "2025-02-10T19:03:55Z"
   id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
@@ -10695,3 +12918,73 @@
   notes = ""
   program_block_id = "6f88e577-de0e-4f1a-bb8d-d9b39c1cbf5e"
   start_time = "2025-03-14T00:48:25Z"
+
+[[training_sessions]]
+  end_time = "2025-03-14T19:46:52Z"
+  id = "897c0dbf-04d7-435e-a76d-10216a98df28"
+  notes = ""
+  program_block_id = "a1bb6e10-8796-4eea-866a-90a414b62bba"
+  start_time = "2025-03-14T18:57:45Z"
+
+[[training_sessions]]
+  end_time = "2025-03-15T20:58:21Z"
+  id = "a573fe19-1166-4691-a54b-b910c3f6ea77"
+  notes = ""
+  program_block_id = "cc659052-1dfa-498b-afc7-c32b0c0380a0"
+  start_time = "2025-03-15T19:47:13Z"
+
+[[training_sessions]]
+  end_time = "2025-03-17T19:06:56Z"
+  id = "69f41ca0-40ce-4c88-ab45-c4f7a1d7dcb5"
+  notes = ""
+  program_block_id = "60823cc8-15f7-4cbf-8a08-bf316edecaf6"
+  start_time = "2025-03-17T17:52:08Z"
+
+[[training_sessions]]
+  end_time = "2025-03-19T19:37:42Z"
+  id = "1e7e9a76-6bfd-4058-b8df-e57b4ca7883e"
+  notes = ""
+  program_block_id = "8efbbcfd-aded-413e-a079-6248402bc01d"
+  start_time = "2025-03-19T18:26:24Z"
+
+[[training_sessions]]
+  end_time = "2025-03-20T18:40:02Z"
+  id = "5af8d30a-ebb5-4d17-a431-34e55fd419e0"
+  notes = ""
+  program_block_id = "1c4788f9-305f-4d24-b4fc-4f9cc4af797b"
+  start_time = "2025-03-20T17:33:54Z"
+
+[[training_sessions]]
+  end_time = "2025-03-21T18:28:50Z"
+  id = "31308230-d125-4cbd-b11f-1c793e4a3bd4"
+  notes = ""
+  program_block_id = "a1bb6e10-8796-4eea-866a-90a414b62bba"
+  start_time = "2025-03-21T17:16:11Z"
+
+[[training_sessions]]
+  end_time = "2025-03-26T18:02:07Z"
+  id = "e7fc103e-c0a2-42f6-8467-6aed26cf3fe0"
+  notes = ""
+  program_block_id = "60823cc8-15f7-4cbf-8a08-bf316edecaf6"
+  start_time = "2025-03-25T17:30:08Z"
+
+[[training_sessions]]
+  end_time = "2025-03-27T18:35:42Z"
+  id = "1194dd5d-6013-4584-a396-0fdc56b4c69b"
+  notes = ""
+  program_block_id = "8efbbcfd-aded-413e-a079-6248402bc01d"
+  start_time = "2025-03-26T18:02:08Z"
+
+[[training_sessions]]
+  end_time = "2025-03-27T19:53:16Z"
+  id = "a22eb2d0-4939-49da-92b1-2ce14a963e1b"
+  notes = ""
+  program_block_id = "1c4788f9-305f-4d24-b4fc-4f9cc4af797b"
+  start_time = "2025-03-27T18:35:43Z"
+
+[[training_sessions]]
+  end_time = "2025-03-28T18:24:53Z"
+  id = "2d229f5a-7d0f-4fec-8d53-5a9626b00166"
+  notes = ""
+  program_block_id = "a1bb6e10-8796-4eea-866a-90a414b62bba"
+  start_time = "2025-03-28T17:16:45Z"
