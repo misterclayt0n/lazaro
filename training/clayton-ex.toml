@@ -190,6 +190,22 @@ description = "Always go to absolute stretch and full ROM"
 primary_muscle = "Biceps"
 
 [[exercise]]
+name = "Machine Preacher Curl"
+description = "Always go to absolute stretch and full ROM"
+primary_muscle = "Biceps"
+
+[[exercise]]
+name = "Machine Hammer Preacher Curl"
+description = "Always go to absolute stretch and full ROM"
+primary_muscle = "Biceps"
+
+[[exercise]]
+name = "Dumbbell Hammer Preacher Curl"
+description = "Always go to absolute stretch and full ROM"
+primary_muscle = "Biceps"
+
+
+[[exercise]]
 name = "Dumbbell Preacher Curl"
 description = "Always go to absolute stretch and full ROM"
 primary_muscle = "Biceps"
@@ -259,6 +275,11 @@ primary_muscle = "Quadriceps"
 
 [[exercise]]
 name = "Machine Leg Press"
+description = "Pause for 1 second at the bottom"
+primary_muscle = "Quadriceps"
+
+[[exercise]]
+name = "Single Machine Leg Press"
 description = "Pause for 1 second at the bottom"
 primary_muscle = "Quadriceps"
 
