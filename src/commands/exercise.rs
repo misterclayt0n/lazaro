@@ -1,4 +1,4 @@
-use sqlx::SqlitePool;
+use sqlx::{Row, SqlitePool};
 use colored::Colorize;
 use crate::cli::ExerciseCmd;
 use anyhow::Result;
@@ -38,12 +38,54 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool) -> Result<()> {
             }
         }
         
-        ExerciseCmd::Import { file } => {
+        ExerciseCmd::Import { file: _ } => {
             // read TOML, deserialize into a Vec<struct { name, description, primary_muscle }>
             // then loop and `INSERT OR IGNORE INTO exercises ...`
             todo!("impl exercise import");
         }
-        _ => todo!("not gucci")
+        ExerciseCmd::List { muscle } => {
+            let base = "
+                SELECT name, primary_muscle, 
+                COALESCE(description, '') AS description, 
+                created_at
+                FROM exercises
+            ";
+
+            // Add a filter if requested.
+            let rows = if let Some(musc) = muscle {
+                let q = format!("{base} WHERE primary_muscle = ? ORDER BY name");
+                sqlx::query(&q).bind(musc).fetch_all(pool).await? // Probably not a problem using ? here.
+            } else {
+                let q = format!("{base} ORDER BY name");
+                sqlx::query(&q).fetch_all(pool).await?
+            };
+
+            println!("{}", "Exercises:".cyan().bold());
+
+            for row in &rows {
+                let name: String        = row.get("name");
+                let muscle: String      = row.get("primary_muscle");
+                let desc: String        = row.get("description");
+                let created_at: String  = row.get("created_at");
+
+                // e.g.  • Preacher Curl (biceps) – EZ-bar variation • added 2025-04-29
+                println!(
+                    "  • {} ({}) {} {}",
+                    name.bold(),
+                    muscle.yellow(),
+                    if desc.is_empty() {
+                        "".dimmed().to_string()
+                    } else {
+                        format!("– {}", desc).dimmed().to_string()
+                    },
+                    format!("• added {}", &created_at[..10]).dimmed(),
+                );
+            }
+            
+            if rows.is_empty() {
+                println!("{}", "  (no exercises found)".dimmed());
+            }
+        }
     }
 
     Ok(())
