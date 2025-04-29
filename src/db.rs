@@ -9,10 +9,13 @@ use sqlx::{
 pub type DB = SqlitePool;
 
 pub async fn open(path: &str) -> Result<DB> {
-    let opts = SqliteConnectOptions::from_str(path)?.create_if_missing(true);
+    let opts = SqliteConnectOptions::from_str(path)?.create_if_missing(true).foreign_keys(true).to_owned();
 
-    Ok(SqlitePoolOptions::new()
+    let pool = SqlitePoolOptions::new()
         .max_connections(5)
         .connect_with(opts)
-        .await?)
+        .await?;
+
+    sqlx::migrate!().run(&pool).await?;
+    Ok(pool)
 }
