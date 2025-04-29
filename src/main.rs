@@ -6,6 +6,7 @@ use db::open;
 mod cli;
 mod db;
 mod commands;
+mod types;
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -14,7 +15,8 @@ async fn main() -> Result<()> {
     let pool = open(&db_path).await?;
 
     match cli.cmd {
-        Commands::Session(cmd) => commands::session::handle(cmd, &pool).await?
+        Commands::Session(cmd) => commands::session::handle(cmd, &pool).await?,
+        Commands::Exercise(cmd) => commands::exercise::handle(cmd, &pool).await?
     }
 
     Ok(())
