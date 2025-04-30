@@ -23,3 +23,4 @@ In this example here, both session start and ss would refer to the same command,
 - db export [file] -> exports to a simple file output
 - db import <dump.toml> -> This syncs the current db with the provided dump.toml, and if no dump.toml is provided, it creates a new database for you
 
+Config file: change aliases
