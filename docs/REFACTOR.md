@@ -23,5 +23,12 @@ In this example here, both session start and ss would refer to the same command,
 - db export [file] -> exports to a simple file output
 - db import <dump.toml> -> This syncs the current db with the provided dump.toml, and if no dump.toml is provided, it creates a new database for you
 
-Config file: change aliases
-Sync: something easy to sync with github
+
+## General stuff
+- Config file: change aliases
+- Sync: something easy to sync with github
+- Data science: progression on exercises (strength)
+- Show session should grab the last occurrence of an exercise, currently it shows First time if I skipped a given ex.
+- Start program should look for an ID for the program name and session. see task warrior for reference. 
+- On the note above, all things should probably work with structured data.
+- Release with cargo install or pkg for easy setup.
