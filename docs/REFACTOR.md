@@ -34,3 +34,4 @@ In this example here, both session start and ss would refer to the same command,
 - Release with cargo install or pkg for easy setup.
 - Option to output data as json for structured data (nushell shit)
 - ex list chest if I want to grab all chest exercises 
+- add neck as muscle
