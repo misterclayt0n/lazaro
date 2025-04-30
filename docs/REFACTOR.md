@@ -32,3 +32,4 @@ In this example here, both session start and ss would refer to the same command,
 - Start program should look for an ID for the program name and session. see task warrior for reference. 
 - On the note above, all things should probably work with structured data.
 - Release with cargo install or pkg for easy setup.
+- Option to output data as json for structured data (nushell shit)
