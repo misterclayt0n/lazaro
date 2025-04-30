@@ -33,3 +33,4 @@ In this example here, both session start and ss would refer to the same command,
 - On the note above, all things should probably work with structured data.
 - Release with cargo install or pkg for easy setup.
 - Option to output data as json for structured data (nushell shit)
+- ex list chest if I want to grab all chest exercises 
