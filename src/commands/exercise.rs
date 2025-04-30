@@ -43,6 +43,7 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool) -> Result<()> {
         ExerciseCmd::Import { file } => {
             let path = Path::new(&file);
             let toml_str = tokio::fs::read_to_string(path).await.with_context(|| format!("Could not read file: `{}`", file))?;
+            assert!(toml_str.is_char_boundary(toml_str.len()), "read_to_string returned invalid UTF-8");
 
             // Parse into Vec<ExerciseDef>.
             let import: ExerciseImport = toml::from_str(&toml_str).context("Failed to parse TOML: Expected `[[exercise]] entries`")?;
@@ -58,6 +59,8 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool) -> Result<()> {
             let mut unknowns: BTreeSet<String> = BTreeSet::new();
             
             for ex in import.exercise {
+                assert!(!ex.name.trim().is_empty(), "exercise.name must not be empty");
+                
                 // Validate the `primary_muscle` field.
                 let musc = match cannonical_muscle(&ex.primary_muscle) {
                     Some(m) => m,
@@ -91,6 +94,8 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool) -> Result<()> {
                 .execute(pool)
                 .await
                 .with_context(|| format!("DB error inserting `{}`", ex.name))?;
+
+                assert!(res.rows_affected() <= 1, "unexpected rows_affected {} for insert {}", res.rows_affected(), &ex.name);
 
                 if res.rows_affected() == 1 {
                     inserted += 1;

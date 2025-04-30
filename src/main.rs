@@ -12,6 +12,8 @@ mod types;
 async fn main() -> Result<()> {
     let cli = Cli::parse();
     let db_path = "./lazarus.db";
+    assert!(!db_path.is_empty(), "database path must not be empty");
+    
     let pool = open(&db_path).await?;
 
     match cli.cmd {

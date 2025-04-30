@@ -61,7 +61,10 @@ pub static ALLOWED_MUSCLES: Lazy<HashSet<&'static str>> = Lazy::new(|| {
 
 /// Returns the canonical lowercase muscle name or `None` if not allowed.
 pub fn cannonical_muscle<S: AsRef<str>>(m: S) -> Option<String> {
-    let m = m.as_ref().to_ascii_lowercase();
+    let raw = m.as_ref();
+    assert!(raw.chars().all(|c| !c.is_control()), "received control chars in muscle name: {raw:?}");
+    
+    let m = raw.to_ascii_lowercase();
     if ALLOWED_MUSCLES.contains(m.as_str()) {
         Some(m)
     } else {
@@ -73,6 +76,11 @@ pub fn cannonical_muscle<S: AsRef<str>>(m: S) -> Option<String> {
 /// if similarity ≥ 0.85 *and* clearly better than the runner-up.
 /// Otherwise return `None` (no suggestion shown).
 pub fn best_muscle_suggestions(input: &str) -> Option<&'static str> {
+    assert!(!ALLOWED_MUSCLES.is_empty(), "ALLOWED_MUSCLES must contain at least one entry");
+
+    let inp = input.to_ascii_lowercase();
+    assert!(!inp.trim().is_empty(), "best_muscle_suggestions called with empty input"); // Sanity check.
+    
     // Collect (muscle, score) pairs.
     let mut scores: Vec<(&'static str, f64)> = ALLOWED_MUSCLES
         .iter()
