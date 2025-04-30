@@ -12,3 +12,6 @@ serde = { version = "1.0.219", features = ["derive"] }
 anyhow = "1.0.98"
 uuid = { version = "1.16.0", features = ["v4", "serde"] } 
 colored = "3.0.0"
+toml = "0.8.22"
+once_cell = "1.21.3"
+strsim = "0.11.1"

@@ -33,7 +33,7 @@ primary_muscle = "Back"
 
 [[exercise]]
 name = "Incline Chest Press"
-primary_muscle = "Chest"
+primary_muscle = "CHEST"
 
 [[exercise]]
 name = "Chest Supported Row"
@@ -57,4 +57,4 @@ primary_muscle = "Biceps"
 
 [[exercise]]
 name = "Reverse Dumbbell Wrist Curl"
-primary_muscle = "Forearms"
+primary_muscle = "Random muscle"

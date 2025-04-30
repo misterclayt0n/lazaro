@@ -1,4 +1,6 @@
-use std::fmt::Display;
+use once_cell::sync::Lazy;
+use std::{collections::HashSet, fmt::Display};
+use strsim::jaro_winkler;
 
 use clap::ValueEnum;
 use serde::{Deserialize, Serialize};
@@ -39,4 +41,70 @@ impl Display for Muscle {
 
         write!(f, "{}", s)
     }
+}
+
+pub static ALLOWED_MUSCLES: Lazy<HashSet<&'static str>> = Lazy::new(|| {
+    HashSet::from([
+        "biceps",
+        "triceps",
+        "forearms",
+        "chest",
+        "shoulders",
+        "back",
+        "quads",
+        "hamstrings",
+        "glutes",
+        "calves",
+        "abs",
+    ])
+});
+
+/// Returns the canonical lowercase muscle name or `None` if not allowed.
+pub fn cannonical_muscle<S: AsRef<str>>(m: S) -> Option<String> {
+    let m = m.as_ref().to_ascii_lowercase();
+    if ALLOWED_MUSCLES.contains(m.as_str()) {
+        Some(m)
+    } else {
+        None
+    }
+}
+
+/// Return the closest allowed muscle for `input`
+/// if similarity ≥ 0.85 *and* clearly better than the runner-up.
+/// Otherwise return `None` (no suggestion shown).
+pub fn best_muscle_suggestions(input: &str) -> Option<&'static str> {
+    // Collect (muscle, score) pairs.
+    let mut scores: Vec<(&'static str, f64)> = ALLOWED_MUSCLES
+        .iter()
+        .copied()
+        .map(|m| (m, jaro_winkler(input, m)))
+        .collect();
+
+    // Highest score first.
+    scores.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap());
+
+    let (best_muscle, best_score) = scores[0];
+    let second_score = scores.get(1).map(|(_, s)| *s).unwrap_or(0.0);
+
+    // Tune these two constants to taste.
+    const MIN_SCORE: f64 = 0.80;
+    const GAP: f64 = 0.02;
+
+    if best_score >= MIN_SCORE && best_score - second_score >= GAP {
+        Some(best_muscle)
+    } else {
+        None
+    }
+}
+
+#[derive(Deserialize)]
+pub struct ExerciseDef {
+    pub name: String,
+    pub description: Option<String>,
+    pub primary_muscle: String,
+}
+
+#[derive(Deserialize)]
+pub struct ExerciseImport {
+    pub exercise: Vec<ExerciseDef>,
 }
