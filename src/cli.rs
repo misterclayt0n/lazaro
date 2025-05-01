@@ -19,7 +19,15 @@ pub enum Commands {
     /// Exercise management
     #[command(subcommand, alias = "ex")]
     Exercise(ExerciseCmd),
+
+    /// View or edit lazarus config
+    #[command(subcommand)]
+    Config(ConfigCmd),
 }
+
+//
+// Commands
+// 
 
 #[derive(Subcommand)]
 pub enum SessionCmd {
@@ -49,6 +57,21 @@ pub enum ExerciseCmd {
         #[arg(long)]
         muscle: Option<String>,
     },
+}
+
+#[derive(Subcommand)]
+pub enum ConfigCmd {
+    /// Show all config keys
+    List,
+
+    /// Get the value of a key
+    Get { key: String },
+
+    /// Set or override a key
+    Set { key: String, val: String },
+    
+    /// Remove a key
+    Unset { key: String }
 }
 
 #[derive(Args)]

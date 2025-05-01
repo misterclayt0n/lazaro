@@ -1,5 +1,11 @@
+use anyhow::{Context, Result};
 use once_cell::sync::Lazy;
-use std::{collections::HashSet, fmt::Display};
+use std::{
+    collections::{HashMap, HashSet},
+    fmt::Display,
+    fs::{create_dir_all, read_to_string},
+    path::Path,
+};
 use strsim::jaro_winkler;
 
 use clap::ValueEnum;
@@ -62,8 +68,11 @@ pub static ALLOWED_MUSCLES: Lazy<HashSet<&'static str>> = Lazy::new(|| {
 /// Returns the canonical lowercase muscle name or `None` if not allowed.
 pub fn cannonical_muscle<S: AsRef<str>>(m: S) -> Option<String> {
     let raw = m.as_ref();
-    assert!(raw.chars().all(|c| !c.is_control()), "received control chars in muscle name: {raw:?}");
-    
+    assert!(
+        raw.chars().all(|c| !c.is_control()),
+        "received control chars in muscle name: {raw:?}"
+    );
+
     let m = raw.to_ascii_lowercase();
     if ALLOWED_MUSCLES.contains(m.as_str()) {
         Some(m)
@@ -76,11 +85,17 @@ pub fn cannonical_muscle<S: AsRef<str>>(m: S) -> Option<String> {
 /// if similarity ≥ 0.85 *and* clearly better than the runner-up.
 /// Otherwise return `None` (no suggestion shown).
 pub fn best_muscle_suggestions(input: &str) -> Option<&'static str> {
-    assert!(!ALLOWED_MUSCLES.is_empty(), "ALLOWED_MUSCLES must contain at least one entry");
+    assert!(
+        !ALLOWED_MUSCLES.is_empty(),
+        "ALLOWED_MUSCLES must contain at least one entry"
+    );
 
     let inp = input.to_ascii_lowercase();
-    assert!(!inp.trim().is_empty(), "best_muscle_suggestions called with empty input"); // Sanity check.
-    
+    assert!(
+        !inp.trim().is_empty(),
+        "best_muscle_suggestions called with empty input"
+    ); // Sanity check.
+
     // Collect (muscle, score) pairs.
     let mut scores: Vec<(&'static str, f64)> = ALLOWED_MUSCLES
         .iter()
@@ -115,4 +130,45 @@ pub struct ExerciseDef {
 #[derive(Deserialize)]
 pub struct ExerciseImport {
     pub exercise: Vec<ExerciseDef>,
+}
+
+#[derive(Debug, Default)]
+pub struct Config {
+    pub map: HashMap<String, String>,
+}
+
+impl Config {
+    /// Load from disk (returns empty if file not found).
+    pub fn load(path: &Path) -> Result<Self> {
+        let mut cfg = Config::default();
+        if let Ok(s) = read_to_string(path) {
+            for line in s.lines() {
+                let line = line.trim();
+                
+                // Comments.
+                if line.is_empty() || line.starts_with('#') {
+                    continue;
+                }
+
+                if let Some(eq) = line.find('=') {
+                    let key = line[..eq].trim().to_string();
+                    let val = line[eq+1..].trim().to_string();
+                    cfg.map.insert(key, val);
+                }
+            }
+        }
+
+        Ok(cfg)
+    }
+
+    /// Persists back to disk.
+    pub fn save(&self, path: &Path) -> Result<()> {
+        let mut out = String::new();
+        for (k, v) in &self.map {
+            out.push_str(&format!("{} = {}\n", k, v));
+        }
+        create_dir_all(path.parent().unwrap())?;
+        std::fs::write(path, out).context("Failed to write config file")
+    }
+    
 }

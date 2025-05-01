@@ -18,7 +18,8 @@ async fn main() -> Result<()> {
 
     match cli.cmd {
         Commands::Session(cmd) => commands::session::handle(cmd, &pool).await?,
-        Commands::Exercise(cmd) => commands::exercise::handle(cmd, &pool).await?
+        Commands::Exercise(cmd) => commands::exercise::handle(cmd, &pool).await?,
+        Commands::Config(cmd) => commands::config::handle(cmd).await?
     }
 
     Ok(())
