@@ -1,15 +1,14 @@
+use std::path::PathBuf;
+
 use crate::{cli::ConfigCmd, types::Config};
-use anyhow::{Context, Result};
+use anyhow::Result;
 use colored::Colorize;
 
-pub async fn handle(cmd: ConfigCmd) -> Result<()> {
-    let config_path = dirs::config_dir().map(|d| d.join("lazarus").join("config")).context("Could not determine config directory")?;
-    let mut cfg = Config::load(&config_path)?;
-
+pub async fn handle(cmd: ConfigCmd, mut cfg: Config, config_path: PathBuf) -> Result<()> {
     match cmd {
         ConfigCmd::List => {
             if cfg.map.is_empty() {
-                println!("{}", "(no config set)".dimmed());
+                println!("{} {}", "warning:".yellow().bold(), "no config set".dimmed());
             } else {
                 println!("{}", "Config:".cyan().bold());
                 for (k, v) in &cfg.map {
@@ -26,6 +25,11 @@ pub async fn handle(cmd: ConfigCmd) -> Result<()> {
         }
 
         ConfigCmd::Set { key, val } => {
+            if !cfg.validate_key(&key) {
+                println!("{} Invalid config key `{}`", "error:".red().bold(), key);
+                return Ok(());
+            }
+            
             cfg.map.insert(key.clone(), val.clone());
             cfg.save(&config_path)?;
             println!("{} set `{}` = `{}`", "info:".blue().bold(), key.green(), val);

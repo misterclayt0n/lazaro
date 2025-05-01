@@ -8,9 +8,11 @@ use std::{
 };
 use strsim::jaro_winkler;
 
-use clap::ValueEnum;
+use clap::{Command, CommandFactory, ValueEnum};
 use serde::{Deserialize, Serialize};
 use sqlx::prelude::Type;
+
+use crate::cli::Cli;
 
 #[derive(Clone, Debug, ValueEnum, Serialize, Deserialize, Type)]
 #[sqlx(type_name = "TEXT")]
@@ -144,7 +146,7 @@ impl Config {
         if let Ok(s) = read_to_string(path) {
             for line in s.lines() {
                 let line = line.trim();
-                
+
                 // Comments.
                 if line.is_empty() || line.starts_with('#') {
                     continue;
@@ -152,7 +154,7 @@ impl Config {
 
                 if let Some(eq) = line.find('=') {
                     let key = line[..eq].trim().to_string();
-                    let val = line[eq+1..].trim().to_string();
+                    let val = line[eq + 1..].trim().to_string();
                     cfg.map.insert(key, val);
                 }
             }
@@ -170,5 +172,48 @@ impl Config {
         create_dir_all(path.parent().unwrap())?;
         std::fs::write(path, out).context("Failed to write config file")
     }
-    
+
+    /// Returns a map from alias - cannonical path segments.
+    /// e.g. "st" -> ["session", "start"].
+    pub fn aliases(&self) -> HashMap<String, Vec<String>> {
+        let mut m = HashMap::new();
+        for (k, v) in &self.map {
+            if let Some(rest) = k.strip_prefix("aliases.") {
+                // 'rest' is like "session" or "session.start".
+                let canon: Vec<String> = rest.split('.').map(String::from).collect();
+                m.insert(v.clone(), canon);
+            }
+        }
+
+        return m;
+    }
+
+    /// Validate a key is of the form "aliases.<cmd>[.<subcmd>]" and exists in CLI.
+    pub fn validate_key(&self, key: &str) -> bool {
+        let rest = match key.strip_prefix("aliases.") {
+            Some(r) => r,
+            None => return false,
+        };
+
+        let parts: Vec<&str> = rest.split('.').collect();
+        if parts.is_empty() {
+            return false;
+        }
+
+        let mut cmd: Command = Cli::command();
+
+        for &seg in &parts {
+            if let Some(subcmd) = cmd
+                .clone()
+                .get_subcommands()
+                .find(|sc| sc.get_name() == seg || sc.get_all_aliases().any(|alias| alias == seg))
+            {
+                cmd = subcmd.clone();
+            } else {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
