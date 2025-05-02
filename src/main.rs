@@ -4,7 +4,7 @@ use anyhow::{Context, Result};
 use clap::Parser;
 use cli::{Cli, Commands};
 use db::open;
-use types::Config;
+use types::{Config, OutputFmt};
 
 mod cli;
 mod db;
@@ -15,11 +15,17 @@ mod types;
 async fn main() -> Result<()> {
     let config_path = dirs::config_dir().context("no config dir")?.join("lazarus").join("config");
     let cfg = Config::load(&config_path)?;
+    let json_default = cfg.json_default();
     let alias_map = cfg.aliases();
 
-    let new_args = rewrite_args(&alias_map);      // <-- just use it here
+    let new_args = rewrite_args(&alias_map);
     
     let cli = Cli::parse_from(new_args);
+
+    let fmt = OutputFmt {
+        json: cli.json || json_default,
+    };
+    
     let db_path = "./lazarus.db";
     assert!(!db_path.is_empty(), "database path must not be empty");
     
@@ -27,7 +33,7 @@ async fn main() -> Result<()> {
 
     match cli.cmd {
         Commands::Session(cmd) => commands::session::handle(cmd, &pool).await?,
-        Commands::Exercise(cmd) => commands::exercise::handle(cmd, &pool).await?,
+        Commands::Exercise(cmd) => commands::exercise::handle(cmd, &pool, fmt).await?,
         Commands::Config(cmd) => commands::config::handle(cmd, cfg, config_path).await?
     }
 

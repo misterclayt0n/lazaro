@@ -6,6 +6,10 @@ use crate::types::Muscle;
 #[command(name = "lazarus", version, about = "CLI training app")]
 #[command(arg_required_else_help = true)]
 pub struct Cli {
+    /// Emit machine-readable JSON instead of colorful text.
+    #[arg(global = true, long)]
+    pub json: bool,
+    
     #[command(subcommand)]
     pub cmd: Commands,
 }

@@ -190,30 +190,60 @@ impl Config {
 
     /// Validate a key is of the form "aliases.<cmd>[.<subcmd>]" and exists in CLI.
     pub fn validate_key(&self, key: &str) -> bool {
-        let rest = match key.strip_prefix("aliases.") {
-            Some(r) => r,
-            None => return false,
-        };
+        match key {
+            "json" => true,
+            _ if key.starts_with("aliases.") => {
+                let rest = match key.strip_prefix("aliases.") {
+                    Some(r) => r,
+                    None => return false,
+                };
 
-        let parts: Vec<&str> = rest.split('.').collect();
-        if parts.is_empty() {
-            return false;
-        }
+                let parts: Vec<&str> = rest.split('.').collect();
+                if parts.is_empty() {
+                    return false;
+                }
 
-        let mut cmd: Command = Cli::command();
+                let mut cmd: Command = Cli::command();
 
-        for &seg in &parts {
-            if let Some(subcmd) = cmd
-                .clone()
-                .get_subcommands()
-                .find(|sc| sc.get_name() == seg || sc.get_all_aliases().any(|alias| alias == seg))
-            {
-                cmd = subcmd.clone();
-            } else {
-                return false;
+                for &seg in &parts {
+                    if let Some(subcmd) = cmd.clone().get_subcommands().find(|sc| {
+                        sc.get_name() == seg || sc.get_all_aliases().any(|alias| alias == seg)
+                    }) {
+                        cmd = subcmd.clone();
+                    } else {
+                        return false;
+                    }
+                }
+
+                return true;
             }
+            _ => false,
         }
+    }
 
-        return true;
+    pub fn json_default(&self) -> bool {
+        matches!(self.map.get("json").map(|v| v.as_str()), Some("true" | "1"))
+    }
+}
+
+/// How the user wants to see stuff.
+#[derive(Clone, Copy)]
+pub struct OutputFmt {
+    pub json: bool,
+}
+
+/// Generic one-liner: if JSON is requested -> dump, else, run closure.
+pub fn emit<T, F>(fmt: OutputFmt, value: &T, pretty: F)
+where
+    T: Serialize,
+    F: FnOnce(),
+{
+    if fmt.json {
+        println!(
+            "{}",
+            serde_json::to_string_pretty(value).expect("json serialize")
+        );
+    } else {
+        pretty();
     }
 }

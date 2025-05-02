@@ -24,16 +24,19 @@ In this example here, both session start and ss would refer to the same command,
 - db import <dump.toml> -> This syncs the current db with the provided dump.toml, and if no dump.toml is provided, it creates a new database for you
 
 ## General stuff
-- Config file: change aliases.
+- [x] Config file: change aliases.
 - Sync: something easy to sync with github.
 - Data science: progression on exercises (strength).
 - Show session should grab the last occurrence of an exercise, currently it shows First time if I skipped a given ex.
 - Start program should look for an ID for the program name and session. see task warrior for reference. 
 - On the note above, all things should probably work with structured data.
 - Release with cargo install or pkg for easy setup.
-- Option to output data as json for structured data (nushell shit).
-- ex list chest if I want to grab all chest exercises.
-- add neck as muscle.
+- [x] Option to output data as json for structured data (nushell shit).
+- `ex list chest` if I want to grab all chest exercises.
+- Add neck as muscle.
+- Global indeces for exercises/programs/sets/whatever (this way it's easier to use them in a phone)
 
 ## Notes
 - Aliases: don’t mix a top-level alias with a built-in ex/s token.
+- Nushell does not automatically recognizes json output from lazaro, we'd have to keep using `| from json` everywhere. In the future, create a small wrapper to add in nushell for this (when I make the release).
+- Structured data is a must.

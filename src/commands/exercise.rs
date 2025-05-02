@@ -1,11 +1,20 @@
 use std::{collections::BTreeSet, path::Path};
 
+use serde::Serialize;
 use sqlx::{Row, SqlitePool};
 use colored::Colorize;
-use crate::{cli::ExerciseCmd, types::{best_muscle_suggestions, cannonical_muscle, ExerciseImport, ALLOWED_MUSCLES}};
+use crate::{cli::ExerciseCmd, types::{best_muscle_suggestions, cannonical_muscle, emit, ExerciseImport, ALLOWED_MUSCLES}, OutputFmt};
 use anyhow::{Context, Result};
 
-pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool) -> Result<()> {
+#[derive(Serialize)]
+struct RowJson<'a> {
+    name: &'a str,
+    primary_muscle: &'a str,
+    description: &'a str,
+    created_at: &'a str,
+}
+
+pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Result<()> {
     match cmd {
         ExerciseCmd::Add { name, muscle, desc } => {
             let res = sqlx::query(
@@ -124,6 +133,7 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool) -> Result<()> {
                 println!("{} You can write in any case sensitive manner (e.g. `chest` == `CHEST` == `Chest`)", "Note:".blue().bold())
             }
         }
+        
         ExerciseCmd::List { muscle } => {
             let base = "
                 SELECT name, primary_muscle, 
@@ -133,7 +143,7 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool) -> Result<()> {
             ";
 
             // Add a filter if requested.
-            let rows = if let Some(musc) = muscle {
+            let db_rows = if let Some(musc) = muscle {
                 let q = format!("{base} WHERE primary_muscle = ? ORDER BY name");
                 sqlx::query(&q).bind(musc).fetch_all(pool).await? // Probably not a problem using ? here.
             } else {
@@ -141,31 +151,32 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool) -> Result<()> {
                 sqlx::query(&q).fetch_all(pool).await?
             };
 
-            println!("{}", "Exercises:".cyan().bold());
+            let rows: Vec<RowJson> = db_rows.iter().map(|r| RowJson {
+                name: r.get("name"),
+                primary_muscle: r.get("primary_muscle"),
+                description: r.get("description"),
+                created_at: r.get("created_at"),
+            }).collect();
 
-            for row in &rows {
-                let name: String        = row.get("name");
-                let muscle: String      = row.get("primary_muscle");
-                let desc: String        = row.get("description");
-                let created_at: String  = row.get("created_at");
-
-                // e.g.  • Preacher Curl (biceps) – EZ-bar variation • added 2025-04-29
-                println!(
-                    "  • {} ({}) {} {}",
-                    name.bold(),
-                    muscle.yellow(),
-                    if desc.is_empty() {
-                        "".dimmed().to_string()
-                    } else {
-                        format!("– {}", desc).dimmed().to_string()
-                    },
-                    format!("• added {}", &created_at[..10]).dimmed(),
-                );
-            }
-            
-            if rows.is_empty() {
-                println!("{}", "  (no exercises found)".dimmed());
-            }
+            emit(fmt, &rows, || {
+                println!("{}", "Exercises:".cyan().bold());
+                for r in &rows {
+                    println!(
+                        "  • {} ({}) {} {}",
+                        r.name.bold(),
+                        r.primary_muscle.yellow(),
+                        if r.description.is_empty() {
+                            "".dimmed().to_string()
+                        } else {
+                            format!("– {}", r.description).dimmed().to_string()
+                        },
+                        format!("• added {}", &r.created_at[..10]).dimmed(),
+                    );
+                }
+                if rows.is_empty() {
+                    println!("{}", "  (no exercises found)".dimmed());
+                }  
+            });
         }
     }
 
