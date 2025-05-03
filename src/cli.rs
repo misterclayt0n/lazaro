@@ -17,11 +17,11 @@ pub struct Cli {
 #[derive(Subcommand)]
 pub enum Commands {
     /// Session-scoped commands
-    #[command(subcommand, alias = "s")]
+    #[command(subcommand, visible_alias = "s")]
     Session(SessionCmd),
 
     /// Exercise management
-    #[command(subcommand, alias = "ex")]
+    #[command(subcommand, visible_alias = "ex")]
     Exercise(ExerciseCmd),
 
     /// View or edit lazarus config
@@ -36,7 +36,7 @@ pub enum Commands {
 #[derive(Subcommand)]
 pub enum SessionCmd {
     /// Start a session
-    #[command(alias = "s")]
+    #[command(visible_alias = "s")]
     Start(StartArgs),
 }
 
@@ -52,11 +52,11 @@ pub enum ExerciseCmd {
     },
 
     /// Bulk import from a TOML file
-    #[command(alias = "i")]
+    #[command(visible_alias = "i")]
     Import { file: String },
 
     /// List existing exercises, optionally filetering by muscle group
-    #[command(alias = "l")]
+    #[command(visible_alias = "l")]
     List {
         #[arg(long, short = 'm')]
         muscle: Option<String>,
