@@ -205,6 +205,97 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
                 }
             });
         }
+
+        ExerciseCmd::Variant { exercise, variant } => {
+            // Resolve `exercise` to it's `idx`.
+            let idx: i64 = if let Ok(n) = exercise.parse::<i64>() {
+                // User passed a number.
+                n
+            } else {
+                // User passed a name: look the fucker up.
+                match sqlx::query_scalar("SELECT idx FROM exercises WHERE name = ?")
+                    .bind(&exercise)
+                    .fetch_one(pool)
+                    .await
+                 {
+                    Ok(n) => n,
+                    Err(_) => {
+                        println!("{} no such exercise `{}`", "error:".red().bold(), exercise);
+                        return Ok(());
+                    }
+                }
+            };
+
+            if variant.is_none() {
+                // List existing variants  (pretty + json support).
+                #[derive(Serialize)]
+                struct VarJson {
+                    idx: usize,
+                    name: String,
+                    created_at: String,
+                }
+
+                let rows: Vec<(String, String)> = sqlx::query_as(
+                    "SELECT name, created_at
+                     FROM   exercise_variants
+                     WHERE  exercise_id = ?
+                     ORDER  BY name",
+                )
+                .bind(idx)
+                .fetch_all(pool)
+                .await?;
+
+                if rows.is_empty() {
+                    println!("{}", "(no variants found)".dimmed());
+                    return Ok(());
+                }
+
+                // Build Vec<VarJson> for JSON output.
+                let json_rows: Vec<VarJson> = rows
+                    .iter()
+                    .enumerate()
+                    .map(|(i, (name, created))| VarJson {
+                        idx: i + 1,
+                        name: name.clone(),
+                        created_at: created.clone(),
+                    })
+                    .collect();
+
+                emit(fmt, &json_rows, || {
+                    println!(
+                        "{} {}:",
+                        "Variants for exercise".cyan().bold(),
+                        idx.to_string().yellow()
+                    );
+
+                    let idx_width = json_rows
+                        .iter()
+                        .map(|r| r.idx.to_string().len())
+                        .max()
+                        .unwrap_or(1);
+
+                    let lefts: Vec<String> = json_rows
+                        .iter()
+                        .map(|r| {
+                            let idx = format!("{:>width$}", r.idx, width = idx_width).yellow();
+                            format!(" {} • {}", idx, r.name.bold())
+                        })
+                        .collect();
+
+                    let left_width = lefts.iter().map(String::len).max().unwrap_or(0);
+
+                    for (left, r) in lefts.iter().zip(&json_rows) {
+                        let padded = format!("{:<left_width$}", left, left_width = left_width);
+                        println!(
+                            "{} {} {}",
+                            padded,
+                            "|".blue(),
+                            format!("added {}", &r.created_at[..10]).dimmed()
+                        );
+                    }
+                });
+            }
+        }
     }
 
     Ok(())

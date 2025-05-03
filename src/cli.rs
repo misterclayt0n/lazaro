@@ -61,6 +61,15 @@ pub enum ExerciseCmd {
         #[arg(long, short = 'm')]
         muscle: Option<String>,
     },
+
+    #[command(visible_alias = "v")]
+    Variant {
+        /// Either the exercise index (number) or its name
+        exercise: String,
+        
+        /// If provided, adds this as new variant; if ommited, lists all variants
+        variant: Option<String>
+    }
 }
 
 #[derive(Subcommand)]
