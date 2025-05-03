@@ -9,7 +9,7 @@ pub struct Cli {
     /// Emit machine-readable JSON instead of colorful text.
     #[arg(global = true, long)]
     pub json: bool,
-    
+
     #[command(subcommand)]
     pub cmd: Commands,
 }
@@ -31,7 +31,7 @@ pub enum Commands {
 
 //
 // Commands
-// 
+//
 
 #[derive(Subcommand)]
 pub enum SessionCmd {
@@ -60,16 +60,20 @@ pub enum ExerciseCmd {
     List {
         #[arg(long, short = 'm')]
         muscle: Option<String>,
+
+        /// Hide variants (shown by default)
+        #[arg(long = "no-variants", short = 'n', action = clap::ArgAction::SetFalse, default_value_t = true)]
+        variants: bool,
     },
 
     #[command(visible_alias = "v")]
     Variant {
         /// Either the exercise index (number) or its name
         exercise: String,
-        
+
         /// If provided, adds this as new variant; if ommited, lists all variants
-        variant: Option<String>
-    }
+        variant: Option<String>,
+    },
 }
 
 #[derive(Subcommand)]
@@ -82,9 +86,9 @@ pub enum ConfigCmd {
 
     /// Set or override a key
     Set { key: String, val: String },
-    
+
     /// Remove a key
-    Unset { key: String }
+    Unset { key: String },
 }
 
 #[derive(Args)]

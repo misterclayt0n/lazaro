@@ -2,6 +2,7 @@
 name = "Back Squat"
 description = "Full depth barbell back squat"
 primary_muscle = "Quads"
+variants = ["Low bar", "High Bar"]
 
 [[exercise]]
 name = "Bench Press"
