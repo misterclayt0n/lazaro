@@ -8,6 +8,7 @@ use anyhow::{Context, Result};
 
 #[derive(Serialize)]
 struct RowJson<'a> {
+    idx: i64,
     name: &'a str,
     primary_muscle: &'a str,
     description: &'a str,
@@ -136,7 +137,7 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
         
         ExerciseCmd::List { muscle } => {
             let base = "
-                SELECT name, primary_muscle, 
+                SELECT idx, name, primary_muscle, 
                 COALESCE(description, '') AS description, 
                 created_at
                 FROM exercises
@@ -144,14 +145,15 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
 
             // Add a filter if requested.
             let db_rows = if let Some(musc) = muscle {
-                let q = format!("{base} WHERE primary_muscle = ? ORDER BY name");
+                let q = format!("{base} WHERE primary_muscle = ? ORDER BY idx");
                 sqlx::query(&q).bind(musc).fetch_all(pool).await? // Probably not a problem using ? here.
             } else {
-                let q = format!("{base} ORDER BY name");
+                let q = format!("{base} ORDER BY idx");
                 sqlx::query(&q).fetch_all(pool).await?
             };
 
             let rows: Vec<RowJson> = db_rows.iter().map(|r| RowJson {
+                idx: r.get("idx"),
                 name: r.get("name"),
                 primary_muscle: r.get("primary_muscle"),
                 description: r.get("description"),
@@ -160,22 +162,47 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
 
             emit(fmt, &rows, || {
                 println!("{}", "Exercises:".cyan().bold());
-                for r in &rows {
-                    println!(
-                        "  • {} ({}) {} {}",
-                        r.name.bold(),
-                        r.primary_muscle.yellow(),
-                        if r.description.is_empty() {
-                            "".dimmed().to_string()
+
+                let idx_width = rows
+                    .iter()
+                    .map(|r| r.idx.to_string().len())
+                    .max()
+                    .unwrap_or(1);
+
+                // Build all left‐hand strings and find their max width.
+                let lefts: Vec<String> = rows
+                    .iter()
+                    .map(|r| {
+                        let idx = format!("{:>width$}", r.idx, width = idx_width);
+                        let desc = if r.description.is_empty() {
+                            String::new()
                         } else {
-                            format!("– {}", r.description).dimmed().to_string()
-                        },
-                        format!("• added {}", &r.created_at[..10]).dimmed(),
+                            format!("– {}", r.description)
+                        };
+                        format!(
+                            " {} • {} ({}) {}",
+                            idx.yellow(),
+                            r.name.bold(),
+                            r.primary_muscle.yellow(),
+                            desc.dimmed()
+                        )
+                    })
+                    .collect();
+                let left_width = lefts.iter().map(String::len).max().unwrap_or(0);
+
+                for (left, r) in lefts.iter().zip(&rows) {
+                    let padded = format!("{:<left_width$}", left, left_width = left_width);
+                    println!(
+                        "{} {} {}",
+                        padded,
+                        "|".blue(),
+                        format!("added {}", &r.created_at[..10]).dimmed()
                     );
                 }
+
                 if rows.is_empty() {
                     println!("{}", "  (no exercises found)".dimmed());
-                }  
+                }
             });
         }
     }

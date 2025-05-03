@@ -58,7 +58,7 @@ pub enum ExerciseCmd {
     /// List existing exercises, optionally filetering by muscle group
     #[command(alias = "l")]
     List {
-        #[arg(long)]
+        #[arg(long, short = 'm')]
         muscle: Option<String>,
     },
 }
