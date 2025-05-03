@@ -15,6 +15,7 @@ In this example here, both session start and ss would refer to the same command,
 - exercise add <name> <muscle> [--desc TXT]
 - exercise import <file.toml>
 - exercise list --muscle
+- exercise show <muscle_idx> || <muscle_name>
 - program import <file.toml> -> This not only creates a new program, but also updates it
 - program delete <file.toml> --name [<program_name>] -> Can delete by file or name
 - program list
