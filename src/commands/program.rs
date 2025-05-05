@@ -1,17 +1,22 @@
-use std::{collections::HashSet, fs::read_to_string};
+use std::{
+    collections::{HashMap, HashSet},
+    fs::read_to_string,
+};
 
 use anyhow::{Context, Result};
 use colored::Colorize;
 use serde::Deserialize;
-use sqlx::SqlitePool;
+use sqlx::{Row, SqlitePool};
 
-use crate::{cli::ProgramCmd, types::OutputFmt};
+use crate::{
+    cli::ProgramCmd,
+    types::{OutputFmt, emit},
+};
 
 #[derive(Debug, Deserialize)]
 struct ProgramToml {
     name: String,
     description: Option<String>,
-
     weeks: Option<Vec<WeekToml>>,
     blocks: Option<Vec<BlockToml>>,
 }
@@ -38,26 +43,204 @@ struct BlockExerciseToml {
     target_rm_percent: Option<Vec<f32>>,
     notes: Option<String>,
     program_1rm: Option<f32>,
-    options: Option<Vec<String>>,
     technique: Option<String>,
     group: Option<u32>,
 }
 
-pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, _fmt: OutputFmt) -> Result<()> {
+#[derive(Debug)]
+struct BlockRow {
+    name: String,
+    week: Option<i64>,
+}
+
+#[derive(serde::Serialize)]
+struct ProgJson {
+    idx: i64,
+    name: String,
+    description: String,
+    created_at: String,
+    blocks: i64,
+}
+
+fn plain_len(s: &str) -> usize {
+    let mut n = 0;
+    let mut esc = false;
+    for b in s.bytes() {
+        match (esc, b) {
+            (true, b'm') => esc = false,
+            (true, _) => {}
+            (false, 0x1B) => esc = true,
+            (false, _) => n += 1,
+        }
+    }
+    n
+}
+
+async fn blocks_by_program(pool: &SqlitePool) -> Result<HashMap<String, Vec<BlockRow>>> {
+    let rows = sqlx::query(
+        r#"
+        SELECT program_id, name, week
+        FROM   program_blocks
+        ORDER  BY program_id, COALESCE(week,1), name
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+
+    let mut map: HashMap<String, Vec<BlockRow>> = HashMap::new();
+    for r in rows {
+        map.entry(r.get::<String, _>("program_id"))
+            .or_default()
+            .push(BlockRow {
+                name: r.get("name"),
+                week: r.get("week"),
+            });
+    }
+    Ok(map)
+}
+
+fn pretty_print(
+    progs: &[ProgJson],
+    blk_map: &HashMap<String, Vec<BlockRow>>,
+    idx2id: &HashMap<i64, String>,
+) {
+    if progs.is_empty() {
+        println!("{}", "  (no programs found)".dimmed());
+        return;
+    }
+
+    println!("{}", "Programs:".cyan().bold());
+
+    let idx_w = progs
+        .iter()
+        .map(|p| p.idx.to_string().len())
+        .max()
+        .unwrap_or(1);
+    let mut left = Vec::<String>::new();
+    let mut right = Vec::<String>::new();
+
+    for p in progs {
+        //
+        // Program row.
+        //
+        let idx = format!("{:>width$}", p.idx, width = idx_w).yellow();
+        let desc = if p.description.is_empty() {
+            String::new()
+        } else {
+            format!("– {}", p.description).dimmed().to_string()
+        };
+        left.push(format!(" {} • {} {}", idx, p.name.bold(), desc));
+        right.push(
+            format!("added {}", &p.created_at[..10])
+                .dimmed()
+                .to_string(),
+        );
+
+        //
+        // Block rows
+        //
+        if let Some(id) = idx2id.get(&p.idx) {
+            if let Some(blocks) = blk_map.get(id) {
+                for (i, b) in blocks.iter().enumerate() {
+                    let connector = if i + 1 == blocks.len() {
+                        "└─"
+                    } else {
+                        "├─"
+                    };
+                    let b_idx_col = format!("{:>width$}", i + 1, width = idx_w).yellow();
+                    let label = match b.week {
+                        Some(w) => format!("{} (week {})", b.name, w),
+                        None => b.name.clone(),
+                    };
+                    left.push(format!(
+                        " {}   {} {} • {}",
+                        " ".repeat(idx_w).yellow(),
+                        connector,
+                        b_idx_col,
+                        label.bold()
+                    ));
+                    right.push(String::new());
+                }
+            }
+        }
+    }
+
+    let pad_plain = left.iter().map(|s| plain_len(s)).max().unwrap_or(0);
+    for (l, r) in left.into_iter().zip(right) {
+        let pad = pad_plain + (l.len() - plain_len(&l));
+        if r.is_empty() {
+            println!("{}", l);
+        } else {
+            println!("{:<pad$} {} {}", l, "|".blue(), r, pad = pad);
+        }
+    }
+}
+
+pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, fmt: OutputFmt) -> Result<()> {
     match cmd {
         ProgramCmd::Import { files } => {
             if files.is_empty() {
-                println!("{} No program file provided", "warning".yellow().bold())
+                println!("{} no program file provided", "warning:".yellow().bold());
             }
+            for f in files {
+                match import_single_program(pool, &f).await {
+                    Ok(()) => {}
+                    Err(e) => {
+                        if let Some(io_err) = e.downcast_ref::<std::io::Error>() {
+                            if io_err.kind() == std::io::ErrorKind::NotFound {
+                                println!(
+                                    "{} cannot open file `{}` – file not found",
+                                    "error:".red().bold(),
+                                    f
+                                );
+                                continue;
+                            }
 
-            for file in files {
-                import_single_program(pool, &file).await?;
+                            return Err(e);
+                        }
+                    }
+                }
             }
         }
 
-        ProgramCmd::List => {}
-    }
+        ProgramCmd::List => {
+            let rows = sqlx::query(
+                r#"
+                SELECT ROW_NUMBER() OVER (ORDER BY name) AS idx,
+                       id, name,
+                       COALESCE(description,'') AS description,
+                       created_at
+                FROM   programs
+                ORDER  BY idx
+                "#,
+            )
+            .fetch_all(pool)
+            .await?;
 
+            let mut progs = Vec::<ProgJson>::new();
+            let mut idx2id = HashMap::<i64, String>::new();
+            for r in &rows {
+                let idx: i64 = r.get("idx");
+                progs.push(ProgJson {
+                    idx,
+                    name: r.get("name"),
+                    description: r.get("description"),
+                    created_at: r.get("created_at"),
+                    blocks: 0,
+                });
+                idx2id.insert(idx, r.get("id"));
+            }
+
+            let blk_map = blocks_by_program(pool).await?;
+            for p in &mut progs {
+                if let Some(id) = idx2id.get(&p.idx) {
+                    p.blocks = blk_map.get(id).map(|v| v.len() as i64).unwrap_or(0);
+                }
+            }
+
+            emit(fmt, &progs, || pretty_print(&progs, &blk_map, &idx2id));
+        }
+    }
     Ok(())
 }
 
@@ -66,56 +249,43 @@ async fn import_single_program(pool: &SqlitePool, file: &str) -> Result<()> {
     let prog: ProgramToml =
         toml::from_str(&toml_str).with_context(|| format!("parsing `{file}`"))?;
 
-    // Make sure every exercise mentioned exists in DB first.
-    let mut all_ex_names = std::collections::HashSet::<&str>::new();
+    // Check all exercises exist.
+    let mut all_ex = HashSet::<&str>::new();
     if let Some(weeks) = &prog.weeks {
         for w in weeks {
             for b in &w.blocks {
-                for ex in &b.exercises {
-                    all_ex_names.insert(ex.name.as_str());
+                for e in &b.exercises {
+                    all_ex.insert(&e.name);
                 }
             }
         }
     }
     if let Some(blocks) = &prog.blocks {
         for b in blocks {
-            for ex in &b.exercises {
-                all_ex_names.insert(ex.name.as_str());
+            for e in &b.exercises {
+                all_ex.insert(&e.name);
             }
         }
     }
 
-    if !all_ex_names.is_empty() {
-        // Build the IN (?,?,?,...) clause first.
-        let placeholders = std::iter::repeat("?")
-            .take(all_ex_names.len())
+    if !all_ex.is_empty() {
+        let q_marks = std::iter::repeat("?")
+            .take(all_ex.len())
             .collect::<Vec<_>>()
             .join(",");
-
-        // Start the query.
-        let query = &format!(
-            "SELECT name FROM exercises WHERE name IN ({})",
-            placeholders,
-        );
-        let mut q = sqlx::query_as::<_, (String,)>(query);
-
-        // And bind every parameter one‑by‑one.
-        for name in &all_ex_names {
-            q = q.bind(name);
+        let sql = format!("SELECT name FROM exercises WHERE name IN ({})", q_marks);
+        let mut q = sqlx::query_as::<_, (String,)>(&sql);
+        for n in &all_ex {
+            q = q.bind(n);
         }
-
-        let rows: Vec<(String,)> = q.fetch_all(pool).await?;
-
-        let present: std::collections::HashSet<_> = rows.into_iter().map(|(n,)| n).collect();
-
-        let missing: Vec<_> = all_ex_names
+        let present: HashSet<_> = q.fetch_all(pool).await?.into_iter().map(|(n,)| n).collect();
+        let missing: Vec<_> = all_ex
             .into_iter()
             .filter(|n| !present.contains(*n))
             .collect();
-
         if !missing.is_empty() {
             println!(
-                "{} cannot import program `{}` – these exercises are missing: {}",
+                "{} cannot import program `{}` – missing exercises: {}",
                 "warning:".yellow().bold(),
                 prog.name,
                 missing.join(", ")
@@ -127,11 +297,11 @@ async fn import_single_program(pool: &SqlitePool, file: &str) -> Result<()> {
     // Transactional import.
     let mut tx = pool.begin().await?;
 
-    // Try to insert the program row.
+    // Program row.
     let prog_id = uuid::Uuid::new_v4().to_string();
     let res = sqlx::query(
         r#"INSERT INTO programs (id,name,description,created_at)
-           VALUES (?1,?2,?3,datetime('now'))"#,
+               VALUES (?1,?2,?3,datetime('now'))"#,
     )
     .bind(&prog_id)
     .bind(&prog.name)
@@ -142,7 +312,7 @@ async fn import_single_program(pool: &SqlitePool, file: &str) -> Result<()> {
     if let Err(sqlx::Error::Database(db_err)) = &res {
         if db_err.code() == Some("2067".into()) {
             println!(
-                "{} program `{}` already exists – skipping import",
+                "{} program `{}` already exists – skipping",
                 "warning:".yellow().bold(),
                 prog.name
             );
@@ -150,9 +320,9 @@ async fn import_single_program(pool: &SqlitePool, file: &str) -> Result<()> {
             return Ok(());
         }
     }
-    res?; // Propagate any other error.
+    res?;
 
-    // Flatten weeks->blocks.
+    // Flatten blocks.
     let mut blocks: Vec<(Option<u32>, BlockToml)> = Vec::new();
     if let Some(weeks) = prog.weeks {
         for w in weeks {
@@ -167,39 +337,31 @@ async fn import_single_program(pool: &SqlitePool, file: &str) -> Result<()> {
         }
     }
 
-    // Insert blocks & exercises.
+    // Insert blocks + exercises.
+    // NOTE: Removed the "options" column.
     for (week_opt, block) in blocks {
-        // Duplicate exercise in the same block detection
-        // NOTE: We do not allow in the same block something like this:
-        // "day 1"
-        // - Bench press
-        // - Incline press
-        // - Bench press
-        let mut seen: HashSet<&str> = HashSet::new();
-        let mut dupes: Vec<&str> = Vec::new();
-
-        for ex in &block.exercises {
-            if !seen.insert(ex.name.as_str()) {
-                dupes.push(ex.name.as_str());
+        let mut seen = HashSet::new();
+        let mut dup = Vec::<&str>::new();
+        for e in &block.exercises {
+            if !seen.insert(e.name.as_str()) {
+                dup.push(&e.name);
             }
         }
-
-        if !dupes.is_empty() {
+        if !dup.is_empty() {
             println!(
-                "{} block `{}` in program `{}` contains duplicate exercise names: {} – skipping this block",
+                "{} block `{}` in program `{}` has duplicates: {} – skipped",
                 "warning:".yellow().bold(),
                 block.name,
                 prog.name,
-                dupes.join(", ")
+                dup.join(", ")
             );
-            continue; // Don’t try to insert this block
+            continue;
         }
 
         let block_id = uuid::Uuid::new_v4().to_string();
-
         sqlx::query(
             r#"INSERT INTO program_blocks
-                 (id, program_id, name, description, week)
+                 (id,program_id,name,description,week)
                VALUES (?1,?2,?3,?4,?5)"#,
         )
         .bind(&block_id)
@@ -214,7 +376,7 @@ async fn import_single_program(pool: &SqlitePool, file: &str) -> Result<()> {
             let ex_id: String = sqlx::query_scalar("SELECT id FROM exercises WHERE name = ?")
                 .bind(&ex.name)
                 .fetch_one(&mut *tx)
-                .await?; // Safe – we validated earlier.
+                .await?;
 
             let reps_csv = ex.reps.as_ref().map(|v| v.join(","));
             let rpe_csv = ex.target_rpe.as_ref().map(|v| {
@@ -229,14 +391,13 @@ async fn import_single_program(pool: &SqlitePool, file: &str) -> Result<()> {
                     .collect::<Vec<_>>()
                     .join(",")
             });
-            let opt_csv = ex.options.as_ref().map(|v| v.join(","));
 
             sqlx::query(
                 r#"INSERT INTO program_exercises
-                     (id, program_block_id, exercise_id, sets, reps,
-                      target_rpe, target_rm_percent, notes, program_1rm,
-                      options, technique, technique_group, order_index)
-                   VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13)"#,
+                     (id,program_block_id,exercise_id,sets,reps,
+                      target_rpe,target_rm_percent,notes,program_1rm,
+                      technique,technique_group,order_index)
+                   VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12)"#,
             )
             .bind(uuid::Uuid::new_v4().to_string())
             .bind(&block_id)
@@ -247,7 +408,6 @@ async fn import_single_program(pool: &SqlitePool, file: &str) -> Result<()> {
             .bind(rm_csv)
             .bind(ex.notes.as_deref())
             .bind(ex.program_1rm)
-            .bind(opt_csv)
             .bind(ex.technique.as_deref())
             .bind(ex.group.map(|g| g as i32))
             .bind(order_idx as i32)

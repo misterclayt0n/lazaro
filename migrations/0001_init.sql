@@ -68,7 +68,6 @@ CREATE TABLE program_exercises (
     target_rm_percent  TEXT,
     notes              TEXT,
     program_1rm        REAL,
-    options            TEXT,
     technique          TEXT,
     technique_group    INTEGER,
     order_index        INTEGER,
