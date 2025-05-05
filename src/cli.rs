@@ -27,6 +27,10 @@ pub enum Commands {
     /// View or edit lazarus config
     #[command(subcommand)]
     Config(ConfigCmd),
+
+    /// Program management
+    #[command(subcommand, visible_alias = "p")]
+    Program(ProgramCmd),
 }
 
 //
@@ -89,6 +93,17 @@ pub enum ConfigCmd {
 
     /// Remove a key
     Unset { key: String },
+}
+
+#[derive(Subcommand)]
+pub enum ProgramCmd {
+    /// Import one or more programs
+    #[command(visible_alias = "i")]
+    Import { files: Vec<String> },
+
+    /// List programs 
+    #[command(visible_alias = "l")]
+    List,
 }
 
 #[derive(Args)]

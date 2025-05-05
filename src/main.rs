@@ -34,7 +34,8 @@ async fn main() -> Result<()> {
     match cli.cmd {
         Commands::Session(cmd) => commands::session::handle(cmd, &pool).await?,
         Commands::Exercise(cmd) => commands::exercise::handle(cmd, &pool, fmt).await?,
-        Commands::Config(cmd) => commands::config::handle(cmd, cfg, config_path).await?
+        Commands::Config(cmd) => commands::config::handle(cmd, cfg, config_path).await?,
+        Commands::Program(cmd) => commands::program::handle(cmd, &pool, fmt).await?,
     }
 
     Ok(())

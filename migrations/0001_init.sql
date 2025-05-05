@@ -1,24 +1,38 @@
--- Exercises and aliases -------------------------------------------------------
+PRAGMA foreign_keys = ON;
+
+-- Exercises -------------------------------------------------------------------
 CREATE TABLE exercises (
-    id              TEXT PRIMARY KEY,
-    name            TEXT NOT NULL UNIQUE COLLATE NOCASE,
+    idx             INTEGER PRIMARY KEY AUTOINCREMENT,      -- numeric handle
+    id              TEXT    UNIQUE,                         -- stable UUID
+    name            TEXT    NOT NULL UNIQUE COLLATE NOCASE,
     description     TEXT,
-    primary_muscle  TEXT,
-    created_at      TEXT NOT NULL,
+    primary_muscle  TEXT    NOT NULL CHECK (primary_muscle IN (
+                     'biceps','triceps','forearms','chest','shoulders','back',
+                     'quads','hamstrings','glutes','calves','abs')),
+    created_at      TEXT    NOT NULL,
     current_pr_date TEXT,
     estimated_one_rm REAL
 );
 
--- optional many-to-one aliases (handy for swap and fuzzy search)
+-- optional many‑to‑one aliases (handy for swap and fuzzy search)
 CREATE TABLE exercise_aliases (
-    exercise_id TEXT NOT NULL,
+    exercise_id TEXT NOT NULL,          -- → exercises.id (uuid)
     alias       TEXT NOT NULL COLLATE NOCASE,
     PRIMARY KEY (exercise_id, alias),
     FOREIGN KEY (exercise_id) REFERENCES exercises(id) ON DELETE CASCADE
 );
 
+CREATE TABLE exercise_variants (
+    id          TEXT PRIMARY KEY,
+    exercise_id INTEGER NOT NULL,       -- → exercises.idx  (numeric)
+    name        TEXT NOT NULL COLLATE NOCASE,
+    created_at  TEXT NOT NULL DEFAULT (datetime('now')),
+    FOREIGN KEY (exercise_id) REFERENCES exercises(idx) ON DELETE CASCADE,
+    UNIQUE (exercise_id, name)
+);
+
 CREATE TABLE personal_records (
-    exercise_id   TEXT NOT NULL,
+    exercise_id   TEXT NOT NULL,        -- → exercises.id
     date          TEXT NOT NULL,
     weight        REAL NOT NULL,
     reps          INTEGER NOT NULL,
@@ -37,7 +51,7 @@ CREATE TABLE programs (
 
 CREATE TABLE program_blocks (
     id          TEXT PRIMARY KEY,
-    program_id  TEXT NOT NULL,
+    program_id  TEXT NOT NULL,          -- → programs.id
     name        TEXT NOT NULL COLLATE NOCASE,
     description TEXT,
     week        INTEGER,
@@ -46,10 +60,10 @@ CREATE TABLE program_blocks (
 
 CREATE TABLE program_exercises (
     id                 TEXT PRIMARY KEY,
-    program_block_id   TEXT NOT NULL,
-    exercise_id        TEXT NOT NULL,
+    program_block_id   TEXT NOT NULL,   -- → program_blocks.id
+    exercise_id        TEXT NOT NULL,   -- → exercises.id     (uuid)
     sets               INTEGER NOT NULL,
-    reps               TEXT NOT NULL,
+    reps               TEXT,            -- may be NULL for “simplest program”
     target_rpe         TEXT,
     target_rm_percent  TEXT,
     notes              TEXT,
@@ -63,28 +77,28 @@ CREATE TABLE program_exercises (
     UNIQUE(program_block_id, exercise_id)
 );
 
--- Training sessions -----------------------------------------------------------
+-- Sessions --------------------------------------------------------------------
 CREATE TABLE training_sessions (
-    id              TEXT PRIMARY KEY,
-    program_block_id TEXT NOT NULL,
-    start_time      TEXT NOT NULL,
-    end_time        TEXT,
-    notes           TEXT,
+    id               TEXT PRIMARY KEY,
+    program_block_id TEXT NOT NULL,     -- → program_blocks.id
+    start_time       TEXT NOT NULL,
+    end_time         TEXT,
+    notes            TEXT,
     FOREIGN KEY (program_block_id) REFERENCES program_blocks(id)
 );
 
 CREATE TABLE training_session_exercises (
-    id                    TEXT PRIMARY KEY,
-    training_session_id   TEXT NOT NULL,
-    exercise_id           TEXT NOT NULL,
-    notes                 TEXT,
+    id                  TEXT PRIMARY KEY,
+    training_session_id TEXT NOT NULL,  -- → training_sessions.id
+    exercise_id         TEXT NOT NULL,  -- → exercises.id
+    notes               TEXT,
     FOREIGN KEY (training_session_id) REFERENCES training_sessions(id) ON DELETE CASCADE,
     FOREIGN KEY (exercise_id)         REFERENCES exercises(id)
 );
 
 CREATE TABLE exercise_sets (
     id                  TEXT PRIMARY KEY,
-    session_exercise_id TEXT NOT NULL,
+    session_exercise_id TEXT NOT NULL,  -- → training_session_exercises.id
     weight              REAL NOT NULL,
     reps                INTEGER NOT NULL,
     rpe                 REAL,
@@ -93,10 +107,11 @@ CREATE TABLE exercise_sets (
     timestamp           TEXT NOT NULL,
     ignore_for_one_rm   INTEGER DEFAULT 0,
     bodyweight          INTEGER DEFAULT 0,
-    FOREIGN KEY (session_exercise_id) REFERENCES training_session_exercises(id) ON DELETE CASCADE
+    FOREIGN KEY (session_exercise_id) REFERENCES training_session_exercises(id)
+                 ON DELETE CASCADE
 );
 
--- View that always yields “the session in progress” ---------------------------
+-- Convenience view: the session that’s still open -----------------------------
 CREATE VIEW current_session AS
 SELECT *
 FROM training_sessions
