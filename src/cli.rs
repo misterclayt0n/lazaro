@@ -104,6 +104,13 @@ pub enum ProgramCmd {
     /// List programs 
     #[command(visible_alias = "l")]
     List,
+
+    /// Show a single program in detail
+    #[command(visible_alias = "s")]
+    Show {
+        /// Program index (from `p list`) or exact name
+        program: String
+    }
 }
 
 #[derive(Args)]

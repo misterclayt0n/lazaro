@@ -14,16 +14,10 @@ use crate::{
 };
 
 #[derive(Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
 struct ProgramToml {
     name: String,
     description: Option<String>,
-    weeks: Option<Vec<WeekToml>>,
-    blocks: Option<Vec<BlockToml>>,
-}
-
-#[derive(Debug, Deserialize)]
-struct WeekToml {
-    week: u32,
     blocks: Vec<BlockToml>,
 }
 
@@ -50,7 +44,6 @@ struct BlockExerciseToml {
 #[derive(Debug)]
 struct BlockRow {
     name: String,
-    week: Option<i64>,
 }
 
 #[derive(serde::Serialize)]
@@ -77,25 +70,17 @@ fn plain_len(s: &str) -> usize {
 }
 
 async fn blocks_by_program(pool: &SqlitePool) -> Result<HashMap<String, Vec<BlockRow>>> {
-    let rows = sqlx::query(
-        r#"
-        SELECT program_id, name, week
-        FROM   program_blocks
-        ORDER  BY program_id, COALESCE(week,1), name
-        "#,
-    )
-    .fetch_all(pool)
-    .await?;
+    let rows = sqlx::query("SELECT program_id, name FROM program_blocks ORDER BY program_id, name")
+        .fetch_all(pool)
+        .await?;
 
     let mut map: HashMap<String, Vec<BlockRow>> = HashMap::new();
     for r in rows {
-        map.entry(r.get::<String, _>("program_id"))
-            .or_default()
-            .push(BlockRow {
-                name: r.get("name"),
-                week: r.get("week"),
-            });
+        let pid: String = r.get("program_id");
+        let name: String = r.get("name");
+        map.entry(pid).or_default().push(BlockRow { name });
     }
+
     Ok(map)
 }
 
@@ -123,6 +108,7 @@ fn pretty_print(
         //
         // Program row.
         //
+
         let idx = format!("{:>width$}", p.idx, width = idx_w).yellow();
         let desc = if p.description.is_empty() {
             String::new()
@@ -148,16 +134,12 @@ fn pretty_print(
                         "├─"
                     };
                     let b_idx_col = format!("{:>width$}", i + 1, width = idx_w).yellow();
-                    let label = match b.week {
-                        Some(w) => format!("{} (week {})", b.name, w),
-                        None => b.name.clone(),
-                    };
                     left.push(format!(
                         " {}   {} {} • {}",
                         " ".repeat(idx_w).yellow(),
                         connector,
                         b_idx_col,
-                        label.bold()
+                        b.name.bold()
                     ));
                     right.push(String::new());
                 }
@@ -183,23 +165,116 @@ pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resul
                 println!("{} no program file provided", "warning:".yellow().bold());
             }
             for f in files {
-                match import_single_program(pool, &f).await {
-                    Ok(()) => {}
+                // Read TOML.
+                let toml = match read_to_string(&f) {
+                    Ok(s) => s,
+                    Err(_) => {
+                        println!("{} cannot open `{}`", "error:".red().bold(), f);
+                        continue;
+                    }
+                };
+                let prog: ProgramToml = match toml::from_str(&toml) {
+                    Ok(p) => p,
                     Err(e) => {
-                        if let Some(io_err) = e.downcast_ref::<std::io::Error>() {
-                            if io_err.kind() == std::io::ErrorKind::NotFound {
-                                println!(
-                                    "{} cannot open file `{}` – file not found",
-                                    "error:".red().bold(),
-                                    f
-                                );
-                                continue;
-                            }
+                        println!("{} parsing `{}`: {}", "error:".red().bold(), f, e);
+                        continue;
+                    }
+                };
 
-                            return Err(e);
-                        }
+                // Validate exercises exist.
+                let mut all_ex = HashSet::new();
+                for b in &prog.blocks {
+                    for e in &b.exercises {
+                        all_ex.insert(e.name.as_str());
                     }
                 }
+                if !all_ex.is_empty() {
+                    let marks = std::iter::repeat("?")
+                        .take(all_ex.len())
+                        .collect::<Vec<_>>()
+                        .join(",");
+                    let query_str =
+                        &format!("SELECT name FROM exercises WHERE name IN ({})", marks);
+
+                    let mut q = sqlx::query_as::<_, (String,)>(query_str);
+                    for &n in &all_ex {
+                        q = q.bind(n);
+                    }
+                    let present: HashSet<_> =
+                        q.fetch_all(pool).await?.into_iter().map(|(n,)| n).collect();
+                    let missing: Vec<_> = all_ex
+                        .into_iter()
+                        .filter(|n| !present.contains(*n))
+                        .collect();
+                    if !missing.is_empty() {
+                        println!(
+                            "{} missing exercises: {}",
+                            "warning:".yellow().bold(),
+                            missing.join(", ")
+                        );
+                        continue;
+                    }
+                }
+
+                // Insert program.
+                let mut tx = pool.begin().await?;
+                let pid = uuid::Uuid::new_v4().to_string();
+                let res = sqlx::query("INSERT INTO programs (id,name,description,created_at) VALUES (?1,?2,?3,datetime('now'))")
+                    .bind(&pid).bind(&prog.name).bind(prog.description.as_deref())
+                    .execute(&mut *tx).await;
+                if let Err(sqlx::Error::Database(db)) = &res {
+                    if db.code() == Some("2067".into()) {
+                        println!(
+                            "{} `{}` exists—skipping",
+                            "warning:".yellow().bold(),
+                            prog.name
+                        );
+                        tx.rollback().await?;
+                        continue;
+                    }
+                }
+                res?;
+
+                // Insert blocks & exercises.
+                for b in prog.blocks {
+                    let bid = uuid::Uuid::new_v4().to_string();
+                    sqlx::query("INSERT INTO program_blocks (id,program_id,name,description) VALUES (?1,?2,?3,?4)")
+                        .bind(&bid).bind(&pid).bind(&b.name).bind(b.description.as_deref())
+                        .execute(&mut *tx).await?;
+                    let mut seen = HashSet::new();
+                    for (idx, ex) in b.exercises.into_iter().enumerate() {
+                        if !seen.insert(ex.name.clone()) {
+                            println!(
+                                "{} duplicate `{}` in block `{}`—skipped",
+                                "warning:".yellow().bold(),
+                                ex.name,
+                                b.name
+                            );
+                            continue;
+                        }
+                        let ex_id: String =
+                            sqlx::query_scalar("SELECT id FROM exercises WHERE name=?")
+                                .bind(&ex.name)
+                                .fetch_one(&mut *tx)
+                                .await?;
+                        sqlx::query("INSERT INTO program_exercises (id,program_block_id,exercise_id,sets,reps,target_rpe,target_rm_percent,notes,program_1rm,technique,technique_group,order_index) VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12)")
+                            .bind(uuid::Uuid::new_v4().to_string())
+                            .bind(&bid)
+                            .bind(&ex_id)
+                            .bind(ex.sets as i32)
+                            .bind(ex.reps.map(|v|v.join(",")))
+                            .bind(ex.target_rpe.map(|v| v.into_iter().map(|x| x.to_string()).collect::<Vec<_>>().join(",")))
+                            .bind(ex.target_rm_percent.map(|v| v.into_iter().map(|x| x.to_string()).collect::<Vec<_>>().join(",")))
+                            .bind(ex.notes.as_deref())
+                            .bind(ex.program_1rm)
+                            .bind(ex.technique.as_deref())
+                            .bind(ex.group.map(|g|g as i32))
+                            .bind(idx as i32)
+                            .execute(&mut *tx).await?;
+                    }
+                }
+                tx.commit().await?;
+                println!("{} `{}`", "ok:".green().bold(), prog.name);
             }
         }
 
@@ -240,183 +315,162 @@ pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resul
 
             emit(fmt, &progs, || pretty_print(&progs, &blk_map, &idx2id));
         }
-    }
-    Ok(())
-}
 
-async fn import_single_program(pool: &SqlitePool, file: &str) -> Result<()> {
-    let toml_str = read_to_string(file).with_context(|| format!("reading `{file}`"))?;
-    let prog: ProgramToml =
-        toml::from_str(&toml_str).with_context(|| format!("parsing `{file}`"))?;
+        ProgramCmd::Show { program } => {
+            // Figure out the real UUID for this program.
+            let prog_id: String = if let Ok(idx) = program.parse::<i64>() {
+                // User passed a number - look up by row number.
+                sqlx::query_scalar(
+                    r#"
+                SELECT id 
+                FROM (
+                  SELECT id, ROW_NUMBER() OVER (ORDER BY name) AS rn
+                  FROM programs
+                ) t
+                WHERE t.rn = ?
+                "#,
+                )
+                .bind(idx)
+                .fetch_one(pool)
+                .await
+                .with_context(|| format!("no program at index {}", idx))?
+            } else {
+                // User passed a name - look up by exact name.
+                sqlx::query_scalar("SELECT id FROM programs WHERE name = ?")
+                    .bind(&program)
+                    .fetch_one(pool)
+                    .await
+                    .with_context(|| format!("no program named `{}`", program))?
+            };
 
-    // Check all exercises exist.
-    let mut all_ex = HashSet::<&str>::new();
-    if let Some(weeks) = &prog.weeks {
-        for w in weeks {
-            for b in &w.blocks {
-                for e in &b.exercises {
-                    all_ex.insert(&e.name);
+            // Fetch the program's metadata.
+            let (name, desc, created) = sqlx::query_as::<_, (String, String, String)>(
+                r#"
+                SELECT name, COALESCE(description,''), created_at
+                FROM programs
+                WHERE id = ?
+                "#,
+            )
+            .bind(&prog_id)
+            .fetch_one(pool)
+            .await?;
+
+            if !desc.is_empty() {
+                println!(
+                    "{} {} — {} (added {})",
+                    "Program:".cyan().bold(),
+                    name.bold(),
+                    desc.dimmed(),
+                    &created[..10]
+                );
+            } else {
+                println!(
+                    "{} {} (added {})",
+                    "Program:".cyan().bold(),
+                    name.bold(),
+                    &created[..10]
+                );
+            }
+
+            // Fetch its blocks in order.
+            let blocks = sqlx::query_as::<_, (String,String)>(
+                "SELECT name, COALESCE(description,'') FROM program_blocks WHERE program_id = ? ORDER BY name",
+            )
+            .bind(&prog_id)
+            .fetch_all(pool)
+            .await?;
+
+            if blocks.is_empty() {
+                println!("{} no blocks defined)", "warning".yellow().bold());
+            } else {
+                println!("{}", "Blocks:".cyan().bold());
+                
+                for (i, (block_name, block_desc)) in blocks.into_iter().enumerate() {
+                    let idx = format!("{}", i + 1).yellow();
+                    let desc = if !block_desc.is_empty() {
+                        format!(" – {}", block_desc).dimmed().to_string()
+                    } else {
+                        String::new()
+                    };
+                    println!("{} • {}{}", idx, block_name.bold(), desc);
+                    
+                    // Fetch the exercises in that block.
+                    let exs = sqlx::query_as::<_, (i32, String, i32)>(
+                        r#"
+                        SELECT pe.order_index,
+                               e.name,
+                               pe.sets
+                      FROM program_exercises pe
+                      JOIN exercises e
+                        ON e.id = pe.exercise_id
+                     WHERE pe.program_block_id = (
+                       SELECT id
+                         FROM program_blocks
+                        WHERE program_id = ? AND name = ?
+                            LIMIT 1
+                         )
+                      ORDER BY pe.order_index
+                        "#,
+                    )
+                    .bind(&prog_id)
+                    .bind(&block_name)
+                    .fetch_all(pool)
+                    .await?;
+
+                    for (order, ex_name, sets) in exs.clone() {
+                        let reps_csv: Option<String> = sqlx::query_scalar(
+                            r#"
+                            SELECT reps
+                              FROM program_exercises pe
+                             WHERE pe.program_block_id = (
+                               SELECT id
+                                 FROM program_blocks
+                                WHERE program_id = ? AND name = ?
+                                LIMIT 1
+                              )
+                           AND pe.exercise_id = (
+                               SELECT e.id FROM exercises e WHERE e.name = ?
+                             )
+                            "#,
+                        )
+                        .bind(&prog_id)
+                        .bind(&block_name)
+                        .bind(&ex_name)
+                        .fetch_one(pool)
+                        .await?;
+
+                        // format the reps into a nicer "(5, 6–10, 15 reps)" if present
+                        let reps_display = reps_csv
+                            .map(|csv| {
+                                let pretty = csv
+                                    .split(',')
+                                    .map(|s| s.trim())
+                                    .collect::<Vec<_>>()
+                                    .join(", ");
+                                format!(" ({pretty} reps)")
+                            })
+                            .unwrap_or_default();
+
+                        let connector = if order + 1 == exs.len() as i32 {
+                            "└─"
+                        } else {
+                            "├─"
+                        };
+                        let idx = format!("{}", order + 1).yellow();
+
+                        println!(
+                            " {} {} {} • {} -> {} sets{}",
+                            " ".repeat(2),
+                            connector,
+                            idx,
+                            ex_name.bold(),
+                            sets,
+                            reps_display
+                        );
+                    }
                 }
             }
         }
     }
-    if let Some(blocks) = &prog.blocks {
-        for b in blocks {
-            for e in &b.exercises {
-                all_ex.insert(&e.name);
-            }
-        }
-    }
-
-    if !all_ex.is_empty() {
-        let q_marks = std::iter::repeat("?")
-            .take(all_ex.len())
-            .collect::<Vec<_>>()
-            .join(",");
-        let sql = format!("SELECT name FROM exercises WHERE name IN ({})", q_marks);
-        let mut q = sqlx::query_as::<_, (String,)>(&sql);
-        for n in &all_ex {
-            q = q.bind(n);
-        }
-        let present: HashSet<_> = q.fetch_all(pool).await?.into_iter().map(|(n,)| n).collect();
-        let missing: Vec<_> = all_ex
-            .into_iter()
-            .filter(|n| !present.contains(*n))
-            .collect();
-        if !missing.is_empty() {
-            println!(
-                "{} cannot import program `{}` – missing exercises: {}",
-                "warning:".yellow().bold(),
-                prog.name,
-                missing.join(", ")
-            );
-            return Ok(());
-        }
-    }
-
-    // Transactional import.
-    let mut tx = pool.begin().await?;
-
-    // Program row.
-    let prog_id = uuid::Uuid::new_v4().to_string();
-    let res = sqlx::query(
-        r#"INSERT INTO programs (id,name,description,created_at)
-               VALUES (?1,?2,?3,datetime('now'))"#,
-    )
-    .bind(&prog_id)
-    .bind(&prog.name)
-    .bind(prog.description.as_deref())
-    .execute(&mut *tx)
-    .await;
-
-    if let Err(sqlx::Error::Database(db_err)) = &res {
-        if db_err.code() == Some("2067".into()) {
-            println!(
-                "{} program `{}` already exists – skipping",
-                "warning:".yellow().bold(),
-                prog.name
-            );
-            tx.rollback().await?;
-            return Ok(());
-        }
-    }
-    res?;
-
-    // Flatten blocks.
-    let mut blocks: Vec<(Option<u32>, BlockToml)> = Vec::new();
-    if let Some(weeks) = prog.weeks {
-        for w in weeks {
-            for b in w.blocks {
-                blocks.push((Some(w.week), b));
-            }
-        }
-    }
-    if let Some(bs) = prog.blocks {
-        for b in bs {
-            blocks.push((None, b));
-        }
-    }
-
-    // Insert blocks + exercises.
-    // NOTE: Removed the "options" column.
-    for (week_opt, block) in blocks {
-        let mut seen = HashSet::new();
-        let mut dup = Vec::<&str>::new();
-        for e in &block.exercises {
-            if !seen.insert(e.name.as_str()) {
-                dup.push(&e.name);
-            }
-        }
-        if !dup.is_empty() {
-            println!(
-                "{} block `{}` in program `{}` has duplicates: {} – skipped",
-                "warning:".yellow().bold(),
-                block.name,
-                prog.name,
-                dup.join(", ")
-            );
-            continue;
-        }
-
-        let block_id = uuid::Uuid::new_v4().to_string();
-        sqlx::query(
-            r#"INSERT INTO program_blocks
-                 (id,program_id,name,description,week)
-               VALUES (?1,?2,?3,?4,?5)"#,
-        )
-        .bind(&block_id)
-        .bind(&prog_id)
-        .bind(&block.name)
-        .bind(block.description.as_deref())
-        .bind(week_opt)
-        .execute(&mut *tx)
-        .await?;
-
-        for (order_idx, ex) in block.exercises.iter().enumerate() {
-            let ex_id: String = sqlx::query_scalar("SELECT id FROM exercises WHERE name = ?")
-                .bind(&ex.name)
-                .fetch_one(&mut *tx)
-                .await?;
-
-            let reps_csv = ex.reps.as_ref().map(|v| v.join(","));
-            let rpe_csv = ex.target_rpe.as_ref().map(|v| {
-                v.iter()
-                    .map(ToString::to_string)
-                    .collect::<Vec<_>>()
-                    .join(",")
-            });
-            let rm_csv = ex.target_rm_percent.as_ref().map(|v| {
-                v.iter()
-                    .map(ToString::to_string)
-                    .collect::<Vec<_>>()
-                    .join(",")
-            });
-
-            sqlx::query(
-                r#"INSERT INTO program_exercises
-                     (id,program_block_id,exercise_id,sets,reps,
-                      target_rpe,target_rm_percent,notes,program_1rm,
-                      technique,technique_group,order_index)
-                   VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12)"#,
-            )
-            .bind(uuid::Uuid::new_v4().to_string())
-            .bind(&block_id)
-            .bind(&ex_id)
-            .bind(ex.sets as i32)
-            .bind(reps_csv)
-            .bind(rpe_csv)
-            .bind(rm_csv)
-            .bind(ex.notes.as_deref())
-            .bind(ex.program_1rm)
-            .bind(ex.technique.as_deref())
-            .bind(ex.group.map(|g| g as i32))
-            .bind(order_idx as i32)
-            .execute(&mut *tx)
-            .await?;
-        }
-    }
-
-    tx.commit().await?;
-    println!("{} `{}`", "ok:".green().bold(), prog.name);
     Ok(())
 }

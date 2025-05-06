@@ -1,46 +1,12 @@
-name = "Sexy program"
-description = "Just a test ma man"
+name = "Program 1"
 
-[[weeks]]
-week = 1
+[[blocks]]
+name = "Upper day 1"
 
-  [[weeks.blocks]]
-  name = "Heavy Day"
-  description = "Max effort day"
+[[blocks.exercises]]
+name = "Back Squat"
+sets = 3
 
-    [[weeks.blocks.exercises]]
-    name = "Back Squat"
-    sets = 3
-    reps = ["5", "6-10", "15"]
-    target_rpe = [8.0, 9.0, 10.0]
-    notes = "Work up to heavy set"
-    program_1rm = 150.0
-
-    [[weeks.blocks.exercises]]
-    name = "Bench Press"
-    sets = 3
-    reps = ["5", "5", "5"]
-    target_rm_percent = [95.0, 75.0, 85.0]
-    program_1rm = 110.0
-
-[[weeks]]
-week = 2
-
-  [[weeks.blocks]]
-  name = "Heavy Day"
-  description = "Max effort day"
-
-    [[weeks.blocks.exercises]]
-    name = "Back Squat"
-    sets = 3
-    reps = ["5", "6-10", "15"]
-    target_rpe = [8.0, 9.0, 10.0]
-    notes = "Work up to heavy set"
-    program_1rm = 150.0
-
-    [[weeks.blocks.exercises]]
-    name = "Bench Press"
-    sets = 3
-    reps = ["5", "5", "5"]
-    target_rm_percent = [97.0, 75.0, 85.0]
-    program_1rm = 110.0
+[[blocks.exercises]]
+name = "Bench Press"
+sets = 3

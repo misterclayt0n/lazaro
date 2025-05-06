@@ -54,7 +54,6 @@ CREATE TABLE program_blocks (
     program_id  TEXT NOT NULL,          -- → programs.id
     name        TEXT NOT NULL COLLATE NOCASE,
     description TEXT,
-    week        INTEGER,
     FOREIGN KEY (program_id) REFERENCES programs(id) ON DELETE CASCADE
 );
 

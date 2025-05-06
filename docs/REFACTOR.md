@@ -19,7 +19,7 @@ In this example here, both session start and ss would refer to the same command,
 - program import <file.toml> -> This not only creates a new program, but also updates it
 - program delete <file.toml> --name [<program_name>] -> Can delete by file or name
 - program list
-- program show <program_name> [--block <block_name>]
+- program show <program_name> || <program_id>
 - calendar [<YYYY-MM>] [--details]
 - db export [file] -> exports to a simple file output
 - db import <dump.toml> -> This syncs the current db with the provided dump.toml, and if no dump.toml is provided, it creates a new database for you
