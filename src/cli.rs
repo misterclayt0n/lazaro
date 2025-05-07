@@ -42,6 +42,10 @@ pub enum SessionCmd {
     /// Start a session
     #[command(visible_alias = "s")]
     Start(StartArgs),
+
+    /// Cancel the current session
+    #[command(visible_alias = "c")]
+    Cancel,
 }
 
 #[derive(Subcommand)]
