@@ -50,6 +50,28 @@ pub enum SessionCmd {
     /// Show current session details
     #[command(visible_alias = "i")]
     Show,
+
+    /// Edit a set in the current session
+    #[command(visible_alias = "e")]
+    Edit {
+        /// Exercise index (from session show)
+        exercise: usize,
+
+        /// Number of reps performed
+        reps: i32,
+
+        /// Weight in kg (ignored if --bw is set)
+        #[arg(required_unless_present = "bw")]
+        weight: Option<f32>,
+
+        /// Mark as bodyweight exercise
+        #[arg(long)]
+        bw: bool,
+
+        /// Specific set index to edit (defaults to next unlogged set)
+        #[arg(long, short = 's')]
+        set: Option<usize>,
+    },
 }
 
 #[derive(Subcommand)]
