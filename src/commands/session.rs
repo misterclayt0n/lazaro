@@ -2,6 +2,7 @@ use anyhow::Result;
 use colored::Colorize;
 use sqlx::SqlitePool;
 use uuid::Uuid;
+use std::collections::HashMap;
 
 use crate::cli::SessionCmd;
 
@@ -299,30 +300,37 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         .map(|d| format!(" — last performed: {}", &d[..10]))
                         .unwrap_or_default();
 
-                    println!(
-                        "{} • {}{}{}",
-                        idx,
-                        ex_name.bold(),
-                        pr_info.dimmed(),
-                        last_date.dimmed()
-                    );
-
-                    // Print variants if any
-                    if let Some(count) = variant_count {
+                    // Get variants if any
+                    let variants = if let Some(count) = variant_count {
                         if *count > 0 {
-                            let variants = sqlx::query_as::<_, (String,)>(
+                            let vars = sqlx::query_as::<_, (String,)>(
                                 "SELECT name FROM exercise_variants WHERE exercise_id = (SELECT idx FROM exercises WHERE id = ?) ORDER BY name"
                             )
                             .bind(ex_id)
                             .fetch_all(pool)
                             .await?;
 
-                            for (j, (var_name,)) in variants.iter().enumerate() {
-                                let connector = if j + 1 == variants.len() { "└─" } else { "├─" };
-                                println!(" {} {} {}", " ".repeat(2), connector, var_name.dimmed());
+                            let var_names: Vec<String> = vars.into_iter().map(|(n,)| n).collect();
+                            if !var_names.is_empty() {
+                                format!(" - {}", var_names.join(", "))
+                            } else {
+                                String::new()
                             }
+                        } else {
+                            String::new()
                         }
-                    }
+                    } else {
+                        String::new()
+                    };
+
+                    println!(
+                        "{} • {}{}{}{}",
+                        idx,
+                        ex_name.bold(),
+                        variants,
+                        pr_info.dimmed(),
+                        last_date.dimmed()
+                    );
 
                     // Parse target values
                     let target_rpes: Vec<f32> = target_rpe
@@ -371,27 +379,39 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         // Get previous set info
                         let prev_set: Option<(f32, i32)> = sqlx::query_as(
                             r#"
-                            WITH last_session AS (
-                                SELECT ts.id
-                                FROM training_sessions ts
-                                JOIN training_session_exercises tse ON tse.training_session_id = ts.id
+                            WITH set_numbers AS (
+                                SELECT 
+                                    es.weight,
+                                    es.reps,
+                                    es.timestamp,
+                                    tse.exercise_id,
+                                    ROW_NUMBER() OVER (
+                                        PARTITION BY tse.exercise_id, tse.id
+                                        ORDER BY es.timestamp
+                                    ) - 1 as set_num
+                                FROM exercise_sets es
+                                JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
+                                JOIN training_sessions ts ON ts.id = tse.training_session_id
                                 WHERE tse.exercise_id = ?
-                                AND ts.id != (
-                                    SELECT id FROM current_session
-                                )
-                                ORDER BY ts.start_time DESC
-                                LIMIT 1
+                                AND ts.end_time IS NOT NULL  -- Only completed sessions
+                                AND es.weight > 0  -- Skip empty sets
+                            ),
+                            last_sets AS (
+                                SELECT 
+                                    weight,
+                                    reps,
+                                    ROW_NUMBER() OVER (
+                                        PARTITION BY exercise_id, set_num
+                                        ORDER BY timestamp DESC
+                                    ) as rn
+                                FROM set_numbers
+                                WHERE set_num = ?
                             )
-                            SELECT es.weight, es.reps
-                            FROM exercise_sets es
-                            JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
-                            WHERE tse.training_session_id = (SELECT id FROM last_session)
-                            AND tse.exercise_id = ?
-                            ORDER BY es.timestamp DESC
-                            LIMIT 1 OFFSET ?
+                            SELECT weight, reps
+                            FROM last_sets
+                            WHERE rn = 1
                             "#,
                         )
-                        .bind(ex_id)
                         .bind(ex_id)
                         .bind(set_num)
                         .fetch_optional(pool)
@@ -408,7 +428,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                             .unwrap_or_default();
 
                         let prev_info = prev_set
-                            .map(|(w, r)| format!(" - prev: {}kg × {}", w, r))
+                            .map(|(w, r)| format!(" - {}kg × {}", w, r))
                             .unwrap_or_default();
 
                         // Calculate and display target info
@@ -430,15 +450,21 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                             }
                         };
 
+                        let target_padding = if (target_reps.len() + target_info.len()) < 25 { 25 - (target_reps.len() + target_info.len()) } else { 0 };
+                        let dont_know: usize = 14;
+                        let prev_len = prev_info.len();             // se usar cores, remova ANSI primeiro
+                        let prev_pad  = dont_know.saturating_sub(prev_len);
+
                         println!(
-                            " {} {} • {}{}{}{}| {}",
-                            " ".repeat(2),
-                            format!("{}", set_num + 1).yellow(),
-                            target_reps,
-                            target_info.dimmed(),
-                            prev_info.dimmed(),
-                            " ".repeat(20 - target_reps.len() - target_info.len() - prev_info.len()),
-                            current_info
+                            " {} {} • {}{}{}{}{}| {}",
+                            " ".repeat(2),                         
+                            format!("{}", set_num + 1).yellow(),   
+                            target_reps,                           
+                            target_info.dimmed(),                  
+                            " ".repeat(target_padding),            
+                            prev_info.dimmed(),                    
+                            " ".repeat(prev_pad),                  
+                            current_info                           
                         );
                     }
                     println!();
@@ -691,6 +717,216 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     "{} new personal record!",
                     "note:".yellow().bold()
                 );
+            }
+
+            Ok(())
+        }
+
+        SessionCmd::End => {
+            // Check if there's an active session
+            let session: Option<(String, String, String)> = sqlx::query_as(
+                r#"
+                SELECT ts.id, ts.start_time, pb.name
+                FROM training_sessions ts
+                JOIN program_blocks pb ON pb.id = ts.program_block_id
+                WHERE ts.end_time IS NULL
+                LIMIT 1
+                "#
+            )
+            .fetch_optional(pool)
+            .await?;
+
+            let (session_id, start_time, block_name) = match session {
+                Some(s) => s,
+                None => {
+                    println!("{} no active session", "error:".red().bold());
+                    return Ok(());
+                }
+            };
+
+            // Start a transaction
+            let mut tx = pool.begin().await?;
+
+            // Get all exercises and their sets for this session
+            let exercises = sqlx::query_as::<_, (String, String, i32, Option<f32>, bool)>(
+                r#"
+                SELECT 
+                    e.id,
+                    e.name,
+                    es.reps,
+                    es.weight,
+                    es.bodyweight
+                FROM training_session_exercises tse
+                JOIN exercises e ON e.id = tse.exercise_id
+                JOIN exercise_sets es ON es.session_exercise_id = tse.id
+                WHERE tse.training_session_id = ?
+                ORDER BY es.timestamp
+                "#
+            )
+            .bind(&session_id)
+            .fetch_all(&mut *tx)
+            .await?;
+
+            // Group sets by exercise
+            let mut exercise_sets: HashMap<String, Vec<(i32, Option<f32>, bool)>> = HashMap::new();
+            for (ex_id, _ex_name, reps, weight, bw) in exercises {
+                exercise_sets
+                    .entry(ex_id)
+                    .or_default()
+                    .push((reps, weight, bw));
+            }
+
+            // Process PRs and exercise stats
+            let mut pr_updates = Vec::new();
+            for (ex_id, sets) in &exercise_sets {
+                // Calculate estimated 1RM for each set
+                let mut max_1rm = 0.0;
+                let mut pr_weight = 0.0;
+                let mut pr_reps = 0;
+
+                for (reps, weight, bw) in sets {
+                    if *bw {
+                        // For bodyweight exercises, we only track reps
+                        if *reps > pr_reps {
+                            pr_reps = *reps;
+                            pr_weight = 0.0;
+                        }
+                    } else if let Some(w) = weight {
+                        // For weighted exercises, calculate estimated 1RM
+                        let est_1rm = w * (1.0 + (*reps as f32 / 30.0));
+                        if est_1rm > max_1rm {
+                            max_1rm = est_1rm;
+                            pr_weight = *w;
+                            pr_reps = *reps;
+                        }
+                    }
+                }
+
+                // Check if this is a new PR
+                let is_pr = sqlx::query_scalar::<_, bool>(
+                    r#"
+                    WITH current_pr AS (
+                        SELECT weight, reps, estimated_1rm
+                        FROM personal_records
+                        WHERE exercise_id = ?
+                        ORDER BY date DESC
+                        LIMIT 1
+                    )
+                    SELECT 
+                        CASE 
+                            WHEN ? = 0 THEN -- Bodyweight
+                                ? > (SELECT reps FROM current_pr WHERE weight = 0)
+                            ELSE -- Weighted
+                                ? > (SELECT estimated_1rm FROM current_pr)
+                        END
+                    "#
+                )
+                .bind(ex_id)
+                .bind(pr_weight)
+                .bind(pr_reps)
+                .bind(max_1rm)
+                .fetch_one(&mut *tx)
+                .await?;
+
+                if is_pr {
+                    pr_updates.push((ex_id.clone(), pr_weight, pr_reps, max_1rm));
+                }
+            }
+
+            // Apply PR updates
+            for (ex_id, pr_weight, pr_reps, max_1rm) in pr_updates {
+                // Insert new PR
+                sqlx::query(
+                    r#"
+                    INSERT INTO personal_records (
+                        id,
+                        exercise_id,
+                        weight,
+                        reps,
+                        estimated_1rm,
+                        date
+                    ) VALUES (?, ?, ?, ?, ?, datetime('now'))
+                    "#
+                )
+                .bind(Uuid::new_v4().to_string())
+                .bind(&ex_id)
+                .bind(pr_weight)
+                .bind(pr_reps)
+                .bind(max_1rm)
+                .execute(&mut *tx)
+                .await?;
+
+                // Update exercise's current PR date and estimated 1RM
+                sqlx::query(
+                    r#"
+                    UPDATE exercises 
+                    SET current_pr_date = datetime('now'),
+                        estimated_one_rm = ?
+                    WHERE id = ?
+                    "#
+                )
+                .bind(max_1rm)
+                .bind(&ex_id)
+                .execute(&mut *tx)
+                .await?;
+            }
+
+            // Mark session as ended
+            sqlx::query(
+                "UPDATE training_sessions SET end_time = datetime('now') WHERE id = ?"
+            )
+            .bind(&session_id)
+            .execute(&mut *tx)
+            .await?;
+
+            // Commit the transaction
+            tx.commit().await?;
+
+            // Calculate session duration
+            let duration = sqlx::query_scalar::<_, String>(
+                r#"
+                SELECT strftime('%H:%M:%S', 
+                    strftime('%s', 'now') - strftime('%s', ?) || ' seconds', 
+                    'unixepoch'
+                )
+                "#
+            )
+            .bind(&start_time)
+            .fetch_one(pool)
+            .await?;
+
+            // Print summary
+            println!(
+                "{} session ended (id: {})",
+                "ok:".green().bold(),
+                session_id
+            );
+            println!(
+                "{} {} — {} (duration: {})",
+                "Session:".cyan().bold(),
+                block_name.bold(),
+                start_time[..16].to_string(),
+                duration
+            );
+
+            // Print exercise summary
+            println!("\n{}", "Exercises:".cyan().bold());
+            for (ex_id, sets) in &exercise_sets {
+                let exercise_name: String = sqlx::query_scalar(
+                    "SELECT name FROM exercises WHERE id = ?"
+                )
+                .bind(ex_id)
+                .fetch_one(pool)
+                .await?;
+
+                println!("• {}", exercise_name.bold());
+                for (reps, weight, bw) in sets {
+                    if *bw {
+                        println!("  - {} reps (bodyweight)", reps);
+                    } else if let Some(w) = weight {
+                        println!("  - {}kg × {}", w, reps);
+                    }
+                }
             }
 
             Ok(())

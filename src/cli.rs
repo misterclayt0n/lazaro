@@ -51,6 +51,10 @@ pub enum SessionCmd {
     #[command(visible_alias = "i")]
     Show,
 
+    /// End the current session
+    // #[command(visible_alias = "e")]
+    End,
+
     /// Edit a set in the current session
     #[command(visible_alias = "e")]
     Edit {
