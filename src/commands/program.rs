@@ -3,7 +3,7 @@ use std::{
     fs::read_to_string,
 };
 
-use anyhow::{Context, Result};
+use anyhow::Result;
 use colored::Colorize;
 use serde::Deserialize;
 use sqlx::{Row, SqlitePool};
@@ -220,21 +220,21 @@ pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resul
                 let mut tx = pool.begin().await?;
                 let pid = uuid::Uuid::new_v4().to_string();
                 
-                // Check if program exists
+                // Check if program exists.
                 let existing_id: Option<String> = sqlx::query_scalar("SELECT id FROM programs WHERE name = ?")
                     .bind(&prog.name)
                     .fetch_optional(&mut *tx)
                     .await?;
 
                 let pid = if let Some(ref existing_id) = existing_id {
-                    // Update existing program
+                    // Update existing program.
                     sqlx::query("UPDATE programs SET description = ? WHERE id = ?")
                         .bind(prog.description.as_deref())
                         .bind(&existing_id)
                         .execute(&mut *tx)
                         .await?;
 
-                    // Delete existing blocks and exercises
+                    // Delete existing blocks and exercises.
                     sqlx::query("DELETE FROM program_blocks WHERE program_id = ?")
                         .bind(&existing_id)
                         .execute(&mut *tx)
@@ -242,7 +242,7 @@ pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resul
 
                     existing_id
                 } else {
-                    // Insert new program
+                    // Insert new program.
                     sqlx::query("INSERT INTO programs (id,name,description,created_at) VALUES (?1,?2,?3,datetime('now'))")
                         .bind(&pid)
                         .bind(&prog.name)
@@ -341,7 +341,7 @@ pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resul
             // Figure out the real UUID for this program.
             let prog_id: String = if let Ok(idx) = program.parse::<i64>() {
                 // User passed a number - look up by row number.
-                sqlx::query_scalar(
+                match sqlx::query_scalar(
                     r#"
                 SELECT id 
                 FROM (
@@ -353,15 +353,25 @@ pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resul
                 )
                 .bind(idx)
                 .fetch_one(pool)
-                .await
-                .with_context(|| format!("no program at index {}", idx))?
+                .await {
+                    Ok(id) => id,
+                    Err(_) => {
+                        println!("{} no program at index {}", "error:".red().bold(), idx);
+                        return Ok(());
+                    }
+                }
             } else {
                 // User passed a name - look up by exact name.
-                sqlx::query_scalar("SELECT id FROM programs WHERE name = ?")
+                match sqlx::query_scalar("SELECT id FROM programs WHERE name = ?")
                     .bind(&program)
                     .fetch_one(pool)
-                    .await
-                    .with_context(|| format!("no program named `{}`", program))?
+                    .await {
+                    Ok(id) => id,
+                    Err(_) => {
+                        println!("{} no program named `{}`", "error:".red().bold(), program);
+                        return Ok(());
+                    }
+                }
             };
 
             // Fetch the program's metadata.
@@ -409,7 +419,7 @@ pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resul
                 for (i, (block_name, block_desc)) in blocks.into_iter().enumerate() {
                     let idx = format!("{}", i + 1).yellow();
                     let desc = if !block_desc.is_empty() {
-                        format!(" – {}", block_desc).dimmed().to_string()
+                        format!(" — {}", block_desc).dimmed().to_string()
                     } else {
                         String::new()
                     };
@@ -491,6 +501,58 @@ pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resul
                     }
                 }
             }
+        }
+
+        ProgramCmd::Delete { program } => {
+            // Figure out the real UUID for this program.
+            let prog_id: String = if let Ok(idx) = program.parse::<i64>() {
+                // User passed a number - look up by row number.
+                match sqlx::query_scalar(
+                    r#"
+                SELECT id 
+                FROM (
+                  SELECT id, ROW_NUMBER() OVER (ORDER BY name) AS rn
+                  FROM programs
+                ) t
+                WHERE t.rn = ?
+                "#,
+                )
+                .bind(idx)
+                .fetch_one(pool)
+                .await {
+                    Ok(id) => id,
+                    Err(_) => {
+                        println!("{} no program at index {}", "error:".red().bold(), idx);
+                        return Ok(());
+                    }
+                }
+            } else {
+                // User passed a name - look up by exact name.
+                match sqlx::query_scalar("SELECT id FROM programs WHERE name = ?")
+                    .bind(&program)
+                    .fetch_one(pool)
+                    .await {
+                    Ok(id) => id,
+                    Err(_) => {
+                        println!("{} no program named `{}`", "error:".red().bold(), program);
+                        return Ok(());
+                    }
+                }
+            };
+
+            // Get program name for confirmation message.
+            let name: String = sqlx::query_scalar("SELECT name FROM programs WHERE id = ?")
+                .bind(&prog_id)
+                .fetch_one(pool)
+                .await?;
+
+            // Delete the program (cascade will handle blocks and exercises as well).
+            sqlx::query("DELETE FROM programs WHERE id = ?")
+                .bind(&prog_id)
+                .execute(pool)
+                .await?;
+
+            println!("{} deleted program `{}`", "ok:".green().bold(), name);
         }
     }
     Ok(())

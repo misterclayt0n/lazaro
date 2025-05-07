@@ -110,6 +110,13 @@ pub enum ProgramCmd {
     Show {
         /// Program index (from `p list`) or exact name
         program: String
+    },
+
+    /// Delete a program
+    #[command(visible_alias = "d")]
+    Delete {
+        /// Program index (from `p list`) or exact name
+        program: String
     }
 }
 
