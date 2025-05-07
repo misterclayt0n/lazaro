@@ -78,6 +78,13 @@ pub enum ExerciseCmd {
         /// If provided, adds this as new variant; if ommited, lists all variants
         variant: Option<String>,
     },
+
+    /// Delete an exercise
+    #[command(visible_alias = "d")]
+    Delete {
+        /// Exercise index (from `ex list`) or exact name
+        exercise: String
+    }
 }
 
 #[derive(Subcommand)]

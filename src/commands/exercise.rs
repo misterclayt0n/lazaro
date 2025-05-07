@@ -442,6 +442,41 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
                 }
             }
         }
+
+        ExerciseCmd::Delete { exercise } => {
+            // Resolve exercise to its idx.
+            let idx: i64 = if let Ok(n) = exercise.parse::<i64>() {
+                // User passed a number.
+                n
+            } else {
+                // User passed a name: look it up.
+                match sqlx::query_scalar("SELECT idx FROM exercises WHERE name = ?")
+                    .bind(&exercise)
+                    .fetch_one(pool)
+                    .await
+                {
+                    Ok(n) => n,
+                    Err(_) => {
+                        println!("{} no such exercise `{}`", "error:".red().bold(), exercise);
+                        return Ok(());
+                    }
+                }
+            };
+
+            // Get exercise name for confirmation message.
+            let name: String = sqlx::query_scalar("SELECT name FROM exercises WHERE idx = ?")
+                .bind(idx)
+                .fetch_one(pool)
+                .await?;
+
+            // Delete the exercise (cascade will handle variants).
+            sqlx::query("DELETE FROM exercises WHERE idx = ?")
+                .bind(idx)
+                .execute(pool)
+                .await?;
+
+            println!("{} deleted exercise `{}`", "ok:".green().bold(), name);
+        }
     }
 
     Ok(())
