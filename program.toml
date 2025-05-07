@@ -2,6 +2,7 @@ name = "Program 1"
 
 [[blocks]]
 name = "Upper day 1"
+description = "Insane montage"
 
 [[blocks.exercises]]
 name = "Back Squat"

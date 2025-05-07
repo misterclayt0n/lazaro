@@ -219,21 +219,38 @@ pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resul
                 // Insert program.
                 let mut tx = pool.begin().await?;
                 let pid = uuid::Uuid::new_v4().to_string();
-                let res = sqlx::query("INSERT INTO programs (id,name,description,created_at) VALUES (?1,?2,?3,datetime('now'))")
-                    .bind(&pid).bind(&prog.name).bind(prog.description.as_deref())
-                    .execute(&mut *tx).await;
-                if let Err(sqlx::Error::Database(db)) = &res {
-                    if db.code() == Some("2067".into()) {
-                        println!(
-                            "{} `{}` exists—skipping",
-                            "warning:".yellow().bold(),
-                            prog.name
-                        );
-                        tx.rollback().await?;
-                        continue;
-                    }
-                }
-                res?;
+                
+                // Check if program exists
+                let existing_id: Option<String> = sqlx::query_scalar("SELECT id FROM programs WHERE name = ?")
+                    .bind(&prog.name)
+                    .fetch_optional(&mut *tx)
+                    .await?;
+
+                let pid = if let Some(ref existing_id) = existing_id {
+                    // Update existing program
+                    sqlx::query("UPDATE programs SET description = ? WHERE id = ?")
+                        .bind(prog.description.as_deref())
+                        .bind(&existing_id)
+                        .execute(&mut *tx)
+                        .await?;
+
+                    // Delete existing blocks and exercises
+                    sqlx::query("DELETE FROM program_blocks WHERE program_id = ?")
+                        .bind(&existing_id)
+                        .execute(&mut *tx)
+                        .await?;
+
+                    existing_id
+                } else {
+                    // Insert new program
+                    sqlx::query("INSERT INTO programs (id,name,description,created_at) VALUES (?1,?2,?3,datetime('now'))")
+                        .bind(&pid)
+                        .bind(&prog.name)
+                        .bind(prog.description.as_deref())
+                        .execute(&mut *tx)
+                        .await?;
+                    &pid
+                };
 
                 // Insert blocks & exercises.
                 for b in prog.blocks {
@@ -274,7 +291,11 @@ pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resul
                     }
                 }
                 tx.commit().await?;
-                println!("{} `{}`", "ok:".green().bold(), prog.name);
+                if existing_id.is_some() {
+                    println!("{} `{}` updated", "ok:".green().bold(), prog.name);
+                } else {
+                    println!("{} `{}`", "ok:".green().bold(), prog.name);
+                }
             }
         }
 
