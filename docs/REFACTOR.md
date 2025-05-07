@@ -33,9 +33,9 @@ In this example here, both session start and ss would refer to the same command,
 - On the note above, all things should probably work with structured data.
 - Release with cargo install or pkg for easy setup.
 - [x] Option to output data as json for structured data (nushell shit).
-- `ex list chest` if I want to grab all chest exercises.
+- [x] `ex list chest` if I want to grab all chest exercises.
 - Add neck as muscle.
-- Global indeces for exercises/programs/sets/whatever (this way it's easier to use them in a phone)
+- [x] Global indeces for exercises/programs/sets/whatever (this way it's easier to use them in a phone)
 
 ## Notes
 - Aliases: don’t mix a top-level alias with a built-in ex/s token.
