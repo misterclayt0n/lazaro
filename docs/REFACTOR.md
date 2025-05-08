@@ -28,9 +28,9 @@ In this example here, both session start and ss would refer to the same command,
 - [x] Config file: change aliases.
 - Sync: something easy to sync with github.
 - Data science: progression on exercises (strength).
-- Show session should grab the last occurrence of an exercise, currently it shows First time if I skipped a given ex.
-- Start program should look for an ID for the program name and session. see task warrior for reference. 
-- On the note above, all things should probably work with structured data.
+- [x] Show session should grab the last occurrence of an exercise, currently it shows First time if I skipped a given ex.
+- [x] Start program should look for an ID for the program name and session. see task warrior for reference. 
+- [x] On the note above, all things should probably work with structured data.
 - Release with cargo install or pkg for easy setup.
 - [x] Option to output data as json for structured data (nushell shit).
 - [x] `ex list chest` if I want to grab all chest exercises.

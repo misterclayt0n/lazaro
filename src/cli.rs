@@ -75,6 +75,18 @@ pub enum SessionCmd {
         #[arg(long, short = 's')]
         set: Option<usize>,
     },
+    
+    /// Swap an exercise in the current session with another - Usage: session swap EXERCISE NEW_EXERCISE
+    #[command(visible_alias = "sw")]
+    Swap {
+        /// Exercise index in the current session to replace
+        #[arg(value_name = "EXERCISE")]
+        exercise: usize,
+        
+        /// New exercise index or name to swap in
+        #[arg(value_name = "NEW_EXERCISE")]
+        new_exercise: String,
+    },
 }
 
 #[derive(Subcommand)]
