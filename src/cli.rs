@@ -55,22 +55,21 @@ pub enum SessionCmd {
     // #[command(visible_alias = "e")]
     End,
 
-    /// Edit a set in the current session
+    /// Edit a set in the current session - Usage: session edit EXERCISE WEIGHT REPS
     #[command(visible_alias = "e")]
+    #[command(override_usage = "session edit <EXERCISE> <WEIGHT> <REPS>")]
     Edit {
-        /// Exercise index (from session show)
+        /// Exercise index
+        #[arg(value_name = "EXERCISE")]
         exercise: usize,
 
-        /// Number of reps performed
+        /// Weight in kg (use "bw" for bodyweight exercises)
+        #[arg(value_name = "WEIGHT")]
+        weight: String,
+
+        /// Number of reps
+        #[arg(value_name = "REPS")]
         reps: i32,
-
-        /// Weight in kg (ignored if --bw is set)
-        #[arg(required_unless_present = "bw")]
-        weight: Option<f32>,
-
-        /// Mark as bodyweight exercise
-        #[arg(long)]
-        bw: bool,
 
         /// Specific set index to edit (defaults to next unlogged set)
         #[arg(long, short = 's')]

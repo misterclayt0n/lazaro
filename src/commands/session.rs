@@ -401,7 +401,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         ex_name,
                         sets,
                         reps,
-                        last_pr_date,
+                        _last_pr_date,
                         _est_1rm,
                         _last_pr_1rm,
                         pr_weight,
@@ -424,17 +424,13 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                             String::new()
                         };
 
-                    let last_date = last_pr_date
-                        .as_deref()
-                        .map(|d| format!(" — last performed: {}", &d[..10]))
-                        .unwrap_or_default();
 
                     println!(
-                        "{} • {}{}{}",
+                        "{} • {}{}",
                         idx,
                         ex_name.bold(),
                         pr_info.dimmed(),
-                        last_date.dimmed()
+                        // last_date.dimmed()
                     );
 
                     // Parse target values
@@ -595,9 +591,8 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
 
         SessionCmd::Edit {
             exercise,
-            reps,
             weight,
-            bw,
+            reps,
             set,
         } => {
             // Check if there's an active session
@@ -611,6 +606,19 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 None => {
                     println!("{} no active session", "error:".red().bold());
                     return Ok(());
+                }
+            };
+
+            // Parse weight - handle bodyweight exercises
+            let (is_bodyweight, parsed_weight) = if weight.to_lowercase() == "bw" {
+                (true, None)
+            } else {
+                match weight.parse::<f32>() {
+                    Ok(w) => (false, Some(w)),
+                    Err(_) => {
+                        println!("{} invalid weight: {}", "error:".red().bold(), weight);
+                        return Ok(());
+                    }
                 }
             };
 
@@ -737,9 +745,9 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     WHERE id = ?
                     "#,
                 )
-                .bind(if bw { 0.0 } else { weight.unwrap_or(0.0) })
+                .bind(if is_bodyweight { 0.0 } else { parsed_weight.unwrap_or(0.0) })
                 .bind(reps)
-                .bind(bw as i32)
+                .bind(is_bodyweight as i32)
                 .bind(&id)
                 .execute(&mut *tx)
                 .await?;
@@ -759,18 +767,18 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 )
                 .bind(Uuid::new_v4().to_string())
                 .bind(&session_exercise_id)
-                .bind(if bw { 0.0 } else { weight.unwrap_or(0.0) })
+                .bind(if is_bodyweight { 0.0 } else { parsed_weight.unwrap_or(0.0) })
                 .bind(reps)
-                .bind(bw as i32)
+                .bind(is_bodyweight as i32)
                 .execute(&mut *tx)
                 .await?;
             }
 
             // Check if this is a new PR
-            let estimated_1rm = if bw {
+            let estimated_1rm = if is_bodyweight {
                 0.0  // For bodyweight, we don't calculate 1RM
             } else {
-                epley_1rm(weight.unwrap_or(0.0), reps)
+                epley_1rm(parsed_weight.unwrap_or(0.0), reps)
             };
 
             // Get the current PR for this exercise
@@ -789,7 +797,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
 
             let is_pr = match current_pr {
                 Some((curr_weight, curr_reps, curr_1rm)) => {
-                    if bw {
+                    if is_bodyweight {
                         // For bodyweight, PR is when reps is higher
                         reps > curr_reps && curr_weight == 0.0
                     } else {
@@ -814,7 +822,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     "#,
                 )
                 .bind(&exercise_id)
-                .bind(if bw { 0.0 } else { weight.unwrap_or(0.0) })
+                .bind(if is_bodyweight { 0.0 } else { parsed_weight.unwrap_or(0.0) })
                 .bind(reps)
                 .bind(estimated_1rm)
                 .execute(&mut *tx)
@@ -832,20 +840,27 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
             tx.commit().await?;
 
             // Print success message
-            let set_type = if bw { "bodyweight" } else { "weighted" };
+            let set_type = if is_bodyweight { "bodyweight" } else { "weighted" };
+            let weight_display = if is_bodyweight { 
+                "bodyweight".to_string() 
+            } else { 
+                format!("{}kg", parsed_weight.unwrap_or(0.0)) 
+            };
+            
             println!(
-                "{} logged {} set {} for exercise {} ({} reps)",
+                "{} logged {} set {} for exercise {} ({} × {})",
                 "ok:".green().bold(),
                 set_type,
                 set_index + 1,
                 exercise,
+                weight_display,
                 reps
             );
 
             if is_pr {
                 println!("{} new personal record!", "note:".yellow().bold());
             }
-
+            
             Ok(())
         }
 
