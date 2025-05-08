@@ -294,16 +294,105 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         pe.program_1rm
                     FROM training_session_exercises tse
                     JOIN exercises e ON e.id = tse.exercise_id
-                    JOIN program_exercises pe ON pe.exercise_id = e.id
+                    JOIN program_exercises pe ON pe.exercise_id = e.id 
+                        AND pe.program_block_id = (
+                            SELECT program_block_id 
+                            FROM training_sessions 
+                            WHERE id = ?
+                        )
                     WHERE tse.training_session_id = ?
                     ORDER BY pe.order_index
                     "#,
                 )
                 .bind(&session_id)
+                .bind(&session_id)
                 .fetch_all(pool)
                 .await?;
 
                 println!("\n{}", "Exercises:".cyan().bold());
+                
+                // Pre-calculate all previous set information to find the maximum width
+                let mut prev_sets_info = Vec::new();
+                for (
+                    _i,
+                    (
+                        ex_id,
+                        _ex_name,
+                        sets,
+                        _reps,
+                        _last_pr_date,
+                        _est_1rm,
+                        _last_pr_1rm,
+                        _pr_weight,
+                        _pr_reps,
+                        _target_rpe,
+                        _target_rm_percent,
+                        _program_1rm,
+                    ),
+                ) in exercises.iter().enumerate() {
+                    let mut exercise_prev_sets = Vec::new();
+                    
+                    // For each set
+                    for set_num in 0..*sets {
+                        // Get previous set info
+                        let prev_set: Option<(f32, i32)> = sqlx::query_as(
+                            r#"
+                            WITH set_numbers AS (
+                                SELECT 
+                                    es.weight,
+                                    es.reps,
+                                    es.timestamp,
+                                    tse.exercise_id,
+                                    ROW_NUMBER() OVER (
+                                        PARTITION BY tse.exercise_id, tse.id
+                                        ORDER BY es.timestamp
+                                    ) - 1 as set_num
+                                FROM exercise_sets es
+                                JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
+                                JOIN training_sessions ts ON ts.id = tse.training_session_id
+                                WHERE tse.exercise_id = ?
+                                AND ts.end_time IS NOT NULL  -- Only completed sessions
+                                AND es.weight > 0  -- Skip empty sets
+                            ),
+                            last_sets AS (
+                                SELECT 
+                                    weight,
+                                    reps,
+                                    ROW_NUMBER() OVER (
+                                        PARTITION BY exercise_id, set_num
+                                        ORDER BY timestamp DESC
+                                    ) as rn
+                                FROM set_numbers
+                                WHERE set_num = ?
+                            )
+                            SELECT weight, reps
+                            FROM last_sets
+                            WHERE rn = 1
+                            "#,
+                        )
+                        .bind(ex_id)
+                        .bind(set_num)
+                        .fetch_optional(pool)
+                        .await?;
+                        
+                        let prev_info = prev_set
+                            .map(|(w, r)| format!(" - {}kg × {}", w, r))
+                            .unwrap_or_default();
+                            
+                        exercise_prev_sets.push(prev_info);
+                    }
+                    
+                    prev_sets_info.push(exercise_prev_sets);
+                }
+                
+                // Find maximum width of prev_info
+                let max_prev_width = prev_sets_info
+                    .iter()
+                    .flat_map(|sets| sets.iter().map(|s| s.len()))
+                    .max()
+                    .unwrap_or(0);
+                
+                // Now display everything with consistent padding
                 for (
                     i,
                     (
@@ -320,8 +409,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         target_rm_percent,
                         program_1rm,
                     ),
-                ) in exercises.iter().enumerate()
-                {
+                ) in exercises.iter().enumerate() {
                     let idx = format!("{}", i + 1).yellow();
 
                     // Print exercise header with PR info
@@ -363,89 +451,6 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         .unwrap_or_default();
 
                     for set_num in 0..*sets {
-                        let target_reps = if set_num < reps_display.len().try_into().unwrap() {
-                            format!("{} reps", reps_display[set_num as usize])
-                        } else {
-                            "reps".to_string()
-                        };
-
-                        // Get current set info
-                        let current_set: Option<(f32, i32, bool)> = sqlx::query_as(
-                            r#"
-                            WITH set_numbers AS (
-                                SELECT 
-                                    es.*,
-                                    ROW_NUMBER() OVER (ORDER BY es.timestamp) - 1 as set_num
-                                FROM exercise_sets es
-                                JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
-                                WHERE tse.exercise_id = ?
-                            )
-                            SELECT weight, reps, bodyweight
-                            FROM set_numbers
-                            WHERE set_num = ?
-                            "#,
-                        )
-                        .bind(ex_id)
-                        .bind(set_num)
-                        .fetch_optional(pool)
-                        .await?;
-
-                        // Get previous set info
-                        let prev_set: Option<(f32, i32)> = sqlx::query_as(
-                            r#"
-                            WITH set_numbers AS (
-                                SELECT 
-                                    es.weight,
-                                    es.reps,
-                                    es.timestamp,
-                                    tse.exercise_id,
-                                    ROW_NUMBER() OVER (
-                                        PARTITION BY tse.exercise_id, tse.id
-                                        ORDER BY es.timestamp
-                                    ) - 1 as set_num
-                                FROM exercise_sets es
-                                JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
-                                JOIN training_sessions ts ON ts.id = tse.training_session_id
-                                WHERE tse.exercise_id = ?
-                                AND ts.end_time IS NOT NULL  -- Only completed sessions
-                                AND es.weight > 0  -- Skip empty sets
-                            ),
-                            last_sets AS (
-                                SELECT 
-                                    weight,
-                                    reps,
-                                    ROW_NUMBER() OVER (
-                                        PARTITION BY exercise_id, set_num
-                                        ORDER BY timestamp DESC
-                                    ) as rn
-                                FROM set_numbers
-                                WHERE set_num = ?
-                            )
-                            SELECT weight, reps
-                            FROM last_sets
-                            WHERE rn = 1
-                            "#,
-                        )
-                        .bind(ex_id)
-                        .bind(set_num)
-                        .fetch_optional(pool)
-                        .await?;
-
-                        let current_info = current_set
-                            .map(|(w, r, bw)| {
-                                if bw {
-                                    format!("bw × {}", r)
-                                } else {
-                                    format!("{}kg × {}", w, r)
-                                }
-                            })
-                            .unwrap_or_default();
-
-                        let prev_info = prev_set
-                            .map(|(w, r)| format!(" - {}kg × {}", w, r))
-                            .unwrap_or_default();
-
-                        // Calculate and display target info
                         let set_num_usize = set_num as usize;
                         let target_info = if let Some(program_1rm) = program_1rm {
                             if set_num_usize < target_rpes.len() {
@@ -469,24 +474,71 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                             }
                         };
 
+                        // Get current set info
+                        let current_set: Option<(f32, i32, bool)> = sqlx::query_as(
+                            r#"
+                            WITH set_numbers AS (
+                                SELECT 
+                                    es.*,
+                                    ROW_NUMBER() OVER (ORDER BY es.timestamp) - 1 as set_num
+                                FROM exercise_sets es
+                                JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
+                                WHERE tse.exercise_id = ?
+                                AND tse.training_session_id = ?
+                            )
+                            SELECT weight, reps, bodyweight
+                            FROM set_numbers
+                            WHERE set_num = ?
+                            "#,
+                        )
+                        .bind(ex_id)
+                        .bind(&session_id)
+                        .bind(set_num)
+                        .fetch_optional(pool)
+                        .await?;
+
+                        let current_info = current_set
+                            .map(|(w, r, bw)| {
+                                if bw {
+                                    format!("bw × {}", r)
+                                } else {
+                                    format!("{}kg × {}", w, r)
+                                }
+                            })
+                            .unwrap_or_default();
+
+                        let prev_info = &prev_sets_info[i][set_num as usize];
+                        let prev_column = format!("{:<width$}", prev_info, width = max_prev_width).dimmed();
+
+                        let target_reps = if set_num_usize < reps_display.len() {
+                            format!("{} reps", reps_display[set_num_usize])
+                        } else {
+                            String::from("do your thing")
+                        };
+
                         let target_padding = if (target_reps.len() + target_info.len()) < 25 {
                             25 - (target_reps.len() + target_info.len())
                         } else {
                             0
                         };
-                        let dont_know: usize = 14;
-                        let prev_visible = prev_info;
-                        let prev_column =
-                            format!("{:<width$}", prev_visible, width = dont_know).dimmed();
 
-                        println!(
-                            " {} {} • {}{}{}{}| {}",
-                            " ".repeat(2),
-                            format!("{}", set_num + 1).yellow(),
-                            target_reps,
-                            target_info.dimmed(),
-                            " ".repeat(target_padding),
-                            prev_column,
+                        // Create all parts of the display separately
+                        let set_num_str = format!("{}", set_num + 1).yellow();
+                        let indent = " ".repeat(2);
+                        let target_part = if target_reps.is_empty() {
+                            String::new()
+                        } else {
+                            format!("{}{}", target_reps, target_info.dimmed())
+                        };
+                        let padding = " ".repeat(target_padding);
+                        
+                        // Print with explicit parts
+                        println!(" {} {} • {} {}{} | {}", 
+                            indent, 
+                            set_num_str, 
+                            target_part, 
+                            padding,
+                            prev_column, 
                             current_info
                         );
                     }
