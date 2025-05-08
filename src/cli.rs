@@ -98,19 +98,6 @@ pub enum ExerciseCmd {
     List {
         #[arg(long, short = 'm')]
         muscle: Option<String>,
-
-        /// Hide variants (shown by default)
-        #[arg(long = "no-variants", short = 'n', action = clap::ArgAction::SetFalse, default_value_t = true)]
-        variants: bool,
-    },
-
-    #[command(visible_alias = "v")]
-    Variant {
-        /// Either the exercise index (number) or its name
-        exercise: String,
-
-        /// If provided, adds this as new variant; if ommited, lists all variants
-        variant: Option<String>,
     },
 
     /// Delete an exercise

@@ -1,17 +1,10 @@
-use std::{collections::{BTreeSet, HashMap}, path::Path};
+use std::{collections::BTreeSet, path::Path};
 
 use serde::Serialize;
 use sqlx::{Row, SqlitePool};
 use colored::Colorize;
 use crate::{cli::ExerciseCmd, types::{best_muscle_suggestions, cannonical_muscle, emit, ExerciseImport, ALLOWED_MUSCLES}, OutputFmt};
 use anyhow::{Context, Result};
-
-#[derive(Clone)]
-struct VariantRow {
-    v_idx:      usize,   // Local index (1‑based, inside it's exercise).
-    name:       String,
-    created_at: String,
-}
 
 #[derive(Serialize)]
 struct ExJson {
@@ -20,7 +13,6 @@ struct ExJson {
     primary_muscle: String,
     description: String,
     created_at: String,
-    variants: Vec<String>,
 }
 
 fn plain_len(s: &str) -> usize {
@@ -42,35 +34,6 @@ fn plain_len(s: &str) -> usize {
     }
 
     return count;
-}
-
-async fn variants_by_exercise(pool: &SqlitePool) -> Result<HashMap<i64, Vec<VariantRow>>> {
-    let rows = sqlx::query(
-        r#"
-        SELECT exercise_id,
-               name,
-               created_at,
-               ROW_NUMBER() OVER (
-                   PARTITION BY exercise_id
-                   ORDER BY name
-               ) AS v_idx
-        FROM exercise_variants
-        ORDER BY exercise_id, v_idx
-        "#
-    )
-    .fetch_all(pool)
-    .await?;
-
-    let mut map: HashMap<i64, Vec<VariantRow>> = HashMap::new();
-    for row in rows {
-        let e_idx: i64 = row.get("exercise_id");
-        map.entry(e_idx).or_default().push(VariantRow {
-            v_idx:      row.get::<i64, _>("v_idx")      as usize,
-            name:       row.get("name"),
-            created_at: row.get("created_at"),
-        });
-    }
-    Ok(map)
 }
 
 pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Result<()> {
@@ -163,29 +126,6 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
                 .await
                 .with_context(|| format!("DB error inserting `{}`", ex.name))?;
 
-                // Fetch it's numerical value (guaranteed to exist)
-                let e_idx: i64 = sqlx::query_scalar("SELECT idx FROM exercises WHERE name = ?").bind(&ex.name).fetch_one(pool).await?;
-
-                if let Some(vs) = &ex.variants {
-                    for v in vs {
-                       if v.trim().is_empty() { continue; } 
-
-                       sqlx::query(
-                            r#"
-                            INSERT OR IGNORE INTO exercise_variants
-                                (id, exercise_id, name)
-                            VALUES (?1, ?2, ?3)
-                            "#
-                       )
-                       .bind(uuid::Uuid::new_v4().to_string())
-                       .bind(e_idx)
-                       .bind(v.trim())
-                       .execute(pool)
-                       .await
-                       .with_context(|| format!("DB error inserting variant `{v}` for `{}`", ex.name))?;
-                    }
-                }
-
                 assert!(res.rows_affected() <= 1, "unexpected rows_affected {} for insert {}", res.rows_affected(), &ex.name);
 
                 if res.rows_affected() == 1 {
@@ -216,7 +156,7 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
             }
         }
         
-        ExerciseCmd::List { muscle, variants } => {
+        ExerciseCmd::List { muscle } => {
             let base = "
                 SELECT idx, name, primary_muscle, 
                 COALESCE(description, '') AS description, 
@@ -233,27 +173,15 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
                 sqlx::query(&q).fetch_all(pool).await?
             };
 
-            let variant_map = if variants {
-                Some(variants_by_exercise(pool).await?)
-            } else {
-                None
-            };
-
             let json_rows: Vec<ExJson> = db_rows
                 .iter()
                 .map(|r| {
-                    let e_idx: i64 = r.get("idx");
                     ExJson {
-                        idx: e_idx,
+                        idx: r.get("idx"),
                         name: r.get("name"),
                         primary_muscle: r.get("primary_muscle"),
                         description: r.get("description"),
                         created_at: r.get("created_at"),
-                        variants: variant_map
-                            .as_ref()
-                            .and_then(|m| m.get(&e_idx))
-                            .map(|v| v.iter().map(|vr| vr.name.clone()).collect())
-                            .unwrap_or_default(),
                     }
                 })
                 .collect();
@@ -288,27 +216,6 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
                         desc
                     ));
                     right.push(format!("added {}", &ex.created_at[..10]).dimmed().to_string());
-
-                    // variants …
-                    if variants {
-                        if let Some(vs) = variant_map.as_ref().and_then(|m| m.get(&ex.idx)) {
-                            for (i, v) in vs.iter().enumerate() {
-                                let connector = if i + 1 == vs.len() { "└─" } else { "├─" };
-                                let v_idx_col =
-                                    format!("{:>width$}", v.v_idx, width = idx_w).yellow();
-                                left.push(format!(
-                                    " {}   {} {} • {}",
-                                    " ".repeat(idx_w).yellow(),
-                                    connector,
-                                    v_idx_col,
-                                    v.name.bold()
-                                ));
-                                right.push(
-                                    format!("added {}", &v.created_at[..10]).dimmed().to_string(),
-                                );
-                            }
-                        }
-                    }
                 }
 
                 // ---------- compute printable pad
@@ -329,118 +236,6 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
                     println!("{}", "  (no exercises found)".dimmed());
                 }
             });
-        }
-
-        ExerciseCmd::Variant { exercise, variant } => {
-            // Resolve `exercise` to it's `idx`.
-            let idx: i64 = if let Ok(n) = exercise.parse::<i64>() {
-                // User passed a number.
-                n
-            } else {
-                // User passed a name: look the fucker up.
-                match sqlx::query_scalar("SELECT idx FROM exercises WHERE name = ?")
-                    .bind(&exercise)
-                    .fetch_one(pool)
-                    .await
-                 {
-                    Ok(n) => n,
-                    Err(_) => {
-                        println!("{} no such exercise `{}`", "error:".red().bold(), exercise);
-                        return Ok(());
-                    }
-                }
-            };
-
-            if variant.is_none() {
-                // List existing variants  (pretty + json support).
-                #[derive(Serialize)]
-                struct VarJson {
-                    idx: usize,
-                    name: String,
-                    created_at: String,
-                }
-
-                let rows: Vec<(String, String)> = sqlx::query_as(
-                    "SELECT name, created_at
-                     FROM   exercise_variants
-                     WHERE  exercise_id = ?
-                     ORDER  BY name",
-                )
-                .bind(idx)
-                .fetch_all(pool)
-                .await?;
-
-                if rows.is_empty() {
-                    println!("{}", "(no variants found)".dimmed());
-                    return Ok(());
-                }
-
-                // Build Vec<VarJson> for JSON output.
-                let json_rows: Vec<VarJson> = rows
-                    .iter()
-                    .enumerate()
-                    .map(|(i, (name, created))| VarJson {
-                        idx: i + 1,
-                        name: name.clone(),
-                        created_at: created.clone(),
-                    })
-                    .collect();
-
-                emit(fmt, &json_rows, || {
-                    println!(
-                        "{} {}:",
-                        "Variants for exercise".cyan().bold(),
-                        idx.to_string().yellow()
-                    );
-
-                    let idx_width = json_rows
-                        .iter()
-                        .map(|r| r.idx.to_string().len())
-                        .max()
-                        .unwrap_or(1);
-
-                    let lefts: Vec<String> = json_rows
-                        .iter()
-                        .map(|r| {
-                            let idx = format!("{:>width$}", r.idx, width = idx_width).yellow();
-                            format!(" {} • {}", idx, r.name.bold())
-                        })
-                        .collect();
-
-                    let left_width = lefts.iter().map(String::len).max().unwrap_or(0);
-
-                    for (left, r) in lefts.iter().zip(&json_rows) {
-                        let padded = format!("{:<left_width$}", left, left_width = left_width);
-                        println!(
-                            "{} {} {}",
-                            padded,
-                            "|".blue(),
-                            format!("added {}", &r.created_at[..10]).dimmed()
-                        );
-                    }
-                });
-            } else {
-                let var_name = variant.unwrap();
-                let res = sqlx::query(
-                    r#"
-                    INSERT INTO exercise_variants (id, exercise_id, name)
-                    VALUES (?1, ?2, ?3)
-                    "#
-                )
-                .bind(uuid::Uuid::new_v4().to_string())   
-                .bind(idx)                                
-                .bind(&var_name)                          
-                .execute(pool)
-                .await?;
-
-                match res.rows_affected() {
-                    1 => println!("{} added variant `{}` to exercise {}", 
-                                  "info:".blue().bold(), var_name, idx),
-                    0 => println!("{} variant `{}` already exists", 
-                                  "warning:".yellow().bold(), var_name),
-                    _ => unreachable!(),
-                }
-            }
         }
 
         ExerciseCmd::Delete { exercise } => {

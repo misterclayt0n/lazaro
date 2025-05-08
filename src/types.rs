@@ -127,7 +127,6 @@ pub struct ExerciseDef {
     pub name: String,
     pub description: Option<String>,
     pub primary_muscle: String,
-    pub variants: Option<Vec<String>>,
 }
 
 #[derive(Deserialize)]

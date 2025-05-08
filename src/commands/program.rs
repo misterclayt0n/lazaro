@@ -55,7 +55,7 @@ struct ProgJson {
     blocks: i64,
 }
 
-fn plain_len(s: &str) -> usize {
+pub fn plain_len(s: &str) -> usize {
     let mut n = 0;
     let mut esc = false;
     for b in s.bytes() {

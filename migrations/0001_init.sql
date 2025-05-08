@@ -22,15 +22,6 @@ CREATE TABLE exercise_aliases (
     FOREIGN KEY (exercise_id) REFERENCES exercises(id) ON DELETE CASCADE
 );
 
-CREATE TABLE exercise_variants (
-    id          TEXT PRIMARY KEY,
-    exercise_id INTEGER NOT NULL,       -- → exercises.idx  (numeric)
-    name        TEXT NOT NULL COLLATE NOCASE,
-    created_at  TEXT NOT NULL DEFAULT (datetime('now')),
-    FOREIGN KEY (exercise_id) REFERENCES exercises(idx) ON DELETE CASCADE,
-    UNIQUE (exercise_id, name)
-);
-
 CREATE TABLE personal_records (
     exercise_id   TEXT NOT NULL,        -- → exercises.id
     date          TEXT NOT NULL,
@@ -62,7 +53,7 @@ CREATE TABLE program_exercises (
     program_block_id   TEXT NOT NULL,   -- → program_blocks.id
     exercise_id        TEXT NOT NULL,   -- → exercises.id     (uuid)
     sets               INTEGER NOT NULL,
-    reps               TEXT,            -- may be NULL for “simplest program”
+    reps               TEXT,            -- may be NULL for "simplest program"
     target_rpe         TEXT,
     target_rm_percent  TEXT,
     notes              TEXT,
@@ -109,7 +100,7 @@ CREATE TABLE exercise_sets (
                  ON DELETE CASCADE
 );
 
--- Convenience view: the session that’s still open -----------------------------
+-- Convenience view: the session that's still open -----------------------------
 CREATE VIEW current_session AS
 SELECT *
 FROM training_sessions
