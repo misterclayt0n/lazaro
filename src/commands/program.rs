@@ -294,7 +294,7 @@ pub async fn handle(cmd: ProgramCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resul
                 if existing_id.is_some() {
                     println!("{} `{}` updated", "ok:".green().bold(), prog.name);
                 } else {
-                    println!("{} `{}`", "ok:".green().bold(), prog.name);
+                println!("{} `{}`", "ok:".green().bold(), prog.name);
                 }
             }
         }
