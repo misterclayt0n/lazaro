@@ -4,7 +4,7 @@ In this example here, both session start and ss would refer to the same command,
 - [x] session start <program> <block> [<week>] == ss
 - [x] session show == sh
 - [x] session cancel == sc
-- session add-ex <exercise> <sets> [<reps>] == sae
+- [x] session add-ex <exercise> <sets> [<reps>] == sae
 - [x] session edit <idx> <weight> <reps> [--bw] == ses
 - [x] session swap <idx> <variation> == sse
 - session note <idx> <note> == ssn
