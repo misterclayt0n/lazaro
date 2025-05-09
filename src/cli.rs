@@ -91,6 +91,12 @@ pub enum SessionCmd {
         #[arg(value_name = "NEW_EXERCISE")]
         new_exercise: String,
     },
+
+    /// Add an exercise to the current session
+    AddEx {
+        exercise: String,
+        sets: i32,
+    },
 }
 
 #[derive(Subcommand)]

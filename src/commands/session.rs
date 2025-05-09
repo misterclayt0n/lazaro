@@ -421,11 +421,26 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 {
                     let idx = format!("{}", i + 1).yellow();
 
+                    // Get the latest PR for this exercise
+                    let (pr_weight, pr_reps, pr_1rm): (Option<f32>, Option<i32>, Option<f32>) = sqlx::query_as(
+                        r#"
+                        SELECT weight, reps, estimated_1rm
+                        FROM personal_records
+                        WHERE exercise_id = ?
+                        ORDER BY date DESC
+                        LIMIT 1
+                        "#,
+                    )
+                    .bind(ex_id)
+                    .fetch_optional(pool)
+                    .await?
+                    .unwrap_or((None, None, None));
+
                     // Print exercise header with PR info
-                    let pr_info = if let (Some(w), Some(r)) = (_pr_weight, _pr_reps) {
-                        let one_rm = epley_1rm(*w, *r).round();
+                    let pr_info = if let (Some(w), Some(r)) = (pr_weight, pr_reps) {
+                        let one_rm = pr_1rm.unwrap_or_else(|| epley_1rm(w, r).round());
                         let actual_pr = format!("{}kg × {}", w, r).red().bold().to_string();
-                        format!(" - PR: {} (1RM: {}kg)", actual_pr, one_rm)
+                        format!(" - PR: {} (1RM: {:.1}kg)", actual_pr, one_rm)
                     } else {
                         String::new()
                     };
@@ -460,7 +475,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         WITH set_numbers AS (
                             SELECT 
                                 es.*,
-                                ROW_NUMBER() OVER (ORDER BY es.timestamp) - 1 as set_num
+                                ROW_NUMBER() OVER (PARTITION BY tse.id ORDER BY es.timestamp) - 1 as set_num
                             FROM exercise_sets es
                             JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
                             WHERE tse.exercise_id = ?
@@ -480,7 +495,16 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     let sets_to_show = if logged_sets.is_empty() {
                         (0..*sets).map(|i| (i as i64, 0.0, 0, false)).collect::<Vec<_>>()
                     } else {
-                        logged_sets
+                        // For added exercises, we want to show all sets from the program's set count
+                        let mut all_sets = Vec::new();
+                        for i in 0..*sets {
+                            if let Some(set) = logged_sets.iter().find(|(set_num, _, _, _)| *set_num == i as i64) {
+                                all_sets.push(*set);
+                            } else {
+                                all_sets.push((i as i64, 0.0, 0, false));
+                            }
+                        }
+                        all_sets
                     };
 
                     // Display all sets
@@ -550,12 +574,26 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
 
                             match pr_reps {
                                 Some(max_reps) => reps >= max_reps,
-                                None => false,
+                                None => true, // If no previous PR, this is a PR
                             }
                         } else if weight > 0.0 {
                             // For weighted, check if this matches the PR weight/reps
                             let is_matching_pr: Option<bool> = sqlx::query_scalar(
-                                "SELECT 1 FROM personal_records WHERE exercise_id = ? AND weight = ? AND reps = ? LIMIT 1"
+                                r#"
+                                WITH current_pr AS (
+                                    SELECT weight, reps, estimated_1rm
+                                    FROM personal_records
+                                    WHERE exercise_id = ?
+                                    ORDER BY date DESC
+                                    LIMIT 1
+                                )
+                                SELECT 
+                                    CASE 
+                                        WHEN (SELECT COUNT(*) FROM current_pr) = 0 THEN 1
+                                        WHEN ? >= (SELECT weight FROM current_pr) AND ? >= (SELECT reps FROM current_pr) THEN 1
+                                        ELSE 0
+                                    END
+                                "#,
                             )
                             .bind(ex_id)
                             .bind(weight)
@@ -563,7 +601,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                             .fetch_optional(pool)
                             .await?;
 
-                            is_matching_pr.is_some()
+                            is_matching_pr.unwrap_or(true) // If no previous PR, this is a PR
                         } else {
                             false
                         };
@@ -834,9 +872,51 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
 
                 match max_reps {
                     Some(max_reps) => reps >= max_reps,
-                    None => false,
+                    None => true, // If no previous PR, this is a PR
                 }
             };
+
+            if is_pr {
+                // Calculate estimated 1RM
+                let estimated_1rm = if is_bodyweight {
+                    0.0 // For bodyweight exercises, we don't calculate 1RM
+                } else {
+                    epley_1rm(parsed_weight.unwrap_or(0.0), reps)
+                };
+
+                // Insert new PR
+                sqlx::query(
+                    r#"
+                    INSERT INTO personal_records (
+                        exercise_id,
+                        weight,
+                        reps,
+                        estimated_1rm,
+                        date
+                    ) VALUES (?, ?, ?, ?, datetime('now'))
+                    "#,
+                )
+                .bind(&exercise_id)
+                .bind(if is_bodyweight { 0.0 } else { parsed_weight.unwrap_or(0.0) })
+                .bind(reps)
+                .bind(estimated_1rm)
+                .execute(&mut *tx)
+                .await?;
+
+                // Update exercise's current PR date and estimated 1RM
+                sqlx::query(
+                    r#"
+                    UPDATE exercises 
+                    SET current_pr_date = datetime('now'),
+                        estimated_one_rm = ?
+                    WHERE id = ?
+                    "#,
+                )
+                .bind(estimated_1rm)
+                .bind(&exercise_id)
+                .execute(&mut *tx)
+                .await?;
+            }
 
             // Commit the transaction
             tx.commit().await?;
@@ -939,7 +1019,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         }
                     } else if let Some(w) = weight {
                         // For weighted exercises, calculate estimated 1RM
-                        let est_1rm = w * (1.0 + (*reps as f32 / 30.0));
+                        let est_1rm = epley_1rm(*w, *reps);
                         if est_1rm > max_1rm {
                             max_1rm = est_1rm;
                             pr_weight = *w;
@@ -985,16 +1065,14 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 sqlx::query(
                     r#"
                     INSERT INTO personal_records (
-                        id,
                         exercise_id,
                         weight,
                         reps,
                         estimated_1rm,
                         date
-                    ) VALUES (?, ?, ?, ?, ?, datetime('now'))
+                    ) VALUES (?, ?, ?, ?, datetime('now'))
                     "#,
                 )
-                .bind(Uuid::new_v4().to_string())
                 .bind(&ex_id)
                 .bind(pr_weight)
                 .bind(pr_reps)
@@ -1218,6 +1296,94 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 reps.as_deref()
                     .map(|r| format!(" of {}", r))
                     .unwrap_or_default()
+            );
+        }
+
+        SessionCmd::AddEx { exercise, sets } => {
+            // Check if there's an active session
+            let session: Option<(String,)> =
+                sqlx::query_as("SELECT id FROM current_session LIMIT 1")
+                    .fetch_optional(pool)
+                    .await?;
+
+            let session_id = match session {
+                Some((id,)) => id,
+                None => {
+                    println!("{} no active session", "error:".red().bold());
+                    return Ok(());
+                }
+            };
+
+            // Resolve the exercise (by index or name)
+            let exercise_id: String = if let Ok(idx) = exercise.parse::<i64>() {
+                // User provided an index from exercise list
+                match sqlx::query_scalar::<_, String>(
+                    r#"
+                    SELECT id 
+                    FROM exercises
+                    ORDER BY idx  -- Order by the autoincrement field, not by name
+                    LIMIT 1 OFFSET ?
+                    "#,
+                )
+                .bind(idx - 1) // Convert to 0-based for SQL
+                .fetch_optional(pool)
+                .await?
+                {
+                    Some(id) => id,
+                    None => {
+                        println!("{} no exercise at index {}", "error:".red().bold(), idx);
+                        return Ok(());
+                    }
+                }
+            } else {
+                // User provided an exercise name
+                match sqlx::query_scalar::<_, String>("SELECT id FROM exercises WHERE name = ?")
+                    .bind(&exercise)
+                    .fetch_optional(pool)
+                    .await?
+                {
+                    Some(id) => id,
+                    None => {
+                        println!(
+                            "{} no exercise named `{}`",
+                            "error:".red().bold(),
+                            exercise
+                        );
+                        return Ok(());
+                    }
+                }
+            };
+
+            // Get exercise name for display
+            let exercise_name: String =
+                sqlx::query_scalar("SELECT name FROM exercises WHERE id = ?")
+                    .bind(&exercise_id)
+                    .fetch_one(pool)
+                    .await?;
+
+            // Start a transaction
+            let mut tx = pool.begin().await?;
+
+            // Create a new session exercise record
+            let session_exercise_id = Uuid::new_v4().to_string();
+            sqlx::query(
+                "INSERT INTO training_session_exercises (id, training_session_id, exercise_id) VALUES (?, ?, ?)",
+            )
+            .bind(&session_exercise_id)
+            .bind(&session_id)
+            .bind(&exercise_id)
+            .execute(&mut *tx)
+            .await?;
+
+            // Commit the transaction
+            tx.commit().await?;
+
+            // Show success message
+            println!(
+                "{} added {} ({} sets)",
+                "ok:".green().bold(),
+                exercise_name.bold(),
+                sets
             );
         }
     }
