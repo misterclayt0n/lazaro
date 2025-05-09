@@ -74,6 +74,10 @@ pub enum SessionCmd {
         /// Specific set index to edit (defaults to next unlogged set)
         #[arg(long, short = 's')]
         set: Option<usize>,
+
+        /// Add a new set even if all sets are already logged
+        #[arg(long, short = 'n')]
+        new: bool,
     },
     
     /// Swap an exercise in the current session with another - Usage: session swap EXERCISE NEW_EXERCISE

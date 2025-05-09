@@ -5,7 +5,6 @@ In this example here, both session start and ss would refer to the same command,
 - [x] session show == sh
 - [x] session cancel == sc
 - session add-ex <exercise> <sets> [<reps>] == sae
-- session add-set <idx> <weight> <reps> [--bw] == sas
 - [x] session edit <idx> <weight> <reps> [--bw] == ses
 - [x] session swap <idx> <variation> == sse
 - session note <idx> <note> == ssn
