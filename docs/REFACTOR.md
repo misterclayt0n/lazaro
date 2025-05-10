@@ -1,5 +1,5 @@
 ## New API for lazarus
-In this example here, both session start and ss would refer to the same command, just some aliases
+In this example here, both session start and ss would refer to the same command, just some aliases.
 
 - [x] session start <program> <block> [<week>] == ss
 - [x] session show == sh
@@ -8,24 +8,24 @@ In this example here, both session start and ss would refer to the same command,
 - [x] session edit <idx> <weight> <reps> [--bw] == ses
 - [x] session swap <idx> <variation> == sse
 - [x] session note <idx> <note> == ssn
-- session history <program> <block> [--date YYYY-MM-DD]
 - [x] session end == se
-- status --week --month --lifetime -> Default to week btw
 - [x] exercise add <name> <muscle> [--desc TXT]
 - [x] exercise import <file.toml>
 - [x] exercise list --muscle
-- exercise show <muscle_idx> || <muscle_name>
-- [x] program import <file.toml> -> This not only creates a new program, but also updates it
-- [x] program delete <file.toml> --name [<program_name>] -> Can delete by file or name
+- [x] exercise show <muscle_idx> || <muscle_name>
+- [x] program import <file.toml> -> This not only creates a new program, but also updates it.
+- [x] program delete <file.toml> --name [<program_name>] -> Can delete by file or name.
 - [x] program list
 - [x] program show <program_name> || <program_id>
 - calendar [<YYYY-MM>] [--details]
-- db export [file] -> exports to a simple file output
-- db import <dump.toml> -> This syncs the current db with the provided dump.toml, and if no dump.toml is provided, it creates a new database for you
+- logs -> To be designed...
+- db export [file] -> Exports to a simple file output.
+- db import <dump.toml> -> This syncs the current db with the provided dump.toml, and if no dump.toml is provided, it creates a new database for you.
+- db sync -> Syncs with a github repo, added in your config.
+- status --week --month --lifetime -> Default to week btw.
 
 ## General stuff
 - [x] Config file: change aliases.
-- Sync: something easy to sync with github.
 - Data science: progression on exercises (strength).
 - [x] Show session should grab the last occurrence of an exercise, currently it shows First time if I skipped a given ex.
 - [x] Start program should look for an ID for the program name and session. see task warrior for reference. 
