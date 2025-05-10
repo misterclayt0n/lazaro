@@ -7,7 +7,7 @@ In this example here, both session start and ss would refer to the same command,
 - [x] session add-ex <exercise> <sets> [<reps>] == sae
 - [x] session edit <idx> <weight> <reps> [--bw] == ses
 - [x] session swap <idx> <variation> == sse
-- session note <idx> <note> == ssn
+- [x] session note <idx> <note> == ssn
 - session history <program> <block> [--date YYYY-MM-DD]
 - [x] session end == se
 - status --week --month --lifetime -> Default to week btw

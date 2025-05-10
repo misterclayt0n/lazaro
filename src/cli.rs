@@ -97,6 +97,18 @@ pub enum SessionCmd {
         exercise: String,
         sets: i32,
     },
+
+    #[command(visible_alias = "n")]
+    #[command(override_usage = "session note <EX_IDX> <NOTE_STRING>")]
+    Note {
+        /// 1-based index of the exercise (same order shown in `session show`)
+        #[arg(value_name = "EX_IDX")]
+        exercise: usize,
+
+        /// Free-form text
+        #[arg(value_name = "NOTE_STRING")]
+        note: String
+    }
 }
 
 #[derive(Subcommand)]

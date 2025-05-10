@@ -262,6 +262,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         Option<String>,
                         Option<String>,
                         Option<f32>,
+                        String,
                     ),
                 >(
                     r#"
@@ -296,7 +297,8 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         (SELECT reps FROM last_prs WHERE exercise_id = e.id),
                         pe.target_rpe,
                         pe.target_rm_percent,
-                        pe.program_1rm
+                        pe.program_1rm,
+                        seo.tse_id
                     FROM training_session_exercises tse
                     JOIN session_exercise_order seo ON seo.tse_id = tse.id
                     JOIN exercises e ON e.id = tse.exercise_id
@@ -335,6 +337,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         _target_rpe,
                         _target_rm_percent,
                         _program_1rm,
+                        _tse_id,
                     ),
                 ) in exercises.iter().enumerate()
                 {
@@ -416,25 +419,27 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         _target_rpe,
                         _target_rm_percent,
                         _program_1rm,
+                        tse_id,
                     ),
                 ) in exercises.iter().enumerate()
                 {
                     let idx = format!("{}", i + 1).yellow();
 
                     // Get the latest PR for this exercise
-                    let (pr_weight, pr_reps, pr_1rm): (Option<f32>, Option<i32>, Option<f32>) = sqlx::query_as(
-                        r#"
+                    let (pr_weight, pr_reps, pr_1rm): (Option<f32>, Option<i32>, Option<f32>) =
+                        sqlx::query_as(
+                            r#"
                         SELECT weight, reps, estimated_1rm
                         FROM personal_records
                         WHERE exercise_id = ?
                         ORDER BY date DESC
                         LIMIT 1
                         "#,
-                    )
-                    .bind(ex_id)
-                    .fetch_optional(pool)
-                    .await?
-                    .unwrap_or((None, None, None));
+                        )
+                        .bind(ex_id)
+                        .fetch_optional(pool)
+                        .await?
+                        .unwrap_or((None, None, None));
 
                     // Print exercise header with PR info
                     let pr_info = if let (Some(w), Some(r)) = (pr_weight, pr_reps) {
@@ -445,12 +450,21 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         String::new()
                     };
 
-                    println!(
-                        "{} • {}{}",
-                        idx,
-                        ex_name.bold(),
-                        pr_info.dimmed(),
-                    );
+                    println!("{} • {}{}", idx, ex_name.bold(), pr_info.dimmed());
+
+                    // Print exercise note if it exists
+                    let note: Option<String> = sqlx::query_scalar(
+                        "SELECT notes FROM training_session_exercises WHERE id = ?",
+                    )
+                    .bind(&tse_id)
+                    .fetch_optional(pool)
+                    .await?;
+
+                    if let Some(note) = note {
+                        if note != "" {
+                            println!("    {} {}", "NOTE:".blue().bold(), note);
+                        }
+                    }
 
                     // Parse target values
                     let target_rpes: Vec<f32> = _target_rpe
@@ -493,12 +507,17 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
 
                     // If no sets are logged yet, show the program's sets
                     let sets_to_show = if logged_sets.is_empty() {
-                        (0..*sets).map(|i| (i as i64, 0.0, 0, false)).collect::<Vec<_>>()
+                        (0..*sets)
+                            .map(|i| (i as i64, 0.0, 0, false))
+                            .collect::<Vec<_>>()
                     } else {
                         // For added exercises, we want to show all sets from the program's set count
                         let mut all_sets = Vec::new();
                         for i in 0..*sets {
-                            if let Some(set) = logged_sets.iter().find(|(set_num, _, _, _)| *set_num == i as i64) {
+                            if let Some(set) = logged_sets
+                                .iter()
+                                .find(|(set_num, _, _, _)| *set_num == i as i64)
+                            {
                                 all_sets.push(*set);
                             } else {
                                 all_sets.push((i as i64, 0.0, 0, false));
@@ -538,7 +557,8 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         } else {
                             "" // Empty string for additional sets beyond program's set count
                         };
-                        let prev_column = format!("{:<width$}", prev_info, width = max_prev_width).dimmed();
+                        let prev_column =
+                            format!("{:<width$}", prev_info, width = max_prev_width).dimmed();
 
                         let target_reps = if set_num_usize < reps_display.len() {
                             format!("{} reps", reps_display[set_num_usize])
@@ -897,7 +917,11 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     "#,
                 )
                 .bind(&exercise_id)
-                .bind(if is_bodyweight { 0.0 } else { parsed_weight.unwrap_or(0.0) })
+                .bind(if is_bodyweight {
+                    0.0
+                } else {
+                    parsed_weight.unwrap_or(0.0)
+                })
                 .bind(reps)
                 .bind(estimated_1rm)
                 .execute(&mut *tx)
@@ -1344,11 +1368,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 {
                     Some(id) => id,
                     None => {
-                        println!(
-                            "{} no exercise named `{}`",
-                            "error:".red().bold(),
-                            exercise
-                        );
+                        println!("{} no exercise named `{}`", "error:".red().bold(), exercise);
                         return Ok(());
                     }
                 }
@@ -1384,6 +1404,42 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 "ok:".green().bold(),
                 exercise_name.bold(),
                 sets
+            );
+        }
+
+        SessionCmd::Note { exercise, note } => {
+            let session_id: String = sqlx::query_scalar("SELECT id FROM current_session")
+                .fetch_optional(pool)
+                .await?
+                .ok_or_else(|| anyhow::anyhow!("no active session"))?;
+
+            let tse_id: String = sqlx::query_scalar(
+                r#"
+                WITH ordered AS (
+                    SELECT tse.id,
+                           ROW_NUMBER() OVER (ORDER BY tse.rowid) AS rn
+                    FROM training_session_exercises tse
+                    WHERE tse.training_session_id = ?
+                )
+                SELECT id FROM ordered WHERE rn = ?
+                "#,
+            )
+            .bind(&session_id)
+            .bind(exercise as i64)
+            .fetch_optional(pool)
+            .await?
+            .ok_or_else(|| anyhow::anyhow!(format!("no exercise at index {}", exercise)))?;
+
+            sqlx::query("UPDATE training_session_exercises SET notes = ? WHERE id = ?")
+                .bind(note.trim()) // trim is optional but tidy
+                .bind(&tse_id)
+                .execute(pool)
+                .await?;
+
+            println!(
+                "{} note saved for exercise {}",
+                "ok:".green().bold(),
+                exercise
             );
         }
     }
