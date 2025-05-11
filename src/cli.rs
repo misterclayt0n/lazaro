@@ -29,6 +29,18 @@ pub enum Commands {
     /// Program management
     #[command(subcommand, visible_alias = "p")]
     Program(ProgramCmd),
+
+    /// Show training sessions in a calendar view
+    #[command(visible_alias = "cal")]
+    Calendar {
+        /// Year to show (defaults to current year)
+        #[arg(short, long)]
+        year: Option<i32>,
+
+        /// Month to show (1-12, defaults to current month)
+        #[arg(short, long)]
+        month: Option<u32>,
+    },
 }
 
 //

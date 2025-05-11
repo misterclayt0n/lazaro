@@ -17,7 +17,7 @@ In this example here, both session start and ss would refer to the same command,
 - [x] program delete <file.toml> --name [<program_name>] -> Can delete by file or name.
 - [x] program list
 - [x] program show <program_name> || <program_id>
-- calendar [<YYYY-MM>] [--details]
+- [x] calendar [<YYYY-MM>] [--details]
 - logs -> To be designed...
 - db export [file] -> Exports to a simple file output.
 - db import <dump.toml> -> This syncs the current db with the provided dump.toml, and if no dump.toml is provided, it creates a new database for you.

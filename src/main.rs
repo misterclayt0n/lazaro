@@ -36,6 +36,7 @@ async fn main() -> Result<()> {
         Commands::Exercise(cmd) => commands::exercise::handle(cmd, &pool, fmt).await?,
         Commands::Config(cmd) => commands::config::handle(cmd, cfg, config_path).await?,
         Commands::Program(cmd) => commands::program::handle(cmd, &pool, fmt).await?,
+        Commands::Calendar { year, month } => commands::calendar::handle(&pool, year, month).await?,
     }
 
     Ok(())
