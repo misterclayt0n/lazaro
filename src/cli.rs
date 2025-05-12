@@ -116,6 +116,13 @@ pub enum SessionCmd {
         #[arg(value_name = "NOTE_STRING")]
         note: String,
     },
+
+    /// Show details of a completed session from a specific date
+    Log {
+        /// Date in DD-MM-YYYY format
+        #[arg(short, long)]
+        date: String,
+    },
 }
 
 #[derive(Debug, Subcommand)]

@@ -3,6 +3,7 @@ use colored::Colorize;
 use sqlx::SqlitePool;
 use std::collections::HashMap;
 use uuid::Uuid;
+use chrono::NaiveDate;
 
 use crate::cli::SessionCmd;
 
@@ -1441,6 +1442,467 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 "ok:".green().bold(),
                 exercise
             );
+        }
+
+        SessionCmd::Log { date } => {
+            // Parse the date string (format: DD-MM-YYYY)
+            let date = NaiveDate::parse_from_str(&date, "%d-%m-%Y")?;
+            
+            // Get session info for the given date
+            let session: Option<(String, String, String, String)> = sqlx::query_as(
+                r#"
+                SELECT ts.id, ts.start_time, pb.name, COALESCE(pb.description, '')
+                FROM training_sessions ts
+                JOIN program_blocks pb ON pb.id = ts.program_block_id
+                WHERE date(ts.start_time) = date(?)
+                AND ts.end_time IS NOT NULL
+                LIMIT 1
+                "#,
+            )
+            .bind(date.format("%Y-%m-%d").to_string())
+            .fetch_optional(pool)
+            .await?;
+
+            let (session_id, start_time, block_name, block_desc) = match session {
+                Some(s) => s,
+                None => {
+                    println!("{} no completed session found for {}", "error:".red().bold(), date.format("%d-%m-%Y"));
+                    return Ok(());
+                }
+            };
+
+            // Calculate session duration
+            let duration = sqlx::query_scalar::<_, String>(
+                r#"
+                SELECT strftime('%H:%M:%S', 
+                    strftime('%s', end_time) - strftime('%s', start_time) || ' seconds', 
+                    'unixepoch'
+                )
+                FROM training_sessions
+                WHERE id = ?
+                "#,
+            )
+            .bind(&session_id)
+            .fetch_one(pool)
+            .await?;
+
+            // Print session header
+            println!(
+                "{} {} — {} (started {}, duration: {})",
+                "Session:".cyan().bold(),
+                block_name.bold(),
+                block_desc.dimmed(),
+                &start_time[..16],
+                duration
+            );
+
+            // Get exercises with their PRs
+            let exercises = sqlx::query_as::<
+                _,
+                (
+                    String,
+                    String,
+                    i32,
+                    Option<String>,
+                    Option<String>,
+                    Option<f32>,
+                    Option<f32>,
+                    Option<f32>,
+                    Option<i32>,
+                    Option<String>,
+                    Option<String>,
+                    Option<f32>,
+                    String,
+                ),
+            >(
+                r#"
+                WITH last_prs AS (
+                    SELECT 
+                        exercise_id,
+                        MAX(date) as last_date,
+                        weight,
+                        reps,
+                        estimated_1rm
+                    FROM personal_records
+                    GROUP BY exercise_id
+                ),
+                session_exercise_order AS (
+                    SELECT 
+                        tse.id as tse_id,
+                        tse.exercise_id,
+                        ROW_NUMBER() OVER (ORDER BY tse.rowid) as display_order
+                    FROM training_session_exercises tse
+                    WHERE tse.training_session_id = ?
+                )
+                SELECT 
+                    e.id,
+                    e.name,
+                    COALESCE(pe.sets, 3) as sets,
+                    pe.reps,
+                    e.current_pr_date,
+                    e.estimated_one_rm,
+                    (SELECT estimated_1rm FROM last_prs WHERE exercise_id = e.id),
+                    (SELECT weight FROM last_prs WHERE exercise_id = e.id),
+                    (SELECT reps FROM last_prs WHERE exercise_id = e.id),
+                    pe.target_rpe,
+                    pe.target_rm_percent,
+                    pe.program_1rm,
+                    seo.tse_id
+                FROM training_session_exercises tse
+                JOIN session_exercise_order seo ON seo.tse_id = tse.id
+                JOIN exercises e ON e.id = tse.exercise_id
+                LEFT JOIN program_exercises pe ON pe.exercise_id = e.id 
+                    AND pe.program_block_id = (
+                        SELECT program_block_id 
+                        FROM training_sessions 
+                        WHERE id = ?
+                    )
+                WHERE tse.training_session_id = ?
+                ORDER BY seo.display_order
+                "#,
+            )
+            .bind(&session_id)
+            .bind(&session_id)
+            .bind(&session_id)
+            .fetch_all(pool)
+            .await?;
+
+            println!("\n{}", "Exercises:".cyan().bold());
+
+            // Pre-calculate all previous set information to find the maximum width
+            let mut prev_sets_info = Vec::new();
+            for (
+                _i,
+                (
+                    ex_id,
+                    _ex_name,
+                    sets,
+                    _reps,
+                    _last_pr_date,
+                    _est_1rm,
+                    _last_pr_1rm,
+                    _pr_weight,
+                    _pr_reps,
+                    _target_rpe,
+                    _target_rm_percent,
+                    _program_1rm,
+                    _tse_id,
+                ),
+            ) in exercises.iter().enumerate()
+            {
+                let mut exercise_prev_sets = Vec::new();
+
+                // For each set
+                for set_num in 0..*sets {
+                    // Get previous set info
+                    let prev_set: Option<(f32, i32)> = sqlx::query_as(
+                        r#"
+                        WITH set_numbers AS (
+                            SELECT 
+                                es.weight,
+                                es.reps,
+                                es.timestamp,
+                                tse.exercise_id,
+                                ROW_NUMBER() OVER (
+                                    PARTITION BY tse.exercise_id, tse.id
+                                    ORDER BY es.timestamp
+                                ) - 1 as set_num
+                            FROM exercise_sets es
+                            JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
+                            JOIN training_sessions ts ON ts.id = tse.training_session_id
+                            WHERE tse.exercise_id = ?
+                            AND ts.end_time IS NOT NULL  -- Only completed sessions
+                            AND es.weight > 0  -- Skip empty sets
+                        ),
+                        last_sets AS (
+                            SELECT 
+                                weight,
+                                reps,
+                                ROW_NUMBER() OVER (
+                                    PARTITION BY exercise_id, set_num
+                                    ORDER BY timestamp DESC
+                                ) as rn
+                            FROM set_numbers
+                            WHERE set_num = ?
+                        )
+                        SELECT weight, reps
+                        FROM last_sets
+                        WHERE rn = 1
+                        "#,
+                    )
+                    .bind(ex_id)
+                    .bind(set_num)
+                    .fetch_optional(pool)
+                    .await?;
+
+                    let prev_info = prev_set
+                        .map(|(w, r)| format!(" - {}kg × {}", w, r))
+                        .unwrap_or_default();
+
+                    exercise_prev_sets.push(prev_info);
+                }
+
+                prev_sets_info.push(exercise_prev_sets);
+            }
+
+            // Find maximum width of prev_info
+            let max_prev_width = prev_sets_info
+                .iter()
+                .flat_map(|sets| sets.iter().map(|s| s.len()))
+                .max()
+                .unwrap_or(0);
+
+            // Now display everything with consistent padding
+            for (
+                i,
+                (
+                    ex_id,
+                    ex_name,
+                    sets,
+                    reps,
+                    _last_pr_date,
+                    _est_1rm,
+                    _last_pr_1rm,
+                    _pr_weight,
+                    _pr_reps,
+                    _target_rpe,
+                    _target_rm_percent,
+                    _program_1rm,
+                    tse_id,
+                ),
+            ) in exercises.iter().enumerate()
+            {
+                let idx = format!("{}", i + 1).yellow();
+
+                // Get the latest PR for this exercise
+                let (pr_weight, pr_reps, pr_1rm): (Option<f32>, Option<i32>, Option<f32>) =
+                    sqlx::query_as(
+                        r#"
+                        SELECT weight, reps, estimated_1rm
+                        FROM personal_records
+                        WHERE exercise_id = ?
+                        ORDER BY date DESC
+                        LIMIT 1
+                        "#,
+                    )
+                    .bind(ex_id)
+                    .fetch_optional(pool)
+                    .await?
+                    .unwrap_or((None, None, None));
+
+                // Print exercise header with PR info
+                let pr_info = if let (Some(w), Some(r)) = (pr_weight, pr_reps) {
+                    let one_rm = pr_1rm.unwrap_or_else(|| epley_1rm(w, r).round());
+                    let actual_pr = format!("{}kg × {}", w, r).red().bold().to_string();
+                    format!(" - PR: {} (1RM: {:.1}kg)", actual_pr, one_rm)
+                } else {
+                    String::new()
+                };
+
+                println!("{} • {}{}", idx, ex_name.bold(), pr_info.dimmed());
+
+                // Print exercise note if it exists
+                let note: Option<String> = sqlx::query_scalar(
+                    "SELECT notes FROM training_session_exercises WHERE id = ?",
+                )
+                .bind(&tse_id)
+                .fetch_optional(pool)
+                .await?;
+
+                if let Some(note) = note {
+                    if note != "" {
+                        println!("    {} {}", "NOTE:".blue().bold(), note);
+                    }
+                }
+
+                // Parse target values
+                let target_rpes: Vec<f32> = _target_rpe
+                    .as_deref()
+                    .map(|s| s.split(',').filter_map(|v| v.trim().parse().ok()).collect())
+                    .unwrap_or_default();
+
+                let target_rms: Vec<f32> = _target_rm_percent
+                    .as_deref()
+                    .map(|s| s.split(',').filter_map(|v| v.trim().parse().ok()).collect())
+                    .unwrap_or_default();
+
+                // Print sets
+                let reps_display = reps
+                    .as_deref()
+                    .map(|r| r.split(',').collect::<Vec<_>>())
+                    .unwrap_or_default();
+
+                // Get all logged sets for this exercise
+                let logged_sets = sqlx::query_as::<_, (i64, f32, i32, bool)>(
+                    r#"
+                    WITH set_numbers AS (
+                        SELECT 
+                            es.*,
+                            ROW_NUMBER() OVER (PARTITION BY tse.id ORDER BY es.timestamp) - 1 as set_num
+                        FROM exercise_sets es
+                        JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
+                        WHERE tse.exercise_id = ?
+                        AND tse.training_session_id = ?
+                    )
+                    SELECT set_num, weight, reps, bodyweight
+                    FROM set_numbers
+                    ORDER BY set_num
+                    "#,
+                )
+                .bind(ex_id)
+                .bind(&session_id)
+                .fetch_all(pool)
+                .await?;
+
+                // If no sets are logged yet, show the program's sets
+                let sets_to_show = if logged_sets.is_empty() {
+                    (0..*sets)
+                        .map(|i| (i as i64, 0.0, 0, false))
+                        .collect::<Vec<_>>()
+                } else {
+                    // For added exercises, we want to show all sets from the program's set count
+                    let mut all_sets = Vec::new();
+                    for i in 0..*sets {
+                        if let Some(set) = logged_sets
+                            .iter()
+                            .find(|(set_num, _, _, _)| *set_num == i as i64)
+                        {
+                            all_sets.push(*set);
+                        } else {
+                            all_sets.push((i as i64, 0.0, 0, false));
+                        }
+                    }
+                    all_sets
+                };
+
+                // Display all sets
+                for (set_num, weight, reps, bw) in sets_to_show {
+                    let set_num_usize = set_num as usize;
+                    let target_info = if let Some(program_1rm) = _program_1rm {
+                        if set_num_usize < target_rpes.len() {
+                            format!(" @RPE {}", target_rpes[set_num_usize])
+                        } else if set_num_usize < target_rms.len() {
+                            let target_weight =
+                                program_1rm * (target_rms[set_num_usize] / 100.0);
+                            format!(
+                                " @{}% ({}kg)",
+                                target_rms[set_num_usize],
+                                target_weight.round()
+                            )
+                        } else {
+                            String::new()
+                        }
+                    } else {
+                        if set_num_usize < target_rpes.len() {
+                            format!(" @RPE {}", target_rpes[set_num_usize])
+                        } else {
+                            String::new()
+                        }
+                    };
+
+                    // Get previous set info from our pre-calculated list
+                    let prev_info = if set_num_usize < prev_sets_info[i].len() {
+                        &prev_sets_info[i][set_num_usize]
+                    } else {
+                        "" // Empty string for additional sets beyond program's set count
+                    };
+                    let prev_column =
+                        format!("{:<width$}", prev_info, width = max_prev_width).dimmed();
+
+                    let target_reps = if set_num_usize < reps_display.len() {
+                        format!("{} reps", reps_display[set_num_usize])
+                    } else {
+                        String::from("do your thing")
+                    };
+
+                    let target_padding = if (target_reps.len() + target_info.len()) < 25 {
+                        25 - (target_reps.len() + target_info.len())
+                    } else {
+                        0
+                    };
+
+                    // Create all parts of the display separately
+                    let set_num_str = format!("{}", set_num + 1).yellow();
+                    let indent = " ".repeat(2);
+                    let target_part = if target_reps.is_empty() {
+                        String::new()
+                    } else {
+                        format!("{}{}", target_reps, target_info.dimmed())
+                    };
+                    let padding = " ".repeat(target_padding);
+
+                    // Determine if this set is a PR
+                    let is_pr = if bw {
+                        // For bodyweight, check if reps exceed the PR reps
+                        let pr_reps: Option<i32> = sqlx::query_scalar(
+                            "SELECT MAX(reps) FROM personal_records WHERE exercise_id = ? AND weight = 0"
+                        )
+                        .bind(ex_id)
+                        .fetch_optional(pool)
+                        .await?;
+
+                        match pr_reps {
+                            Some(max_reps) => reps >= max_reps,
+                            None => true, // If no previous PR, this is a PR
+                        }
+                    } else if weight > 0.0 {
+                        // For weighted, check if this matches the PR weight/reps
+                        let is_matching_pr: Option<bool> = sqlx::query_scalar(
+                            r#"
+                            WITH current_pr AS (
+                                SELECT weight, reps, estimated_1rm
+                                FROM personal_records
+                                WHERE exercise_id = ?
+                                ORDER BY date DESC
+                                LIMIT 1
+                            )
+                            SELECT 
+                                CASE 
+                                    WHEN (SELECT COUNT(*) FROM current_pr) = 0 THEN 1
+                                    WHEN ? >= (SELECT weight FROM current_pr) AND ? >= (SELECT reps FROM current_pr) THEN 1
+                                    ELSE 0
+                                END
+                            "#,
+                        )
+                        .bind(ex_id)
+                        .bind(weight)
+                        .bind(reps)
+                        .fetch_optional(pool)
+                        .await?;
+
+                        is_matching_pr.unwrap_or(true) // If no previous PR, this is a PR
+                    } else {
+                        false
+                    };
+
+                    let current_info = if bw {
+                        format!("bw × {}", reps)
+                    } else if weight > 0.0 {
+                        format!("{}kg × {}", weight, reps)
+                    } else {
+                        String::new()
+                    };
+
+                    // Apply green color if it's a PR
+                    let current_info_colored = if is_pr {
+                        current_info.green().to_string()
+                    } else {
+                        current_info
+                    };
+
+                    // Print with explicit parts
+                    println!(
+                        " {} {} • {} {}{} | {}",
+                        indent,
+                        set_num_str,
+                        target_part,
+                        padding,
+                        prev_column,
+                        current_info_colored
+                    );
+                }
+                println!();
+            }
         }
     }
 
