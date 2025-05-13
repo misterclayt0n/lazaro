@@ -37,6 +37,7 @@ async fn main() -> Result<()> {
         Commands::Config(cmd) => commands::config::handle(cmd, cfg, config_path).await?,
         Commands::Program(cmd) => commands::program::handle(cmd, &pool, fmt).await?,
         Commands::Calendar { year, month } => commands::calendar::handle(&pool, year, month).await?,
+        Commands::Db(cmd) => commands::db::handle(cmd, &pool).await?
     }
 
     Ok(())

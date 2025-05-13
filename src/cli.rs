@@ -41,6 +41,10 @@ pub enum Commands {
         #[arg(short, long)]
         month: Option<u32>,
     },
+
+    /// Db operations
+    #[command(subcommand)]
+    Db(DbCmd),
 }
 
 //
@@ -219,4 +223,19 @@ pub struct StartArgs {
     pub program: String,
     pub block: String,
     pub week: Option<i32>,
+}
+
+#[derive(Subcommand)]
+pub enum DbCmd {
+    /// Dump the current DB
+    Export { path: Option<String> },
+
+    /// Import a dump    
+    Import { path: Option<String> },
+
+    /// Migrate an *old* lazaro.db into the current one
+    Migrate {
+        /// path to the old lazaro.db (source)
+        old_db: String,
+    },
 }

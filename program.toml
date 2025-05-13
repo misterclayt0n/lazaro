@@ -5,7 +5,7 @@ name = "Upper day 1"
 description = "Insane montage"
 
 [[blocks.exercises]]
-name = "Back Squat"
+name = "High Bar Squat"
 sets = 3
 
 [[blocks.exercises]]

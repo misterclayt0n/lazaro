@@ -1,5 +1,5 @@
 use anyhow::Result;
-use chrono::{Datelike, NaiveDate, NaiveDateTime};
+use chrono::{Datelike, NaiveDate, DateTime, Utc};
 use colored::Colorize;
 use sqlx::SqlitePool;
 
@@ -53,7 +53,10 @@ pub async fn handle(pool: &SqlitePool, year: Option<i32>, month: Option<u32>) ->
     // Create a map of sessions by day
     let mut sessions_by_day = std::collections::HashMap::new();
     for session in &sessions {
-        let start = NaiveDateTime::parse_from_str(&session.1, "%Y-%m-%d %H:%M:%S").unwrap();
+        let start = DateTime::parse_from_rfc3339(&session.1)
+            .unwrap()
+            .with_timezone(&Utc)
+            .naive_local();
         let day = start.day() as usize;
         sessions_by_day.entry(day).or_insert_with(Vec::new).push(session);
     }
@@ -82,9 +85,15 @@ pub async fn handle(pool: &SqlitePool, year: Option<i32>, month: Option<u32>) ->
     if !sessions.is_empty() {
         println!("{}", "Sessions:".bold().cyan());
         for session in sessions {
-            let start = NaiveDateTime::parse_from_str(&session.1, "%Y-%m-%d %H:%M:%S").unwrap();
+            let start = DateTime::parse_from_rfc3339(&session.1)
+                .unwrap()
+                .with_timezone(&Utc)
+                .naive_local();
             let end = if let Some(end_time) = &session.2 {
-                NaiveDateTime::parse_from_str(end_time, "%Y-%m-%d %H:%M:%S").unwrap()
+                DateTime::parse_from_rfc3339(end_time)
+                    .unwrap()
+                    .with_timezone(&Utc)
+                    .naive_local()
             } else {
                 chrono::Local::now().naive_local()
             };
@@ -97,7 +106,6 @@ pub async fn handle(pool: &SqlitePool, year: Option<i32>, month: Option<u32>) ->
                 session.4.bold(), // program name
                 session.5 // block name
             );
-            
             
             if let Some(notes) = session.3 {
                 if !notes.is_empty() {
