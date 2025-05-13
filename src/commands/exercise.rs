@@ -623,7 +623,8 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
                 let pct = (diff / prev_rm) * 100.0;
                 let arrow = if diff > 0.0 { "▲" } else { "▼" };
                 println!(
-                    "30-day 1 RM change: {} {:.1} kg  ({:+.1} %)",
+                    "{} {} {:.1} kg  ({:+.1} %)",
+                    "30-day 1 RM change:".cyan().bold(),
                     arrow,
                     diff.abs(),
                     pct
