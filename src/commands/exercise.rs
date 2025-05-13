@@ -387,21 +387,29 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
             .await?;
 
             // Get current PR info
-            let (pr_weight, pr_reps, pr_date, pr_1rm): (
-                Option<f32>,
-                Option<i32>,
-                Option<String>,
-                Option<f32>,
-            ) = sqlx::query_as(
+            let (pr_weight, pr_reps, pr_date, pr_1rm): (Option<f32>, Option<i32>, Option<String>, Option<f32>) = sqlx::query_as(
                 r#"
+                WITH all_sets AS (
+                    SELECT 
+                        es.weight,
+                        es.reps,
+                        es.timestamp,
+                        CASE 
+                            WHEN es.bodyweight = 1 THEN 0
+                            ELSE CAST(es.weight AS REAL) * (1 + CAST(es.reps AS REAL) / 30)
+                        END as estimated_1rm
+                    FROM exercise_sets es
+                    JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
+                    WHERE tse.exercise_id = ?
+                    AND es.weight > 0
+                )
                 SELECT 
-                    CAST(weight AS REAL) as weight,
-                    CAST(reps AS INTEGER) as reps,
-                    date,
-                    CAST(estimated_1rm AS REAL) as estimated_1rm
-                FROM personal_records
-                WHERE exercise_id = ?
-                ORDER BY date DESC
+                    weight,
+                    reps,
+                    timestamp,
+                    estimated_1rm
+                FROM all_sets
+                ORDER BY estimated_1rm DESC, weight DESC, reps DESC
                 LIMIT 1
                 "#,
             )
@@ -410,38 +418,36 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
             .await?
             .unwrap_or((None, None, None, None));
 
-            // Get 30-day 1RM change
-            let (curr_1rm, prev_1rm): (Option<f32>, Option<f32>) = sqlx::query_as(
+            // Get 30-day PR change
+            let (prev_pr_1rm, _prev_pr_date): (Option<f32>, Option<String>) = sqlx::query_as(
                 r#"
-                WITH ordered AS (
-                    SELECT CAST(estimated_1rm AS REAL) AS rm,
-                           date,
-                           ROW_NUMBER() OVER (ORDER BY date DESC) AS rn
-                    FROM personal_records
-                    WHERE exercise_id = ?
-                ),
-                latest AS (
-                    SELECT rm, date
-                    FROM   ordered
-                    WHERE  rn = 1                 -- newest PR
-                ),
-                older AS (                        -- newest PR ≥30 days older
-                    SELECT ordered.rm   AS prev_rm,
-                           ordered.date AS prev_date
-                    FROM   ordered
-                    JOIN   latest
-                      ON   julianday(latest.date) - julianday(ordered.date) >= 30
-                    ORDER  BY ordered.date DESC
-                    LIMIT  1
+                WITH all_sets AS (
+                    SELECT 
+                        es.weight,
+                        es.reps,
+                        es.timestamp,
+                        CASE 
+                            WHEN es.bodyweight = 1 THEN 0
+                            ELSE CAST(es.weight AS REAL) * (1 + CAST(es.reps AS REAL) / 30)
+                        END as estimated_1rm
+                    FROM exercise_sets es
+                    JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
+                    WHERE tse.exercise_id = ?
+                    AND es.weight > 0
+                    AND es.timestamp < datetime('now', '-30 days')
                 )
-                SELECT
-                    (SELECT rm       FROM latest)  AS curr,
-                    (SELECT prev_rm  FROM older)   AS prev
+                SELECT 
+                    estimated_1rm,
+                    timestamp
+                FROM all_sets
+                ORDER BY estimated_1rm DESC, weight DESC, reps DESC
+                LIMIT 1
                 "#,
             )
             .bind(&exercise_id)
-            .fetch_one(pool)
-            .await?;
+            .fetch_optional(pool)
+            .await?
+            .unwrap_or((None, None));
 
             // Get 30-day tonnage
             let (current_tonnage, prev_tonnage): (Option<f64>, Option<f64>) = sqlx::query_as(
@@ -515,15 +521,26 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
             // Get top 5 heaviest sets
             let top_sets: Vec<(f32, i32, String)> = sqlx::query_as(
                 r#"
+                WITH set_volumes AS (
+                    SELECT 
+                        CAST(weight AS REAL) as weight,
+                        CAST(reps AS INTEGER) as reps,
+                        timestamp,
+                        CASE 
+                            WHEN bodyweight = 1 THEN 0
+                            ELSE CAST(weight AS REAL) * (1 + CAST(reps AS REAL) / 30)
+                        END as estimated_1rm
+                    FROM exercise_sets es
+                    JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
+                    WHERE tse.exercise_id = ?
+                    AND weight > 0
+                )
                 SELECT 
-                    CAST(weight AS REAL) as weight,
-                    CAST(reps AS INTEGER) as reps,
+                    weight,
+                    reps,
                     timestamp
-                FROM exercise_sets es
-                JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
-                WHERE tse.exercise_id = ?
-                AND weight > 0
-                ORDER BY weight DESC, reps DESC
+                FROM set_volumes
+                ORDER BY estimated_1rm DESC, weight DESC, reps DESC
                 LIMIT 5
                 "#,
             )
@@ -531,7 +548,7 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
             .fetch_all(pool)
             .await?;
 
-            // Get last 10 sets
+            // Get last 10 sets with PR information
             let last_sets: Vec<(String, f32, i32, Option<f32>, bool)> = sqlx::query_as(
                 r#"
                 WITH set_info AS (
@@ -540,15 +557,19 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
                         CAST(es.weight AS REAL) as weight,
                         CAST(es.reps AS INTEGER) as reps,
                         CAST(es.rpe AS REAL) as rpe,
-                        es.session_exercise_id,
-                        pr.date as pr_date
+                        CASE 
+                            WHEN es.bodyweight = 1 THEN 0
+                            ELSE CAST(es.weight AS REAL) * (1 + CAST(es.reps AS REAL) / 30)
+                        END as estimated_1rm,
+                        ROW_NUMBER() OVER (
+                            ORDER BY 
+                                CAST(es.weight AS REAL) * (1 + CAST(es.reps AS REAL) / 30) DESC,
+                                es.timestamp DESC
+                        ) as set_rank
                     FROM exercise_sets es
                     JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
-                    LEFT JOIN personal_records pr ON pr.exercise_id = tse.exercise_id 
-                        AND pr.date = date(es.timestamp)
-                        AND pr.weight = es.weight 
-                        AND pr.reps = es.reps
                     WHERE tse.exercise_id = ?
+                    AND es.weight > 0
                     ORDER BY es.timestamp DESC
                     LIMIT 10
                 )
@@ -557,7 +578,7 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
                     weight,
                     reps,
                     rpe,
-                    pr_date IS NOT NULL as is_pr
+                    set_rank = 1 as is_pr
                 FROM set_info
                 ORDER BY timestamp DESC
                 "#,
@@ -597,13 +618,12 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
             }
 
             // Print 30-day changes
-            if let (Some(curr), Some(prev)) = (curr_1rm, prev_1rm) {
-                let diff = curr - prev;
-                let pct = (diff / prev) * 100.0;
+            if let (Some(prev_rm), _) = (prev_pr_1rm, _prev_pr_date) {
+                let diff = pr_1rm.unwrap_or(0.0) - prev_rm;
+                let pct = (diff / prev_rm) * 100.0;
                 let arrow = if diff > 0.0 { "▲" } else { "▼" };
                 println!(
-                    "{}: {} {:.0} kg  ({:+.1} %)",
-                    "30-day 1 RM change".cyan().bold(),
+                    "30-day 1 RM change: {} {:.1} kg  ({:+.1} %)",
                     arrow,
                     diff.abs(),
                     pct
