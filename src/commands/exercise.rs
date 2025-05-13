@@ -1,4 +1,5 @@
 use std::{collections::BTreeSet, path::Path};
+use chrono::{DateTime, Utc};
 
 use crate::{
     OutputFmt,
@@ -38,6 +39,137 @@ fn plain_len(s: &str) -> usize {
     }
 
     return count;
+}
+
+fn create_ascii_graph(data: &[(DateTime<Utc>, f32)], width: usize, height: usize) -> Vec<String> {
+    if data.is_empty() {
+        return vec!["No data available".to_string()];
+    }
+
+    let min_weight = data.iter().map(|(_, w)| *w).fold(f32::INFINITY, f32::min);
+    let max_weight = data.iter().map(|(_, w)| *w).fold(f32::NEG_INFINITY, f32::max);
+    let range = max_weight - min_weight;
+    
+    // Create the graph grid
+    let mut grid = vec![vec![' '; width]; height];
+    
+    // Draw the data points and lines
+    for i in 0..data.len() {
+        let (_, weight) = data[i];
+        let x = (i as f32 / (data.len() - 1) as f32 * (width - 1) as f32) as usize;
+        let y = ((weight - min_weight) / range * (height - 1) as f32) as usize;
+        let y = height - 1 - y; // Flip the y-axis
+        
+        if y < height && x < width {
+            grid[y][x] = '●';
+        }
+
+        // Draw connecting lines
+        if i > 0 {
+            let prev_x = ((i - 1) as f32 / (data.len() - 1) as f32 * (width - 1) as f32) as usize;
+            let prev_y = ((data[i-1].1 - min_weight) / range * (height - 1) as f32) as usize;
+            let prev_y = height - 1 - prev_y;
+            
+            // Draw line between points
+            let dx = x as isize - prev_x as isize;
+            let dy = y as isize - prev_y as isize;
+            let steps = dx.abs().max(dy.abs());
+            
+            for step in 1..steps {
+                let px = prev_x as isize + (dx * step / steps);
+                let py = prev_y as isize + (dy * step / steps);
+                
+                if px >= 0 && px < width as isize && py >= 0 && py < height as isize {
+                    let px = px as usize;
+                    let py = py as usize;
+                    if grid[py][px] == ' ' {
+                        grid[py][px] = '·';
+                    }
+                }
+            }
+        }
+    }
+    
+    // Convert grid to strings with y-axis labels
+    let mut result = Vec::new();
+    let step = range / (height - 1) as f32;
+    
+    // Add the graph with y-axis labels
+    for (i, row) in grid.iter().enumerate() {
+        let value = min_weight + step * (height - 1 - i) as f32;
+        let label = format!("{:4.0} │{}", value, row.iter().collect::<String>());
+        result.push(label);
+    }
+    
+    // Add x-axis
+    result.push(format!("     └{}", "─".repeat(width)));
+    
+    // Add date labels
+    if !data.is_empty() {
+        let first_date = data.first().unwrap().0.format("%Y-%m-%d").to_string();
+        let last_date = data.last().unwrap().0.format("%Y-%m-%d").to_string();
+        result.push(format!("     {}  {}", first_date, last_date));
+    }
+    
+    result
+}
+
+async fn generate_progression_graph(
+    exercise_id: &str,
+    name: &str,
+    pool: &SqlitePool,
+) -> Result<()> {
+    // Get all sets for this exercise ordered by date
+    let sets: Vec<(String, f32, i32)> = sqlx::query_as(
+        r#"
+        SELECT 
+            es.timestamp,
+            CAST(es.weight AS REAL) as weight,
+            CAST(es.reps AS INTEGER) as reps
+        FROM exercise_sets es
+        JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
+        WHERE tse.exercise_id = ?
+        AND es.weight > 0
+        ORDER BY es.timestamp ASC
+        "#,
+    )
+    .bind(exercise_id)
+    .fetch_all(pool)
+    .await?;
+
+    if sets.is_empty() {
+        println!("{} No data available for graph", "warning:".yellow().bold());
+        return Ok(());
+    }
+
+    // Calculate estimated 1RM for each set
+    let data: Vec<(DateTime<Utc>, f32)> = sets
+        .into_iter()
+        .map(|(timestamp, weight, reps)| {
+            let dt = DateTime::parse_from_rfc3339(&timestamp)
+                .unwrap()
+                .with_timezone(&Utc);
+            let estimated_1rm = weight * (1.0 + reps as f32 / 30.0);
+            (dt, estimated_1rm)
+        })
+        .collect();
+
+    // Get terminal size and use a smaller size for the graph
+    let (term_width, term_height) = term_size::dimensions().unwrap_or((80, 24));
+    let width = (term_width / 2).min(60); // Make it half the terminal width, max 60 chars
+    let height = (term_height / 2).min(15); // Make it half the terminal height, max 15 lines
+
+    // Print title
+    println!("\n{} Progression", name.bold());
+    println!("{}", "─".repeat(width + 7));
+
+    // Create and print the graph
+    let graph = create_ascii_graph(&data, width, height);
+    for line in graph {
+        println!("{}", line);
+    }
+
+    Ok(())
 }
 
 pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Result<()> {
@@ -326,7 +458,7 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
             println!("{} deleted exercise `{}`", "ok:".green().bold(), name);
         }
 
-        ExerciseCmd::Show { exercise } => {
+        ExerciseCmd::Show { exercise, graph } => {
             let exercise = exercise.join(" ");
             
             // Resolve exercise to its ID
@@ -365,6 +497,11 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
             .bind(&exercise_id)
             .fetch_one(pool)
             .await?;
+
+            if graph {
+                generate_progression_graph(&exercise_id, &name, pool).await?;
+                return Ok(());
+            }
 
             // Get last performed date and total sessions
             let (last_performed, total_sessions): (Option<String>, i64) = sqlx::query_as(

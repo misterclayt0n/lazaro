@@ -175,6 +175,10 @@ pub enum ExerciseCmd {
     Show {
         /// Exercise index or name
         exercise: Vec<String>,
+
+        /// Show progression graph
+        #[arg(short, long)]
+        graph: bool,
     },
 }
 
