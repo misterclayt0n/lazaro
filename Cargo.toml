@@ -2,6 +2,8 @@
 name = "lazarus"
 version = "0.1.0"
 edition = "2024"
+description = "A command-line tool for managing training programs and tracking exercises"
+license = "MIT"
 
 [dependencies]
 clap = { version = "4.5.37", features = ["derive"] }
