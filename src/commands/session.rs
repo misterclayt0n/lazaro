@@ -289,7 +289,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     SELECT 
                         e.id,
                         e.name,
-                        COALESCE(pe.sets, 3) as sets, -- Default to 3 sets for swapped exercises
+                        COALESCE(pe.sets, 3) as sets,
                         pe.reps,
                         e.current_pr_date,
                         e.estimated_one_rm,
@@ -485,12 +485,12 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         .unwrap_or_default();
 
                     // Get all logged sets for this exercise
-                    let logged_sets = sqlx::query_as::<_, (i64, f32, i32, bool)>(
+                    let logged_sets_1_based_num = sqlx::query_as::<_, (i64, f32, i32, bool)>(
                         r#"
                         WITH set_numbers AS (
                             SELECT 
                                 es.*,
-                                ROW_NUMBER() OVER (PARTITION BY tse.id ORDER BY es.timestamp) - 1 as set_num
+                                ROW_NUMBER() OVER (PARTITION BY tse.id ORDER BY es.timestamp) as set_num -- 1-based
                             FROM exercise_sets es
                             JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
                             WHERE tse.exercise_id = ?
@@ -506,30 +506,46 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     .fetch_all(pool)
                     .await?;
 
-                    // If no sets are logged yet, show the program's sets
-                    let sets_to_show = if logged_sets.is_empty() {
-                        (0..*sets)
-                            .map(|i| (i as i64, 0.0, 0, false))
+                    // Convert to 0-based set numbers for internal processing
+                    let logged_sets_0_based_num: Vec<(i64, f32, i32, bool)> = logged_sets_1_based_num
+                        .into_iter()
+                        .map(|(snum_1_based, w, r, b)| (snum_1_based - 1, w, r, b)) // Convert to 0-based set_num
+                        .collect();
+
+                    // If no sets are logged yet, show the program's sets (using 0-based set_num)
+                    let sets_to_show = if logged_sets_0_based_num.is_empty() {
+                        (0..*sets) // Iterate 0-based
+                            .map(|i_0_based| (i_0_based as i64, 0.0, 0, false))
                             .collect::<Vec<_>>()
                     } else {
-                        // For added exercises, we want to show all sets from the program's set count
                         let mut all_sets = Vec::new();
-                        for i in 0..*sets {
-                            if let Some(set) = logged_sets
+                        // First add all sets up to the program's set count (using 0-based set_num)
+                        for i_0_based in 0..*sets { // Iterate 0-based program sets
+                            if let Some(set) = logged_sets_0_based_num
                                 .iter()
-                                .find(|(set_num, _, _, _)| *set_num == i as i64)
+                                .find(|(s_0_based, _, _, _)| *s_0_based == i_0_based as i64)
                             {
-                                all_sets.push(*set);
+                                all_sets.push(*set); // s_0_based is already 0-based
                             } else {
-                                all_sets.push((i as i64, 0.0, 0, false));
+                                all_sets.push((i_0_based as i64, 0.0, 0, false)); // Placeholder with 0-based set_num
                             }
                         }
+                        // Then add any additional sets beyond the program's set count (using 0-based set_num)
+                        // Additional sets are those with 0-based index >= program's set count
+                        for set_to_add in logged_sets_0_based_num.iter().filter(|(s_0_based, _, _, _)| *s_0_based >= *sets as i64) {
+                            // Avoid duplicating sets
+                            let s_0_based_to_add = set_to_add.0;
+                            if !all_sets.iter().any(|(added_s_0,_,_,_)| *added_s_0 == s_0_based_to_add) {
+                                all_sets.push(*set_to_add);
+                            }
+                        }
+                        all_sets.sort_by_key(|(s_0_based, _, _, _)| *s_0_based);
                         all_sets
                     };
 
                     // Display all sets
-                    for (set_num, weight, reps, bw) in sets_to_show {
-                        let set_num_usize = set_num as usize;
+                    for (set_num_0_based_in_loop, weight, reps, bw) in sets_to_show {
+                        let set_num_usize = set_num_0_based_in_loop as usize; // 0-based for array indexing
                         let target_info = if let Some(program_1rm) = _program_1rm {
                             if set_num_usize < target_rpes.len() {
                                 format!(" @RPE {}", target_rpes[set_num_usize])
@@ -574,7 +590,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         };
 
                         // Create all parts of the display separately
-                        let set_num_str = format!("{}", set_num + 1).yellow();
+                        let set_num_str = format!("{}", set_num_0_based_in_loop + 1).yellow(); // Display as 1-based
                         let indent = " ".repeat(2);
                         let target_part = if target_reps.is_empty() {
                             String::new()
@@ -583,63 +599,12 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         };
                         let padding = " ".repeat(target_padding);
 
-                        // Determine if this set is a PR
-                        let is_pr = if bw {
-                            // For bodyweight, check if reps exceed the PR reps
-                            let pr_reps: Option<i32> = sqlx::query_scalar(
-                                "SELECT MAX(reps) FROM personal_records WHERE exercise_id = ? AND weight = 0"
-                            )
-                            .bind(ex_id)
-                            .fetch_optional(pool)
-                            .await?;
-
-                            match pr_reps {
-                                Some(max_reps) => reps >= max_reps,
-                                None => true, // If no previous PR, this is a PR
-                            }
-                        } else if weight > 0.0 {
-                            // For weighted, check if this matches the PR weight/reps
-                            let is_matching_pr: Option<bool> = sqlx::query_scalar(
-                                r#"
-                                WITH current_pr AS (
-                                    SELECT weight, reps, estimated_1rm
-                                    FROM personal_records
-                                    WHERE exercise_id = ?
-                                    ORDER BY date DESC
-                                    LIMIT 1
-                                )
-                                SELECT 
-                                    CASE 
-                                        WHEN (SELECT COUNT(*) FROM current_pr) = 0 THEN 1
-                                        WHEN ? >= (SELECT weight FROM current_pr) AND ? >= (SELECT reps FROM current_pr) THEN 1
-                                        ELSE 0
-                                    END
-                                "#,
-                            )
-                            .bind(ex_id)
-                            .bind(weight)
-                            .bind(reps)
-                            .fetch_optional(pool)
-                            .await?;
-
-                            is_matching_pr.unwrap_or(true) // If no previous PR, this is a PR
-                        } else {
-                            false
-                        };
-
                         let current_info = if bw {
                             format!("bw × {}", reps)
                         } else if weight > 0.0 {
                             format!("{}kg × {}", weight, reps)
                         } else {
                             String::new()
-                        };
-
-                        // Apply green color if it's a PR
-                        let current_info_colored = if is_pr {
-                            current_info.green().to_string()
-                        } else {
-                            current_info
                         };
 
                         // Print with explicit parts
@@ -650,7 +615,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                             target_part,
                             padding,
                             prev_column,
-                            current_info_colored
+                            current_info
                         );
                     }
                     println!();
@@ -735,6 +700,18 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
             // Determine which set to edit
             let set_index = if let Some(s) = set {
                 s - 1 // Convert to 0-based index
+            } else if new {
+                // Get the next unlogged set
+                sqlx::query_scalar::<_, i64>(
+                    r#"
+                    SELECT COUNT(*)
+                    FROM exercise_sets
+                    WHERE session_exercise_id = ?
+                    "#,
+                )
+                .bind(&session_exercise_id)
+                .fetch_one(pool)
+                .await? as usize
             } else {
                 // Get the next unlogged set
                 sqlx::query_scalar::<_, i64>(
@@ -749,26 +726,38 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 .await? as usize
             };
 
-            // Get total number of sets for this exercise, default to 3 for swapped exercises
-            let total_sets: i64 = match sqlx::query_scalar::<_, i64>(
+            // Get total number of sets for this exercise, including any additional sets
+            let total_sets: i64 = sqlx::query_scalar::<_, i64>(
                 r#"
-                SELECT sets
-                FROM program_exercises
-                WHERE exercise_id = ? AND program_block_id = (
-                    SELECT program_block_id
-                    FROM training_sessions
-                    WHERE id = ?
+                WITH program_sets AS (
+                    SELECT sets
+                    FROM program_exercises
+                    WHERE exercise_id = ? AND program_block_id = (
+                        SELECT program_block_id
+                        FROM training_sessions
+                        WHERE id = ?
+                    )
+                ),
+                set_numbers AS (
+                    SELECT 
+                        ROW_NUMBER() OVER (ORDER BY timestamp) - 1 as set_num
+                    FROM exercise_sets
+                    WHERE session_exercise_id = ?
+                ),
+                additional_sets AS (
+                    SELECT COUNT(*) as extra_sets
+                    FROM set_numbers
+                    WHERE set_num >= (SELECT sets FROM program_sets)
                 )
+                SELECT COALESCE((SELECT sets FROM program_sets), 2) + 
+                       COALESCE((SELECT extra_sets FROM additional_sets), 0)
                 "#,
             )
             .bind(&exercise_id)
             .bind(&session_id)
-            .fetch_optional(pool)
-            .await?
-            {
-                Some(sets) => sets,
-                None => 3, // Default to 3 sets for swapped exercises
-            };
+            .bind(&session_exercise_id)
+            .fetch_one(pool)
+            .await?;
 
             // Only check set limit if --new flag is not used
             if !new && set_index >= total_sets as usize {
@@ -791,7 +780,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     SELECT 
                         es.id,
                         es.timestamp,
-                        ROW_NUMBER() OVER (ORDER BY es.timestamp) - 1 as set_num
+                        ROW_NUMBER() OVER (PARTITION BY es.session_exercise_id ORDER BY es.timestamp) as set_num
                     FROM exercise_sets es
                     WHERE es.session_exercise_id = ?
                 )
@@ -801,16 +790,17 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 "#,
             )
             .bind(&session_exercise_id)
-            .bind(set_index as i64)
+            .bind((set_index + 1) as i64) // Query with 1-based set number
             .fetch_optional(&mut *tx)
             .await?;
 
-            if let Some((id, _timestamp)) = existing_set {
+            // If set exists, update it; otherwise create new
+            if let Some((set_id, _)) = existing_set {
                 // Update existing set
                 sqlx::query(
                     r#"
                     UPDATE exercise_sets
-                    SET weight = ?, reps = ?, bodyweight = ?, timestamp = datetime('now')
+                    SET weight = ?, reps = ?, bodyweight = ?
                     WHERE id = ?
                     "#,
                 )
@@ -821,7 +811,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 })
                 .bind(reps)
                 .bind(is_bodyweight as i32)
-                .bind(&id)
+                .bind(&set_id)
                 .execute(&mut *tx)
                 .await?;
             } else {
@@ -1299,7 +1289,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
             .bind(&new_exercise_id)  // Display info for the new exercise being swapped in
             .fetch_optional(&mut *tx)
             .await?
-            .unwrap_or((3, None)); // Default to 3 sets with no specific reps for swapped exercises
+            .unwrap_or((2, None)); // Default to 2 sets with no specific reps for swapped exercises
 
             // Update the training_session_exercise record ONLY
             sqlx::query("UPDATE training_session_exercises SET exercise_id = ? WHERE id = ?")
@@ -1733,12 +1723,12 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     .unwrap_or_default();
 
                 // Get all logged sets for this exercise
-                let logged_sets = sqlx::query_as::<_, (i64, f32, i32, bool)>(
+                let logged_sets_1_based_num = sqlx::query_as::<_, (i64, f32, i32, bool)>(
                     r#"
                     WITH set_numbers AS (
                         SELECT 
                             es.*,
-                            ROW_NUMBER() OVER (PARTITION BY tse.id ORDER BY es.timestamp) - 1 as set_num
+                            ROW_NUMBER() OVER (PARTITION BY tse.id ORDER BY es.timestamp) as set_num -- 1-based
                         FROM exercise_sets es
                         JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
                         WHERE tse.exercise_id = ?
@@ -1754,30 +1744,46 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 .fetch_all(pool)
                 .await?;
 
-                // If no sets are logged yet, show the program's sets
-                let sets_to_show = if logged_sets.is_empty() {
-                    (0..*sets)
-                        .map(|i| (i as i64, 0.0, 0, false))
+                // Convert to 0-based set numbers for internal processing
+                let logged_sets_0_based_num: Vec<(i64, f32, i32, bool)> = logged_sets_1_based_num
+                    .into_iter()
+                    .map(|(snum_1_based, w, r, b)| (snum_1_based - 1, w, r, b)) // Convert to 0-based set_num
+                    .collect();
+
+                // If no sets are logged yet, show the program's sets (using 0-based set_num)
+                let sets_to_show = if logged_sets_0_based_num.is_empty() {
+                    (0..*sets) // Iterate 0-based
+                        .map(|i_0_based| (i_0_based as i64, 0.0, 0, false))
                         .collect::<Vec<_>>()
                 } else {
-                    // For added exercises, we want to show all sets from the program's set count
                     let mut all_sets = Vec::new();
-                    for i in 0..*sets {
-                        if let Some(set) = logged_sets
+                    // First add all sets up to the program's set count (using 0-based set_num)
+                    for i_0_based in 0..*sets { // Iterate 0-based program sets
+                        if let Some(set) = logged_sets_0_based_num
                             .iter()
-                            .find(|(set_num, _, _, _)| *set_num == i as i64)
+                            .find(|(s_0_based, _, _, _)| *s_0_based == i_0_based as i64)
                         {
-                            all_sets.push(*set);
+                            all_sets.push(*set); // s_0_based is already 0-based
                         } else {
-                            all_sets.push((i as i64, 0.0, 0, false));
+                            all_sets.push((i_0_based as i64, 0.0, 0, false)); // Placeholder with 0-based set_num
                         }
                     }
+                    // Then add any additional sets beyond the program's set count (using 0-based set_num)
+                    // Additional sets are those with 0-based index >= program's set count
+                    for set_to_add in logged_sets_0_based_num.iter().filter(|(s_0_based, _, _, _)| *s_0_based >= *sets as i64) {
+                        // Avoid duplicating sets
+                        let s_0_based_to_add = set_to_add.0;
+                        if !all_sets.iter().any(|(added_s_0,_,_,_)| *added_s_0 == s_0_based_to_add) {
+                            all_sets.push(*set_to_add);
+                        }
+                    }
+                    all_sets.sort_by_key(|(s_0_based, _, _, _)| *s_0_based);
                     all_sets
                 };
 
                 // Display all sets
-                for (set_num, weight, reps, bw) in sets_to_show {
-                    let set_num_usize = set_num as usize;
+                for (set_num_0_based_in_loop, weight, reps, bw) in sets_to_show {
+                    let set_num_usize = set_num_0_based_in_loop as usize; // 0-based for array indexing
                     let target_info = if let Some(program_1rm) = _program_1rm {
                         if set_num_usize < target_rpes.len() {
                             format!(" @RPE {}", target_rpes[set_num_usize])
@@ -1822,7 +1828,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     };
 
                     // Create all parts of the display separately
-                    let set_num_str = format!("{}", set_num + 1).yellow();
+                    let set_num_str = format!("{}", set_num_0_based_in_loop + 1).yellow(); // Display as 1-based
                     let indent = " ".repeat(2);
                     let target_part = if target_reps.is_empty() {
                         String::new()
@@ -1831,63 +1837,12 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     };
                     let padding = " ".repeat(target_padding);
 
-                    // Determine if this set is a PR
-                    let is_pr = if bw {
-                        // For bodyweight, check if reps exceed the PR reps
-                        let pr_reps: Option<i32> = sqlx::query_scalar(
-                            "SELECT MAX(reps) FROM personal_records WHERE exercise_id = ? AND weight = 0"
-                        )
-                        .bind(ex_id)
-                        .fetch_optional(pool)
-                        .await?;
-
-                        match pr_reps {
-                            Some(max_reps) => reps >= max_reps,
-                            None => true, // If no previous PR, this is a PR
-                        }
-                    } else if weight > 0.0 {
-                        // For weighted, check if this matches the PR weight/reps
-                        let is_matching_pr: Option<bool> = sqlx::query_scalar(
-                            r#"
-                            WITH current_pr AS (
-                                SELECT weight, reps, estimated_1rm
-                                FROM personal_records
-                                WHERE exercise_id = ?
-                                ORDER BY date DESC
-                                LIMIT 1
-                            )
-                            SELECT 
-                                CASE 
-                                    WHEN (SELECT COUNT(*) FROM current_pr) = 0 THEN 1
-                                    WHEN ? >= (SELECT weight FROM current_pr) AND ? >= (SELECT reps FROM current_pr) THEN 1
-                                    ELSE 0
-                                END
-                            "#,
-                        )
-                        .bind(ex_id)
-                        .bind(weight)
-                        .bind(reps)
-                        .fetch_optional(pool)
-                        .await?;
-
-                        is_matching_pr.unwrap_or(true) // If no previous PR, this is a PR
-                    } else {
-                        false
-                    };
-
                     let current_info = if bw {
                         format!("bw × {}", reps)
                     } else if weight > 0.0 {
                         format!("{}kg × {}", weight, reps)
                     } else {
                         String::new()
-                    };
-
-                    // Apply green color if it's a PR
-                    let current_info_colored = if is_pr {
-                        current_info.green().to_string()
-                    } else {
-                        current_info
                     };
 
                     // Print with explicit parts
@@ -1898,7 +1853,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         target_part,
                         padding,
                         prev_column,
-                        current_info_colored
+                        current_info
                     );
                 }
                 println!();
@@ -1916,3 +1871,4 @@ fn epley_1rm(weight: f32, reps: i32) -> f32 {
         weight * (1.0 + reps as f32 / 30.0)
     }
 }
+
