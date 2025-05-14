@@ -1,5 +1,5 @@
 use anyhow::Result;
-use chrono::{Datelike, NaiveDate, DateTime, Utc};
+use chrono::{Datelike, NaiveDate, DateTime, Utc, NaiveDateTime, Local};
 use colored::Colorize;
 use sqlx::SqlitePool;
 
@@ -53,10 +53,8 @@ pub async fn handle(pool: &SqlitePool, year: Option<i32>, month: Option<u32>) ->
     // Create a map of sessions by day
     let mut sessions_by_day = std::collections::HashMap::new();
     for session in &sessions {
-        let start = DateTime::parse_from_rfc3339(&session.1)
-            .unwrap()
-            .with_timezone(&Utc)
-            .naive_local();
+        let start = parse_any_datetime(&session.1)
+            .unwrap();
         let day = start.day() as usize;
         sessions_by_day.entry(day).or_insert_with(Vec::new).push(session);
     }
@@ -85,17 +83,13 @@ pub async fn handle(pool: &SqlitePool, year: Option<i32>, month: Option<u32>) ->
     if !sessions.is_empty() {
         println!("{}", "Sessions:".bold().cyan());
         for session in sessions {
-            let start = DateTime::parse_from_rfc3339(&session.1)
-                .unwrap()
-                .with_timezone(&Utc)
-                .naive_local();
+            let start = parse_any_datetime(&session.1)
+                .unwrap();
             let end = if let Some(end_time) = &session.2 {
-                DateTime::parse_from_rfc3339(end_time)
+                parse_any_datetime(end_time)
                     .unwrap()
-                    .with_timezone(&Utc)
-                    .naive_local()
             } else {
-                chrono::Local::now().naive_local()
+                Local::now().naive_local()
             };
             let duration = end - start;
             
@@ -127,4 +121,16 @@ fn format_duration(duration: chrono::Duration) -> String {
     } else {
         format!("{}m", minutes)
     }
+}
+
+fn parse_any_datetime(s: &str) -> Option<NaiveDateTime> {
+    // Try RFC3339 first
+    if let Ok(dt) = DateTime::parse_from_rfc3339(s) {
+        return Some(dt.with_timezone(&Utc).naive_local());
+    }
+    // Try legacy format
+    if let Ok(dt) = NaiveDateTime::parse_from_str(s, "%Y-%m-%d %H:%M:%S") {
+        return Some(dt);
+    }
+    None
 } 
