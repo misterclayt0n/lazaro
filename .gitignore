@@ -3,3 +3,9 @@ lazaro
 .env
 current_session.toml
 training/lazaro.db
+lazarus.db
+
+
+# Added by cargo
+
+/target

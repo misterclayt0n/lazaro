@@ -1,7 +1,7 @@
 [[exercise]]
 name = "Back Squat"
 description = "Full depth barbell back squat"
-primary_muscle = "Quadriceps"
+primary_muscle = "Quads"
 
 [[exercise]]
 name = "Bench Press"
@@ -21,7 +21,7 @@ primary_muscle = "Chest"
 [[exercise]]
 name = "Deadlift"
 description = "Conventional barbell deadlift"
-primary_muscle = "Posterior Chain"
+primary_muscle = "Back"
 
 [[exercise]]
 name = "Weighted Pull-Up"
@@ -33,7 +33,7 @@ primary_muscle = "Back"
 
 [[exercise]]
 name = "Incline Chest Press"
-primary_muscle = "Chest"
+primary_muscle = "CHEST"
 
 [[exercise]]
 name = "Chest Supported Row"

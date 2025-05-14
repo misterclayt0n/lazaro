@@ -1,11 +1,12 @@
-name = "Program 1"
+name = "Program 4"
+description = "Simplest possible program"
 
 [[blocks]]
 name = "Upper day 1"
-description = "Insane montage"
+description = "Max effort day"
 
 [[blocks.exercises]]
-name = "High Bar Squat"
+name = "Back Squat"
 sets = 3
 
 [[blocks.exercises]]
