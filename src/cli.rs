@@ -231,11 +231,18 @@ pub struct StartArgs {
 
 #[derive(Subcommand)]
 pub enum DbCmd {
-    /// Dump the current DB
-    Export { path: Option<String> },
+    /// Export database to a TOML file
+    Export {
+        /// Output file path (defaults to dump.toml)
+        #[arg(short, long)]
+        file: Option<String>,
+    },
 
-    /// Import a dump    
-    Import { path: Option<String> },
+    /// Import database from a TOML file
+    Import {
+        /// Input TOML file path
+        file: String,
+    },
 
     /// Migrate an *old* lazaro.db into the current one
     Migrate {
