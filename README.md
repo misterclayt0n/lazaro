@@ -13,7 +13,7 @@ A powerful command-line tool for managing training programs and tracking your wo
 
 ## Building on Android (Termux)
 
-To build Lazaro on an Android device using Termux, follow these steps:
+To build Lazarus on an Android device using Termux, follow these steps:
 
 1. Install required dependencies:
    ```
