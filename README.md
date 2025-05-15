@@ -14,24 +14,28 @@ A powerful command-line tool for managing training programs and tracking your wo
 ## Building on Android (Termux)
 
 To build Lazarus on an Android device using Termux, follow these steps:
+1. Update and upgrade 
+   ```
+   pkg update && pkg upgrade
+   ```
 
-1. Install required dependencies:
+2. Install required dependencies:
    ```
    pkg install clang make pkg-config fontconfig freetype libpng libxml2
    ```
 
-2. Install Rust:
+3. Install Rust:
    ```
    pkg install rust
    ```
 
-3. Clone the repository:
+4. Clone the repository:
    ```
    git clone https://github.com/misterclayt0n/lazarus
    cd lazarus
    ```
 
-4. Build and install the application:
+5. Build and install the application:
    ```
    cargo build --release
    cp target/release/lazarus $PREFIX/bin/
