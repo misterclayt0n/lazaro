@@ -17,7 +17,7 @@ To build Lazarus on an Android device using Termux, follow these steps:
 
 1. Install required dependencies:
    ```
-   pkg install clang make pkg-config fontconfig freetype libpng
+   pkg install clang make pkg-config fontconfig freetype libpng libxml2
    ```
 
 2. Install Rust:
