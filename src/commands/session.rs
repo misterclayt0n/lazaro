@@ -599,13 +599,25 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         };
                         let padding = " ".repeat(target_padding);
 
-                        let current_info = if bw {
-                            format!("bw × {}", reps)
-                        } else if weight > 0.0 {
-                            format!("{}kg × {}", weight, reps)
+                                            // Check if this set is a PR (matching the PR weight and reps)
+                    let is_pr_set = if let (Some(pr_w), Some(pr_r)) = (pr_weight, pr_reps) {
+                        !bw && weight > 0.0 && weight == pr_w && reps == pr_r
+                    } else {
+                        false
+                    };
+
+                    let current_info = if bw {
+                        format!("bw × {}", reps)
+                    } else if weight > 0.0 {
+                        let set_info = format!("{}kg × {}", weight, reps);
+                        if is_pr_set {
+                            set_info.green().bold().to_string()
                         } else {
-                            String::new()
-                        };
+                            set_info
+                        }
+                    } else {
+                        String::new()
+                    };
 
                         // Print with explicit parts
                         println!(
@@ -1879,10 +1891,22 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     };
                     let padding = " ".repeat(target_padding);
 
+                    // Check if this set is a PR (matching the PR weight and reps)
+                    let is_pr_set = if let (Some(pr_w), Some(pr_r)) = (pr_weight, pr_reps) {
+                        !bw && weight > 0.0 && weight == pr_w && reps == pr_r
+                    } else {
+                        false
+                    };
+
                     let current_info = if bw {
                         format!("bw × {}", reps)
                     } else if weight > 0.0 {
-                        format!("{}kg × {}", weight, reps)
+                        let set_info = format!("{}kg × {}", weight, reps);
+                        if is_pr_set {
+                            set_info.green().bold().to_string()
+                        } else {
+                            set_info
+                        }
                     } else {
                         String::new()
                     };
