@@ -289,7 +289,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     SELECT 
                         e.id,
                         e.name,
-                        COALESCE(pe.sets, 3) as sets,
+                        COALESCE(pe.sets, 2) as sets,
                         pe.reps,
                         e.current_pr_date,
                         e.estimated_one_rm,
@@ -1218,7 +1218,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
             .fetch_optional(pool)
             .await?;
 
-            let (old_session_exercise_id, _old_exercise_id, old_exercise_name) =
+            let (old_session_exercise_id, old_exercise_id, old_exercise_name) =
                 match old_exercise_info {
                     Some(info) => info,
                     None => {
@@ -1230,6 +1230,17 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         return Ok(());
                     }
                 };
+
+            // Get the original exercise's set count from the program
+            let original_sets: i32 = sqlx::query_scalar(
+                "SELECT COALESCE(pe.sets, 2) FROM program_exercises pe 
+                 WHERE pe.program_block_id = ? AND pe.exercise_id = ?"
+            )
+            .bind(&program_block_id)
+            .bind(&old_exercise_id)
+            .fetch_optional(pool)
+            .await?
+            .unwrap_or(2); // Default to 2 sets if not found
 
             // Resolve the new exercise (by index or name)
             let new_exercise_id: String = if let Ok(idx) = new_exercise.parse::<i64>() {
@@ -1281,15 +1292,46 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
             // Start a transaction
             let mut tx = pool.begin().await?;
 
-            // Get the sets and reps info from the program_exercises for display only
-            let (sets, reps) = sqlx::query_as::<_, (i32, Option<String>)>(
-                "SELECT sets, reps FROM program_exercises WHERE program_block_id = ? AND exercise_id = ?"
+            // Get the reps info from the program_exercises for display only
+            let reps: Option<String> = sqlx::query_scalar(
+                "SELECT reps FROM program_exercises WHERE program_block_id = ? AND exercise_id = ?"
             )
             .bind(&program_block_id)
             .bind(&new_exercise_id)  // Display info for the new exercise being swapped in
             .fetch_optional(&mut *tx)
-            .await?
-            .unwrap_or((2, None)); // Default to 2 sets with no specific reps for swapped exercises
+            .await?;
+
+            // Check if the new exercise already exists in program_exercises
+            let existing_program_exercise: Option<String> = sqlx::query_scalar(
+                "SELECT id FROM program_exercises WHERE program_block_id = ? AND exercise_id = ?"
+            )
+            .bind(&program_block_id)
+            .bind(&new_exercise_id)
+            .fetch_optional(&mut *tx)
+            .await?;
+
+            if let Some(pe_id) = existing_program_exercise {
+                // Update existing program exercise to use the original exercise's set count
+                sqlx::query(
+                    "UPDATE program_exercises SET sets = ? WHERE id = ?"
+                )
+                .bind(original_sets)
+                .bind(pe_id)
+                .execute(&mut *tx)
+                .await?;
+            } else {
+                // Create a new program exercise with the original exercise's set count
+                sqlx::query(
+                    "INSERT INTO program_exercises (id, program_block_id, exercise_id, sets, order_index) 
+                     VALUES (?, ?, ?, ?, 999)"
+                )
+                .bind(Uuid::new_v4().to_string())
+                .bind(&program_block_id)
+                .bind(&new_exercise_id)
+                .bind(original_sets)
+                .execute(&mut *tx)
+                .await?;
+            }
 
             // Update the training_session_exercise record ONLY
             sqlx::query("UPDATE training_session_exercises SET exercise_id = ? WHERE id = ?")
@@ -1307,7 +1349,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 "ok:".green().bold(),
                 old_exercise_name.bold(),
                 new_exercise_name.bold(),
-                sets,
+                original_sets,
                 reps.as_deref()
                     .map(|r| format!(" of {}", r))
                     .unwrap_or_default()
@@ -1527,7 +1569,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 SELECT 
                     e.id,
                     e.name,
-                    COALESCE(pe.sets, 3) as sets,
+                    COALESCE(pe.sets, 2) as sets,
                     pe.reps,
                     e.current_pr_date,
                     e.estimated_one_rm,
