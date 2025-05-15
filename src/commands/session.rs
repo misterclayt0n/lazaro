@@ -426,14 +426,14 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 {
                     let idx = format!("{}", i + 1).yellow();
 
-                    // Get the latest PR for this exercise
+                    // Get the best (highest 1RM) PR for this exercise
                     let (pr_weight, pr_reps, pr_1rm): (Option<f32>, Option<i32>, Option<f32>) =
                         sqlx::query_as(
                             r#"
                         SELECT weight, reps, estimated_1rm
                         FROM personal_records
                         WHERE exercise_id = ?
-                        ORDER BY date DESC
+                        ORDER BY estimated_1rm DESC
                         LIMIT 1
                         "#,
                         )
@@ -848,7 +848,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     SELECT weight, reps
                     FROM personal_records
                     WHERE exercise_id = ?
-                    ORDER BY date DESC
+                    ORDER BY estimated_1rm DESC
                     LIMIT 1
                     "#,
                 )
@@ -1050,7 +1050,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         SELECT weight, reps, estimated_1rm
                         FROM personal_records
                         WHERE exercise_id = ?
-                        ORDER BY date DESC
+                        ORDER BY estimated_1rm DESC
                         LIMIT 1
                     )
                     SELECT 
@@ -1706,14 +1706,14 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
             {
                 let idx = format!("{}", i + 1).yellow();
 
-                // Get the latest PR for this exercise
+                // Get the best (highest 1RM) PR for this exercise
                 let (pr_weight, pr_reps, pr_1rm): (Option<f32>, Option<i32>, Option<f32>) =
                     sqlx::query_as(
                         r#"
                         SELECT weight, reps, estimated_1rm
                         FROM personal_records
                         WHERE exercise_id = ?
-                        ORDER BY date DESC
+                        ORDER BY estimated_1rm DESC
                         LIMIT 1
                         "#,
                     )

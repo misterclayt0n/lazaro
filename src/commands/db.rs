@@ -11,6 +11,8 @@ struct DatabaseDump {
     exercises: Vec<Exercise>,
     programs: Vec<Program>,
     sessions: Vec<Session>,
+    #[serde(default)]
+    personal_records: Vec<PersonalRecord>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -85,6 +87,15 @@ struct ExerciseSet {
     timestamp: String,
     ignore_for_one_rm: bool,
     bodyweight: bool,
+}
+
+#[derive(Serialize, Deserialize)]
+struct PersonalRecord {
+    exercise_id: String,
+    date: String,
+    weight: f64,
+    reps: i32,
+    estimated_1rm: f64,
 }
 
 /* ────────────────────────── public entry point ───────────────────────── */
@@ -422,11 +433,31 @@ async fn export_db(pool: &SqlitePool, file_path: &str) -> Result<()> {
         });
     }
 
+    // Fetch personal records
+    let personal_records = query(
+        r#"
+        SELECT exercise_id, date, weight, reps, estimated_1rm
+        FROM personal_records
+        "#
+    )
+    .fetch_all(pool)
+    .await?
+    .into_iter()
+    .map(|row| PersonalRecord {
+        exercise_id: row.get("exercise_id"),
+        date: row.get("date"),
+        weight: row.get("weight"),
+        reps: row.get("reps"),
+        estimated_1rm: row.get("estimated_1rm"),
+    })
+    .collect::<Vec<_>>();
+
     // Create the final dump structure
     let dump = DatabaseDump {
         exercises,
         programs,
         sessions,
+        personal_records,
     };
 
     // Write to file
@@ -580,6 +611,120 @@ async fn import_db(pool: &SqlitePool, file_path: &str) -> Result<()> {
                 .execute(&mut *tx)
                 .await?;
             }
+        }
+    }
+
+    // Import personal records if there are any in the dump
+    if !dump.personal_records.is_empty() {
+        for pr in dump.personal_records {
+            query(
+                r#"
+                INSERT OR REPLACE INTO personal_records
+                (exercise_id, date, weight, reps, estimated_1rm)
+                VALUES (?, ?, ?, ?, ?)
+                "#
+            )
+            .bind(&pr.exercise_id)
+            .bind(&pr.date)
+            .bind(pr.weight)
+            .bind(pr.reps)
+            .bind(pr.estimated_1rm)
+            .execute(&mut *tx)
+            .await?;
+        }
+    } else {
+        // If no PRs in the dump, calculate them from session sets
+        // First, clear any existing PRs
+        query("DELETE FROM personal_records")
+            .execute(&mut *tx)
+            .await?;
+
+        // Insert daily PRs - one best set per exercise per day
+        query(
+            r#"
+            INSERT INTO personal_records
+                  (exercise_id, date, weight, reps, estimated_1rm)
+            WITH ranked AS (
+                SELECT
+                    e.id                             AS exercise_id,
+                    date(ts.start_time)              AS day,
+                    es.weight                        AS weight,
+                    es.reps                          AS reps,
+                    es.weight * (1.0 + es.reps/30.0) AS estimated_1rm,
+                    ROW_NUMBER() OVER (
+                        PARTITION BY e.id, date(ts.start_time)
+                        ORDER BY es.weight * (1.0 + es.reps/30.0) DESC
+                    ) AS rn
+                FROM   exercise_sets es
+                JOIN   training_session_exercises tse ON tse.id = es.session_exercise_id
+                JOIN   training_sessions         ts  ON ts.id  = tse.training_session_id
+                JOIN   exercises                 e   ON e.id   = tse.exercise_id
+                WHERE  es.weight > 0
+                  AND  es.ignore_for_one_rm = 0
+            )
+            SELECT exercise_id, day, weight, reps, estimated_1rm
+            FROM   ranked
+            WHERE  rn = 1
+            "#
+        )
+        .execute(&mut *tx)
+        .await?;
+
+        // Find all-time PR for each exercise
+        let exercise_prs = query(
+            r#"
+            WITH all_sets AS (
+                SELECT
+                    e.id AS exercise_id,
+                    e.name AS exercise_name,
+                    es.weight,
+                    es.reps,
+                    es.weight * (1.0 + es.reps/30.0) AS estimated_1rm,
+                    date(ts.start_time) AS date
+                FROM exercise_sets es
+                JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
+                JOIN training_sessions ts ON ts.id = tse.training_session_id
+                JOIN exercises e ON e.id = tse.exercise_id
+                WHERE es.weight > 0
+                  AND es.ignore_for_one_rm = 0
+            ),
+            ranked_by_1rm AS (
+                SELECT
+                    exercise_id,
+                    date,
+                    weight,
+                    reps,
+                    estimated_1rm,
+                    ROW_NUMBER() OVER (PARTITION BY exercise_id ORDER BY estimated_1rm DESC) AS rn
+                FROM all_sets
+            )
+            SELECT exercise_id, date, weight, reps, estimated_1rm
+            FROM ranked_by_1rm
+            WHERE rn = 1
+            "#
+        )
+        .fetch_all(&mut *tx)
+        .await?;
+
+        // Update each exercise with its best PR
+        for row in exercise_prs {
+            let exercise_id: String = row.get("exercise_id");
+            let date: String = row.get("date");
+            let estimated_1rm: f64 = row.get("estimated_1rm");
+
+            query(
+                r#"
+                UPDATE exercises
+                SET current_pr_date = ?,
+                    estimated_one_rm = ?
+                WHERE id = ?
+                "#
+            )
+            .bind(&date)
+            .bind(estimated_1rm)
+            .bind(&exercise_id)
+            .execute(&mut *tx)
+            .await?;
         }
     }
 
