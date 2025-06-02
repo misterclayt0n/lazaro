@@ -145,14 +145,31 @@ async fn generate_progression_graph(
     // Calculate estimated 1RM for each set
     let data: Vec<(DateTime<Utc>, f32)> = sets
         .into_iter()
-        .map(|(timestamp, weight, reps)| {
-            let dt = DateTime::parse_from_rfc3339(&timestamp)
-                .unwrap()
-                .with_timezone(&Utc);
+        .filter_map(|(timestamp, weight, reps)| {
+            // Try different SQLite datetime formats
+            let dt = if let Ok(naive_dt) = chrono::NaiveDateTime::parse_from_str(&timestamp, "%Y-%m-%d %H:%M:%S") {
+                // Format: "2025-06-02 16:07:45"
+                naive_dt.and_utc()
+            } else if let Ok(naive_dt) = chrono::NaiveDateTime::parse_from_str(&timestamp, "%Y-%m-%d %H:%M:%S%.f") {
+                // Format: "2025-06-02 16:07:45.123"
+                naive_dt.and_utc()
+            } else if let Ok(dt) = DateTime::parse_from_rfc3339(&timestamp) {
+                // Format: "2025-06-02T16:07:45Z" or similar
+                dt.with_timezone(&Utc)
+            } else {
+                eprintln!("Warning: Could not parse timestamp '{}', skipping", timestamp);
+                return None;
+            };
+            
             let estimated_1rm = weight * (1.0 + reps as f32 / 30.0);
-            (dt, estimated_1rm)
+            Some((dt, estimated_1rm))
         })
         .collect();
+
+    if data.is_empty() {
+        println!("{} No valid data available for graph", "warning:".yellow().bold());
+        return Ok(());
+    }
 
     // Get terminal size and use a smaller size for the graph
     let (term_width, term_height) = term_size::dimensions().unwrap_or((80, 24));
