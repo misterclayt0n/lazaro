@@ -42,6 +42,21 @@ pub enum Commands {
         month: Option<u32>,
     },
 
+    /// Show global progression and training status
+    Status {
+        /// Show progression for a specific muscle group
+        #[arg(short, long)]
+        muscle: Option<String>,
+
+        /// Time period in weeks (defaults to 12)
+        #[arg(short, long, default_value = "12")]
+        weeks: u32,
+
+        /// Show graph instead of summary
+        #[arg(short, long)]
+        graph: bool,
+    },
+
     /// Db operations
     #[command(subcommand)]
     Db(DbCmd),
