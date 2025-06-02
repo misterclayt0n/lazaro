@@ -855,9 +855,11 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
 
             // Check if this is a new PR
             let is_pr = if !is_bodyweight {
-                let (pr_weight, pr_reps): (Option<f32>, Option<i32>) = sqlx::query_as(
+                let current_estimated_1rm = epley_1rm(parsed_weight.unwrap_or(0.0), reps);
+                
+                let best_pr_1rm: Option<f32> = sqlx::query_scalar(
                     r#"
-                    SELECT weight, reps
+                    SELECT estimated_1rm
                     FROM personal_records
                     WHERE exercise_id = ?
                     ORDER BY estimated_1rm DESC
@@ -866,17 +868,11 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                 )
                 .bind(&exercise_id)
                 .fetch_optional(&mut *tx)
-                .await?
-                .unwrap_or((None, None));
+                .await?;
 
-                if let (Some(pr_weight), Some(pr_reps)) = (pr_weight, pr_reps) {
-                    // For non-bodyweight exercises, compare weight × reps
-                    let current_total = parsed_weight.unwrap_or(0.0) * reps as f32;
-                    let pr_total = pr_weight * pr_reps as f32;
-                    current_total > pr_total
-                } else {
-                    // No previous PR, so this is a PR
-                    true
+                match best_pr_1rm {
+                    Some(best_1rm) => current_estimated_1rm > best_1rm,
+                    None => true, // If no previous PR, this is a PR
                 }
             } else {
                 // For bodyweight exercises, just compare reps
