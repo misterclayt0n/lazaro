@@ -4,8 +4,8 @@ name = "Bench Press"
 primary_muscle = "chest"
 description = "Flat bench barbell press"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 128.33333333333334
-current_pr_date = "2025-03-25"
+estimated_one_rm = 132.0
+current_pr_date = "2025-05-19 18:06:46"
 
 [[exercises]]
 id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
@@ -22,8 +22,8 @@ name = "Machine Incline Press"
 primary_muscle = "chest"
 description = "Full stretch with pause at the bottom always, don't need to lock out to be consider a rep"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 163.33333333333334
-current_pr_date = "2025-05-07"
+estimated_one_rm = 181.3333282470703
+current_pr_date = "2025-05-26 19:25:52"
 
 [[exercises]]
 id = "e1a0189b-b18c-4461-89e4-95cf6c8bd7bb"
@@ -40,8 +40,8 @@ name = "Fly Machine"
 primary_muscle = "chest"
 description = "Try to stretch the pecs as much as possible"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 102.6
-current_pr_date = "2025-02-28"
+estimated_one_rm = 142.5
+current_pr_date = "2025-05-26 18:50:32"
 
 [[exercises]]
 id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
@@ -58,8 +58,8 @@ name = "Bent Over Row"
 primary_muscle = "back"
 description = "Stop at the bottom, full stretch"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 151.66666666666669
-current_pr_date = "2025-05-05"
+estimated_one_rm = 163.3333282470703
+current_pr_date = "2025-05-19 18:23:26"
 
 [[exercises]]
 id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
@@ -67,8 +67,8 @@ name = "Machine Row"
 primary_muscle = "back"
 description = "Full range of motion always with big stretch, pause for 1 second"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 198.00000000000003
-current_pr_date = "2025-03-31"
+estimated_one_rm = 216.00001525878906
+current_pr_date = "2025-05-29 19:44:32"
 
 [[exercises]]
 id = "ce738f93-8d0f-4a7c-a6df-18d9257745db"
@@ -99,8 +99,8 @@ name = "Weighted Pull-Up"
 primary_muscle = "back"
 description = "Full stretch with pause at the bottom always"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 45.33333333333333
-current_pr_date = "2025-05-07"
+estimated_one_rm = 46.666664123535156
+current_pr_date = "2025-05-29 18:58:26"
 
 [[exercises]]
 id = "e0c58361-536a-4111-afd5-60188f0b6447"
@@ -108,8 +108,8 @@ name = "Machine Overhead Press"
 primary_muscle = "shoulders"
 description = "Don't need to lockout, but need full stretch"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 102.6
-current_pr_date = "2025-04-07"
+estimated_one_rm = 105.45000457763672
+current_pr_date = "2025-05-19 18:41:38"
 
 [[exercises]]
 id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
@@ -117,8 +117,8 @@ name = "Barbell Overhead Press"
 primary_muscle = "shoulders"
 description = "Pause at face level, drive with your shoulders"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 85.0
-current_pr_date = "2025-04-09"
+estimated_one_rm = 87.5
+current_pr_date = "2025-05-15 18:32:59"
 
 [[exercises]]
 id = "74ba898e-4fa5-48c5-97dd-fb4a34331b1c"
@@ -183,8 +183,8 @@ name = "Smith JM Press"
 primary_muscle = "triceps"
 description = "Elbows up, kind of like you're punching the weight"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 96.0
-current_pr_date = "2025-05-07"
+estimated_one_rm = 113.33333587646484
+current_pr_date = "2025-05-15 19:33:12"
 
 [[exercises]]
 id = "db2b345d-8817-4447-83b1-24637cd37e9c"
@@ -192,8 +192,8 @@ name = "Tricep Pushdown"
 primary_muscle = "triceps"
 description = "Cable with the bar, stretch and 1 second pause at the top"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 60.166666666666664
-current_pr_date = "2025-03-27"
+estimated_one_rm = 63.000003814697266
+current_pr_date = "2025-05-26 19:25:52"
 
 [[exercises]]
 id = "954b1d2a-9b20-4688-a5eb-cfb2c1866ff5"
@@ -305,8 +305,8 @@ name = "Cable Wrist Curl"
 primary_muscle = "forearms"
 description = "Do this on your back"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 77.0
-current_pr_date = "2025-02-25"
+estimated_one_rm = 61.5
+current_pr_date = "2025-03-19"
 
 [[exercises]]
 id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
@@ -314,8 +314,8 @@ name = "High Bar Squat"
 primary_muscle = "quads"
 description = "Full depth barbell high bar back squat"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 160.0
-current_pr_date = "2025-02-18"
+estimated_one_rm = 168.0
+current_pr_date = "2025-05-27 20:02:54"
 
 [[exercises]]
 id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
@@ -341,8 +341,8 @@ name = "Leg Press"
 primary_muscle = "quads"
 description = "Pause for 1 second at the bottom"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 308.0
-current_pr_date = "2025-05-08"
+estimated_one_rm = 317.3333435058594
+current_pr_date = "2025-05-27 19:40:44"
 
 [[exercises]]
 id = "abc7548c-00db-4a2a-8b6e-87c453308dc5"
@@ -357,6 +357,8 @@ name = "Belt Squat"
 primary_muscle = "quads"
 description = "Pause for 1 second at the bottom"
 created_at = "2025-03-31T18:11:23Z"
+estimated_one_rm = 114.00000762939453
+current_pr_date = "2025-05-21 18:49:03"
 
 [[exercises]]
 id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
@@ -380,8 +382,8 @@ name = "Lying Leg Curl"
 primary_muscle = "hamstrings"
 description = "Pause at the bottom for 1 second"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 117.16666666666667
-current_pr_date = "2025-04-02"
+estimated_one_rm = 120.33332824707031
+current_pr_date = "2025-05-27 19:50:40"
 
 [[exercises]]
 id = "46a87b35-49fa-4dea-b86e-7546b033103f"
@@ -407,8 +409,8 @@ name = "SLDL"
 primary_muscle = "hamstrings"
 description = "Dead stop at every rep"
 created_at = "2025-03-31T18:11:24Z"
-estimated_one_rm = 192.0
-current_pr_date = "2025-05-06"
+estimated_one_rm = 176.0
+current_pr_date = "2025-05-21 18:34:51"
 
 [[exercises]]
 id = "323673b3-eda6-460f-8868-a12f56ba1da3"
@@ -484,8 +486,8 @@ name = "Lat Pulldown"
 primary_muscle = "back"
 description = "Full stretch with pause at the bottom always"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 128.4
-current_pr_date = "2025-04-24"
+estimated_one_rm = 140.0
+current_pr_date = "2025-05-26 18:56:14"
 
 [[exercises]]
 id = "78fc24f1-dd4e-4e73-8909-68d643c5df63"
@@ -516,8 +518,8 @@ name = "Machine Preacher Curl"
 primary_muscle = "biceps"
 description = "Always go to absolute stretch and full ROM"
 created_at = "2025-03-31T18:11:23Z"
-estimated_one_rm = 102.0
-current_pr_date = "2025-05-07"
+estimated_one_rm = 93.33332824707031
+current_pr_date = "2025-05-26 19:16:31"
 
 [[exercises]]
 id = "e662cd16-b03b-47ec-a7ee-1f3200bc1eca"
@@ -542,6 +544,69 @@ primary_muscle = "quads"
 description = "Pause for 1 second at the bottom"
 created_at = "2025-03-31T18:11:23Z"
 
+[[exercises]]
+id = "46ea689c-c9d2-47f2-9fb1-ac4207b46cd7"
+name = "Machine Incline Press (cybex)"
+primary_muscle = "chest"
+description = ""
+created_at = "2025-05-15 18:50:10"
+estimated_one_rm = 120.74999237060547
+current_pr_date = "2025-05-15 18:53:33"
+
+[[exercises]]
+id = "87e60018-0827-4884-981e-1ad9ff75c85f"
+name = "Single Arm Cable Row"
+primary_muscle = "back"
+description = ""
+created_at = "2025-05-15 18:55:16"
+estimated_one_rm = 86.4000015258789
+current_pr_date = "2025-05-26 18:40:22"
+
+[[exercises]]
+id = "0515a0c3-86da-48cf-9762-62645bf04aed"
+name = "Machine Preacher Curl (supreme)"
+primary_muscle = "biceps"
+description = ""
+created_at = "2025-05-15 19:22:43"
+estimated_one_rm = 186.66665649414063
+current_pr_date = "2025-05-15 19:33:03"
+
+[[exercises]]
+id = "026a4108-a658-4299-ae34-423629cf940d"
+name = "Single Arm Pushdown"
+primary_muscle = "triceps"
+description = ""
+created_at = "2025-05-19 18:54:28"
+estimated_one_rm = 30.000001907348633
+current_pr_date = "2025-05-29 19:43:15"
+
+[[exercises]]
+id = "5b07363e-770b-4f94-81cd-3b69ad51b67f"
+name = "smith bulgarian split squat"
+primary_muscle = "quads"
+description = ""
+created_at = "2025-05-21 18:56:51"
+estimated_one_rm = 93.33332824707031
+current_pr_date = "2025-05-21 19:07:06"
+
+[[exercises]]
+id = "523769d9-3898-4d88-82bc-84b18c40c45f"
+name = "Smith Seated Overhead Press"
+primary_muscle = "shoulders"
+description = ""
+created_at = "2025-05-23 17:26:58"
+estimated_one_rm = 93.33332824707031
+current_pr_date = "2025-05-23 17:35:05"
+
+[[exercises]]
+id = "b22f1f64-5993-4e5d-bde9-7523327aa7f8"
+name = "Smith RDL"
+primary_muscle = "hamstrings"
+description = ""
+created_at = "2025-05-27 19:06:21"
+estimated_one_rm = 181.3333282470703
+current_pr_date = "2025-05-27 20:02:54"
+
 [[programs]]
 id = "legacy-prog"
 name = "Legacy import"
@@ -552,6 +617,459 @@ created_at = "2025-05-14 16:55:31"
 id = "legacy-block"
 name = "Imported sessions"
 exercises = []
+
+[[programs]]
+id = "e8037b38-7b39-4fd9-8d36-0fd9c91c91ed"
+name = "Mister"
+description = "No need for description"
+created_at = "2025-05-15 18:12:44"
+
+[[programs.blocks]]
+id = "0df21d75-deeb-4c5e-85c2-fe8208dfd53f"
+name = "Upper Day 1"
+description = "Primary bench day"
+
+[[programs.blocks.exercises]]
+id = "bef44f53-ca4c-48ab-9512-1edf4bd9f6cf"
+exercise_id = "026a4108-a658-4299-ae34-423629cf940d"
+sets = 3
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "30492e82-a4d4-48ea-8c9d-ded9b7c3d918"
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "9e72dbfa-1a2e-4989-925f-5019d1311d00"
+exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 8
+
+[[programs.blocks.exercises]]
+id = "76c42d06-0cf8-4b8b-bc44-f6cf2406f244"
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+sets = 3
+reps = "4-6,4-6,6-8"
+program_1rm = 110.0
+order_index = 0
+
+[[programs.blocks.exercises]]
+id = "503f6730-6adc-44fb-aa1a-ae8e6b78a090"
+exercise_id = "87e60018-0827-4884-981e-1ad9ff75c85f"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "99bf950d-9b4e-4693-9bef-b2893ecafe08"
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+sets = 3
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "5e7aed7c-2e7b-4598-8aca-43667ca64544"
+exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+sets = 3
+reps = "4-8,4-8,AMRAP"
+order_index = 5
+
+[[programs.blocks.exercises]]
+id = "8d11d3f9-777d-474a-b2eb-aef1719db6b1"
+exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+sets = 2
+reps = "4-8,4-8"
+order_index = 1
+
+[[programs.blocks.exercises]]
+id = "dc8773db-24e2-44e5-820e-c89d13ef6b0e"
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+sets = 3
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "e7851087-9a54-47a1-a37c-50a67fd1fa3a"
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+sets = 3
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "98821641-ccf7-47f5-be14-4e89f932d333"
+exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "5d1f58a5-eebc-4e78-a10a-3ef2161232f3"
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+sets = 2
+reps = "4-8,4-8"
+order_index = 4
+
+[[programs.blocks.exercises]]
+id = "5e2e5363-11af-4bee-a5b6-65d976e18a72"
+exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+sets = 3
+reps = "4-8,4-8,AMRAP"
+order_index = 6
+
+[[programs.blocks.exercises]]
+id = "31ff58c5-6b58-4d11-9623-38f2edd59676"
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "98def7b0-bd15-4303-9622-0beaadfa34f4"
+exercise_id = "f19b6bd8-0964-4118-8188-0a8044e7548c"
+sets = 3
+reps = "4-8,4-8,AMRAP"
+order_index = 7
+
+[[programs.blocks.exercises]]
+id = "86931b81-67a3-4ad7-b9a4-6040a54e4d1d"
+exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+sets = 2
+reps = "4-8,4-8"
+order_index = 2
+
+[[programs.blocks.exercises]]
+id = "d4a56915-90af-44fc-879a-2c3c523ec11a"
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+sets = 2
+reps = "4-8,4-8"
+order_index = 3
+
+[[programs.blocks]]
+id = "45d9d66f-2f6e-4f78-ba1c-b2714eb05dc7"
+name = "Lower Day 1"
+description = "Primary squat day"
+
+[[programs.blocks.exercises]]
+id = "561214db-fc45-493e-a131-d922ec70369b"
+exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "707efdb4-e4ee-41ed-bb82-e1af6da9fbb8"
+exercise_id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
+sets = 2
+reps = "4-8,4-8"
+order_index = 1
+
+[[programs.blocks.exercises]]
+id = "4cd6b200-0b88-4d1f-b96e-355dafe1587a"
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+sets = 2
+reps = "4-8,4-8"
+order_index = 3
+
+[[programs.blocks.exercises]]
+id = "ee461bc3-670b-477b-bce3-c30fca4892b5"
+exercise_id = "5b07363e-770b-4f94-81cd-3b69ad51b67f"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "a0e39d12-1bcb-4fc3-b0c1-4cc51ab6026f"
+exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "0cb6e469-aed7-454f-8d29-d2250099c85d"
+exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+sets = 2
+reps = "4-8,4-8"
+order_index = 5
+
+[[programs.blocks.exercises]]
+id = "74ef12f9-4219-4cb2-bf37-793bbcdf7b9d"
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+sets = 2
+reps = "4-8,4-8"
+order_index = 4
+
+[[programs.blocks.exercises]]
+id = "c9bea28f-2707-4154-b506-cf6d919d093c"
+exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+sets = 2
+reps = "4-8,4-8"
+notes = "Take some rest between legs"
+order_index = 2
+
+[[programs.blocks.exercises]]
+id = "f37fb966-2477-4817-91f1-18c7f013663a"
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+sets = 3
+reps = "4-6,4-6,6-8"
+program_1rm = 150.0
+order_index = 0
+
+[[programs.blocks.exercises]]
+id = "4d5a5c8e-f101-4931-a96b-6361b9297f77"
+exercise_id = "b22f1f64-5993-4e5d-bde9-7523327aa7f8"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "16e1dc9c-81e7-41fc-8fbb-6abc355673fa"
+exercise_id = "c18218bc-4573-4560-b11b-3aec99b39682"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "959ac3aa-1488-4f09-8acc-e2abca92f0a8"
+exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 6
+
+[[programs.blocks.exercises]]
+id = "272ca44e-dce1-4a17-b64b-d2049fefedd7"
+exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+sets = 3
+reps = "AMRAP,AMRAP,AMRAP"
+order_index = 7
+
+[[programs.blocks.exercises]]
+id = "7b528725-798a-4885-99ca-83b2e9924d67"
+exercise_id = "fd1b7922-9691-4407-8434-56a671a20e01"
+sets = 2
+order_index = 999
+
+[[programs.blocks]]
+id = "65124cce-c782-4b59-b810-43011dfa2593"
+name = "Upper Day 2"
+description = "Secondary upper body day"
+
+[[programs.blocks.exercises]]
+id = "3a314ec2-9727-41d4-be8a-7dea375af308"
+exercise_id = "026a4108-a658-4299-ae34-423629cf940d"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "9256d9fd-78ea-46c4-a342-02b01d40aa67"
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "762b74d3-a09e-42c0-b546-27824d76c0ca"
+exercise_id = "0515a0c3-86da-48cf-9762-62645bf04aed"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "75b8d15b-12b0-4b36-8037-c94a9c64a14d"
+exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+sets = 2
+reps = "4-8,4-8"
+order_index = 6
+
+[[programs.blocks.exercises]]
+id = "d2b65742-597e-4c6a-9bb5-da8e15896747"
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+sets = 2
+reps = "4-8,4-8"
+order_index = 3
+
+[[programs.blocks.exercises]]
+id = "7512557e-48b5-45fd-9dad-3f5369ad1974"
+exercise_id = "215bdffc-62b4-4bb7-ae90-5ff2342661e8"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "b74824c1-0b93-475f-9aa6-78cb578c83b6"
+exercise_id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
+sets = 2
+reps = "AMRAP,AMRAP"
+order_index = 8
+
+[[programs.blocks.exercises]]
+id = "cf162a93-96f2-4af1-88d7-32c5fc9c02d5"
+exercise_id = "46ea689c-c9d2-47f2-9fb1-ac4207b46cd7"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "eda73bcb-6c60-49aa-9296-29499ebc8fd5"
+exercise_id = "523769d9-3898-4d88-82bc-84b18c40c45f"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "456c6526-bee4-49b8-b16e-89c9426a5bee"
+exercise_id = "87e60018-0827-4884-981e-1ad9ff75c85f"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "bed8879e-a9b0-4067-a1dc-2ebbb09f11a9"
+exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+sets = 2
+reps = "4-8,4-8"
+order_index = 4
+
+[[programs.blocks.exercises]]
+id = "f0f3fee8-afcf-4d56-8a68-2f106ac71437"
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+sets = 2
+reps = "4-8,4-8"
+order_index = 2
+
+[[programs.blocks.exercises]]
+id = "88ee690b-f417-4429-a06f-bca675f05d82"
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+sets = 2
+reps = "4-8,4-8"
+order_index = 7
+
+[[programs.blocks.exercises]]
+id = "00cb176d-341d-4348-9b8e-526cb3474da1"
+exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+sets = 2
+reps = "4-8,4-8"
+order_index = 5
+
+[[programs.blocks.exercises]]
+id = "e02aee9a-a284-4c74-93cf-ae43baaffd07"
+exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+sets = 2
+order_index = 999
+
+[[programs.blocks.exercises]]
+id = "bd85a335-2a8e-448d-a163-69b12108b2f3"
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+sets = 2
+reps = "4-8,4-8"
+order_index = 0
+
+[[programs.blocks.exercises]]
+id = "ecef09ae-5db5-483e-b246-5df82fa4b0bb"
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+sets = 2
+reps = "3-6,3-6"
+order_index = 1
+
+[[programs.blocks]]
+id = "f7f5e974-4ff1-4222-a377-2d723953d906"
+name = "Lower Day 2"
+description = "Secondary squat day"
+
+[[programs.blocks.exercises]]
+id = "e3e8c1d6-c833-495e-bad1-0824186d843a"
+exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+sets = 2
+reps = "6-8,6-8"
+order_index = 2
+
+[[programs.blocks.exercises]]
+id = "f85a4f90-0f99-4441-970c-f5a0b8c2de32"
+exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 5
+
+[[programs.blocks.exercises]]
+id = "009e2586-1608-4e6a-9daa-e7c428f5036e"
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+sets = 3
+reps = "4-8,4-8,AMRAP"
+order_index = 1
+
+[[programs.blocks.exercises]]
+id = "96b4a425-6e22-45f0-94d7-93b8f4c5467c"
+exercise_id = "4db7342f-b484-4a1a-a731-360c1ac8499f"
+sets = 2
+reps = "4-6,4-6"
+order_index = 0
+
+[[programs.blocks.exercises]]
+id = "406e4522-324e-441a-bdc5-32ec974b9c3e"
+exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+sets = 2
+reps = "4-8,4-8"
+order_index = 4
+
+[[programs.blocks.exercises]]
+id = "73b879cc-b18e-448b-803f-da4273a43813"
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+sets = 2
+reps = "4-8,4-8"
+order_index = 3
+
+[[programs.blocks.exercises]]
+id = "7e5aaecf-876d-48f9-bc2f-6ee57b160e69"
+exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+sets = 3
+reps = "AMRAP,AMRAP,AMRAP"
+order_index = 6
+
+[[programs.blocks]]
+id = "d15ea1e0-1c68-4fef-acc1-c1eca5866faa"
+name = "Upper Day 3"
+description = "Tertiary upper body day"
+
+[[programs.blocks.exercises]]
+id = "eb4c3a11-8d9a-442a-b36f-7fca4159f7d7"
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+sets = 2
+reps = "4-8,4-8"
+order_index = 1
+
+[[programs.blocks.exercises]]
+id = "556dd315-a7f9-4a8c-9128-d59e3b3ecff5"
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+sets = 2
+reps = "4-8,4-8"
+order_index = 0
+
+[[programs.blocks.exercises]]
+id = "d83cc2d6-e2d2-4282-a5b9-34e5a427963a"
+exercise_id = "3e64096a-f6f8-4bc0-8110-aff7992be6cc"
+sets = 2
+reps = "4-8,4-8"
+order_index = 5
+
+[[programs.blocks.exercises]]
+id = "eca6bc2b-1d9c-4ac2-9103-1c0573495a28"
+exercise_id = "57155170-9937-4f82-a611-a2878d073c4a"
+sets = 2
+reps = "4-8,4-8"
+order_index = 2
+
+[[programs.blocks.exercises]]
+id = "b1e79e7d-8b0d-480d-9973-bc7caa68c8a6"
+exercise_id = "8625a7ec-07da-4716-b446-94986f324656"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 6
+
+[[programs.blocks.exercises]]
+id = "89152e30-810c-435f-9ed6-96435a48b675"
+exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+sets = 2
+reps = "4-8,4-8"
+order_index = 3
+
+[[programs.blocks.exercises]]
+id = "98155755-c8c5-4d69-b94f-6707c5f9ae2e"
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+sets = 2
+reps = "4-8,4-8"
+order_index = 4
+
+[[programs.blocks.exercises]]
+id = "2ff46e25-3ba0-454f-9bdf-333a7d30165d"
+exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+sets = 3
+reps = "AMRAP,AMRAP,AMRAP"
+order_index = 7
 
 [[sessions]]
 id = "e3dfba9d-3c0f-46bf-b9c2-511aeb3fb2ae"
@@ -11431,3 +11949,3091 @@ reps = 0
 timestamp = "0001-01-01T00:00:00Z"
 ignore_for_one_rm = false
 bodyweight = false
+
+[[sessions]]
+id = "0754db58-a8dc-43ce-a1ed-43cceff83fc8"
+program_block_id = "65124cce-c782-4b59-b810-43011dfa2593"
+start_time = "2025-05-15 18:12:56"
+end_time = "2025-05-15 19:33:12"
+
+[[sessions.exercises]]
+id = "57a18743-4a2d-4427-8d40-fdfbedce3923"
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+
+[[sessions.exercises.sets]]
+id = "fef78621-e357-4fb2-9170-5083db4d979f"
+weight = 70.0
+reps = 5
+timestamp = "2025-05-15 18:25:04"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "78d7d869-ec4d-4c72-bffc-56862ace8f03"
+weight = 75.0
+reps = 5
+timestamp = "2025-05-15 18:32:59"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "11dc4124-4a40-4ba2-a0f9-7d87b9a728cd"
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+
+[[sessions.exercises.sets]]
+id = "9c28189d-f016-4e09-be16-6d4188066f6b"
+weight = 113.0
+reps = 6
+timestamp = "2025-05-15 18:44:34"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "d0beba8f-220b-4946-8596-4fc084b7b7da"
+weight = 120.0
+reps = 4
+timestamp = "2025-05-15 18:48:14"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "0b68924e-1482-4d4a-9792-e4d6475b0b45"
+exercise_id = "46ea689c-c9d2-47f2-9fb1-ac4207b46cd7"
+
+[[sessions.exercises.sets]]
+id = "56be53b3-cec4-4456-ab09-2e9c6e07ebde"
+weight = 65.0
+reps = 6
+timestamp = "2025-05-15 18:51:18"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "95a6df43-ef2b-42d7-ab92-939cfeac4032"
+weight = 103.5
+reps = 5
+timestamp = "2025-05-15 18:53:33"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "fdb35bd1-587a-4d6a-9c0a-7726cb126daa"
+exercise_id = "87e60018-0827-4884-981e-1ad9ff75c85f"
+
+[[sessions.exercises.sets]]
+id = "c062f225-249f-455e-94ac-3f30fd2a6486"
+weight = 72.0
+reps = 6
+timestamp = "2025-05-15 18:59:49"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "37719047-224d-414d-9bfd-62900abc85a3"
+weight = 79.0
+reps = 4
+timestamp = "2025-05-15 19:03:13"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "c83885cb-8821-4b94-9f60-bb33d6ee7579"
+exercise_id = "0515a0c3-86da-48cf-9762-62645bf04aed"
+
+[[sessions.exercises.sets]]
+id = "9ea15cb7-76aa-4f17-a9c1-cdd08c93a3f8"
+weight = 120.0
+reps = 6
+timestamp = "2025-05-15 19:29:25"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "bb31476c-792a-4ca1-b8aa-864089a3f32f"
+weight = 160.0
+reps = 5
+timestamp = "2025-05-15 19:33:03"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "1e7180fc-7350-4fe0-b8d1-5ee57f90f46f"
+exercise_id = "215bdffc-62b4-4bb7-ae90-5ff2342661e8"
+
+[[sessions.exercises.sets]]
+id = "edee2e36-3a04-4348-a965-3a4dca90f0c6"
+weight = 90.0
+reps = 6
+timestamp = "2025-05-15 19:15:06"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "47f7c612-7d99-4a16-a595-1f2876fc738a"
+weight = 100.0
+reps = 4
+timestamp = "2025-05-15 19:20:08"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "f2e5a04b-805b-4157-9cc8-14f44a097548"
+exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+sets = []
+
+[[sessions.exercises]]
+id = "a277c4c2-2ddd-48b9-a533-b60d349b017c"
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+sets = []
+
+[[sessions.exercises]]
+id = "aa564ded-b8a6-4b11-958d-d19e8fc1dc3e"
+exercise_id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
+sets = []
+
+[[sessions]]
+id = "3c34d8ad-d97b-4de8-9423-c0caeb90a2e4"
+program_block_id = "0df21d75-deeb-4c5e-85c2-fe8208dfd53f"
+start_time = "2025-05-19 17:54:26"
+end_time = "2025-05-19 19:01:55"
+
+[[sessions.exercises]]
+id = "15eb793d-1117-4294-bab7-ac4e5147222d"
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+
+[[sessions.exercises.sets]]
+id = "53339d97-428c-4bfb-892f-7092f3aa6926"
+weight = 110.0
+reps = 6
+timestamp = "2025-05-19 18:06:46"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "db4a5bb4-cd8a-4400-aa0b-b3d2090b39a6"
+weight = 110.0
+reps = 5
+timestamp = "2025-05-19 18:14:15"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "17127773-7cbc-4847-bbc3-e8dc131db2fc"
+exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+
+[[sessions.exercises.sets]]
+id = "e20a255b-fcda-41b0-8051-bad0b2d104e7"
+weight = 140.0
+reps = 5
+timestamp = "2025-05-19 18:23:26"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "bcfe209c-0f4a-4d93-8cba-db701ff6b641"
+exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+sets = []
+
+[[sessions.exercises]]
+id = "8358f603-b411-4179-8d1c-1f05c4907590"
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+
+[[sessions.exercises.sets]]
+id = "84e60d1d-670b-4a54-850c-c60a035c2548"
+weight = 120.0
+reps = 3
+timestamp = "2025-05-19 18:32:45"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "0a4ba19c-e6f8-4181-b5cc-be07da7e7f96"
+weight = 120.0
+reps = 4
+timestamp = "2025-05-19 18:34:51"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "baf4f439-5c3d-4ab3-b049-cfdfe834deb6"
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+
+[[sessions.exercises.sets]]
+id = "2693c83f-2790-42c2-8e48-2ee3fb0c2ffa"
+weight = 85.5
+reps = 6
+timestamp = "2025-05-19 18:38:50"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "33068cac-a9f1-4b37-97a7-a5ac5b8b055e"
+weight = 85.5
+reps = 7
+timestamp = "2025-05-19 18:41:38"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "7eaf2fec-92a9-4dbc-85f4-d3bc6fa15e07"
+exercise_id = "026a4108-a658-4299-ae34-423629cf940d"
+
+[[sessions.exercises.sets]]
+id = "bef4ad2f-28b8-4f12-99bb-f7df72e15311"
+weight = 21.0
+reps = 6
+timestamp = "2025-05-19 18:57:45"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "20b20535-cd17-4729-8468-519552515443"
+weight = 21.0
+reps = 6
+timestamp = "2025-05-19 19:01:50"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "3dd3cf0b-2e6d-4c8a-8fae-18913041b9ce"
+weight = 21.0
+reps = 6
+timestamp = "2025-05-19 19:01:50"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "971f249f-5e79-4036-89b0-a26d9f654135"
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+
+[[sessions.exercises.sets]]
+id = "e6be06f9-66cc-4b50-803a-0a11db9c5e33"
+weight = 80.0
+reps = 5
+timestamp = "2025-05-19 18:47:05"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "85ff70ec-b894-4a8f-a870-58e1808134f4"
+weight = 90.0
+reps = 3
+timestamp = "2025-05-19 18:52:05"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "5c03aff4-6f1c-4202-a184-54a5188cf70e"
+weight = 90.0
+reps = 3
+timestamp = "2025-05-19 18:52:08"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "320bb7c7-7672-41e1-a24c-90c91f218d4d"
+exercise_id = "f19b6bd8-0964-4118-8188-0a8044e7548c"
+sets = []
+
+[[sessions.exercises]]
+id = "6148f55c-09e0-4b07-a9a2-92655a373e3f"
+exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+sets = []
+
+[[sessions]]
+id = "280cb0c1-2637-48e7-b65d-b0b054e59f98"
+program_block_id = "45d9d66f-2f6e-4f78-ba1c-b2714eb05dc7"
+start_time = "2025-05-21 18:18:19"
+end_time = "2025-05-21 19:09:06"
+
+[[sessions.exercises]]
+id = "e166107b-e87d-4987-8c3e-3882fb35ec61"
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+sets = []
+
+[[sessions.exercises]]
+id = "3f962e64-91c2-4a4a-b507-d682bbe22995"
+exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+
+[[sessions.exercises.sets]]
+id = "c5cfd998-cf3b-4d23-b27d-a42621109f82"
+weight = 160.0
+reps = 3
+timestamp = "2025-05-21 18:34:51"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "128ffc78-9017-478a-bb8e-711ff8e019e9"
+exercise_id = "5b07363e-770b-4f94-81cd-3b69ad51b67f"
+
+[[sessions.exercises.sets]]
+id = "cb44aa96-bc86-42ca-bfb5-92a0b4f8a3f8"
+weight = 60.0
+reps = 5
+timestamp = "2025-05-21 18:49:03"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "aab1f17a-6b0f-4e20-bc43-b491a0145200"
+weight = 80.0
+reps = 5
+timestamp = "2025-05-21 19:07:06"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "da402285-ce07-490a-9397-69e8857dc1c2"
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+
+[[sessions.exercises.sets]]
+id = "ced30c7a-3388-4be4-aea3-04d52df3e543"
+weight = 95.0
+reps = 6
+timestamp = "2025-05-21 18:49:10"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "6294afc4-987f-4f1d-b204-362bacc8b9f2"
+weight = 95.0
+reps = 6
+timestamp = "2025-05-21 18:55:08"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "8d677f7c-680c-4dd6-a91f-926087290bc8"
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+sets = []
+
+[[sessions.exercises]]
+id = "39e77aca-a44c-4507-89fe-5476dc5b06df"
+exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+sets = []
+
+[[sessions.exercises]]
+id = "e97ec2b7-88d2-4cad-918c-d353761aa18c"
+exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+sets = []
+
+[[sessions.exercises]]
+id = "cd814e87-2e10-4242-b6ba-c3af3aba9cdf"
+exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+sets = []
+
+[[sessions]]
+id = "e6c43121-ee35-4b9d-91a0-d4f43fc749de"
+program_block_id = "65124cce-c782-4b59-b810-43011dfa2593"
+start_time = "2025-05-23 17:23:40"
+end_time = "2025-05-23 17:54:28"
+
+[[sessions.exercises]]
+id = "000712e5-96f8-4bdb-b42a-3869e7229c60"
+exercise_id = "523769d9-3898-4d88-82bc-84b18c40c45f"
+
+[[sessions.exercises.sets]]
+id = "80f35e48-e135-4f75-be64-07fa4026093e"
+weight = 80.0
+reps = 4
+timestamp = "2025-05-23 17:32:49"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "56724cbf-0730-457b-9a07-24427afedee1"
+weight = 80.0
+reps = 5
+timestamp = "2025-05-23 17:35:05"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "8bec2510-7cec-4338-ae2d-3f351d9b1a26"
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+
+[[sessions.exercises.sets]]
+id = "0d6fddbb-9d8a-4bb6-aa64-df6b46b5ca21"
+weight = 91.0
+reps = 8
+timestamp = "2025-05-23 17:40:37"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "98655984-0572-4295-8002-22e222af2585"
+weight = 91.0
+reps = 10
+timestamp = "2025-05-23 17:44:05"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "95401218-9170-4398-bb70-cde29d2bb93e"
+exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+
+[[sessions.exercises.sets]]
+id = "f7772dad-af75-43e0-b63f-c0890954ea81"
+weight = 85.5
+reps = 8
+timestamp = "2025-05-23 17:49:55"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "8ec197e2-740c-436c-842a-3b23dfa2a37e"
+weight = 103.5
+reps = 5
+timestamp = "2025-05-23 17:52:55"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "800151ea-b3c7-4b05-9fa6-4306b286507a"
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+sets = []
+
+[[sessions.exercises]]
+id = "c71ae774-3afa-437a-940e-e83800160eb7"
+exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+sets = []
+
+[[sessions.exercises]]
+id = "eccbbf61-bc5a-4c39-9b5e-bf565b642486"
+exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+sets = []
+
+[[sessions.exercises]]
+id = "c5fe470e-3fee-4b73-a234-7ed61eea9f5d"
+exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+sets = []
+
+[[sessions.exercises]]
+id = "e219fb9d-d082-4fa2-a494-855636d57867"
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+sets = []
+
+[[sessions.exercises]]
+id = "6cbee7fd-5583-46cd-9589-473714801bea"
+exercise_id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
+sets = []
+
+[[sessions.exercises]]
+id = "9618920d-254b-46e8-ba40-058de993757a"
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+sets = []
+
+[[sessions.exercises]]
+id = "f89ec3b6-dad7-4436-a5d2-7b5b7c9f0a4f"
+exercise_id = "0515a0c3-86da-48cf-9762-62645bf04aed"
+sets = []
+
+[[sessions.exercises]]
+id = "41de3e81-d621-4d7b-8355-37d825ab38d1"
+exercise_id = "215bdffc-62b4-4bb7-ae90-5ff2342661e8"
+sets = []
+
+[[sessions.exercises]]
+id = "c7ce6dab-68f6-4f8f-b92b-330bc60e3981"
+exercise_id = "46ea689c-c9d2-47f2-9fb1-ac4207b46cd7"
+sets = []
+
+[[sessions.exercises]]
+id = "d933400f-5f03-4855-8823-71fce46227c1"
+exercise_id = "87e60018-0827-4884-981e-1ad9ff75c85f"
+
+[[sessions.exercises.sets]]
+id = "ad964508-a660-495c-ad47-aec13216d3c7"
+weight = 1.0
+reps = 1
+timestamp = "2025-05-23 17:38:05"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions]]
+id = "b5c24c77-3741-4f9f-8c11-90d608ba84b8"
+program_block_id = "0df21d75-deeb-4c5e-85c2-fe8208dfd53f"
+start_time = "2025-05-26 18:16:42"
+end_time = "2025-05-26 19:25:52"
+
+[[sessions.exercises]]
+id = "36fddf7b-592c-4f6a-a86a-28a82720ec95"
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+
+[[sessions.exercises.sets]]
+id = "e814ed40-0adf-4fc5-90b6-577f2d1feed3"
+weight = 140.0
+reps = 7
+timestamp = "2025-05-26 18:27:13"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "33947eea-c6c7-4b0e-b28d-a84979cbae64"
+weight = 160.0
+reps = 4
+timestamp = "2025-05-26 18:31:34"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "e5603269-b5f9-422a-8a38-d470c3b3191a"
+exercise_id = "87e60018-0827-4884-981e-1ad9ff75c85f"
+
+[[sessions.exercises.sets]]
+id = "aaf85f88-d76e-41a5-87f0-361a8f71e26d"
+weight = 66.0
+reps = 6
+timestamp = "2025-05-26 18:37:48"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "f9d489c5-3591-4b77-8627-d0177f8116ea"
+weight = 72.0
+reps = 6
+timestamp = "2025-05-26 18:40:22"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "8c1ad191-5ebb-49a9-82b9-d2e29187a06e"
+exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+
+[[sessions.exercises.sets]]
+id = "4bdf2e6f-08d0-46c6-b601-7b58b216f3ab"
+weight = 103.5
+reps = 8
+timestamp = "2025-05-26 18:45:43"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "89ee9765-0126-4887-8f75-6bb35fd3d6a7"
+weight = 112.5
+reps = 5
+timestamp = "2025-05-26 18:50:32"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "573d61d7-91d3-4699-86fa-7f457f0abf93"
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+
+[[sessions.exercises.sets]]
+id = "8fac9f92-e8d1-444c-a49f-b18ec1d8be08"
+weight = 120.0
+reps = 5
+timestamp = "2025-05-26 18:56:14"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "5b2a2d0c-1e2d-4848-924e-47748da02507"
+weight = 120.0
+reps = 4
+timestamp = "2025-05-26 18:59:18"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "67af0f53-8058-40f3-95ac-e04db29e9106"
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+
+[[sessions.exercises.sets]]
+id = "b9a81b7f-a294-4b81-abe5-f74ec1ab9e82"
+weight = 60.0
+reps = 6
+timestamp = "2025-05-26 19:04:01"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "5549501b-5cb3-4c8d-a149-6fab4a653484"
+weight = 70.0
+reps = 3
+timestamp = "2025-05-26 19:06:13"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "8c2b8cd4-75af-4d7e-a575-aedd5a36854d"
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+
+[[sessions.exercises.sets]]
+id = "b91594e8-4811-4d8f-a5dd-afb0214ea01e"
+weight = 35.0
+reps = 7
+timestamp = "2025-05-26 19:19:54"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "19451f0c-020b-471a-867f-daecb6fd819d"
+weight = 42.5
+reps = 8
+timestamp = "2025-05-26 19:22:05"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "a1a9da76-d851-4380-870b-eff9122fd451"
+weight = 52.5
+reps = 6
+timestamp = "2025-05-26 19:25:21"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "256876b8-12be-466c-8b10-c687fafb6d8b"
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+
+[[sessions.exercises.sets]]
+id = "597f9379-8c26-4603-b1d4-6c608e8d44d6"
+weight = 80.0
+reps = 6
+timestamp = "2025-05-26 19:11:15"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "05cea697-99e7-46f7-b3ac-7dca51345d1a"
+weight = 80.0
+reps = 5
+timestamp = "2025-05-26 19:16:31"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "aacfd47b-7deb-4753-b796-c189708ce435"
+weight = 80.0
+reps = 4
+timestamp = "2025-05-26 19:16:33"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "de7bb07b-e643-4806-8af6-6213b483889a"
+exercise_id = "f19b6bd8-0964-4118-8188-0a8044e7548c"
+sets = []
+
+[[sessions.exercises]]
+id = "5b6414f7-8702-4948-aa2c-a51c0b743ebb"
+exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+sets = []
+
+[[sessions.exercises]]
+id = "6e203e81-ea12-4861-a01a-b399e6c0f7d0"
+exercise_id = "026a4108-a658-4299-ae34-423629cf940d"
+sets = []
+
+[[sessions.exercises]]
+id = "b05d97e5-9d06-47ff-9dd1-eace725ecee1"
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+sets = []
+
+[[sessions.exercises]]
+id = "f4c89eeb-7fb2-4d45-b1ad-f9db9a3c195b"
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+sets = []
+
+[[sessions]]
+id = "fe7609e9-2e13-40e9-802a-9a01adbab592"
+program_block_id = "45d9d66f-2f6e-4f78-ba1c-b2714eb05dc7"
+start_time = "2025-05-27 19:05:12"
+end_time = "2025-05-27 20:02:54"
+
+[[sessions.exercises]]
+id = "c2d3f200-f8f8-4fd0-b4bb-92773cbc2466"
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+
+[[sessions.exercises.sets]]
+id = "16996b26-3086-4e3d-8627-0f518327aa5d"
+weight = 140.0
+reps = 6
+timestamp = "2025-05-27 19:14:54"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "709b6631-6606-4fd7-bacf-7628542c5932"
+exercise_id = "b22f1f64-5993-4e5d-bde9-7523327aa7f8"
+
+[[sessions.exercises.sets]]
+id = "f0869974-b063-4d18-b728-ce1cdc8b19ef"
+weight = 140.0
+reps = 6
+timestamp = "2025-05-27 19:15:06"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "8cedbc64-94d6-4a7d-aae1-067b3fdc7f17"
+weight = 160.0
+reps = 4
+timestamp = "2025-05-27 19:18:50"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "0e82c688-b106-49db-831e-0d6735459f7d"
+exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+
+[[sessions.exercises.sets]]
+id = "0df02560-dd2d-483e-8bfb-2357c6a5262d"
+weight = 240.0
+reps = 5
+timestamp = "2025-05-27 19:38:19"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "b94b5351-4e63-488c-97bf-508b9ffa3c2f"
+weight = 280.0
+reps = 4
+timestamp = "2025-05-27 19:40:44"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "44a95996-5844-49a7-b899-83ecdc62110f"
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+
+[[sessions.exercises.sets]]
+id = "7ff25203-c86b-4334-b7a1-030306af4dfe"
+weight = 95.0
+reps = 8
+timestamp = "2025-05-27 19:50:40"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "f7c426fd-3e74-4c6f-9fbe-577e21c08ac9"
+weight = 95.0
+reps = 8
+timestamp = "2025-05-27 19:55:08"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "5885de63-6622-45c8-8f57-04aeb99b5909"
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+
+[[sessions.exercises.sets]]
+id = "9be3865c-bcd0-4b6b-8867-55b8e8861b6e"
+weight = 130.5
+reps = 6
+timestamp = "2025-05-27 19:58:35"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "38673af2-092c-46eb-8315-2dbb8d830fa5"
+weight = 130.5
+reps = 7
+timestamp = "2025-05-27 20:01:31"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "b0028852-cd02-4789-a068-14806cd73f54"
+exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+sets = []
+
+[[sessions.exercises]]
+id = "6d04c332-ee5b-452b-a905-98e4dee446e6"
+exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+sets = []
+
+[[sessions.exercises]]
+id = "0858ef02-646c-44fd-af90-2485ce95448e"
+exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+sets = []
+
+[[sessions.exercises]]
+id = "cb92069a-e26b-4ffe-88d5-c674da8e6c11"
+exercise_id = "5b07363e-770b-4f94-81cd-3b69ad51b67f"
+sets = []
+
+[[sessions.exercises]]
+id = "2d2b9735-7168-4b08-918a-5b83933ac8d6"
+exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+sets = []
+
+[[sessions.exercises]]
+id = "ad6f693b-cf49-437f-83df-c9dbeaa2267d"
+exercise_id = "c18218bc-4573-4560-b11b-3aec99b39682"
+sets = []
+
+[[sessions.exercises]]
+id = "911d3420-9206-49d0-937e-9a446c182489"
+exercise_id = "fd1b7922-9691-4407-8434-56a671a20e01"
+sets = []
+
+[[sessions]]
+id = "99f658da-f230-424f-a928-349ed636f0ec"
+program_block_id = "65124cce-c782-4b59-b810-43011dfa2593"
+start_time = "2025-05-29 18:38:18"
+end_time = "2025-05-29 19:44:32"
+
+[[sessions.exercises]]
+id = "cf10c75b-9d33-4e16-bb56-0e83d98e4d13"
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+
+[[sessions.exercises.sets]]
+id = "b82243d3-2602-4636-9946-724e33bb343d"
+weight = 70.0
+reps = 5
+timestamp = "2025-05-29 18:46:52"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "b9544d44-1f2d-485f-87d5-c55b6dbfeca4"
+weight = 80.0
+reps = 1
+timestamp = "2025-05-29 18:51:01"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "7bb0f864-112e-4339-98e7-b9ea9771777a"
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+
+[[sessions.exercises.sets]]
+id = "6be9b9ff-4940-495e-885c-d8097b824987"
+weight = 40.0
+reps = 5
+timestamp = "2025-05-29 18:58:26"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "d12759c1-0db3-420d-9323-dea19c2d543e"
+weight = 40.0
+reps = 5
+timestamp = "2025-05-29 19:07:33"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "56da4793-e002-4874-9287-3beacfa6b8c8"
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+
+[[sessions.exercises.sets]]
+id = "272be43a-2154-4004-a146-8a209d3ea71d"
+weight = 160.0
+reps = 2
+timestamp = "2025-05-29 19:13:51"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "f732bfcf-b823-4f1b-84de-2bfb5c05b0f3"
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+
+[[sessions.exercises.sets]]
+id = "ede505ab-ef12-481e-b6ff-baceba5137a9"
+weight = 160.0
+reps = 8
+timestamp = "2025-05-29 19:24:17"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "9cb51b05-27b4-4071-a07f-b4d9af3b9812"
+weight = 180.0
+reps = 6
+timestamp = "2025-05-29 19:26:13"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "168afb38-65f1-4025-ac1d-dfe22963e9e8"
+exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+
+[[sessions.exercises.sets]]
+id = "b7723a6e-6bcd-4059-9b47-228e60b57aea"
+weight = 40.0
+reps = 6
+timestamp = "2025-05-29 19:32:55"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "32096852-6df9-48fe-8cb8-b8149dff8531"
+exercise_id = "026a4108-a658-4299-ae34-423629cf940d"
+
+[[sessions.exercises.sets]]
+id = "8c2da9cf-8716-4ffc-b828-c9d45ae162e3"
+weight = 25.0
+reps = 5
+timestamp = "2025-05-29 19:40:04"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises.sets]]
+id = "838eb2b2-ad05-4457-9254-863aeed0176a"
+weight = 25.0
+reps = 6
+timestamp = "2025-05-29 19:43:15"
+ignore_for_one_rm = false
+bodyweight = false
+
+[[sessions.exercises]]
+id = "e89230bd-c225-4cbe-b1e7-80b3c601d3a3"
+exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+sets = []
+
+[[sessions.exercises]]
+id = "80e4ab69-e97e-47cf-84c9-c0491684572f"
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+sets = []
+
+[[sessions.exercises]]
+id = "c90c1037-ec83-4422-9f73-d1dfbda1f162"
+exercise_id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
+sets = []
+
+[[sessions.exercises]]
+id = "7c35ecf9-1acc-4743-8f3b-a53ca57b66bc"
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+sets = []
+
+[[sessions.exercises]]
+id = "dec4d63d-9762-4f80-89ee-743cc769bbd7"
+exercise_id = "0515a0c3-86da-48cf-9762-62645bf04aed"
+sets = []
+
+[[sessions.exercises]]
+id = "cada687e-fca4-4f06-8dca-ae0661882589"
+exercise_id = "215bdffc-62b4-4bb7-ae90-5ff2342661e8"
+sets = []
+
+[[sessions.exercises]]
+id = "0a8cd2ae-a02f-4159-b869-2cd472ca4909"
+exercise_id = "46ea689c-c9d2-47f2-9fb1-ac4207b46cd7"
+sets = []
+
+[[sessions.exercises]]
+id = "5fb5f2b1-9390-4bd3-aafc-e28dd31bc6a9"
+exercise_id = "523769d9-3898-4d88-82bc-84b18c40c45f"
+sets = []
+
+[[sessions.exercises]]
+id = "a834e7b6-d540-48ad-b4f0-6d97f8a56d3e"
+exercise_id = "87e60018-0827-4884-981e-1ad9ff75c85f"
+sets = []
+
+[[sessions.exercises]]
+id = "16b827ba-29e1-4b4a-9683-896fbb54d4b3"
+exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+sets = []
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-03-14"
+weight = 91.0
+reps = 7
+estimated_1rm = 112.23333333333333
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-03-27"
+weight = 100.0
+reps = 6
+estimated_1rm = 120.0
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-03-31"
+weight = 100.0
+reps = 7
+estimated_1rm = 123.33333333333334
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-04-03"
+weight = 107.0
+reps = 5
+estimated_1rm = 124.83333333333334
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-04-24"
+weight = 107.0
+reps = 6
+estimated_1rm = 128.4
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-04-28"
+weight = 107.0
+reps = 5
+estimated_1rm = 124.83333333333334
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-05-01"
+weight = 91.0
+reps = 10
+estimated_1rm = 121.33333333333333
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-05-05"
+weight = 107.0
+reps = 6
+estimated_1rm = 128.4
+
+[[personal_records]]
+exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+date = "2025-02-26"
+weight = 47.5
+reps = 6
+estimated_1rm = 57.0
+
+[[personal_records]]
+exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+date = "2025-03-20"
+weight = 42.0
+reps = 7
+estimated_1rm = 51.800000000000004
+
+[[personal_records]]
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+date = "2025-02-12"
+weight = 100.0
+reps = 10
+estimated_1rm = 133.33333333333331
+
+[[personal_records]]
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+date = "2025-02-17"
+weight = 140.0
+reps = 8
+estimated_1rm = 177.33333333333331
+
+[[personal_records]]
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+date = "2025-02-24"
+weight = 160.0
+reps = 5
+estimated_1rm = 186.66666666666669
+
+[[personal_records]]
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+date = "2025-03-14"
+weight = 75.0
+reps = 5
+estimated_1rm = 87.5
+
+[[personal_records]]
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+date = "2025-03-17"
+weight = 160.0
+reps = 5
+estimated_1rm = 186.66666666666669
+
+[[personal_records]]
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+date = "2025-03-25"
+weight = 160.0
+reps = 6
+estimated_1rm = 192.0
+
+[[personal_records]]
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+date = "2025-03-31"
+weight = 180.0
+reps = 3
+estimated_1rm = 198.00000000000003
+
+[[personal_records]]
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+date = "2025-04-24"
+weight = 130.5
+reps = 10
+estimated_1rm = 174.0
+
+[[personal_records]]
+exercise_id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+date = "2025-02-11"
+weight = 160.0
+reps = 6
+estimated_1rm = 192.0
+
+[[personal_records]]
+exercise_id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+date = "2025-02-13"
+weight = 140.0
+reps = 8
+estimated_1rm = 177.33333333333331
+
+[[personal_records]]
+exercise_id = "1666a3f1-bb5f-485b-97b5-65692972eb5e"
+date = "2025-02-25"
+weight = 175.0
+reps = 3
+estimated_1rm = 192.50000000000003
+
+[[personal_records]]
+exercise_id = "215bdffc-62b4-4bb7-ae90-5ff2342661e8"
+date = "2025-04-24"
+weight = 70.0
+reps = 7
+estimated_1rm = 86.33333333333334
+
+[[personal_records]]
+exercise_id = "215bdffc-62b4-4bb7-ae90-5ff2342661e8"
+date = "2025-05-07"
+weight = 80.0
+reps = 6
+estimated_1rm = 96.0
+
+[[personal_records]]
+exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+date = "2025-03-21"
+weight = 240.0
+reps = 6
+estimated_1rm = 288.0
+
+[[personal_records]]
+exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+date = "2025-04-10"
+weight = 240.0
+reps = 8
+estimated_1rm = 304.0
+
+[[personal_records]]
+exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+date = "2025-04-25"
+weight = 240.0
+reps = 5
+estimated_1rm = 280.0
+
+[[personal_records]]
+exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+date = "2025-05-08"
+weight = 280.0
+reps = 3
+estimated_1rm = 308.0
+
+[[personal_records]]
+exercise_id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
+date = "2025-03-28"
+weight = 20.0
+reps = 8
+estimated_1rm = 25.333333333333332
+
+[[personal_records]]
+exercise_id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
+date = "2025-04-02"
+weight = 24.0
+reps = 5
+estimated_1rm = 28.0
+
+[[personal_records]]
+exercise_id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
+date = "2025-04-25"
+weight = 20.0
+reps = 10
+estimated_1rm = 26.666666666666664
+
+[[personal_records]]
+exercise_id = "2bbb67b2-8349-4e07-81aa-c8bd3faf5c23"
+date = "2025-05-08"
+weight = 26.0
+reps = 5
+estimated_1rm = 30.333333333333336
+
+[[personal_records]]
+exercise_id = "2eea5a6c-9716-48c6-9ff6-4cce5e820a95"
+date = "2025-02-14"
+weight = 18.0
+reps = 10
+estimated_1rm = 24.0
+
+[[personal_records]]
+exercise_id = "2eea5a6c-9716-48c6-9ff6-4cce5e820a95"
+date = "2025-02-28"
+weight = 18.0
+reps = 8
+estimated_1rm = 22.799999999999997
+
+[[personal_records]]
+exercise_id = "2eea5a6c-9716-48c6-9ff6-4cce5e820a95"
+date = "2025-03-31"
+weight = 24.0
+reps = 5
+estimated_1rm = 28.0
+
+[[personal_records]]
+exercise_id = "2eea5a6c-9716-48c6-9ff6-4cce5e820a95"
+date = "2025-04-22"
+weight = 24.0
+reps = 4
+estimated_1rm = 27.2
+
+[[personal_records]]
+exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+date = "2025-03-21"
+weight = 160.0
+reps = 8
+estimated_1rm = 202.66666666666666
+
+[[personal_records]]
+exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+date = "2025-04-10"
+weight = 160.0
+reps = 10
+estimated_1rm = 213.33333333333331
+
+[[personal_records]]
+exercise_id = "323673b3-eda6-460f-8868-a12f56ba1da3"
+date = "2025-05-08"
+weight = 160.0
+reps = 10
+estimated_1rm = 213.33333333333331
+
+[[personal_records]]
+exercise_id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
+date = "2025-02-27"
+weight = 60.0
+reps = 8
+estimated_1rm = 76.0
+
+[[personal_records]]
+exercise_id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
+date = "2025-03-13"
+weight = 140.0
+reps = 6
+estimated_1rm = 168.0
+
+[[personal_records]]
+exercise_id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
+date = "2025-03-19"
+weight = 140.0
+reps = 4
+estimated_1rm = 158.66666666666666
+
+[[personal_records]]
+exercise_id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
+date = "2025-03-26"
+weight = 140.0
+reps = 6
+estimated_1rm = 168.0
+
+[[personal_records]]
+exercise_id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
+date = "2025-04-02"
+weight = 140.0
+reps = 7
+estimated_1rm = 172.66666666666669
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-02-10"
+weight = 85.0
+reps = 6
+estimated_1rm = 102.0
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-02-12"
+weight = 85.0
+reps = 6
+estimated_1rm = 102.0
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-02-14"
+weight = 85.0
+reps = 10
+estimated_1rm = 113.33333333333333
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-02-17"
+weight = 90.0
+reps = 8
+estimated_1rm = 114.0
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-02-19"
+weight = 90.0
+reps = 8
+estimated_1rm = 114.0
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-02-21"
+weight = 90.0
+reps = 10
+estimated_1rm = 120.0
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-02-24"
+weight = 95.0
+reps = 6
+estimated_1rm = 114.0
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-02-26"
+weight = 95.0
+reps = 6
+estimated_1rm = 114.0
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-03-10"
+weight = 100.0
+reps = 6
+estimated_1rm = 120.0
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-03-15"
+weight = 120.0
+reps = 1
+estimated_1rm = 124.00000000000001
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-03-17"
+weight = 105.0
+reps = 6
+estimated_1rm = 126.0
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-03-25"
+weight = 110.0
+reps = 5
+estimated_1rm = 128.33333333333334
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-03-31"
+weight = 100.0
+reps = 6
+estimated_1rm = 120.0
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-04-07"
+weight = 110.0
+reps = 5
+estimated_1rm = 128.33333333333334
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-04-11"
+weight = 50.0
+reps = 8
+estimated_1rm = 63.33333333333333
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-04-22"
+weight = 115.0
+reps = 3
+estimated_1rm = 126.50000000000001
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-04-28"
+weight = 110.0
+reps = 4
+estimated_1rm = 124.66666666666666
+
+[[personal_records]]
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+date = "2025-02-11"
+weight = 60.0
+reps = 12
+estimated_1rm = 84.0
+
+[[personal_records]]
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+date = "2025-02-18"
+weight = 67.0
+reps = 9
+estimated_1rm = 87.10000000000001
+
+[[personal_records]]
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+date = "2025-03-19"
+weight = 95.0
+reps = 5
+estimated_1rm = 110.83333333333334
+
+[[personal_records]]
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+date = "2025-03-26"
+weight = 95.0
+reps = 6
+estimated_1rm = 114.0
+
+[[personal_records]]
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+date = "2025-04-02"
+weight = 95.0
+reps = 7
+estimated_1rm = 117.16666666666667
+
+[[personal_records]]
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+date = "2025-04-08"
+weight = 95.0
+reps = 5
+estimated_1rm = 110.83333333333334
+
+[[personal_records]]
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+date = "2025-04-23"
+weight = 95.0
+reps = 6
+estimated_1rm = 114.0
+
+[[personal_records]]
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+date = "2025-04-29"
+weight = 60.0
+reps = 8
+estimated_1rm = 76.0
+
+[[personal_records]]
+exercise_id = "43b7d511-5a8d-48ec-ac2d-5e00e761256e"
+date = "2025-03-25"
+weight = 40.0
+reps = 5
+estimated_1rm = 46.66666666666667
+
+[[personal_records]]
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+date = "2025-02-13"
+weight = 58.5
+reps = 10
+estimated_1rm = 78.0
+
+[[personal_records]]
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+date = "2025-02-25"
+weight = 67.5
+reps = 9
+estimated_1rm = 87.75
+
+[[personal_records]]
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+date = "2025-02-27"
+weight = 67.5
+reps = 8
+estimated_1rm = 85.5
+
+[[personal_records]]
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+date = "2025-03-13"
+weight = 89.0
+reps = 10
+estimated_1rm = 118.66666666666666
+
+[[personal_records]]
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+date = "2025-03-14"
+weight = 96.0
+reps = 8
+estimated_1rm = 121.6
+
+[[personal_records]]
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+date = "2025-03-21"
+weight = 85.5
+reps = 8
+estimated_1rm = 108.3
+
+[[personal_records]]
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+date = "2025-03-28"
+weight = 85.5
+reps = 9
+estimated_1rm = 111.15
+
+[[personal_records]]
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+date = "2025-04-10"
+weight = 85.0
+reps = 11
+estimated_1rm = 116.16666666666667
+
+[[personal_records]]
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+date = "2025-04-25"
+weight = 100.5
+reps = 6
+estimated_1rm = 120.6
+
+[[personal_records]]
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+date = "2025-05-06"
+weight = 85.5
+reps = 10
+estimated_1rm = 114.0
+
+[[personal_records]]
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+date = "2025-05-08"
+weight = 100.5
+reps = 8
+estimated_1rm = 127.3
+
+[[personal_records]]
+exercise_id = "48bb54c6-af25-45a8-aaae-409aad70a1e6"
+date = "2025-02-21"
+weight = 40.0
+reps = 5
+estimated_1rm = 46.66666666666667
+
+[[personal_records]]
+exercise_id = "4db7342f-b484-4a1a-a731-360c1ac8499f"
+date = "2025-03-21"
+weight = 120.0
+reps = 4
+estimated_1rm = 136.0
+
+[[personal_records]]
+exercise_id = "4db7342f-b484-4a1a-a731-360c1ac8499f"
+date = "2025-03-28"
+weight = 120.0
+reps = 5
+estimated_1rm = 140.0
+
+[[personal_records]]
+exercise_id = "4db7342f-b484-4a1a-a731-360c1ac8499f"
+date = "2025-04-02"
+weight = 140.0
+reps = 2
+estimated_1rm = 149.33333333333334
+
+[[personal_records]]
+exercise_id = "4db7342f-b484-4a1a-a731-360c1ac8499f"
+date = "2025-04-08"
+weight = 120.0
+reps = 4
+estimated_1rm = 136.0
+
+[[personal_records]]
+exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+date = "2025-02-18"
+weight = 100.0
+reps = 8
+estimated_1rm = 126.66666666666666
+
+[[personal_records]]
+exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+date = "2025-04-08"
+weight = 140.0
+reps = 6
+estimated_1rm = 168.0
+
+[[personal_records]]
+exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+date = "2025-04-23"
+weight = 160.0
+reps = 4
+estimated_1rm = 181.33333333333331
+
+[[personal_records]]
+exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+date = "2025-04-29"
+weight = 160.0
+reps = 3
+estimated_1rm = 176.0
+
+[[personal_records]]
+exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+date = "2025-05-06"
+weight = 180.0
+reps = 2
+estimated_1rm = 192.0
+
+[[personal_records]]
+exercise_id = "747335b7-2f37-40cf-a205-ae3868096577"
+date = "2025-02-14"
+weight = 16.0
+reps = 8
+estimated_1rm = 20.266666666666666
+
+[[personal_records]]
+exercise_id = "747335b7-2f37-40cf-a205-ae3868096577"
+date = "2025-02-28"
+weight = 17.5
+reps = 8
+estimated_1rm = 22.166666666666664
+
+[[personal_records]]
+exercise_id = "74ba898e-4fa5-48c5-97dd-fb4a34331b1c"
+date = "2025-02-10"
+weight = 7.5
+reps = 10
+estimated_1rm = 10.0
+
+[[personal_records]]
+exercise_id = "74ba898e-4fa5-48c5-97dd-fb4a34331b1c"
+date = "2025-02-17"
+weight = 10.0
+reps = 6
+estimated_1rm = 12.0
+
+[[personal_records]]
+exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+date = "2025-03-13"
+weight = 50.0
+reps = 8
+estimated_1rm = 63.33333333333333
+
+[[personal_records]]
+exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+date = "2025-03-21"
+weight = 50.0
+reps = 5
+estimated_1rm = 58.333333333333336
+
+[[personal_records]]
+exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+date = "2025-03-26"
+weight = 50.0
+reps = 8
+estimated_1rm = 63.33333333333333
+
+[[personal_records]]
+exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+date = "2025-03-28"
+weight = 55.0
+reps = 7
+estimated_1rm = 67.83333333333334
+
+[[personal_records]]
+exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+date = "2025-04-02"
+weight = 60.0
+reps = 6
+estimated_1rm = 72.0
+
+[[personal_records]]
+exercise_id = "8625a7ec-07da-4716-b446-94986f324656"
+date = "2025-02-28"
+weight = 12.0
+reps = 8
+estimated_1rm = 15.2
+
+[[personal_records]]
+exercise_id = "8625a7ec-07da-4716-b446-94986f324656"
+date = "2025-04-28"
+weight = 16.0
+reps = 8
+estimated_1rm = 20.266666666666666
+
+[[personal_records]]
+exercise_id = "8dd8962f-eaed-4724-9b71-4d468b905845"
+date = "2025-04-09"
+weight = 18.0
+reps = 8
+estimated_1rm = 22.799999999999997
+
+[[personal_records]]
+exercise_id = "8dd8962f-eaed-4724-9b71-4d468b905845"
+date = "2025-04-11"
+weight = 20.0
+reps = 7
+estimated_1rm = 24.666666666666668
+
+[[personal_records]]
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+date = "2025-02-11"
+weight = 85.5
+reps = 10
+estimated_1rm = 114.0
+
+[[personal_records]]
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+date = "2025-02-13"
+weight = 85.5
+reps = 14
+estimated_1rm = 125.4
+
+[[personal_records]]
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+date = "2025-02-18"
+weight = 94.0
+reps = 8
+estimated_1rm = 119.06666666666666
+
+[[personal_records]]
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+date = "2025-02-25"
+weight = 94.5
+reps = 11
+estimated_1rm = 129.15
+
+[[personal_records]]
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+date = "2025-03-13"
+weight = 138.0
+reps = 8
+estimated_1rm = 174.79999999999998
+
+[[personal_records]]
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+date = "2025-03-19"
+weight = 130.0
+reps = 8
+estimated_1rm = 164.66666666666666
+
+[[personal_records]]
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+date = "2025-03-21"
+weight = 130.5
+reps = 7
+estimated_1rm = 160.95000000000002
+
+[[personal_records]]
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+date = "2025-03-26"
+weight = 130.0
+reps = 8
+estimated_1rm = 164.66666666666666
+
+[[personal_records]]
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+date = "2025-04-23"
+weight = 130.0
+reps = 8
+estimated_1rm = 164.66666666666666
+
+[[personal_records]]
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+date = "2025-04-25"
+weight = 130.5
+reps = 6
+estimated_1rm = 156.6
+
+[[personal_records]]
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+date = "2025-04-29"
+weight = 85.0
+reps = 8
+estimated_1rm = 107.66666666666666
+
+[[personal_records]]
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+date = "2025-05-08"
+weight = 130.5
+reps = 10
+estimated_1rm = 174.0
+
+[[personal_records]]
+exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+date = "2025-02-18"
+weight = 80.0
+reps = 6
+estimated_1rm = 96.0
+
+[[personal_records]]
+exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+date = "2025-02-25"
+weight = 80.0
+reps = 8
+estimated_1rm = 101.33333333333333
+
+[[personal_records]]
+exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+date = "2025-03-13"
+weight = 55.0
+reps = 8
+estimated_1rm = 69.66666666666666
+
+[[personal_records]]
+exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+date = "2025-03-19"
+weight = 120.0
+reps = 5
+estimated_1rm = 140.0
+
+[[personal_records]]
+exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+date = "2025-03-26"
+weight = 85.5
+reps = 8
+estimated_1rm = 108.3
+
+[[personal_records]]
+exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+date = "2025-04-02"
+weight = 160.0
+reps = 3
+estimated_1rm = 176.0
+
+[[personal_records]]
+exercise_id = "9108e0af-13ed-46b3-9eaf-0567b6b7328b"
+date = "2025-04-08"
+weight = 120.0
+reps = 6
+estimated_1rm = 144.0
+
+[[personal_records]]
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+date = "2025-02-11"
+weight = 120.0
+reps = 6
+estimated_1rm = 144.0
+
+[[personal_records]]
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+date = "2025-02-13"
+weight = 105.0
+reps = 8
+estimated_1rm = 133.0
+
+[[personal_records]]
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+date = "2025-02-18"
+weight = 120.0
+reps = 10
+estimated_1rm = 160.0
+
+[[personal_records]]
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+date = "2025-02-20"
+weight = 120.0
+reps = 10
+estimated_1rm = 160.0
+
+[[personal_records]]
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+date = "2025-02-25"
+weight = 130.0
+reps = 6
+estimated_1rm = 156.0
+
+[[personal_records]]
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+date = "2025-02-27"
+weight = 130.0
+reps = 6
+estimated_1rm = 156.0
+
+[[personal_records]]
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+date = "2025-03-19"
+weight = 130.0
+reps = 4
+estimated_1rm = 147.33333333333334
+
+[[personal_records]]
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+date = "2025-03-26"
+weight = 120.0
+reps = 5
+estimated_1rm = 140.0
+
+[[personal_records]]
+exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+date = "2025-02-12"
+weight = 30.0
+reps = 7
+estimated_1rm = 37.0
+
+[[personal_records]]
+exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+date = "2025-02-19"
+weight = 30.0
+reps = 7
+estimated_1rm = 37.0
+
+[[personal_records]]
+exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+date = "2025-02-26"
+weight = 30.0
+reps = 8
+estimated_1rm = 38.0
+
+[[personal_records]]
+exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+date = "2025-03-15"
+weight = 30.0
+reps = 8
+estimated_1rm = 38.0
+
+[[personal_records]]
+exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+date = "2025-03-20"
+weight = 40.0
+reps = 5
+estimated_1rm = 46.66666666666667
+
+[[personal_records]]
+exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+date = "2025-03-27"
+weight = 40.0
+reps = 6
+estimated_1rm = 48.0
+
+[[personal_records]]
+exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+date = "2025-04-03"
+weight = 40.0
+reps = 6
+estimated_1rm = 48.0
+
+[[personal_records]]
+exercise_id = "bf8a1c09-aa5f-4c8b-ba79-4ac72a8224ce"
+date = "2025-03-14"
+weight = 90.0
+reps = 6
+estimated_1rm = 108.0
+
+[[personal_records]]
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+date = "2025-02-12"
+weight = 80.0
+reps = 9
+estimated_1rm = 104.0
+
+[[personal_records]]
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+date = "2025-03-14"
+weight = 55.0
+reps = 7
+estimated_1rm = 67.83333333333334
+
+[[personal_records]]
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+date = "2025-03-20"
+weight = 120.0
+reps = 5
+estimated_1rm = 140.0
+
+[[personal_records]]
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+date = "2025-03-27"
+weight = 140.0
+reps = 3
+estimated_1rm = 154.0
+
+[[personal_records]]
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+date = "2025-04-03"
+weight = 140.0
+reps = 4
+estimated_1rm = 158.66666666666666
+
+[[personal_records]]
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+date = "2025-04-22"
+weight = 140.0
+reps = 4
+estimated_1rm = 158.66666666666666
+
+[[personal_records]]
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+date = "2025-04-28"
+weight = 103.5
+reps = 4
+estimated_1rm = 117.3
+
+[[personal_records]]
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+date = "2025-05-01"
+weight = 110.0
+reps = 5
+estimated_1rm = 128.33333333333334
+
+[[personal_records]]
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+date = "2025-05-07"
+weight = 140.0
+reps = 5
+estimated_1rm = 163.33333333333334
+
+[[personal_records]]
+exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+date = "2025-02-10"
+weight = 32.0
+reps = 10
+estimated_1rm = 42.666666666666664
+
+[[personal_records]]
+exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+date = "2025-02-14"
+weight = 28.75
+reps = 12
+estimated_1rm = 40.25
+
+[[personal_records]]
+exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+date = "2025-02-17"
+weight = 28.75
+reps = 8
+estimated_1rm = 36.416666666666664
+
+[[personal_records]]
+exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+date = "2025-02-21"
+weight = 36.5
+reps = 10
+estimated_1rm = 48.666666666666664
+
+[[personal_records]]
+exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+date = "2025-02-24"
+weight = 36.5
+reps = 6
+estimated_1rm = 43.8
+
+[[personal_records]]
+exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+date = "2025-02-28"
+weight = 36.0
+reps = 11
+estimated_1rm = 49.2
+
+[[personal_records]]
+exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+date = "2025-03-17"
+weight = 47.0
+reps = 5
+estimated_1rm = 54.833333333333336
+
+[[personal_records]]
+exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+date = "2025-03-25"
+weight = 47.0
+reps = 6
+estimated_1rm = 56.4
+
+[[personal_records]]
+exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+date = "2025-03-31"
+weight = 52.5
+reps = 4
+estimated_1rm = 59.5
+
+[[personal_records]]
+exercise_id = "c57ddbfe-1e43-4252-aeed-e845e9958df0"
+date = "2025-04-28"
+weight = 80.0
+reps = 5
+estimated_1rm = 93.33333333333334
+
+[[personal_records]]
+exercise_id = "c79c90c9-d7bc-4ef0-98d0-96ad73619517"
+date = "2025-03-13"
+weight = 100.0
+reps = 6
+estimated_1rm = 120.0
+
+[[personal_records]]
+exercise_id = "c79c90c9-d7bc-4ef0-98d0-96ad73619517"
+date = "2025-03-14"
+weight = 120.0
+reps = 3
+estimated_1rm = 132.0
+
+[[personal_records]]
+exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+date = "2025-02-10"
+weight = 110.0
+reps = 8
+estimated_1rm = 139.33333333333331
+
+[[personal_records]]
+exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+date = "2025-03-10"
+weight = 110.0
+reps = 8
+estimated_1rm = 139.33333333333331
+
+[[personal_records]]
+exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+date = "2025-04-07"
+weight = 120.0
+reps = 5
+estimated_1rm = 140.0
+
+[[personal_records]]
+exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+date = "2025-04-22"
+weight = 120.0
+reps = 6
+estimated_1rm = 144.0
+
+[[personal_records]]
+exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+date = "2025-05-05"
+weight = 130.0
+reps = 5
+estimated_1rm = 151.66666666666669
+
+[[personal_records]]
+exercise_id = "ce738f93-8d0f-4a7c-a6df-18d9257745db"
+date = "2025-02-19"
+weight = 91.0
+reps = 8
+estimated_1rm = 115.26666666666667
+
+[[personal_records]]
+exercise_id = "ce738f93-8d0f-4a7c-a6df-18d9257745db"
+date = "2025-02-26"
+weight = 91.0
+reps = 10
+estimated_1rm = 121.33333333333333
+
+[[personal_records]]
+exercise_id = "ce738f93-8d0f-4a7c-a6df-18d9257745db"
+date = "2025-03-27"
+weight = 113.0
+reps = 6
+estimated_1rm = 135.6
+
+[[personal_records]]
+exercise_id = "ce738f93-8d0f-4a7c-a6df-18d9257745db"
+date = "2025-04-03"
+weight = 113.0
+reps = 7
+estimated_1rm = 139.36666666666667
+
+[[personal_records]]
+exercise_id = "ce738f93-8d0f-4a7c-a6df-18d9257745db"
+date = "2025-04-28"
+weight = 70.0
+reps = 4
+estimated_1rm = 79.33333333333333
+
+[[personal_records]]
+exercise_id = "ce738f93-8d0f-4a7c-a6df-18d9257745db"
+date = "2025-05-07"
+weight = 134.0
+reps = 5
+estimated_1rm = 156.33333333333334
+
+[[personal_records]]
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+date = "2025-04-09"
+weight = 80.0
+reps = 5
+estimated_1rm = 93.33333333333334
+
+[[personal_records]]
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+date = "2025-04-11"
+weight = 80.0
+reps = 6
+estimated_1rm = 96.0
+
+[[personal_records]]
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+date = "2025-04-24"
+weight = 80.0
+reps = 6
+estimated_1rm = 96.0
+
+[[personal_records]]
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+date = "2025-05-07"
+weight = 90.0
+reps = 4
+estimated_1rm = 102.0
+
+[[personal_records]]
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+date = "2025-02-12"
+weight = 32.0
+reps = 10
+estimated_1rm = 42.666666666666664
+
+[[personal_records]]
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+date = "2025-02-26"
+weight = 36.0
+reps = 8
+estimated_1rm = 45.599999999999994
+
+[[personal_records]]
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+date = "2025-03-15"
+weight = 36.0
+reps = 8
+estimated_1rm = 45.599999999999994
+
+[[personal_records]]
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+date = "2025-03-20"
+weight = 42.0
+reps = 8
+estimated_1rm = 53.199999999999996
+
+[[personal_records]]
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+date = "2025-03-27"
+weight = 47.5
+reps = 8
+estimated_1rm = 60.166666666666664
+
+[[personal_records]]
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+date = "2025-04-03"
+weight = 52.5
+reps = 3
+estimated_1rm = 57.75000000000001
+
+[[personal_records]]
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+date = "2025-04-09"
+weight = 47.5
+reps = 8
+estimated_1rm = 60.166666666666664
+
+[[personal_records]]
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+date = "2025-04-11"
+weight = 50.0
+reps = 6
+estimated_1rm = 60.0
+
+[[personal_records]]
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+date = "2025-04-24"
+weight = 21.0
+reps = 5
+estimated_1rm = 24.5
+
+[[personal_records]]
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+date = "2025-05-07"
+weight = 21.0
+reps = 6
+estimated_1rm = 25.2
+
+[[personal_records]]
+exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+date = "2025-02-12"
+weight = 30.0
+reps = 10
+estimated_1rm = 40.0
+
+[[personal_records]]
+exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+date = "2025-02-14"
+weight = 30.0
+reps = 10
+estimated_1rm = 40.0
+
+[[personal_records]]
+exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+date = "2025-02-19"
+weight = 35.0
+reps = 8
+estimated_1rm = 44.33333333333333
+
+[[personal_records]]
+exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+date = "2025-02-21"
+weight = 40.0
+reps = 6
+estimated_1rm = 48.0
+
+[[personal_records]]
+exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+date = "2025-02-26"
+weight = 40.0
+reps = 8
+estimated_1rm = 50.666666666666664
+
+[[personal_records]]
+exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+date = "2025-02-28"
+weight = 40.0
+reps = 6
+estimated_1rm = 48.0
+
+[[personal_records]]
+exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+date = "2025-03-20"
+weight = 40.0
+reps = 8
+estimated_1rm = 50.666666666666664
+
+[[personal_records]]
+exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+date = "2025-03-27"
+weight = 50.0
+reps = 8
+estimated_1rm = 63.33333333333333
+
+[[personal_records]]
+exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+date = "2025-04-03"
+weight = 60.0
+reps = 8
+estimated_1rm = 76.0
+
+[[personal_records]]
+exercise_id = "de4cdf01-a88d-48cb-946d-5fce97350f04"
+date = "2025-04-11"
+weight = 50.0
+reps = 8
+estimated_1rm = 63.33333333333333
+
+[[personal_records]]
+exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+date = "2025-02-28"
+weight = 85.5
+reps = 6
+estimated_1rm = 102.6
+
+[[personal_records]]
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+date = "2025-02-10"
+weight = 58.5
+reps = 6
+estimated_1rm = 70.2
+
+[[personal_records]]
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+date = "2025-02-17"
+weight = 58.5
+reps = 8
+estimated_1rm = 74.1
+
+[[personal_records]]
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+date = "2025-02-24"
+weight = 67.5
+reps = 8
+estimated_1rm = 85.5
+
+[[personal_records]]
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+date = "2025-03-17"
+weight = 67.5
+reps = 8
+estimated_1rm = 85.5
+
+[[personal_records]]
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+date = "2025-03-25"
+weight = 76.5
+reps = 7
+estimated_1rm = 94.35000000000001
+
+[[personal_records]]
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+date = "2025-03-31"
+weight = 85.5
+reps = 4
+estimated_1rm = 96.89999999999999
+
+[[personal_records]]
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+date = "2025-04-07"
+weight = 85.5
+reps = 6
+estimated_1rm = 102.6
+
+[[personal_records]]
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+date = "2025-04-22"
+weight = 85.5
+reps = 6
+estimated_1rm = 102.6
+
+[[personal_records]]
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+date = "2025-04-28"
+weight = 67.5
+reps = 6
+estimated_1rm = 81.0
+
+[[personal_records]]
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+date = "2025-05-01"
+weight = 80.0
+reps = 7
+estimated_1rm = 98.66666666666667
+
+[[personal_records]]
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+date = "2025-05-05"
+weight = 85.5
+reps = 5
+estimated_1rm = 99.75
+
+[[personal_records]]
+exercise_id = "e1a0189b-b18c-4461-89e4-95cf6c8bd7bb"
+date = "2025-02-19"
+weight = 60.0
+reps = 8
+estimated_1rm = 76.0
+
+[[personal_records]]
+exercise_id = "e1a0189b-b18c-4461-89e4-95cf6c8bd7bb"
+date = "2025-02-26"
+weight = 70.0
+reps = 10
+estimated_1rm = 93.33333333333333
+
+[[personal_records]]
+exercise_id = "e1a0189b-b18c-4461-89e4-95cf6c8bd7bb"
+date = "2025-03-31"
+weight = 90.0
+reps = 5
+estimated_1rm = 105.0
+
+[[personal_records]]
+exercise_id = "e1a0189b-b18c-4461-89e4-95cf6c8bd7bb"
+date = "2025-04-07"
+weight = 90.0
+reps = 5
+estimated_1rm = 105.0
+
+[[personal_records]]
+exercise_id = "e1a0189b-b18c-4461-89e4-95cf6c8bd7bb"
+date = "2025-04-09"
+weight = 90.0
+reps = 5
+estimated_1rm = 105.0
+
+[[personal_records]]
+exercise_id = "e1a0189b-b18c-4461-89e4-95cf6c8bd7bb"
+date = "2025-04-24"
+weight = 90.0
+reps = 5
+estimated_1rm = 105.0
+
+[[personal_records]]
+exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+date = "2025-02-10"
+weight = 15.0
+reps = 9
+estimated_1rm = 19.5
+
+[[personal_records]]
+exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+date = "2025-02-17"
+weight = 15.0
+reps = 9
+estimated_1rm = 19.5
+
+[[personal_records]]
+exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+date = "2025-02-24"
+weight = 17.5
+reps = 8
+estimated_1rm = 22.166666666666664
+
+[[personal_records]]
+exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+date = "2025-03-17"
+weight = 21.5
+reps = 6
+estimated_1rm = 25.8
+
+[[personal_records]]
+exercise_id = "e4faeda9-0070-4910-b690-fb84edfad075"
+date = "2025-04-28"
+weight = 80.0
+reps = 6
+estimated_1rm = 96.0
+
+[[personal_records]]
+exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+date = "2025-03-13"
+weight = 195.0
+reps = 9
+estimated_1rm = 253.5
+
+[[personal_records]]
+exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+date = "2025-03-19"
+weight = 220.0
+reps = 6
+estimated_1rm = 264.0
+
+[[personal_records]]
+exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+date = "2025-04-02"
+weight = 220.5
+reps = 6
+estimated_1rm = 264.59999999999997
+
+[[personal_records]]
+exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+date = "2025-04-22"
+weight = 193.5
+reps = 9
+estimated_1rm = 251.55
+
+[[personal_records]]
+exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+date = "2025-04-23"
+weight = 193.5
+reps = 11
+estimated_1rm = 264.45
+
+[[personal_records]]
+exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+date = "2025-04-29"
+weight = 148.0
+reps = 10
+estimated_1rm = 197.33333333333331
+
+[[personal_records]]
+exercise_id = "e994a6a3-9911-415b-afc6-da82787f3641"
+date = "2025-02-12"
+weight = 18.0
+reps = 8
+estimated_1rm = 22.799999999999997
+
+[[personal_records]]
+exercise_id = "e994a6a3-9911-415b-afc6-da82787f3641"
+date = "2025-04-24"
+weight = 26.0
+reps = 6
+estimated_1rm = 31.2
+
+[[personal_records]]
+exercise_id = "e994a6a3-9911-415b-afc6-da82787f3641"
+date = "2025-05-07"
+weight = 30.0
+reps = 4
+estimated_1rm = 34.0
+
+[[personal_records]]
+exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+date = "2025-03-13"
+weight = 36.20000076293945
+reps = 20
+estimated_1rm = 60.333334604899086
+
+[[personal_records]]
+exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+date = "2025-03-19"
+weight = 45.0
+reps = 11
+estimated_1rm = 61.5
+
+[[personal_records]]
+exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+date = "2025-03-20"
+weight = 42.0
+reps = 9
+estimated_1rm = 54.6
+
+[[personal_records]]
+exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+date = "2025-03-21"
+weight = 42.0
+reps = 10
+estimated_1rm = 56.0
+
+[[personal_records]]
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+date = "2025-03-14"
+weight = 60.0
+reps = 5
+estimated_1rm = 70.0
+
+[[personal_records]]
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+date = "2025-03-20"
+weight = 70.0
+reps = 4
+estimated_1rm = 79.33333333333333
+
+[[personal_records]]
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+date = "2025-03-27"
+weight = 70.0
+reps = 5
+estimated_1rm = 81.66666666666667
+
+[[personal_records]]
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+date = "2025-04-03"
+weight = 70.0
+reps = 6
+estimated_1rm = 84.0
+
+[[personal_records]]
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+date = "2025-04-09"
+weight = 75.0
+reps = 4
+estimated_1rm = 85.0
+
+[[personal_records]]
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+date = "2025-04-24"
+weight = 65.0
+reps = 5
+estimated_1rm = 75.83333333333334
+
+[[personal_records]]
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+date = "2025-05-07"
+weight = 70.0
+reps = 3
+estimated_1rm = 77.0
+
+[[personal_records]]
+exercise_id = "f19b6bd8-0964-4118-8188-0a8044e7548c"
+date = "2025-03-17"
+weight = 14.0
+reps = 8
+estimated_1rm = 17.733333333333334
+
+[[personal_records]]
+exercise_id = "fd1b7922-9691-4407-8434-56a671a20e01"
+date = "2025-02-13"
+weight = 121.5
+reps = 6
+estimated_1rm = 145.79999999999998
+
+[[personal_records]]
+exercise_id = "fd1b7922-9691-4407-8434-56a671a20e01"
+date = "2025-02-27"
+weight = 121.5
+reps = 8
+estimated_1rm = 153.9
+
+[[personal_records]]
+exercise_id = "fd1b7922-9691-4407-8434-56a671a20e01"
+date = "2025-03-28"
+weight = 148.0
+reps = 7
+estimated_1rm = 182.53333333333333
+
+[[personal_records]]
+exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+date = "2025-02-10"
+weight = 20.0
+reps = 4
+estimated_1rm = 22.666666666666664
+
+[[personal_records]]
+exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+date = "2025-02-17"
+weight = 20.0
+reps = 6
+estimated_1rm = 24.0
+
+[[personal_records]]
+exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+date = "2025-02-24"
+weight = 20.0
+reps = 8
+estimated_1rm = 25.333333333333332
+
+[[personal_records]]
+exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+date = "2025-03-10"
+weight = 20.0
+reps = 6
+estimated_1rm = 24.0
+
+[[personal_records]]
+exercise_id = "fdaf730f-1086-4e67-8078-ddf2c883b42e"
+date = "2025-05-05"
+weight = 30.0
+reps = 5
+estimated_1rm = 35.0
+
+[[personal_records]]
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+date = "2025-02-12"
+weight = 30.0
+reps = 3
+estimated_1rm = 33.0
+
+[[personal_records]]
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+date = "2025-02-19"
+weight = 30.0
+reps = 6
+estimated_1rm = 36.0
+
+[[personal_records]]
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+date = "2025-02-26"
+weight = 30.0
+reps = 6
+estimated_1rm = 36.0
+
+[[personal_records]]
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+date = "2025-03-20"
+weight = 30.0
+reps = 4
+estimated_1rm = 34.0
+
+[[personal_records]]
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+date = "2025-04-07"
+weight = 30.0
+reps = 5
+estimated_1rm = 35.0
+
+[[personal_records]]
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+date = "2025-04-09"
+weight = 30.0
+reps = 5
+estimated_1rm = 35.0
+
+[[personal_records]]
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+date = "2025-04-22"
+weight = 30.0
+reps = 5
+estimated_1rm = 35.0
+
+[[personal_records]]
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+date = "2025-05-07"
+weight = 40.0
+reps = 4
+estimated_1rm = 45.33333333333333
+
+[[personal_records]]
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+date = "2025-05-15 18:25:04"
+weight = 70.0
+reps = 5
+estimated_1rm = 81.66666412353516
+
+[[personal_records]]
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+date = "2025-05-15 18:32:59"
+weight = 75.0
+reps = 5
+estimated_1rm = 87.5
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-05-15 18:44:34"
+weight = 113.0
+reps = 6
+estimated_1rm = 135.60000610351563
+
+[[personal_records]]
+exercise_id = "46ea689c-c9d2-47f2-9fb1-ac4207b46cd7"
+date = "2025-05-15 18:51:18"
+weight = 65.0
+reps = 6
+estimated_1rm = 78.0
+
+[[personal_records]]
+exercise_id = "46ea689c-c9d2-47f2-9fb1-ac4207b46cd7"
+date = "2025-05-15 18:53:33"
+weight = 103.5
+reps = 5
+estimated_1rm = 120.74999237060547
+
+[[personal_records]]
+exercise_id = "87e60018-0827-4884-981e-1ad9ff75c85f"
+date = "2025-05-15 18:59:49"
+weight = 72.0
+reps = 6
+estimated_1rm = 86.4000015258789
+
+[[personal_records]]
+exercise_id = "215bdffc-62b4-4bb7-ae90-5ff2342661e8"
+date = "2025-05-15 19:15:06"
+weight = 90.0
+reps = 6
+estimated_1rm = 108.00000762939453
+
+[[personal_records]]
+exercise_id = "0515a0c3-86da-48cf-9762-62645bf04aed"
+date = "2025-05-15 19:29:25"
+weight = 120.0
+reps = 6
+estimated_1rm = 144.0
+
+[[personal_records]]
+exercise_id = "0515a0c3-86da-48cf-9762-62645bf04aed"
+date = "2025-05-15 19:33:03"
+weight = 160.0
+reps = 5
+estimated_1rm = 186.66665649414063
+
+[[personal_records]]
+exercise_id = "87e60018-0827-4884-981e-1ad9ff75c85f"
+date = "2025-05-15 19:33:12"
+weight = 79.0
+reps = 4
+estimated_1rm = 89.53333282470703
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-05-15 19:33:12"
+weight = 120.0
+reps = 4
+estimated_1rm = 136.0
+
+[[personal_records]]
+exercise_id = "215bdffc-62b4-4bb7-ae90-5ff2342661e8"
+date = "2025-05-15 19:33:12"
+weight = 100.0
+reps = 4
+estimated_1rm = 113.33333587646484
+
+[[personal_records]]
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+date = "2025-05-19 18:06:46"
+weight = 110.0
+reps = 6
+estimated_1rm = 132.0
+
+[[personal_records]]
+exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+date = "2025-05-19 18:23:26"
+weight = 140.0
+reps = 5
+estimated_1rm = 163.3333282470703
+
+[[personal_records]]
+exercise_id = "e0c58361-536a-4111-afd5-60188f0b6447"
+date = "2025-05-19 18:41:38"
+weight = 85.5
+reps = 7
+estimated_1rm = 105.45000457763672
+
+[[personal_records]]
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+date = "2025-05-19 18:47:05"
+weight = 80.0
+reps = 5
+estimated_1rm = 93.33332824707031
+
+[[personal_records]]
+exercise_id = "026a4108-a658-4299-ae34-423629cf940d"
+date = "2025-05-19 18:57:45"
+weight = 21.0
+reps = 6
+estimated_1rm = 25.200000762939453
+
+[[personal_records]]
+exercise_id = "6bc851da-6c59-48b4-bbf4-757c9ec25132"
+date = "2025-05-21 18:34:51"
+weight = 160.0
+reps = 3
+estimated_1rm = 176.0
+
+[[personal_records]]
+exercise_id = "c18218bc-4573-4560-b11b-3aec99b39682"
+date = "2025-05-21 18:49:03"
+weight = 95.0
+reps = 6
+estimated_1rm = 114.00000762939453
+
+[[personal_records]]
+exercise_id = "5b07363e-770b-4f94-81cd-3b69ad51b67f"
+date = "2025-05-21 19:06:58"
+weight = 60.0
+reps = 5
+estimated_1rm = 70.0
+
+[[personal_records]]
+exercise_id = "5b07363e-770b-4f94-81cd-3b69ad51b67f"
+date = "2025-05-21 19:07:06"
+weight = 80.0
+reps = 5
+estimated_1rm = 93.33332824707031
+
+[[personal_records]]
+exercise_id = "523769d9-3898-4d88-82bc-84b18c40c45f"
+date = "2025-05-23 17:32:49"
+weight = 80.0
+reps = 4
+estimated_1rm = 90.66666412353516
+
+[[personal_records]]
+exercise_id = "523769d9-3898-4d88-82bc-84b18c40c45f"
+date = "2025-05-23 17:35:05"
+weight = 80.0
+reps = 5
+estimated_1rm = 93.33332824707031
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-05-23 17:40:37"
+weight = 91.0
+reps = 8
+estimated_1rm = 115.26666259765625
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-05-23 17:44:05"
+weight = 91.0
+reps = 10
+estimated_1rm = 121.33333587646484
+
+[[personal_records]]
+exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+date = "2025-05-23 17:49:55"
+weight = 85.5
+reps = 8
+estimated_1rm = 108.29999542236328
+
+[[personal_records]]
+exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+date = "2025-05-23 17:54:28"
+weight = 103.5
+reps = 5
+estimated_1rm = 120.74999237060547
+
+[[personal_records]]
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+date = "2025-05-26 18:27:13"
+weight = 140.0
+reps = 7
+estimated_1rm = 172.6666717529297
+
+[[personal_records]]
+exercise_id = "87e60018-0827-4884-981e-1ad9ff75c85f"
+date = "2025-05-26 18:37:48"
+weight = 66.0
+reps = 6
+estimated_1rm = 79.20000457763672
+
+[[personal_records]]
+exercise_id = "87e60018-0827-4884-981e-1ad9ff75c85f"
+date = "2025-05-26 18:40:22"
+weight = 72.0
+reps = 6
+estimated_1rm = 86.4000015258789
+
+[[personal_records]]
+exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+date = "2025-05-26 18:45:43"
+weight = 103.5
+reps = 8
+estimated_1rm = 131.09999084472656
+
+[[personal_records]]
+exercise_id = "def2af7f-e8ac-4f12-8543-08317a69bd8b"
+date = "2025-05-26 18:50:32"
+weight = 112.5
+reps = 8
+estimated_1rm = 142.5
+
+[[personal_records]]
+exercise_id = "02e3048c-46a2-4b0a-99ce-b9ff3270123f"
+date = "2025-05-26 18:56:14"
+weight = 120.0
+reps = 5
+estimated_1rm = 140.0
+
+[[personal_records]]
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+date = "2025-05-26 19:11:15"
+weight = 80.0
+reps = 6
+estimated_1rm = 96.0
+
+[[personal_records]]
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+date = "2025-05-26 19:16:31"
+weight = 80.0
+reps = 5
+estimated_1rm = 93.33332824707031
+
+[[personal_records]]
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+date = "2025-05-26 19:25:52"
+weight = 52.5
+reps = 6
+estimated_1rm = 63.000003814697266
+
+[[personal_records]]
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+date = "2025-05-26 19:25:52"
+weight = 160.0
+reps = 4
+estimated_1rm = 181.3333282470703
+
+[[personal_records]]
+exercise_id = "b22f1f64-5993-4e5d-bde9-7523327aa7f8"
+date = "2025-05-27 19:15:06"
+weight = 140.0
+reps = 6
+estimated_1rm = 168.0
+
+[[personal_records]]
+exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+date = "2025-05-27 19:38:19"
+weight = 240.0
+reps = 5
+estimated_1rm = 280.0
+
+[[personal_records]]
+exercise_id = "2163b96e-05cf-482d-939f-647d9f9af7d7"
+date = "2025-05-27 19:40:44"
+weight = 280.0
+reps = 4
+estimated_1rm = 317.3333435058594
+
+[[personal_records]]
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+date = "2025-05-27 19:50:40"
+weight = 95.0
+reps = 8
+estimated_1rm = 120.33332824707031
+
+[[personal_records]]
+exercise_id = "b22f1f64-5993-4e5d-bde9-7523327aa7f8"
+date = "2025-05-27 20:02:54"
+weight = 160.0
+reps = 4
+estimated_1rm = 181.3333282470703
+
+[[personal_records]]
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+date = "2025-05-27 20:02:54"
+weight = 140.0
+reps = 6
+estimated_1rm = 168.0
+
+[[personal_records]]
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+date = "2025-05-29 18:58:26"
+weight = 40.0
+reps = 5
+estimated_1rm = 46.666664123535156
+
+[[personal_records]]
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+date = "2025-05-29 19:24:17"
+weight = 160.0
+reps = 8
+estimated_1rm = 202.66665649414063
+
+[[personal_records]]
+exercise_id = "026a4108-a658-4299-ae34-423629cf940d"
+date = "2025-05-29 19:43:15"
+weight = 25.0
+reps = 6
+estimated_1rm = 30.000001907348633
+
+[[personal_records]]
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+date = "2025-05-29 19:44:32"
+weight = 180.0
+reps = 6
+estimated_1rm = 216.00001525878906
