@@ -599,25 +599,25 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                         };
                         let padding = " ".repeat(target_padding);
 
-                                            // Check if this set is a PR (matching the PR weight and reps)
-                    let is_pr_set = if let (Some(pr_w), Some(pr_r)) = (pr_weight, pr_reps) {
-                        !bw && weight > 0.0 && weight == pr_w && reps == pr_r
-                    } else {
-                        false
-                    };
-
-                    let current_info = if bw {
-                        format!("bw × {}", reps)
-                    } else if weight > 0.0 {
-                        let set_info = format!("{}kg × {}", weight, reps);
-                        if is_pr_set {
-                            set_info.green().bold().to_string()
+                        // Check if this set is a PR (matching the PR weight and reps)
+                        let is_pr_set = if let (Some(pr_w), Some(pr_r)) = (pr_weight, pr_reps) {
+                            !bw && weight > 0.0 && weight == pr_w && reps == pr_r
                         } else {
-                            set_info
-                        }
-                    } else {
-                        String::new()
-                    };
+                            false
+                        };
+
+                        let current_info = if bw {
+                            format!("bw × {}", reps)
+                        } else if weight > 0.0 {
+                            let set_info = format!("{}kg × {}", weight, reps);
+                            if is_pr_set {
+                                set_info.green().bold().to_string()
+                            } else {
+                                set_info
+                            }
+                        } else {
+                            String::new()
+                        };
 
                         // Print with explicit parts
                         println!(
@@ -1243,7 +1243,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
                     }
                 };
 
-            // Get the original exercise's set count from the program
+            // Get the original exercise's set count from the program for display purposes
             let original_sets: i32 = sqlx::query_scalar(
                 "SELECT COALESCE(pe.sets, 2) FROM program_exercises pe 
                  WHERE pe.program_block_id = ? AND pe.exercise_id = ?"
@@ -1313,39 +1313,7 @@ pub async fn handle(cmd: SessionCmd, pool: &SqlitePool) -> Result<()> {
             .fetch_optional(&mut *tx)
             .await?;
 
-            // Check if the new exercise already exists in program_exercises
-            let existing_program_exercise: Option<String> = sqlx::query_scalar(
-                "SELECT id FROM program_exercises WHERE program_block_id = ? AND exercise_id = ?"
-            )
-            .bind(&program_block_id)
-            .bind(&new_exercise_id)
-            .fetch_optional(&mut *tx)
-            .await?;
-
-            if let Some(pe_id) = existing_program_exercise {
-                // Update existing program exercise to use the original exercise's set count
-                sqlx::query(
-                    "UPDATE program_exercises SET sets = ? WHERE id = ?"
-                )
-                .bind(original_sets)
-                .bind(pe_id)
-                .execute(&mut *tx)
-                .await?;
-            } else {
-                // Create a new program exercise with the original exercise's set count
-                sqlx::query(
-                    "INSERT INTO program_exercises (id, program_block_id, exercise_id, sets, order_index) 
-                     VALUES (?, ?, ?, ?, 999)"
-                )
-                .bind(Uuid::new_v4().to_string())
-                .bind(&program_block_id)
-                .bind(&new_exercise_id)
-                .bind(original_sets)
-                .execute(&mut *tx)
-                .await?;
-            }
-
-            // Update the training_session_exercise record ONLY
+            // ONLY update the training_session_exercise record - DO NOT modify program_exercises
             sqlx::query("UPDATE training_session_exercises SET exercise_id = ? WHERE id = ?")
                 .bind(&new_exercise_id)
                 .bind(&old_session_exercise_id)
