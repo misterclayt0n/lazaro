@@ -249,6 +249,11 @@ name = "Cable Wrist Curl"
 description = "Do this on your back"
 primary_muscle = "Forearms"
 
+[[exercise]]
+name = "Unilateral Cable Wrist Curl"
+description = "Sam sulek style"
+primary_muscle = "Forearms"
+
 #
 # Quads
 #
@@ -256,57 +261,57 @@ primary_muscle = "Forearms"
 [[exercise]]
 name = "High Bar Squat"
 description = "Full depth barbell high bar back squat"
-primary_muscle = "Quadriceps"
+primary_muscle = "Quads"
 
 [[exercise]]
 name = "Paused High Bar Squat"
 description = "Full depth paused barbell high bar back squat"
-primary_muscle = "Quadriceps"
+primary_muscle = "Quads"
 
 [[exercise]]
 name = "Smith Machine Squat"
 description = "Full range of motion always, brace as hard as you can"
-primary_muscle = "Quadriceps"
+primary_muscle = "Quads"
 
 [[exercise]]
 name = "Single Leg Press"
 description = "Pause for 1 second at the bottom"
-primary_muscle = "Quadriceps"
+primary_muscle = "Quads"
 
 [[exercise]]
 name = "Machine Leg Press"
 description = "Pause for 1 second at the bottom"
-primary_muscle = "Quadriceps"
+primary_muscle = "Quads"
 
 [[exercise]]
 name = "Single Machine Leg Press"
 description = "Pause for 1 second at the bottom"
-primary_muscle = "Quadriceps"
+primary_muscle = "Quads"
 
 [[exercise]]
 name = "Leg Press"
 description = "Pause for 1 second at the bottom"
-primary_muscle = "Quadriceps"
+primary_muscle = "Quads"
 
 [[exercise]]
 name = "Hack Squat"
 description = "Pause for 1 second at the bottom"
-primary_muscle = "Quadriceps"
+primary_muscle = "Quads"
 
 [[exercise]]
 name = "Belt Squat"
 description = "Pause for 1 second at the bottom"
-primary_muscle = "Quadriceps"
+primary_muscle = "Quads"
 
 [[exercise]]
 name = "Leg Extension"
 description = "Push the seat a bit back"
-primary_muscle = "Quadriceps"
+primary_muscle = "Quads"
 
 [[exercise]]
 name = "Sissy Squat"
 description = "Absolute stretch at the bottom"
-primary_muscle = "Quadriceps"
+primary_muscle = "Quads"
 
 #
 # Hamstrings
@@ -342,7 +347,17 @@ description = "Put a pad to go for a deep stretch on the calves"
 primary_muscle = "Calves"
 
 [[exercise]]
+name = "Standing Unilateral Smith Calf Raise"
+description = "Put a pad to go for a deep stretch on the calves"
+primary_muscle = "Calves"
+
+[[exercise]]
 name = "Leg Press Calf Raise"
+description = "No secret here"
+primary_muscle = "Calves"
+
+[[exercise]]
+name = "Unilateral Leg Press Calf Raise"
 description = "No secret here"
 primary_muscle = "Calves"
 

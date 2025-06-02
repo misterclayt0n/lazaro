@@ -607,6 +607,27 @@ created_at = "2025-05-27 19:06:21"
 estimated_one_rm = 181.3333282470703
 current_pr_date = "2025-05-27 20:02:54"
 
+[[exercises]]
+id = "9b735dad-0914-4d29-80c0-404ce6c7207e"
+name = "Unilateral Cable Wrist Curl"
+primary_muscle = "forearms"
+description = "Sam sulek style"
+created_at = "2025-06-02 17:31:00"
+
+[[exercises]]
+id = "a691246f-c573-441a-ad88-6086c5811328"
+name = "Standing Unilateral Smith Calf Raise"
+primary_muscle = "calves"
+description = "Put a pad to go for a deep stretch on the calves"
+created_at = "2025-06-02 17:31:00"
+
+[[exercises]]
+id = "ab86c485-9824-498a-8119-2209500f8042"
+name = "Unilateral Leg Press Calf Raise"
+primary_muscle = "calves"
+description = "No secret here"
+created_at = "2025-06-02 17:31:00"
+
 [[programs]]
 id = "legacy-prog"
 name = "Legacy import"
@@ -1069,6 +1090,298 @@ id = "2ff46e25-3ba0-454f-9bdf-333a7d30165d"
 exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
 sets = 3
 reps = "AMRAP,AMRAP,AMRAP"
+order_index = 7
+
+[[programs]]
+id = "a0cd2eb5-db30-47c1-a313-4a3e8cee23e8"
+name = "The Berserk"
+description = "Designed to turn you into an absolute unit"
+created_at = "2025-06-02 17:31:02"
+
+[[programs.blocks]]
+id = "b81bd6fa-b156-4ece-b25a-180771dadd62"
+name = "Upper Day 1"
+
+[[programs.blocks.exercises]]
+id = "6f56be6a-1a95-47eb-adf8-e01266d7d119"
+exercise_id = "215bdffc-62b4-4bb7-ae90-5ff2342661e8"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 4
+
+[[programs.blocks.exercises]]
+id = "91244553-a323-4ba5-b0a6-578dacfb29f0"
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+sets = 3
+reps = "4-8,4-8,6-8"
+order_index = 0
+
+[[programs.blocks.exercises]]
+id = "c8da0c9a-3f06-4f2d-974e-dc0452663631"
+exercise_id = "a691246f-c573-441a-ad88-6086c5811328"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 7
+
+[[programs.blocks.exercises]]
+id = "8a0487a2-f368-49ec-9289-cefe4ddcf484"
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+sets = 2
+reps = "4-8,4-8"
+order_index = 2
+
+[[programs.blocks.exercises]]
+id = "9aece883-d1f7-4e71-92fa-95b14f95127f"
+exercise_id = "cd16fcce-1c61-4a55-acb7-c14635b0c848"
+sets = 2
+reps = "4-8,4-8"
+order_index = 1
+
+[[programs.blocks.exercises]]
+id = "51292890-ef3f-427f-9ddf-f2feb35118ef"
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 5
+
+[[programs.blocks.exercises]]
+id = "bb1272a5-3428-402b-9323-f77804c25e21"
+exercise_id = "f19b6bd8-0964-4118-8188-0a8044e7548c"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 6
+
+[[programs.blocks.exercises]]
+id = "9e386dea-61f8-4c59-8db1-5550a78d5d82"
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+sets = 2
+reps = "4-8,4-8"
+order_index = 3
+
+[[programs.blocks]]
+id = "683833d8-f2f6-4691-a954-cc46c4c851c4"
+name = "Lower Day 1"
+
+[[programs.blocks.exercises]]
+id = "09a3b250-32ad-49b5-9f83-765c29274d54"
+exercise_id = "331d478c-6b5b-410a-8b99-7b54aa05b672"
+sets = 2
+reps = "4-8,4-8"
+order_index = 1
+
+[[programs.blocks.exercises]]
+id = "483c48c4-12df-423d-9efb-d68d1f320e62"
+exercise_id = "3e977dc2-2869-40fd-afa3-e3b9d2712b40"
+sets = 2
+reps = "4-8,4-8"
+order_index = 3
+
+[[programs.blocks.exercises]]
+id = "8f10cb06-1599-4c0b-9bb8-39aaa6224504"
+exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+sets = 2
+reps = "4-8,4-8"
+order_index = 4
+
+[[programs.blocks.exercises]]
+id = "b61603e1-00a8-4d49-aab0-53e3632c64b4"
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+sets = 2
+reps = "4-8,4-8"
+order_index = 2
+
+[[programs.blocks.exercises]]
+id = "1315e8b8-79dc-4eef-abd3-d8bba5f0ed1b"
+exercise_id = "9b735dad-0914-4d29-80c0-404ce6c7207e"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 6
+
+[[programs.blocks.exercises]]
+id = "b8e232c0-0431-4050-bffc-6dcf3b94a980"
+exercise_id = "a2daff57-4f81-4047-98cf-e7000d77d0dc"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 0
+
+[[programs.blocks.exercises]]
+id = "78a17932-fc8b-4e97-832c-300c208d2620"
+exercise_id = "e7d861dd-863d-42e4-936d-5e4262e21e12"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 5
+
+[[programs.blocks]]
+id = "3b0714cb-3c19-47d2-a2cd-e3faad356e14"
+name = "Upper Day 2"
+
+[[programs.blocks.exercises]]
+id = "3b122fde-4ca9-4ce3-8bcf-bdb1d3e380ec"
+exercise_id = "11829513-8731-4912-8315-0ea143248e48"
+sets = 2
+reps = "4-8,4-8"
+order_index = 6
+
+[[programs.blocks.exercises]]
+id = "0880854a-f23f-4973-8bff-ab6bb46d2949"
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+sets = 2
+reps = "4-8,4-8"
+order_index = 3
+
+[[programs.blocks.exercises]]
+id = "fcceb2c8-a9bc-4988-999f-77a06b98b4a2"
+exercise_id = "215bdffc-62b4-4bb7-ae90-5ff2342661e8"
+sets = 2
+reps = "4-8,4-8"
+order_index = 5
+
+[[programs.blocks.exercises]]
+id = "283a2de8-9787-4175-af6e-7bc6a590ec07"
+exercise_id = "9b735dad-0914-4d29-80c0-404ce6c7207e"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 8
+
+[[programs.blocks.exercises]]
+id = "f88aa501-94ee-4a86-b219-50ac93af5cc9"
+exercise_id = "c1711051-6d53-4ce2-8af1-c9b62d6145c5"
+sets = 2
+reps = "4-8,4-8"
+order_index = 2
+
+[[programs.blocks.exercises]]
+id = "19a8c0ae-5192-4c2c-8385-43f4631eefd6"
+exercise_id = "da7c7607-6314-4292-a00c-090b986f6b74"
+sets = 2
+reps = "4-8,4-8"
+order_index = 4
+
+[[programs.blocks.exercises]]
+id = "5f94fcbf-b734-4675-8efc-2836c24cedef"
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+sets = 2
+reps = "4-8,4-8"
+order_index = 7
+
+[[programs.blocks.exercises]]
+id = "6b69e5cc-adc5-490b-aaae-99615a8fc9e9"
+exercise_id = "f140b1b3-c704-43be-ad64-0f2ca151f125"
+sets = 2
+reps = "4-8,4-8"
+order_index = 0
+
+[[programs.blocks.exercises]]
+id = "257d296b-2256-43bb-bf75-2e0735ec503d"
+exercise_id = "fef534c7-6ae7-4832-a43f-2cd5e6ddb6b5"
+sets = 2
+reps = "3-6,3-6"
+order_index = 1
+
+[[programs.blocks]]
+id = "82cf99c1-c150-4bb8-8795-ab3c732da834"
+name = "Lower Day 2"
+
+[[programs.blocks.exercises]]
+id = "b75a4975-2446-4d5c-bd24-097d9073e868"
+exercise_id = "46a87b35-49fa-4dea-b86e-7546b033103f"
+sets = 3
+reps = "4-8,4-8,AMRAP"
+order_index = 1
+
+[[programs.blocks.exercises]]
+id = "53a4cdc3-b787-47ac-91b5-546c595812c4"
+exercise_id = "4db7342f-b484-4a1a-a731-360c1ac8499f"
+sets = 2
+reps = "4-8,4-8"
+order_index = 0
+
+[[programs.blocks.exercises]]
+id = "35a163f0-8599-4873-b819-9bdae6bb6705"
+exercise_id = "7ae245e3-8acc-4959-98dd-9a1d7293ca37"
+sets = 2
+reps = "4-8,4-8"
+order_index = 3
+
+[[programs.blocks.exercises]]
+id = "7d76f429-896a-4c39-8ec0-3ee70a0d644d"
+exercise_id = "8f36ec03-2c57-4db0-9c33-5eb2582ec01a"
+sets = 2
+reps = "4-8,4-8"
+order_index = 2
+
+[[programs.blocks.exercises]]
+id = "f575af2b-3073-4e73-8e39-d87002eb09db"
+exercise_id = "9b735dad-0914-4d29-80c0-404ce6c7207e"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 5
+
+[[programs.blocks.exercises]]
+id = "97da0ac6-a4b6-465f-829c-128747ec84c5"
+exercise_id = "a691246f-c573-441a-ad88-6086c5811328"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 4
+
+[[programs.blocks]]
+id = "b901a893-9251-4ab7-9365-42e9193698b4"
+name = "Upper Day 3"
+
+[[programs.blocks.exercises]]
+id = "7d03ab4c-0782-449a-8326-e38779793192"
+exercise_id = "11974fc3-3e6f-42db-b423-60922dbd8fdc"
+sets = 2
+reps = "4-8,4-8"
+order_index = 1
+
+[[programs.blocks.exercises]]
+id = "c41be405-d17f-46ee-93eb-5fedf8595d59"
+exercise_id = "35837b73-367b-4316-9de2-f55fe73f630e"
+sets = 2
+reps = "4-8,4-8"
+order_index = 0
+
+[[programs.blocks.exercises]]
+id = "517c10e2-2b9d-4c75-b2b8-13022ef02144"
+exercise_id = "3e64096a-f6f8-4bc0-8110-aff7992be6cc"
+sets = 2
+reps = "4-8,4-8"
+order_index = 5
+
+[[programs.blocks.exercises]]
+id = "075c514c-b99f-4f50-92ef-a1e7ec3ac944"
+exercise_id = "57155170-9937-4f82-a611-a2878d073c4a"
+sets = 2
+reps = "4-8,4-8"
+order_index = 2
+
+[[programs.blocks.exercises]]
+id = "69b27690-c96b-4415-b091-69bc73e0c5f8"
+exercise_id = "8625a7ec-07da-4716-b446-94986f324656"
+sets = 3
+reps = "4-8,4-8,4-8"
+order_index = 6
+
+[[programs.blocks.exercises]]
+id = "1a98dfd5-9ebc-47ce-8267-5ae96c359370"
+exercise_id = "bb9bdc48-f4f9-4dce-8621-6dfd9314d201"
+sets = 2
+reps = "4-8,4-8"
+order_index = 3
+
+[[programs.blocks.exercises]]
+id = "232d3a2e-b1d2-4710-a1ac-9bece7736171"
+exercise_id = "db2b345d-8817-4447-83b1-24637cd37e9c"
+sets = 2
+reps = "4-8,4-8"
+order_index = 4
+
+[[programs.blocks.exercises]]
+id = "80fb5310-3c21-4a74-bf68-f9c373e1804d"
+exercise_id = "ed3cd093-e12b-4216-b28e-35390c826415"
+sets = 3
+reps = "4-8,4-8,4-8"
 order_index = 7
 
 [[sessions]]
