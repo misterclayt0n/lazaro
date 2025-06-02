@@ -771,6 +771,71 @@ pub async fn handle(cmd: ExerciseCmd, pool: &SqlitePool, fmt: OutputFmt) -> Resu
                 );
             }
 
+            // Get PR progression history
+            let pr_history: Vec<(String, f32, i32, f32)> = sqlx::query_as(
+                r#"
+                WITH pr_progression AS (
+                    SELECT 
+                        es.timestamp,
+                        CAST(es.weight AS REAL) as weight,
+                        CAST(es.reps AS INTEGER) as reps,
+                        CASE 
+                            WHEN es.bodyweight = 1 THEN 0
+                            ELSE CAST(es.weight AS REAL) * (1 + CAST(es.reps AS REAL) / 30)
+                        END as estimated_1rm,
+                        MAX(CASE 
+                            WHEN es.bodyweight = 1 THEN 0
+                            ELSE CAST(es.weight AS REAL) * (1 + CAST(es.reps AS REAL) / 30)
+                        END) OVER (ORDER BY es.timestamp ROWS UNBOUNDED PRECEDING) as running_max_1rm
+                    FROM exercise_sets es
+                    JOIN training_session_exercises tse ON tse.id = es.session_exercise_id
+                    WHERE tse.exercise_id = ?
+                    AND es.weight > 0
+                ),
+                pr_with_lag AS (
+                    SELECT 
+                        timestamp,
+                        weight,
+                        reps,
+                        estimated_1rm,
+                        running_max_1rm,
+                        LAG(running_max_1rm, 1, 0) OVER (ORDER BY timestamp) as prev_max_1rm
+                    FROM pr_progression
+                )
+                SELECT 
+                    timestamp,
+                    weight,
+                    reps,
+                    estimated_1rm
+                FROM pr_with_lag
+                WHERE estimated_1rm = running_max_1rm
+                AND (prev_max_1rm < running_max_1rm OR prev_max_1rm = 0)
+                ORDER BY timestamp ASC
+                "#,
+            )
+            .bind(&exercise_id)
+            .fetch_all(pool)
+            .await?;
+
+            // Print PR progression timeline
+            if !pr_history.is_empty() {
+                println!();
+                println!("{}", "PR Progression".cyan().bold());
+                let mut pr_line = String::new();
+                for (i, (timestamp, weight, reps, _)) in pr_history.iter().enumerate() {
+                    if i > 0 {
+                        pr_line.push_str(" → ");
+                    }
+                    pr_line.push_str(&format!(
+                        "{}kg×{} ({})",
+                        weight,
+                        reps,
+                        &timestamp[..10]
+                    ));
+                }
+                println!("  {}\n", pr_line);
+            }
+
             // Print 30-day changes
             if let (Some(prev_rm), _) = (prev_pr_1rm, _prev_pr_date) {
                 let diff = pr_1rm.unwrap_or(0.0) - prev_rm;
